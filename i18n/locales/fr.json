@@ -167,7 +167,8 @@
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — fait avec",
-    "right2": "à Mulhouse"
+    "right2": "à Mulhouse",
+    "legal": "Mentions légales"
   },
   "stack": {
     "title": "Stack",
@@ -220,5 +221,46 @@
         ]
       }
     }
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "updated": "Dernière mise à jour : juillet 2026",
+    "back": "← Retour au site",
+    "s": [
+      {
+        "h": "Éditeur du site",
+        "p": [
+          "Alexandra Porhansl — développeuse web.",
+          "Mulhouse (Haut-Rhin), France.",
+          "Contact : a.porhansl{'@'}icloud.com"
+        ]
+      },
+      {
+        "h": "Hébergement",
+        "p": [
+          "Ce site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis — www.cloudflare.com."
+        ]
+      },
+      {
+        "h": "Propriété intellectuelle",
+        "p": [
+          "L'ensemble des contenus de ce site (textes, visuels, photographies, code) est la propriété d'Alexandra Porhansl, sauf mention contraire. Toute reproduction ou représentation, totale ou partielle, sans autorisation préalable est interdite."
+        ]
+      },
+      {
+        "h": "Données personnelles & cookies",
+        "p": [
+          "Ce site ne collecte aucune donnée personnelle : pas de compte, pas de formulaire, pas d'outil de mesure d'audience, pas de traceur publicitaire.",
+          "Deux cookies strictement fonctionnels sont utilisés : « lang » (langue d'affichage) et « aud » (mode freelance / CDI). Exemptés de consentement au sens des recommandations CNIL, ils ne servent qu'au confort de navigation et ne sont transmis à aucun tiers.",
+          "Pour toute question relative à vos données : a.porhansl{'@'}icloud.com."
+        ]
+      },
+      {
+        "h": "Crédits",
+        "p": [
+          "Design & développement : Alexandra Porhansl — construit avec Claude Code."
+        ]
+      }
+    ]
   }
 }

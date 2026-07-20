@@ -16,6 +16,7 @@ One-page Nuxt 4 SSG, trilingue FR/EN/DE, design sobre dark (pas de mode clair po
 - Typo : Archivo variable (nom en `wdth 125/wght 700`, reste léger tracked uppercase) + JB Mono pour dates/méta. Fontes self-hostées dans `app/assets/fonts/`, ne pas ajouter de CDN.
 - Animations : GSAP ScrollTrigger via `app/plugins/scroll.client.ts` — tout élément `[data-reveal]` est révélé au scroll. Respecter `prefers-reduced-motion` pour toute nouvelle animation.
 - i18n : locale files rechargés seulement au restart du dev server si modifiés hors HMR (script externe).
+- **i18n PIÈGE : jamais de `@` brut dans les messages** (syntaxe vue-i18n de messages liés) — un email non échappé fait planter la compilation de TOUTE la locale (messages vides, clés brutes à l'écran). Écrire `a.porhansl{'@'}icloud.com`. Mêmes précautions avec `|` et `{ }`.
 - URL canonique : `siteUrl` dans `nuxt.config.ts` — une seule source de vérité (SEO, OG, sitemap, robots.txt à garder synchro).
 
 ## Contenu — points sensibles

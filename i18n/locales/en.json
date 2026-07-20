@@ -167,7 +167,8 @@
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — made with",
-    "right2": "in Mulhouse"
+    "right2": "in Mulhouse",
+    "legal": "Legal notice"
   },
   "stack": {
     "title": "Stack",
@@ -220,5 +221,46 @@
         ]
       }
     }
+  },
+  "legal": {
+    "title": "Legal notice",
+    "updated": "Last updated: July 2026",
+    "back": "← Back to the site",
+    "s": [
+      {
+        "h": "Site publisher",
+        "p": [
+          "Alexandra Porhansl — web developer.",
+          "Mulhouse (Haut-Rhin), France.",
+          "Contact: a.porhansl{'@'}icloud.com"
+        ]
+      },
+      {
+        "h": "Hosting",
+        "p": [
+          "This site is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA — www.cloudflare.com."
+        ]
+      },
+      {
+        "h": "Intellectual property",
+        "p": [
+          "All content on this site (texts, visuals, photographs, code) is the property of Alexandra Porhansl unless stated otherwise. Any full or partial reproduction without prior permission is prohibited."
+        ]
+      },
+      {
+        "h": "Personal data & cookies",
+        "p": [
+          "This site collects no personal data: no accounts, no forms, no audience analytics, no advertising trackers.",
+          "Two strictly functional cookies are used: “lang” (display language) and “aud” (freelance / permanent mode). They exist purely for browsing comfort and are never shared with third parties.",
+          "Any question about your data: a.porhansl{'@'}icloud.com."
+        ]
+      },
+      {
+        "h": "Credits",
+        "p": [
+          "Design & development: Alexandra Porhansl — built with Claude Code."
+        ]
+      }
+    ]
   }
 }

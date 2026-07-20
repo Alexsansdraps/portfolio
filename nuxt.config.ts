@@ -50,6 +50,14 @@ export default defineNuxtConfig({
     baseUrl: siteUrl,
     defaultLocale: 'fr',
     strategy: 'prefix_except_default',
+    customRoutes: 'config',
+    pages: {
+      mentions: {
+        fr: '/mentions-legales',
+        en: '/legal-notice',
+        de: '/impressum',
+      },
+    },
     locales: [
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
       { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },

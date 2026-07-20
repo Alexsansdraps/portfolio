@@ -167,7 +167,8 @@
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — mit",
-    "right2": "in Mulhouse gebaut"
+    "right2": "in Mulhouse gebaut",
+    "legal": "Impressum"
   },
   "stack": {
     "title": "Stack",
@@ -220,5 +221,46 @@
         ]
       }
     }
+  },
+  "legal": {
+    "title": "Impressum",
+    "updated": "Stand: Juli 2026",
+    "back": "← Zurück zur Website",
+    "s": [
+      {
+        "h": "Angaben zur Betreiberin",
+        "p": [
+          "Alexandra Porhansl — Webentwicklerin.",
+          "Mulhouse (Haut-Rhin), Frankreich.",
+          "Kontakt: a.porhansl{'@'}icloud.com"
+        ]
+      },
+      {
+        "h": "Hosting",
+        "p": [
+          "Diese Website wird gehostet von Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA — www.cloudflare.com."
+        ]
+      },
+      {
+        "h": "Urheberrecht",
+        "p": [
+          "Alle Inhalte dieser Website (Texte, Grafiken, Fotografien, Code) sind, sofern nicht anders angegeben, Eigentum von Alexandra Porhansl. Jede vollständige oder teilweise Vervielfältigung ohne vorherige Genehmigung ist untersagt."
+        ]
+      },
+      {
+        "h": "Datenschutz & Cookies",
+        "p": [
+          "Diese Website erhebt keine personenbezogenen Daten: keine Konten, keine Formulare, keine Analyse-Tools, keine Werbe-Tracker.",
+          "Es werden zwei rein funktionale Cookies verwendet: „lang“ (Anzeigesprache) und „aud“ (Modus Freelance / Festanstellung). Sie dienen ausschließlich dem Komfort und werden nicht an Dritte weitergegeben.",
+          "Fragen zu Ihren Daten: a.porhansl{'@'}icloud.com."
+        ]
+      },
+      {
+        "h": "Credits",
+        "p": [
+          "Design & Entwicklung: Alexandra Porhansl — gebaut mit Claude Code."
+        ]
+      }
+    ]
   }
 }
