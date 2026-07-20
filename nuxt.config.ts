@@ -1,11 +1,11 @@
 import tailwindcss from '@tailwindcss/vite'
 
 /**
- * URL canonique du site — UNE seule source de vérité.
- * À la mise en prod : si le domaine final n'est pas porhansl.dev,
- * changer ici OU poser NUXT_PUBLIC_SITE_URL / NUXT_SITE_URL sur l'hébergeur.
+ * URL canonique du site — UNE seule source de vérité
+ * (canonical, hreflang, sitemap, OG images).
+ * Surchargeable via NUXT_PUBLIC_SITE_URL sur l'hébergeur.
  */
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://porhansl.dev'
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://alexandraporhansl.com'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

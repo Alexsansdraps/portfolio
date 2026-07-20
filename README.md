@@ -1,4 +1,4 @@
-# porhansl.dev — Portfolio
+# alexandraporhansl.com — Portfolio
 
 Portfolio d'Alexandra Porhansl — développeuse full-stack (appétence front), Mulhouse.
 Trilingue **FR / EN / DE**, double discours **freelance / CDI** (`?mode=freelance|cdi`), timeline d'expérience, carte de mobilité tri-nationale interactive, CV PDF générés par pipeline HTML → PDF.
