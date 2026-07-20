@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Alexandra Porhansl — Full-Stack-Entwicklerin · Vue / Nuxt · Mulhouse",
+    "description": "Full-Stack-Entwicklerin mit Schwerpunkt Front-End (Vue, Nuxt, TypeScript, Symfony), 7 Jahre Erfahrung. Wohnhaft in Mulhouse — Basel, Freiburg und Zürich in Reichweite. Offen für Freelance-Projekte oder Festanstellung."
+  },
+  "nav": {
+    "aria": "Sprachen",
+    "modeAria": "Freelance oder Festanstellung",
+    "freelance": "Freelance",
+    "cdi": "Festanstellung",
+    "cv": "Lebenslauf herunterladen (PDF)"
+  },
+  "hero": {
+    "eyebrow": "Mulhouse · Basel 35 Min. · Freiburg 50 Min. · Zürich 1 Std. 50",
+    "role": "Full-Stack-Entwicklerin",
+    "stack": "Schwerpunkt Front-End · vue · nuxt — symfony · nest — 7 Jahre",
+    "portraitAlt": "Porträt von Alexandra Porhansl"
+  },
+  "status": {
+    "fl": "Verfügbar — Web- & Mobile-Projekte · remote oder hybrid",
+    "cdi": "Offen für Festanstellung · Mulhouse & Dreiländereck (Basel · Freiburg · Zürich)",
+    "geo": "FR / EN / DE — grenzüberschreitend mobil"
+  },
+  "value": {
+    "title": "Was ich mitbringe",
+    "range": "Analyse → Pflichtenheft → Lieferung",
+    "intro": "Sieben Jahre Webentwicklung quer durch die Branchen haben mich eines gelehrt: Code ist nur die halbe Arbeit. Die andere Hälfte: verstehen, was Menschen wirklich brauchen — und es liefern.",
+    "s1": {
+      "t": "Bedarfsanalyse & Konzeption",
+      "d": "Ich höre dem Kunden zu — oder dem Team, wenn der Bedarf intern ist — stelle die richtigen Fragen und mache daraus ein klares, priorisiertes Pflichtenheft."
+    },
+    "s2": {
+      "t": "Entwicklung mit Claude Code",
+      "d": "Ich entwickle täglich mit Claude Code — eine Praxis, die ich in meiner Freizeit aufgebaut habe. Agent-Setup, systematische Reviews, Tests: Ich behalte die Kontrolle, das Werkzeug vervielfacht das Tempo. Diese Website ist der direkte Beweis."
+    },
+    "s3": {
+      "t": "Von der Idee bis in die Produktion",
+      "d": "Kompletter Projektzyklus: Ich übersetze einen Bedarf in ein ausgeliefertes Produkt — Spezifikation, Entwicklung, Abnahme, Deployment, Betreuung."
+    }
+  },
+  "xp": {
+    "title": "Erfahrung",
+    "range": "2019 — 2026",
+    "jobs": {
+      "spv": {
+        "role": "Front-End-Entwicklerin Web & Mobile",
+        "bullets": [
+          {
+            "k": "Technische Migration",
+            "t": "Umstellung einer CSHTML-/jQuery-Codebasis auf Vue.js."
+          },
+          {
+            "k": "Mobile Features",
+            "t": "größere Releases mit Ionic und Angular, Veröffentlichung bei Google & Apple."
+          },
+          {
+            "k": "Nuxt-Projekt",
+            "t": "Aufbau und Deployment einer kompletten Website mit Nuxt.js."
+          }
+        ]
+      },
+      "visiofactory": {
+        "role": "PHP-/PrestaShop-Entwicklerin",
+        "bullets": [
+          {
+            "k": "Große Migration",
+            "t": "Mitarbeit am Upgrade von PrestaShop 1.6 auf 8.2."
+          },
+          {
+            "k": "Wartung",
+            "t": "Analyse komplexer Bugs, Verbesserung von Stabilität und Performance der Plattform."
+          }
+        ]
+      },
+      "vivocaz": {
+        "role": "Front-End-Entwicklerin Web & Mobile",
+        "bullets": [
+          {
+            "k": "Web & Mobile",
+            "t": "Verantwortung für das Vue.js-/TypeScript-Front-End."
+          },
+          {
+            "k": "Natives iOS",
+            "t": "Swift-Entwicklung über weite Teile des Projekts, bis zur Veröffentlichung der App."
+          },
+          {
+            "k": "UI/UX",
+            "t": "Gestaltung von SaaS-Oberflächen für eine Fuhrpark-Management-Software."
+          },
+          {
+            "k": "Ops",
+            "t": "Arbeit mit Docker und Git-basierter CI/CD."
+          }
+        ]
+      },
+      "olihost": {
+        "role": "Full-Stack-Entwicklerin",
+        "bullets": [
+          {
+            "k": "Individualsoftware",
+            "t": "maßgeschneiderte Lösungen mit Symfony 3/4/5 und PHP."
+          },
+          {
+            "k": "CMS",
+            "t": "Aufbau und Betreuung zahlreicher WordPress-Websites."
+          },
+          {
+            "k": "Systeme",
+            "t": "Administration von Windows-Server- und Linux-Systemen."
+          }
+        ]
+      }
+    }
+  },
+  "mob": {
+    "title": "Mobilität",
+    "range": "FR · CH · DE",
+    "text": "Wohnhaft in Mulhouse, Führerschein und eigenes Auto: Im Dreiländereck bin ich flexibel unterwegs — Basel, Freiburg, Zürich, Straßburg. Remote, hybrid oder vor Ort.",
+    "home": "Mulhouse",
+    "homeTag": "Homebase",
+    "chips": [
+      "FÜHRERSCHEIN B",
+      "EIGENES AUTO",
+      "REMOTE",
+      "HYBRID",
+      "VOR ORT"
+    ],
+    "cities": {
+      "basel": "Basel",
+      "freiburg": "Freiburg",
+      "zurich": "Zürich",
+      "strasbourg": "Straßburg",
+      "belfort": "Belfort",
+      "montbeliard": "Montbéliard",
+      "colmar": "Colmar"
+    },
+    "mapAria": "Fahrzeiten-Karte ab Mulhouse: Colmar 30 Min., Basel 35 Min., Belfort 40 Min., Montbéliard 50 Min., Freiburg 50 Min., Straßburg 55 Min., Zürich 1 Std. 50"
+  },
+  "langs": {
+    "title": "Sprachen",
+    "range": "FR · EN · DE",
+    "fr": {
+      "name": "Französisch",
+      "level": "Muttersprache",
+      "note": ""
+    },
+    "en": {
+      "name": "Englisch",
+      "level": "B1 → B2",
+      "note": "gutes Verständnis — im Ausbau, tägliche Praxis"
+    },
+    "de": {
+      "name": "Deutsch",
+      "level": "A2 → B1",
+      "note": "im Aufbau — regelmäßige Praxis"
+    }
+  },
+  "cta": {
+    "t1": "Ein Projekt?",
+    "t2": "Eine Stelle",
+    "fl": "Sprechen wir über Ihr Projekt — Antwort innerhalb von 24 Stunden.",
+    "cdi": "Sprechen wir — Lebenslauf auf FR / EN / DE verfügbar.",
+    "btn": "Kontakt aufnehmen",
+    "cvFr": "Lebenslauf FR (PDF)",
+    "cvEn": "Lebenslauf EN (PDF)"
+  },
+  "foot": {
+    "left": "© 2026 Alexandra Porhansl",
+    "right1": "Vue · Nuxt — mit",
+    "right2": "in Mulhouse gebaut"
+  },
+  "stack": {
+    "title": "Stack",
+    "range": "Front · Back · Data · Ops",
+    "groups": {
+      "front": {
+        "label": "Front",
+        "items": [
+          "VUE.JS",
+          "NUXT",
+          "TYPESCRIPT",
+          "IONIC",
+          "SWIFT"
+        ]
+      },
+      "back": {
+        "label": "Back",
+        "items": [
+          "SYMFONY",
+          "PHP",
+          "NEST.JS",
+          "NODE"
+        ]
+      },
+      "data": {
+        "label": "Data",
+        "items": [
+          "MYSQL",
+          "SQL",
+          "DATENMODELLIERUNG",
+          "DATENANALYSE"
+        ]
+      },
+      "ops": {
+        "label": "Ops",
+        "items": [
+          "DOCKER",
+          "GIT-CI/CD",
+          "LINUX",
+          "WINDOWS SERVER"
+        ]
+      },
+      "method": {
+        "label": "Methode",
+        "items": [
+          "CLAUDE CODE",
+          "FIGMA",
+          "UI/UX",
+          "TECHNISCHES SEO"
+        ]
+      }
+    }
+  }
+}

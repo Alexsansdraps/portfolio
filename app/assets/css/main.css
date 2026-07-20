@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ---------- fontes self-hostées (subsets latin) ---------- */
+@font-face {
+  font-family: 'Archivo Var';
+  src: url('../fonts/archivo.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: block;
+}
+@font-face {
+  font-family: 'JB Mono';
+  src: url('../fonts/jbmono.woff2') format('woff2');
+  font-weight: 100 800;
+  font-display: block;
+}
+
+/* ---------- tokens ---------- */
+@theme {
+  --color-void:   #0a0a0c;
+  --color-carbon: #131316;
+  --color-ash:    #26262a;
+  --color-bone:   #ece9e2;
+  --color-mute:   #77747c;
+  --color-wine:   #b26270; /* échantillonné sur le portrait */
+  --color-deep:   #480e1f;
+  --font-display: 'Archivo Var', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JB Mono', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ---------- base ---------- */
+html { background: var(--color-void); overflow-x: clip; }
+body {
+  background: var(--color-void);
+  color: var(--color-bone);
+  font-family: var(--font-display);
+  font-weight: 380;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+::selection { background: var(--color-wine); color: var(--color-void); }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+
+.pulse {
+  display: inline-block; width: 7px; height: 7px; background: var(--color-wine);
+  border-radius: 50%; margin-right: 10px; vertical-align: 1px;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+
+/* entrance */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { opacity: 0; transform: translateY(24px); animation: rise .9s cubic-bezier(.2, .65, .25, 1) forwards; }
+  .rise.d1 { animation-delay: .08s; }
+  .rise.d2 { animation-delay: .18s; }
+  .rise.d3 { animation-delay: .3s; }
+  .rise.d4 { animation-delay: .42s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}

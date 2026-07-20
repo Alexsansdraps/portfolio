@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Alexandra Porhansl — Développeuse Full-Stack · Vue / Nuxt · Mulhouse",
+    "description": "Développeuse full-stack à forte appétence front-end (Vue, Nuxt, TypeScript, Symfony), 7 ans d'expérience. Basée à Mulhouse, mobile Bâle · Freiburg · Zürich. Disponible en freelance ou CDI."
+  },
+  "nav": {
+    "aria": "Langues",
+    "modeAria": "Freelance ou CDI",
+    "freelance": "Freelance",
+    "cdi": "CDI",
+    "cv": "Télécharger mon CV (PDF)"
+  },
+  "hero": {
+    "eyebrow": "Mulhouse · Bâle 35 min · Freiburg 50 min · Zürich 1 h 50",
+    "role": "Développeuse Full-Stack",
+    "stack": "appétence front · vue · nuxt — symfony · nest — 7 ans",
+    "portraitAlt": "Portrait d'Alexandra Porhansl"
+  },
+  "status": {
+    "fl": "Disponible — missions web & mobile · remote ou hybride",
+    "cdi": "À l'écoute — CDI · Mulhouse & tri-national (Bâle · Freiburg · Zürich)",
+    "geo": "FR / EN / DE — mobilité tri-nationale"
+  },
+  "value": {
+    "title": "Ce que j'apporte",
+    "range": "recueil → cahier des charges → livraison",
+    "intro": "Sept ans à construire des produits web multi-secteurs m'ont appris une chose : le code n'est que la moitié du métier. L'autre moitié, c'est comprendre ce que les gens veulent vraiment — puis le livrer.",
+    "s1": {
+      "t": "Recueil & cadrage",
+      "d": "J'écoute le client — ou l'équipe quand le besoin est interne — je pose les bonnes questions et j'en tire un cahier des charges clair, priorisé, actionnable."
+    },
+    "s2": {
+      "t": "Dev augmenté par Claude Code",
+      "d": "Je développe avec Claude Code au quotidien — une maîtrise construite sur mon temps perso. Cadrage de l'agent, revue systématique, tests : je garde la main, l'outil démultiplie la vitesse. Ce site en est la preuve directe."
+    },
+    "s3": {
+      "t": "De l'idée à la prod",
+      "d": "Gestion complète du cycle projet : je traduis le besoin en produit livré — specs, développement, recette, mise en production, suivi."
+    }
+  },
+  "xp": {
+    "title": "Expérience",
+    "range": "2019 — 2026",
+    "jobs": {
+      "spv": {
+        "role": "Développeuse Front-End Web & Mobile",
+        "bullets": [
+          {
+            "k": "Migration technique",
+            "t": "passage d'un environnement CSHTML / jQuery vers Vue.js."
+          },
+          {
+            "k": "Features mobiles",
+            "t": "évolutions majeures sous Ionic et Angular, mises en production Google & Apple."
+          },
+          {
+            "k": "Projet Nuxt",
+            "t": "création et déploiement complet d'un site sous Nuxt.js."
+          }
+        ]
+      },
+      "visiofactory": {
+        "role": "Développeuse PHP / PrestaShop",
+        "bullets": [
+          {
+            "k": "Migration majeure",
+            "t": "participation au passage de PrestaShop 1.6 vers 8.2."
+          },
+          {
+            "k": "Maintenance",
+            "t": "résolution de bugs complexes, stabilité et performances de la plateforme."
+          }
+        ]
+      },
+      "vivocaz": {
+        "role": "Développeuse Front-End Web & Mobile",
+        "bullets": [
+          {
+            "k": "Web & mobile",
+            "t": "pilotage du front-end Vue.js / TypeScript."
+          },
+          {
+            "k": "iOS natif",
+            "t": "développement Swift sur une grande partie de la mission, jusqu'à la mise en ligne de l'app."
+          },
+          {
+            "k": "UI/UX",
+            "t": "conception d'interfaces SaaS pour un logiciel de gestion de flotte automobile."
+          },
+          {
+            "k": "Ops",
+            "t": "travail sous Docker, intégration continue via Git (CI/CD)."
+          }
+        ]
+      },
+      "olihost": {
+        "role": "Développeuse Full-Stack",
+        "bullets": [
+          {
+            "k": "Logiciels métiers",
+            "t": "solutions sur mesure sous Symfony 3/4/5 et PHP."
+          },
+          {
+            "k": "CMS",
+            "t": "création et gestion de parcs de sites WordPress."
+          },
+          {
+            "k": "Systèmes",
+            "t": "administration et maintenance de serveurs Windows Server / Linux."
+          }
+        ]
+      }
+    }
+  },
+  "mob": {
+    "title": "Mobilité",
+    "range": "FR · CH · DE",
+    "text": "Basée à Mulhouse, permis B et véhicule personnel : je me déplace sans friction dans le Dreiländereck — Bâle, Freiburg, Zürich, Strasbourg. Remote, hybride ou sur site.",
+    "home": "Mulhouse",
+    "homeTag": "port d'attache",
+    "chips": [
+      "PERMIS B",
+      "VÉHICULE PERSO",
+      "REMOTE",
+      "HYBRIDE",
+      "SUR SITE"
+    ],
+    "cities": {
+      "basel": "Bâle",
+      "freiburg": "Freiburg",
+      "zurich": "Zürich",
+      "strasbourg": "Strasbourg",
+      "belfort": "Belfort",
+      "montbeliard": "Montbéliard",
+      "colmar": "Colmar"
+    },
+    "mapAria": "Carte des temps de trajet depuis Mulhouse : Colmar 30 min, Bâle 35 min, Belfort 40 min, Freiburg 50 min, Montbéliard 50 min, Strasbourg 55 min, Zürich 1 h 50"
+  },
+  "langs": {
+    "title": "Langues",
+    "range": "FR · EN · DE",
+    "fr": {
+      "name": "Français",
+      "level": "langue maternelle",
+      "note": ""
+    },
+    "en": {
+      "name": "Anglais",
+      "level": "B1 → B2",
+      "note": "bonne compréhension — en progression active, pratique quotidienne"
+    },
+    "de": {
+      "name": "Allemand",
+      "level": "A2 → B1",
+      "note": "en progression active — pratique régulière"
+    }
+  },
+  "cta": {
+    "t1": "Un projet ?",
+    "t2": "Un poste",
+    "fl": "Discutons de votre mission — réponse sous 24 h.",
+    "cdi": "Discutons du poste — CV FR / EN / DE sur demande.",
+    "btn": "Me contacter",
+    "cvFr": "CV français (PDF)",
+    "cvEn": "CV anglais (PDF)"
+  },
+  "foot": {
+    "left": "© 2026 Alexandra Porhansl",
+    "right1": "Vue · Nuxt — fait avec",
+    "right2": "à Mulhouse"
+  },
+  "stack": {
+    "title": "Stack",
+    "range": "front · back · data · ops",
+    "groups": {
+      "front": {
+        "label": "Front",
+        "items": [
+          "VUE.JS",
+          "NUXT",
+          "TYPESCRIPT",
+          "IONIC",
+          "SWIFT"
+        ]
+      },
+      "back": {
+        "label": "Back",
+        "items": [
+          "SYMFONY",
+          "PHP",
+          "NEST.JS",
+          "NODE"
+        ]
+      },
+      "data": {
+        "label": "Data",
+        "items": [
+          "MYSQL",
+          "SQL",
+          "MODÉLISATION",
+          "ANALYSE DE DONNÉES"
+        ]
+      },
+      "ops": {
+        "label": "Ops",
+        "items": [
+          "DOCKER",
+          "CI/CD GIT",
+          "LINUX",
+          "WINDOWS SERVER"
+        ]
+      },
+      "method": {
+        "label": "Méthode",
+        "items": [
+          "CLAUDE CODE",
+          "FIGMA",
+          "UI/UX",
+          "SEO TECHNIQUE"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CV — Alexandra Porhansl (EN)</title>
+<style>
+  @font-face {
+    font-family: 'Archivo Var';
+    src: url('../app/assets/fonts/archivo.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 62% 125%;
+  }
+  @font-face {
+    font-family: 'JB Mono';
+    src: url('../app/assets/fonts/jbmono.woff2') format('woff2');
+    font-weight: 100 800;
+  }
+  :root {
+    --ink: #1b1b1f;
+    --mute: #6e6e73;
+    --wine: #a34d5d;
+    --hair: #e4e2de;
+    --paper: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--paper); }
+  body {
+    width: 210mm; height: 296mm; overflow: hidden;
+    padding: 11mm 13mm 9mm;
+    font-family: 'Archivo Var', system-ui, sans-serif;
+    font-weight: 400; color: var(--ink);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .mono { font-family: 'JB Mono', monospace; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8mm; }
+  .h-name {
+    font-weight: 700; font-stretch: 125%; text-transform: uppercase;
+    font-size: 24pt; line-height: .95; letter-spacing: -.01em;
+  }
+  .h-name .dot { color: var(--wine); }
+  .h-role {
+    margin-top: 3.5mm;
+    font-weight: 300; letter-spacing: .2em; text-transform: uppercase;
+    font-size: 9pt; color: var(--ink);
+  }
+  .h-role b { font-weight: 500; color: var(--wine); }
+  .h-contact {
+    margin-top: 3mm;
+    font-family: 'JB Mono', monospace; font-size: 6.8pt; letter-spacing: .04em;
+    color: var(--mute); line-height: 1.8;
+  }
+  .h-contact b { color: var(--ink); font-weight: 500; }
+  .h-photo { width: 30mm; height: 30mm; object-fit: cover; object-position: top; border-radius: 2mm; flex-shrink: 0; }
+
+  .rule { border: 0; border-top: .35mm solid var(--hair); margin: 5mm 0; }
+
+  .grid { display: grid; grid-template-columns: 1fr 58mm; gap: 0 8mm; }
+
+  h2 {
+    font-weight: 300; font-size: 8pt; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 3mm;
+  }
+  h2::before { content: "— "; color: var(--wine); letter-spacing: 0; }
+  section { margin-bottom: 5.5mm; }
+
+  .profil p { font-size: 8.6pt; line-height: 1.55; color: #333338; }
+  .profil b { font-weight: 600; color: var(--ink); }
+
+  .job { margin-bottom: 4.2mm; }
+  .j-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .j-role { font-weight: 640; font-stretch: 82%; font-size: 9.6pt; text-transform: uppercase; letter-spacing: .03em; }
+  .j-dates { font-family: 'JB Mono', monospace; font-size: 6.8pt; color: var(--mute); white-space: nowrap; }
+  .j-co { font-size: 7.6pt; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-top: .8mm; }
+  .j-co b { font-weight: 500; color: var(--wine); }
+  .job ul { list-style: none; margin-top: 1.6mm; }
+  .job li { font-size: 8.2pt; line-height: 1.5; color: #333338; padding-left: 3.5mm; position: relative; }
+  .job li::before { content: "—"; position: absolute; left: 0; color: var(--wine); }
+
+  .side section { margin-bottom: 5mm; }
+  .claude {
+    border: .35mm solid var(--hair); border-left: 1mm solid var(--wine);
+    padding: 3mm 3.5mm; font-size: 7.8pt; line-height: 1.55; color: #333338;
+  }
+  .claude b { font-weight: 600; color: var(--ink); }
+  .s-group { margin-bottom: 2.2mm; }
+  .s-k { font-family: 'JB Mono', monospace; font-size: 6.4pt; letter-spacing: .14em; color: var(--wine); }
+  .s-v { font-size: 8pt; line-height: 1.5; color: #333338; margin-top: .4mm; }
+  .lang-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.6mm; }
+  .lang-row .n { font-size: 8pt; }
+  .lang-row .l { font-family: 'JB Mono', monospace; font-size: 6.8pt; color: var(--mute); }
+  .lang-note { font-size: 7pt; color: var(--mute); line-height: 1.45; margin-top: -0.8mm; margin-bottom: 1.6mm; }
+  .edu { font-size: 8pt; line-height: 1.5; color: #333338; margin-bottom: 1.6mm; }
+  .edu .y { font-family: 'JB Mono', monospace; font-size: 6.8pt; color: var(--mute); }
+  .hobbies { font-size: 7.8pt; line-height: 1.55; color: #333338; }
+
+  footer {
+    position: absolute; bottom: 5mm; left: 13mm; right: 13mm;
+    display: flex; justify-content: space-between;
+    font-family: 'JB Mono', monospace; font-size: 6.2pt; letter-spacing: .06em; color: var(--mute);
+  }
+  footer b { color: var(--wine); font-weight: 400; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="h-name">Alexandra<br>Porhansl<span class="dot">.</span></div>
+      <div class="h-role">Full-Stack Developer — <b>front-end at heart</b></div>
+      <div class="h-contact">
+        Mulhouse, France · <b>+33 7 69 69 00 35</b> · <b>a.porhansl&#64;icloud.com</b><br>
+        Driving licence + own car · mobile across Basel / Freiburg / Zurich · remote, hybrid or on-site
+      </div>
+    </div>
+    <img class="h-photo" src="../app/assets/img/portrait.webp" alt="">
+  </header>
+
+  <hr class="rule">
+
+  <div class="grid">
+    <div class="main">
+      <section class="profil">
+        <h2>Profile</h2>
+        <p>
+          Full-stack developer — 7 years across multiple industries, with a strong front-end leaning.
+          I take a need from the root: client or team discovery, <b>specification</b>,
+          development (Vue/Nuxt, Symfony), QA and <b>production release</b>.
+          I work with <b>Claude Code</b> daily — mastery built on my own time:
+          agent scoping, systematic reviews, tests. Multiplied pace, kept rigour.
+        </p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="j-head"><span class="j-role">Front-End Developer, Web &amp; Mobile</span><span class="j-dates">10/2025 — 05/2026</span></div>
+          <div class="j-co"><b>SPV Informatique</b> — Mulhouse, France</div>
+          <ul>
+            <li>Migrated a CSHTML / jQuery environment to Vue.js.</li>
+            <li>Major mobile releases with Ionic and Angular — shipped to Google Play &amp; App Store.</li>
+            <li>Built and deployed a complete website with Nuxt.js.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="j-head"><span class="j-role">PHP / PrestaShop Developer</span><span class="j-dates">01/2025 — 10/2025</span></div>
+          <div class="j-co"><b>Visiofactory</b> — Mulhouse, France</div>
+          <ul>
+            <li>Contributed to the PrestaShop 1.6 → 8.2 migration.</li>
+            <li>Tracked down complex bugs — platform stability and performance.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="j-head"><span class="j-role">Front-End Developer, Web &amp; Mobile</span><span class="j-dates">05/2022 — 10/2024</span></div>
+          <div class="j-co"><b>Vivocaz</b> — Soissons, France</div>
+          <ul>
+            <li>Vue.js / TypeScript front end — SaaS interfaces for vehicle fleet management.</li>
+            <li>Native iOS in Swift for a large part of the mission — through to the app's release.</li>
+            <li>Docker, Git-based CI/CD.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="j-head"><span class="j-role">Full-Stack Developer</span><span class="j-dates">06/2019 — 12/2021</span></div>
+          <div class="j-co"><b>Olihost</b> — Soissons, France</div>
+          <ul>
+            <li>Custom business software — Symfony 3/4/5, PHP · WordPress site portfolios.</li>
+            <li>Windows Server / Linux administration.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="side">
+      <section>
+        <h2>Augmented dev</h2>
+        <div class="claude">
+          <b>Claude Code — daily practice.</b>
+          Agent scoping, CLAUDE.md, systematic reviews, tests.
+          This CV and my portfolio come out of that pipeline (HTML → PDF, Nuxt).
+        </div>
+      </section>
+
+      <section>
+        <h2>Stack</h2>
+        <div class="s-group"><div class="s-k">FRONT</div><div class="s-v">Vue.js · Nuxt · TypeScript · Ionic · Swift</div></div>
+        <div class="s-group"><div class="s-k">BACK</div><div class="s-v">Symfony · PHP · Nest.js</div></div>
+        <div class="s-group"><div class="s-k">DATA</div><div class="s-v">MySQL · SQL — data modelling &amp; analysis</div></div>
+        <div class="s-group"><div class="s-k">OPS</div><div class="s-v">Docker · Git CI/CD · Linux · Windows Server</div></div>
+        <div class="s-group"><div class="s-k">METHOD</div><div class="s-v">Requirements gathering · UI/UX mockups (Figma) · technical SEO</div></div>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <div class="lang-row"><span class="n">French</span><span class="l">native</span></div>
+        <div class="lang-row"><span class="n">English</span><span class="l">B1 → B2</span></div>
+        <div class="lang-note">good comprehension — daily practice</div>
+        <div class="lang-row"><span class="n">German</span><span class="l">A2 → B1</span></div>
+        <div class="lang-note">actively improving — regular practice</div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu">Simplon — Web &amp; Mobile Developer <span class="y">· 2018</span></div>
+        <div class="edu">Vocational diploma in Sales <span class="y">· 2011 — 2014</span></div>
+      </section>
+
+      <section>
+        <h2>Interests</h2>
+        <div class="hobbies">Horsemanship with my mare — patience &amp; listening. Gardening, video games, music.</div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <span>Alexandra Porhansl — CV 2026</span>
+    <span>generated by an <b>HTML → PDF</b> pipeline · handmade with Claude Code</span>
+  </footer>
+</body>
+</html>
