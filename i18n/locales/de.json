@@ -251,7 +251,7 @@
         "h": "Datenschutz & Cookies",
         "p": [
           "Diese Website erhebt keine personenbezogenen Daten: keine Konten, keine Formulare, keine Analyse-Tools, keine Werbe-Tracker.",
-          "Es werden zwei rein funktionale Cookies verwendet: „lang“ (Anzeigesprache) und „aud“ (Modus Freelance / Festanstellung). Sie dienen ausschließlich dem Komfort und werden nicht an Dritte weitergegeben.",
+          "Es wird ein einziges rein funktionales Cookie verwendet: „aud“, das den gewählten Anzeigemodus speichert (Freelance oder Festanstellung). Es dient ausschließlich dem Komfort und wird nicht an Dritte weitergegeben.",
           "Fragen zu Ihren Daten: a.porhansl{'@'}icloud.com."
         ]
       },
