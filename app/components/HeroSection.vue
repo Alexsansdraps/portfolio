@@ -91,15 +91,30 @@ const { mode } = useAudienceMode()
 }
 
 @media (max-width: 900px) {
+  /* la photo devient le fond du hero, texte par-dessus, ancré en bas */
   .hero {
-    grid-template-columns: 1fr;
-    align-items: start;
-    min-height: 0;
-    padding-top: 28px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative;
+    min-height: min(92svh, 680px);
+    padding-top: 0;
+    overflow: hidden;
   }
-  .hero-pic { order: -1; }
-  .hero-pic img { max-width: min(46vw, 200px); margin: 0 auto; }
-  .hero-txt { padding-bottom: 8px; }
+  .hero-pic {
+    position: absolute; inset: 0;
+    z-index: 0; pointer-events: none;
+  }
+  .hero-pic img {
+    width: 100%; height: 100%; max-width: none; margin: 0;
+    object-fit: cover; object-position: 50% 12%;
+    opacity: .8;
+    /* fondu vers le void — appuyé dans la zone du texte pour la lisibilité */
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgba(0, 0, 0, .38) 56%, transparent 92%);
+    -webkit-mask-composite: source-over;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgba(0, 0, 0, .38) 56%, transparent 92%);
+    mask-composite: add;
+  }
+  .hero-txt { position: relative; z-index: 1; padding-bottom: 22px; }
+  .hero-eyebrow { margin-bottom: 18px; }
   .hero-name { font-size: min(10.2vw, calc((100vw - 48px) / 8), 64px); }
 }
 </style>
