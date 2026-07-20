@@ -63,8 +63,13 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
       { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
     ],
-    // Pas de détection navigateur : « / » sert toujours le français.
-    // Les autres langues restent accessibles via /en, /de et le switch.
-    detectBrowserLanguage: false,
+    // Détection de la langue du navigateur à l'arrivée sur « / » :
+    // navigateur DE → /de, EN → /en, tout le reste → FR (defaultLocale).
+    // Le choix manuel est ensuite mémorisé dans le cookie « lang ».
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'lang',
+      redirectOn: 'root',
+    },
   },
 })

@@ -251,7 +251,7 @@
         "h": "Données personnelles & cookies",
         "p": [
           "Ce site ne collecte aucune donnée personnelle : pas de compte, pas de formulaire, pas d'outil de mesure d'audience, pas de traceur publicitaire.",
-          "Un seul cookie strictement fonctionnel est utilisé : « aud », qui mémorise le mode d'affichage choisi (freelance ou CDI). Exempté de consentement au sens des recommandations CNIL, il ne sert qu'au confort de navigation et n'est transmis à aucun tiers.",
+          "Deux cookies strictement fonctionnels sont utilisés : « lang » (langue d'affichage) et « aud » (mode freelance / CDI). Exemptés de consentement au sens des recommandations CNIL, ils ne servent qu'au confort de navigation et ne sont transmis à aucun tiers.",
           "Pour toute question relative à vos données : a.porhansl{'@'}icloud.com."
         ]
       },

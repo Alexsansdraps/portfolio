@@ -251,7 +251,7 @@
         "h": "Personal data & cookies",
         "p": [
           "This site collects no personal data: no accounts, no forms, no audience analytics, no advertising trackers.",
-          "A single strictly functional cookie is used: “aud”, which remembers the chosen display mode (freelance or permanent). It exists purely for browsing comfort and is never shared with third parties.",
+          "Two strictly functional cookies are used: “lang” (display language) and “aud” (freelance / permanent mode). They exist purely for browsing comfort and are never shared with third parties.",
           "Any question about your data: a.porhansl{'@'}icloud.com."
         ]
       },
