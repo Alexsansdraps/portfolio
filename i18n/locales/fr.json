@@ -24,22 +24,22 @@
   "value": {
     "title": "Ce que j'apporte",
     "range": "écouter · concevoir · développer · livrer",
-    "intro": "En sept ans, j'ai travaillé pour des secteurs très différents. Ce que j'en retiens surtout : écrire le code, c'est souvent la partie la plus simple. Le vrai travail, c'est de comprendre ce dont les gens ont besoin, puis de le livrer pour de bon.",
+    "intro": "En sept ans j'ai travaillé dans pas mal de secteurs différents. Le code, au final, c'est rarement le plus compliqué. Le plus compliqué c'est de comprendre ce que les gens veulent vraiment, et d'aller jusqu'au bout.",
     "s1": {
-      "t": "J'écoute avant de coder",
-      "d": "Je commence toujours par poser des questions. Beaucoup. Au client, ou à l'équipe quand le besoin vient de l'interne. J'en ressors un cahier des charges où tout le monde sait quoi faire, et dans quel ordre."
+      "t": "Je pose beaucoup de questions",
+      "d": "Au début d'un projet je pose beaucoup de questions, au client ou à l'équipe selon d'où vient le besoin. Ça finit en cahier des charges, avec des priorités claires."
     },
     "s2": {
-      "t": "Je conçois autant que je code",
-      "d": "Je viens du front et j'ai une vraie appétence pour le design. Maquettes sur Figma, sens du détail, interfaces cohérentes : je ne me contente pas d'intégrer une maquette, je la pense."
+      "t": "Le design, ça me parle",
+      "d": "Je viens du front et j'aime bien la partie design. Je fais mes maquettes sur Figma, je fais attention aux détails, et je préfère réfléchir à une interface plutôt qu'on me la donne toute faite."
     },
     "s3": {
-      "t": "Avec l'IA, je commence par le plan",
-      "d": "Je ne lance jamais un agent à l'aveugle. J'écris d'abord un plan de développement, et c'est ce qui change tout : je garde le contrôle et j'avance beaucoup plus vite. Cette méthode me rend aussi très adaptable — je peux basculer sur un langage que je ne pratique pas tous les jours sans repartir de zéro. Et je tiens à un code propre : Prettier, conventions partagées, tests. L'IA ne dispense pas de standards, elle les rend encore plus nécessaires."
+      "t": "Je travaille avec l'IA, mais avec un plan",
+      "d": "Je développe avec Claude Code tous les jours, c'est parti de mon temps libre au départ. Je ne lance jamais l'agent sans avoir écrit un plan avant, c'est ce qui fait que je garde la main. Du coup je m'adapte assez vite à des langages que je ne pratique pas souvent. Et je tiens au code propre : Prettier, des conventions, des tests. L'IA ne remplace pas les standards."
     },
     "s4": {
-      "t": "Je vais jusqu'à la mise en ligne",
-      "d": "Specs, développement, recette, mise en production, et le suivi derrière. Je débugge le web comme le mobile, et c'est souvent là que se joue la réussite d'un projet."
+      "t": "Je vais jusqu'à la prod",
+      "d": "Specs, développement, recette, mise en ligne, et le suivi après. Je débugge le web comme le mobile."
     }
   },
   "xp": {

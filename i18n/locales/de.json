@@ -24,22 +24,22 @@
   "value": {
     "title": "Was ich mitbringe",
     "range": "zuhören · gestalten · entwickeln · liefern",
-    "intro": "In sieben Jahren habe ich für sehr unterschiedliche Branchen gearbeitet. Was ich vor allem gelernt habe: Der Code ist meistens der einfachere Teil. Die eigentliche Arbeit ist zu verstehen, was Menschen wirklich brauchen — und es dann auch richtig zu liefern.",
+    "intro": "In sieben Jahren habe ich in ziemlich unterschiedlichen Branchen gearbeitet. Der Code ist selten das Schwierigste. Schwieriger ist es herauszufinden, was die Leute wirklich wollen, und es dann auch fertig zu machen.",
     "s1": {
-      "t": "Ich höre zu, bevor ich programmiere",
-      "d": "Ich fange immer mit Fragen an. Mit vielen. Beim Kunden, oder im Team, wenn der Bedarf intern entsteht. Am Ende steht ein Pflichtenheft, bei dem alle wissen, was zu tun ist — und in welcher Reihenfolge."
+      "t": "Ich stelle viele Fragen",
+      "d": "Am Anfang eines Projekts stelle ich viele Fragen, dem Kunden oder dem Team, je nachdem woher der Bedarf kommt. Daraus wird ein Pflichtenheft mit klaren Prioritäten."
     },
     "s2": {
-      "t": "Ich gestalte, nicht nur programmiere",
-      "d": "Ich komme aus dem Front-End und habe ein echtes Gespür für Design. Figma-Mockups, Blick fürs Detail, stimmige Oberflächen: Ich setze ein Design nicht einfach um, ich denke es mit."
+      "t": "Design liegt mir",
+      "d": "Ich komme aus dem Front-End und mag die Design-Arbeit. Meine Mockups mache ich selbst in Figma, ich achte auf Details, und ich denke eine Oberfläche lieber mit, als sie fertig vorgesetzt zu bekommen."
     },
     "s3": {
-      "t": "Bei KI fange ich mit dem Plan an",
-      "d": "Ich lasse einen Agenten nie blind laufen. Ich schreibe zuerst einen Entwicklungsplan, und das macht den Unterschied: Ich behalte die Kontrolle und komme viel schneller voran. Diese Methode macht mich auch sehr anpassungsfähig — ich kann in eine Sprache einsteigen, die ich nicht täglich nutze, ohne bei null anzufangen. Und sauberer Code ist mir wichtig: Prettier, gemeinsame Konventionen, Tests. KI macht Standards nicht überflüssig, sie macht sie noch wichtiger."
+      "t": "Ich arbeite mit KI, aber mit einem Plan",
+      "d": "Ich entwickle jeden Tag mit Claude Code. Angefangen hat das in meiner Freizeit. Ich lasse nie einen Agenten laufen, ohne vorher einen Plan zu schreiben, so behalte ich die Kontrolle. Dadurch komme ich auch schnell in Sprachen rein, die ich nicht oft nutze. Und sauberer Code ist mir wichtig: Prettier, Konventionen, Tests. KI ersetzt keine Standards."
     },
     "s4": {
       "t": "Ich bringe es bis in die Produktion",
-      "d": "Spezifikation, Entwicklung, Abnahme, Livegang und die Betreuung danach. Ich debugge Web und Mobile gleichermaßen — dort entscheidet sich oft der Erfolg eines Projekts."
+      "d": "Spezifikation, Entwicklung, Abnahme, Livegang und die Betreuung danach. Ich debugge Web und Mobile."
     }
   },
   "xp": {

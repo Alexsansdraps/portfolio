@@ -24,22 +24,22 @@
   "value": {
     "title": "What I bring",
     "range": "listen · design · build · ship",
-    "intro": "Over seven years I've worked across very different industries. The main thing I've taken from it: writing the code is usually the easy part. The real work is understanding what people actually need, then properly shipping it.",
+    "intro": "I've worked in quite a few different industries over seven years. The code is rarely the hard part. The hard part is working out what people actually want, and then seeing it through.",
     "s1": {
-      "t": "I listen before I code",
-      "d": "I always start by asking questions. Lots of them — to the client, or to the team when the need comes from inside. What comes out is a spec where everyone knows what to do, and in what order."
+      "t": "I ask a lot of questions",
+      "d": "At the start of a project I ask a lot of questions, to the client or to the team depending on where the need comes from. That turns into a spec with clear priorities."
     },
     "s2": {
-      "t": "I design as much as I code",
-      "d": "I come from the front end and I genuinely care about design. Figma mockups, an eye for detail, interfaces that hold together: I don't just implement a design, I shape it."
+      "t": "I like the design side",
+      "d": "I come from the front end and I enjoy the design work. I do my own mockups in Figma, I pay attention to detail, and I'd rather think an interface through than be handed one."
     },
     "s3": {
-      "t": "With AI, I start with the plan",
-      "d": "I never let an agent loose blindly. I write a development plan first, and that changes everything: I stay in control and move much faster. It also makes me very adaptable — I can pick up a language I don't use daily without starting from scratch. And I care about clean code: Prettier, shared conventions, tests. AI doesn't remove the need for standards, it makes them more necessary."
+      "t": "I work with AI, but I start with a plan",
+      "d": "I build with Claude Code every day. It started on my own time. I never run an agent without writing a plan first, and that's what keeps me in control. It also means I pick up languages I don't use often fairly quickly. And I keep the code clean: Prettier, conventions, tests. AI doesn't replace standards."
     },
     "s4": {
-      "t": "I take it all the way to production",
-      "d": "Specs, development, QA, release and the follow-up afterwards. I debug web and mobile alike, and that's often where a project is won or lost."
+      "t": "I take it to production",
+      "d": "Specs, development, QA, release, and the follow-up after. I debug web and mobile."
     }
   },
   "xp": {
