@@ -13,29 +13,29 @@
   "hero": {
     "eyebrow": "Mulhouse · Basel 35 min · Freiburg 50 min · Zurich 1 h 50",
     "role": "Full-Stack Developer",
-    "stack": "front-end at heart · vue · nuxt — symfony · nest — 7 years",
+    "stack": "front in vue and nuxt · back in symfony and nest · 7 years",
     "portraitAlt": "Portrait of Alexandra Porhansl"
   },
   "status": {
-    "fl": "Available — web & mobile contract work · remote or hybrid",
-    "cdi": "Open to permanent roles · Mulhouse & cross-border (Basel · Freiburg · Zurich)",
-    "geo": "FR / EN / DE — cross-border mobility"
+    "fl": "Available for web and mobile projects, remote or hybrid",
+    "cdi": "Open to permanent roles around Mulhouse and across the border",
+    "geo": "French, English, German · and happy to travel"
   },
   "value": {
     "title": "What I bring",
-    "range": "discovery → spec → delivery",
-    "intro": "Seven years of building web products across industries taught me one thing: code is only half the job. The other half is understanding what people actually need — then shipping it.",
+    "range": "listen · scope · ship",
+    "intro": "Over seven years I've worked across very different industries. The main thing I've taken from it: writing the code is usually the easy part. The real work is understanding what people actually need, then properly shipping it.",
     "s1": {
-      "t": "Discovery & scoping",
-      "d": "I listen to the client — or the team when the need is internal — ask the right questions, and turn it all into a clear, prioritised, actionable spec."
+      "t": "I listen before I code",
+      "d": "I always start by asking questions. Lots of them — to the client, or to the team when the need comes from inside. What comes out is a spec where everyone knows what to do, and in what order."
     },
     "s2": {
-      "t": "Claude Code-augmented development",
-      "d": "I build with Claude Code every day — a skill built on my own time. Agent set-up, systematic review, tests: I stay in charge, the tool multiplies the pace. This very site is direct proof."
+      "t": "I build with Claude Code",
+      "d": "Every day. It's a skill I built in my own time and it changed the way I work. I scope the agent, review everything, run the tests: the decisions stay mine, but I move much faster. This site is a good example — that's exactly how it was made."
     },
     "s3": {
-      "t": "From idea to production",
-      "d": "Full project cycle: I turn a need into a shipped product — specs, development, QA, deployment, follow-up."
+      "t": "I take it all the way to production",
+      "d": "Specs, development, QA, release, and the follow-up afterwards. I like watching a need turn into something that actually runs."
     }
   },
   "xp": {
@@ -115,7 +115,7 @@
   "mob": {
     "title": "Mobility",
     "range": "FR · CH · DE",
-    "text": "Based in Mulhouse with a driving licence and my own car, the tri-border area is within easy reach — Basel, Freiburg, Zurich, Strasbourg. Remote, hybrid or on-site.",
+    "text": "I live in Mulhouse and I drive, so getting around the region is easy. Basel, Freiburg, Zurich and Strasbourg are all within reach. On-site, hybrid or remote — whatever works best for you.",
     "home": "Mulhouse",
     "homeTag": "home base",
     "chips": [
@@ -147,19 +147,19 @@
     "en": {
       "name": "English",
       "level": "B1 → B2",
-      "note": "good comprehension — actively improving, daily practice"
+      "note": "I understand it well and practise every day, still getting better"
     },
     "de": {
       "name": "German",
       "level": "A2 → B1",
-      "note": "actively improving — regular practice"
+      "note": "Still learning, practising regularly"
     }
   },
   "cta": {
     "t1": "A project?",
     "t2": "A role",
-    "fl": "Let's talk about your project — I reply within 24 hours.",
-    "cdi": "Let's talk — CV available in FR / EN / DE.",
+    "fl": "Tell me about your project — I usually reply the same day.",
+    "cdi": "Drop me a line, I reply quickly. My CV is available in French and English.",
     "btn": "Get in touch",
     "cvFr": "CV in French (PDF)",
     "cvEn": "CV in English (PDF)"

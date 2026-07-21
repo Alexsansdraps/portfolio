@@ -13,29 +13,29 @@
   "hero": {
     "eyebrow": "Mulhouse · Bâle 35 min · Freiburg 50 min · Zürich 1 h 50",
     "role": "Développeuse Full-Stack",
-    "stack": "appétence front · vue · nuxt — symfony · nest — 7 ans",
+    "stack": "front en vue et nuxt · back en symfony et nest · 7 ans",
     "portraitAlt": "Portrait d'Alexandra Porhansl"
   },
   "status": {
-    "fl": "Disponible — missions web & mobile · remote ou hybride",
-    "cdi": "À l'écoute — CDI · Mulhouse & tri-national (Bâle · Freiburg · Zürich)",
-    "geo": "FR / EN / DE — mobilité tri-nationale"
+    "fl": "Disponible pour des missions web et mobile, en remote ou en hybride",
+    "cdi": "Ouverte aux opportunités en CDI, à Mulhouse et de l'autre côté de la frontière",
+    "geo": "Français, anglais, allemand · et prête à faire la route"
   },
   "value": {
     "title": "Ce que j'apporte",
-    "range": "recueil → cahier des charges → livraison",
-    "intro": "Sept ans à construire des produits web multi-secteurs m'ont appris une chose : le code n'est que la moitié du métier. L'autre moitié, c'est comprendre ce que les gens veulent vraiment — puis le livrer.",
+    "range": "écouter · cadrer · livrer",
+    "intro": "En sept ans, j'ai travaillé pour des secteurs très différents. Ce que j'en retiens surtout : écrire le code, c'est souvent la partie la plus simple. Le vrai travail, c'est de comprendre ce dont les gens ont besoin, puis de le livrer pour de bon.",
     "s1": {
-      "t": "Recueil & cadrage",
-      "d": "J'écoute le client — ou l'équipe quand le besoin est interne — je pose les bonnes questions et j'en tire un cahier des charges clair, priorisé, actionnable."
+      "t": "J'écoute avant de coder",
+      "d": "Je commence toujours par poser des questions. Beaucoup. Au client, ou à l'équipe quand le besoin vient de l'interne. J'en ressors un cahier des charges où tout le monde sait quoi faire, et dans quel ordre."
     },
     "s2": {
-      "t": "Dev augmenté par Claude Code",
-      "d": "Je développe avec Claude Code au quotidien — une maîtrise construite sur mon temps perso. Cadrage de l'agent, revue systématique, tests : je garde la main, l'outil démultiplie la vitesse. Ce site en est la preuve directe."
+      "t": "Je développe avec Claude Code",
+      "d": "Tous les jours. C'est une pratique que j'ai construite sur mon temps libre et qui a changé ma façon de travailler. Je cadre l'agent, je relis, je teste : les décisions restent les miennes, mais j'avance beaucoup plus vite. Ce site en est un bon exemple, il a été fait comme ça."
     },
     "s3": {
-      "t": "De l'idée à la prod",
-      "d": "Gestion complète du cycle projet : je traduis le besoin en produit livré — specs, développement, recette, mise en production, suivi."
+      "t": "Je vais jusqu'à la mise en ligne",
+      "d": "Specs, développement, recette, mise en production, et le suivi qui vient après. J'aime bien voir un besoin devenir un produit qui tourne vraiment."
     }
   },
   "xp": {
@@ -115,7 +115,7 @@
   "mob": {
     "title": "Mobilité",
     "range": "FR · CH · DE",
-    "text": "Basée à Mulhouse, permis B et véhicule personnel : je me déplace sans friction dans le Dreiländereck — Bâle, Freiburg, Zürich, Strasbourg. Remote, hybride ou sur site.",
+    "text": "J'habite à Mulhouse et j'ai une voiture, donc me déplacer dans la région ne me pose aucun problème. Bâle, Freiburg, Zurich, Strasbourg : tout est à portée. Sur site, en hybride ou en remote, comme vous préférez.",
     "home": "Mulhouse",
     "homeTag": "port d'attache",
     "chips": [
@@ -147,19 +147,19 @@
     "en": {
       "name": "Anglais",
       "level": "B1 → B2",
-      "note": "bonne compréhension — en progression active, pratique quotidienne"
+      "note": "Je comprends bien et je pratique tous les jours, ça continue de progresser"
     },
     "de": {
       "name": "Allemand",
       "level": "A2 → B1",
-      "note": "en progression active — pratique régulière"
+      "note": "Encore en apprentissage, je pratique régulièrement"
     }
   },
   "cta": {
     "t1": "Un projet ?",
     "t2": "Un poste",
-    "fl": "Discutons de votre mission — réponse sous 24 h.",
-    "cdi": "Discutons du poste — CV FR / EN / DE sur demande.",
+    "fl": "Parlez-moi de votre projet, je réponds dans la journée.",
+    "cdi": "Écrivez-moi, je réponds vite. Mon CV est dispo en français et en anglais.",
     "btn": "Me contacter",
     "cvFr": "CV français (PDF)",
     "cvEn": "CV anglais (PDF)"

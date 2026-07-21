@@ -13,29 +13,29 @@
   "hero": {
     "eyebrow": "Mulhouse · Basel 35 Min. · Freiburg 50 Min. · Zürich 1 Std. 50",
     "role": "Full-Stack-Entwicklerin",
-    "stack": "Schwerpunkt Front-End · vue · nuxt — symfony · nest — 7 Jahre",
+    "stack": "Front mit Vue und Nuxt · Back mit Symfony und Nest · 7 Jahre",
     "portraitAlt": "Porträt von Alexandra Porhansl"
   },
   "status": {
-    "fl": "Verfügbar — Web- & Mobile-Projekte · remote oder hybrid",
-    "cdi": "Offen für Festanstellung · Mulhouse & Dreiländereck (Basel · Freiburg · Zürich)",
-    "geo": "FR / EN / DE — grenzüberschreitend mobil"
+    "fl": "Verfügbar für Web- und Mobile-Projekte, remote oder hybrid",
+    "cdi": "Offen für eine Festanstellung rund um Mulhouse und über der Grenze",
+    "geo": "Französisch, Englisch, Deutsch · und gerne unterwegs"
   },
   "value": {
     "title": "Was ich mitbringe",
-    "range": "Analyse → Pflichtenheft → Lieferung",
-    "intro": "Sieben Jahre Webentwicklung quer durch die Branchen haben mich eines gelehrt: Code ist nur die halbe Arbeit. Die andere Hälfte: verstehen, was Menschen wirklich brauchen — und es liefern.",
+    "range": "zuhören · planen · liefern",
+    "intro": "In sieben Jahren habe ich für sehr unterschiedliche Branchen gearbeitet. Was ich vor allem gelernt habe: Der Code ist meistens der einfachere Teil. Die eigentliche Arbeit ist zu verstehen, was Menschen wirklich brauchen — und es dann auch richtig zu liefern.",
     "s1": {
-      "t": "Bedarfsanalyse & Konzeption",
-      "d": "Ich höre dem Kunden zu — oder dem Team, wenn der Bedarf intern ist — stelle die richtigen Fragen und mache daraus ein klares, priorisiertes Pflichtenheft."
+      "t": "Ich höre zu, bevor ich programmiere",
+      "d": "Ich fange immer mit Fragen an. Mit vielen. Beim Kunden, oder im Team, wenn der Bedarf intern entsteht. Am Ende steht ein Pflichtenheft, bei dem alle wissen, was zu tun ist — und in welcher Reihenfolge."
     },
     "s2": {
-      "t": "Entwicklung mit Claude Code",
-      "d": "Ich entwickle täglich mit Claude Code — eine Praxis, die ich in meiner Freizeit aufgebaut habe. Agent-Setup, systematische Reviews, Tests: Ich behalte die Kontrolle, das Werkzeug vervielfacht das Tempo. Diese Website ist der direkte Beweis."
+      "t": "Ich entwickle mit Claude Code",
+      "d": "Jeden Tag. Ich habe es mir in meiner Freizeit beigebracht, und es hat meine Arbeitsweise verändert. Ich gebe dem Agenten den Rahmen vor, lese alles gegen, teste: Die Entscheidungen bleiben meine, aber ich komme deutlich schneller voran. Diese Website ist ein gutes Beispiel dafür — genau so ist sie entstanden."
     },
     "s3": {
-      "t": "Von der Idee bis in die Produktion",
-      "d": "Kompletter Projektzyklus: Ich übersetze einen Bedarf in ein ausgeliefertes Produkt — Spezifikation, Entwicklung, Abnahme, Deployment, Betreuung."
+      "t": "Ich bringe es bis in die Produktion",
+      "d": "Spezifikation, Entwicklung, Abnahme, Livegang und die Betreuung danach. Ich mag es, wenn aus einem Bedarf etwas wird, das tatsächlich läuft."
     }
   },
   "xp": {
@@ -115,7 +115,7 @@
   "mob": {
     "title": "Mobilität",
     "range": "FR · CH · DE",
-    "text": "Wohnhaft in Mulhouse, Führerschein und eigenes Auto: Im Dreiländereck bin ich flexibel unterwegs — Basel, Freiburg, Zürich, Straßburg. Remote, hybrid oder vor Ort.",
+    "text": "Ich wohne in Mulhouse und fahre Auto, unterwegs sein ist für mich also kein Problem. Basel, Freiburg, Zürich und Straßburg liegen alle in Reichweite. Vor Ort, hybrid oder remote — ganz wie es Ihnen passt.",
     "home": "Mulhouse",
     "homeTag": "Homebase",
     "chips": [
@@ -147,19 +147,19 @@
     "en": {
       "name": "Englisch",
       "level": "B1 → B2",
-      "note": "gutes Verständnis — im Ausbau, tägliche Praxis"
+      "note": "Ich verstehe gut und übe täglich, es wird stetig besser"
     },
     "de": {
       "name": "Deutsch",
       "level": "A2 → B1",
-      "note": "im Aufbau — regelmäßige Praxis"
+      "note": "Noch am Lernen, ich übe regelmäßig"
     }
   },
   "cta": {
     "t1": "Ein Projekt?",
     "t2": "Eine Stelle",
-    "fl": "Sprechen wir über Ihr Projekt — Antwort innerhalb von 24 Stunden.",
-    "cdi": "Sprechen wir — Lebenslauf auf FR / EN / DE verfügbar.",
+    "fl": "Erzählen Sie mir von Ihrem Projekt — ich antworte meist am selben Tag.",
+    "cdi": "Schreiben Sie mir, ich antworte schnell. Mein Lebenslauf ist auf Französisch und Englisch verfügbar.",
     "btn": "Kontakt aufnehmen",
     "cvFr": "Lebenslauf FR (PDF)",
     "cvEn": "Lebenslauf EN (PDF)"
