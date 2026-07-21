@@ -276,6 +276,7 @@
   "lofi": {
     "label": "ambiance",
     "play": "Lancer l'ambiance lofi",
-    "pause": "Couper l'ambiance lofi"
+    "pause": "Couper l'ambiance lofi",
+    "real": "ce que j'écoute vraiment"
   }
 }

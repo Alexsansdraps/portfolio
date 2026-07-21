@@ -140,25 +140,44 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <button
-    v-if="ready"
-    class="lofi" :class="{ on: playing }"
-    :aria-pressed="playing"
-    :aria-label="$t(playing ? 'lofi.pause' : 'lofi.play')"
-    :title="$t(playing ? 'lofi.pause' : 'lofi.play')"
-    @click="toggle"
-  >
-    <span class="bars" aria-hidden="true">
-      <i /><i /><i /><i />
-    </span>
-    <span class="label">{{ $t('lofi.label') }}</span>
-  </button>
+  <div v-if="ready" class="lofi-wrap">
+    <a
+      class="real"
+      href="https://music.youtube.com/@alexsansdraps2952"
+      target="_blank" rel="noopener noreferrer"
+    >{{ $t('lofi.real') }} <span aria-hidden="true">↗</span></a>
+
+    <button
+      class="lofi" :class="{ on: playing }"
+      :aria-pressed="playing"
+      :aria-label="$t(playing ? 'lofi.pause' : 'lofi.play')"
+      :title="$t(playing ? 'lofi.pause' : 'lofi.play')"
+      @click="toggle"
+    >
+      <span class="bars" aria-hidden="true">
+        <i /><i /><i /><i />
+      </span>
+      <span class="label">{{ $t('lofi.label') }}</span>
+    </button>
+  </div>
 </template>
 
 <style scoped>
-.lofi {
+.lofi-wrap {
   position: fixed; right: clamp(16px, 3vw, 28px); bottom: clamp(16px, 3vw, 28px);
   z-index: 20;
+  display: flex; align-items: center; gap: 14px;
+}
+.real {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em;
+  color: var(--color-mute); text-decoration: none; white-space: nowrap;
+  transition: color .25s;
+}
+.real span { color: var(--color-wine); }
+.real:hover { color: var(--color-bone); }
+.real:focus-visible { outline: 1px solid var(--color-wine); outline-offset: 3px; }
+
+.lofi {
   display: flex; align-items: center; gap: 10px;
   padding: 9px 14px;
   background: color-mix(in srgb, var(--color-carbon) 92%, transparent);
@@ -195,5 +214,6 @@ onBeforeUnmount(() => {
 @media (max-width: 640px) {
   .lofi .label { display: none; }
   .lofi { padding: 10px; }
+  .real { display: none; }
 }
 </style>
