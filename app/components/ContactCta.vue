@@ -13,6 +13,9 @@ const { mode } = useAudienceMode()
       <div class="cta-cvs">
         <a href="/cv/cv-alexandra-porhansl-fr.pdf" download>{{ $t('cta.cvFr') }}</a>
         <a href="/cv/cv-alexandra-porhansl-en.pdf" download>{{ $t('cta.cvEn') }}</a>
+        <a href="https://github.com/Alexsansdraps" target="_blank" rel="noopener noreferrer">
+          {{ $t('cta.github') }} <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   </section>
@@ -45,7 +48,8 @@ const { mode } = useAudienceMode()
 .cta-btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
 .cta-btn:focus-visible { outline: 1px solid var(--color-wine); outline-offset: 3px; }
 .cta-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-.cta-cvs { display: flex; gap: 18px; }
+.cta-cvs { display: flex; flex-wrap: wrap; gap: 18px; }
+.cta-cvs a span { color: var(--color-wine); }
 .cta-cvs a {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
   color: var(--color-mute); text-decoration: underline;

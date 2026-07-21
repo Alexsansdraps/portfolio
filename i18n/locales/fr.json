@@ -170,7 +170,8 @@
     "cdi": "Écrivez-moi, je réponds vite. Mon CV est dispo en français et en anglais.",
     "btn": "Me contacter",
     "cvFr": "CV français (PDF)",
-    "cvEn": "CV anglais (PDF)"
+    "cvEn": "CV anglais (PDF)",
+    "github": "GitHub"
   },
   "foot": {
     "left": "© 2026 Alexandra Porhansl",

@@ -170,7 +170,8 @@
     "cdi": "Drop me a line, I reply quickly. My CV is available in French and English.",
     "btn": "Get in touch",
     "cvFr": "CV in French (PDF)",
-    "cvEn": "CV in English (PDF)"
+    "cvEn": "CV in English (PDF)",
+    "github": "GitHub"
   },
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
