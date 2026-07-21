@@ -35,7 +35,7 @@
     },
     "s3": {
       "t": "Avec l'IA, je commence par le plan",
-      "d": "Je ne lance jamais un agent à l'aveugle. J'écris d'abord un plan de développement, et c'est ce qui change tout : je garde le contrôle et j'avance beaucoup plus vite. Cette méthode me rend aussi très adaptable — je peux basculer sur un langage que je ne pratique pas tous les jours sans repartir de zéro."
+      "d": "Je ne lance jamais un agent à l'aveugle. J'écris d'abord un plan de développement, et c'est ce qui change tout : je garde le contrôle et j'avance beaucoup plus vite. Cette méthode me rend aussi très adaptable — je peux basculer sur un langage que je ne pratique pas tous les jours sans repartir de zéro. Et je tiens à un code propre : Prettier, conventions partagées, tests. L'IA ne dispense pas de standards, elle les rend encore plus nécessaires."
     },
     "s4": {
       "t": "Je vais jusqu'à la mise en ligne",
@@ -90,6 +90,10 @@
           {
             "k": "UI/UX",
             "t": "conception d'interfaces SaaS pour un logiciel de gestion de flotte automobile."
+          },
+          {
+            "k": "Qualité de code",
+            "t": "mise en place de Prettier et de conventions partagées, tests d'acceptation avec Codeception."
           },
           {
             "k": "Ops",
@@ -219,9 +223,11 @@
         "label": "Méthode",
         "items": [
           "CLAUDE CODE",
+          "PLAN DE DEV",
+          "PRETTIER",
+          "CODECEPTION",
           "FIGMA",
-          "UI/UX",
-          "SEO TECHNIQUE"
+          "UI/UX"
         ]
       }
     }

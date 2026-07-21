@@ -39,7 +39,7 @@ function makeCrackle(context: AudioContext) {
   hp.type = 'highpass'
   hp.frequency.value = 1400
   const g = context.createGain()
-  g.gain.value = 0.5
+  g.gain.value = 0.32
   src.connect(hp).connect(g).connect(master!)
   src.start()
   return src
@@ -96,7 +96,7 @@ async function start() {
     await ctx.resume()
     if (!playing.value) return // l'utilisateur a re-cliqué entre-temps
     master!.gain.cancelScheduledValues(ctx.currentTime)
-    master!.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 1.2)
+    master!.gain.linearRampToValueAtTime(0.26, ctx.currentTime + 1.6)
     schedule()
     timer = window.setInterval(schedule, BAR * 1000)
   }

@@ -35,7 +35,7 @@
     },
     "s3": {
       "t": "With AI, I start with the plan",
-      "d": "I never let an agent loose blindly. I write a development plan first, and that changes everything: I stay in control and move much faster. It also makes me very adaptable — I can pick up a language I don't use daily without starting from scratch."
+      "d": "I never let an agent loose blindly. I write a development plan first, and that changes everything: I stay in control and move much faster. It also makes me very adaptable — I can pick up a language I don't use daily without starting from scratch. And I care about clean code: Prettier, shared conventions, tests. AI doesn't remove the need for standards, it makes them more necessary."
     },
     "s4": {
       "t": "I take it all the way to production",
@@ -90,6 +90,10 @@
           {
             "k": "UI/UX",
             "t": "designed SaaS interfaces for a vehicle fleet management product."
+          },
+          {
+            "k": "Code quality",
+            "t": "set up Prettier and shared conventions, acceptance tests with Codeception."
           },
           {
             "k": "Ops",
@@ -219,9 +223,11 @@
         "label": "Method",
         "items": [
           "CLAUDE CODE",
+          "DEV PLAN",
+          "PRETTIER",
+          "CODECEPTION",
           "FIGMA",
-          "UI/UX",
-          "TECHNICAL SEO"
+          "UI/UX"
         ]
       }
     }

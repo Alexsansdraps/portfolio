@@ -35,7 +35,7 @@
     },
     "s3": {
       "t": "Bei KI fange ich mit dem Plan an",
-      "d": "Ich lasse einen Agenten nie blind laufen. Ich schreibe zuerst einen Entwicklungsplan, und das macht den Unterschied: Ich behalte die Kontrolle und komme viel schneller voran. Diese Methode macht mich auch sehr anpassungsfähig — ich kann in eine Sprache einsteigen, die ich nicht täglich nutze, ohne bei null anzufangen."
+      "d": "Ich lasse einen Agenten nie blind laufen. Ich schreibe zuerst einen Entwicklungsplan, und das macht den Unterschied: Ich behalte die Kontrolle und komme viel schneller voran. Diese Methode macht mich auch sehr anpassungsfähig — ich kann in eine Sprache einsteigen, die ich nicht täglich nutze, ohne bei null anzufangen. Und sauberer Code ist mir wichtig: Prettier, gemeinsame Konventionen, Tests. KI macht Standards nicht überflüssig, sie macht sie noch wichtiger."
     },
     "s4": {
       "t": "Ich bringe es bis in die Produktion",
@@ -90,6 +90,10 @@
           {
             "k": "UI/UX",
             "t": "Gestaltung von SaaS-Oberflächen für eine Fuhrpark-Management-Software."
+          },
+          {
+            "k": "Codequalität",
+            "t": "Einführung von Prettier und gemeinsamen Konventionen, Akzeptanztests mit Codeception."
           },
           {
             "k": "Ops",
@@ -219,9 +223,11 @@
         "label": "Methode",
         "items": [
           "CLAUDE CODE",
+          "DEV-PLAN",
+          "PRETTIER",
+          "CODECEPTION",
           "FIGMA",
-          "UI/UX",
-          "TECHNISCHES SEO"
+          "UI/UX"
         ]
       }
     }

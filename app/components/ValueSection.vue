@@ -17,7 +17,7 @@ const steps = ['s1', 's2', 's3', 's4'] as const
           <span class="tag">FIGMA</span><span class="tag">UI/UX</span><span class="tag">DESIGN SYSTEM</span>
         </div>
         <div v-if="s === 's3'" class="tags">
-          <span class="tag">CLAUDE CODE</span><span class="tag">PLAN DE DEV</span><span class="tag">REVIEWS</span><span class="tag">TESTS</span>
+          <span class="tag">CLAUDE CODE</span><span class="tag">PLAN DE DEV</span><span class="tag">PRETTIER</span><span class="tag">TESTS</span>
         </div>
       </div>
     </div>
