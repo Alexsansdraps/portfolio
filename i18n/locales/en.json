@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Alexandra Porhansl — Full-Stack Developer · Vue / Nuxt · Mulhouse",
-    "description": "Full-stack developer with a strong front-end leaning (Vue, Nuxt, TypeScript, Symfony), 7 years of experience. Based in Mulhouse, France — within reach of Basel, Freiburg and Zurich. Open to freelance work or permanent roles."
+    "description": "Full-stack developer with a strong front-end and design leaning (Vue, Nuxt, TypeScript, Symfony, UI/UX), 7 years of experience. Based in Mulhouse, France — Basel, Freiburg and Zurich within reach. Freelance or permanent."
   },
   "nav": {
     "aria": "Languages",
@@ -23,19 +23,23 @@
   },
   "value": {
     "title": "What I bring",
-    "range": "listen · scope · ship",
+    "range": "listen · design · build · ship",
     "intro": "Over seven years I've worked across very different industries. The main thing I've taken from it: writing the code is usually the easy part. The real work is understanding what people actually need, then properly shipping it.",
     "s1": {
       "t": "I listen before I code",
       "d": "I always start by asking questions. Lots of them — to the client, or to the team when the need comes from inside. What comes out is a spec where everyone knows what to do, and in what order."
     },
     "s2": {
-      "t": "I build with Claude Code",
-      "d": "Every day. It's a skill I built in my own time and it changed the way I work. I scope the agent, review everything, run the tests: the decisions stay mine, but I move much faster. This site is a good example — that's exactly how it was made."
+      "t": "I design as much as I code",
+      "d": "I come from the front end and I genuinely care about design. Figma mockups, an eye for detail, interfaces that hold together: I don't just implement a design, I shape it."
     },
     "s3": {
+      "t": "With AI, I start with the plan",
+      "d": "I never let an agent loose blindly. I write a development plan first, and that changes everything: I stay in control and move much faster. It also makes me very adaptable — I can pick up a language I don't use daily without starting from scratch."
+    },
+    "s4": {
       "t": "I take it all the way to production",
-      "d": "Specs, development, QA, release, and the follow-up afterwards. I like watching a need turn into something that actually runs."
+      "d": "Specs, development, QA, release and the follow-up afterwards. I debug web and mobile alike, and that's often where a project is won or lost."
     }
   },
   "xp": {
@@ -262,5 +266,10 @@
         ]
       }
     ]
+  },
+  "lofi": {
+    "label": "ambience",
+    "play": "Play lofi ambience",
+    "pause": "Stop lofi ambience"
   }
 }

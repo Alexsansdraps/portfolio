@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const steps = ['s1', 's2', 's3'] as const
+const steps = ['s1', 's2', 's3', 's4'] as const
 </script>
 
 <template>
@@ -14,7 +14,10 @@ const steps = ['s1', 's2', 's3'] as const
         <h3 class="vs-title">{{ $t(`value.${s}.t`) }}</h3>
         <p class="vs-desc">{{ $t(`value.${s}.d`) }}</p>
         <div v-if="s === 's2'" class="tags">
-          <span class="tag">CLAUDE CODE</span><span class="tag">SPECS</span><span class="tag">REVIEWS</span><span class="tag">TESTS</span>
+          <span class="tag">FIGMA</span><span class="tag">UI/UX</span><span class="tag">DESIGN SYSTEM</span>
+        </div>
+        <div v-if="s === 's3'" class="tags">
+          <span class="tag">CLAUDE CODE</span><span class="tag">PLAN DE DEV</span><span class="tag">REVIEWS</span><span class="tag">TESTS</span>
         </div>
       </div>
     </div>
@@ -38,8 +41,8 @@ const steps = ['s1', 's2', 's3'] as const
 }
 
 .vs-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3.5vw, 48px);
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: clamp(30px, 4vw, 52px);
   border-top: 1px solid var(--color-ash);
   padding-top: clamp(28px, 4.5vh, 44px);
 }

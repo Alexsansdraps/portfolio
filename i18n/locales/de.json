@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Alexandra Porhansl — Full-Stack-Entwicklerin · Vue / Nuxt · Mulhouse",
-    "description": "Full-Stack-Entwicklerin mit Schwerpunkt Front-End (Vue, Nuxt, TypeScript, Symfony), 7 Jahre Erfahrung. Wohnhaft in Mulhouse — Basel, Freiburg und Zürich in Reichweite. Offen für Freelance-Projekte oder Festanstellung."
+    "description": "Full-Stack-Entwicklerin mit Schwerpunkt Front-End und Design (Vue, Nuxt, TypeScript, Symfony, UI/UX), 7 Jahre Erfahrung. Wohnhaft in Mulhouse — Basel, Freiburg und Zürich in Reichweite. Freelance oder Festanstellung."
   },
   "nav": {
     "aria": "Sprachen",
@@ -23,19 +23,23 @@
   },
   "value": {
     "title": "Was ich mitbringe",
-    "range": "zuhören · planen · liefern",
+    "range": "zuhören · gestalten · entwickeln · liefern",
     "intro": "In sieben Jahren habe ich für sehr unterschiedliche Branchen gearbeitet. Was ich vor allem gelernt habe: Der Code ist meistens der einfachere Teil. Die eigentliche Arbeit ist zu verstehen, was Menschen wirklich brauchen — und es dann auch richtig zu liefern.",
     "s1": {
       "t": "Ich höre zu, bevor ich programmiere",
       "d": "Ich fange immer mit Fragen an. Mit vielen. Beim Kunden, oder im Team, wenn der Bedarf intern entsteht. Am Ende steht ein Pflichtenheft, bei dem alle wissen, was zu tun ist — und in welcher Reihenfolge."
     },
     "s2": {
-      "t": "Ich entwickle mit Claude Code",
-      "d": "Jeden Tag. Ich habe es mir in meiner Freizeit beigebracht, und es hat meine Arbeitsweise verändert. Ich gebe dem Agenten den Rahmen vor, lese alles gegen, teste: Die Entscheidungen bleiben meine, aber ich komme deutlich schneller voran. Diese Website ist ein gutes Beispiel dafür — genau so ist sie entstanden."
+      "t": "Ich gestalte, nicht nur programmiere",
+      "d": "Ich komme aus dem Front-End und habe ein echtes Gespür für Design. Figma-Mockups, Blick fürs Detail, stimmige Oberflächen: Ich setze ein Design nicht einfach um, ich denke es mit."
     },
     "s3": {
+      "t": "Bei KI fange ich mit dem Plan an",
+      "d": "Ich lasse einen Agenten nie blind laufen. Ich schreibe zuerst einen Entwicklungsplan, und das macht den Unterschied: Ich behalte die Kontrolle und komme viel schneller voran. Diese Methode macht mich auch sehr anpassungsfähig — ich kann in eine Sprache einsteigen, die ich nicht täglich nutze, ohne bei null anzufangen."
+    },
+    "s4": {
       "t": "Ich bringe es bis in die Produktion",
-      "d": "Spezifikation, Entwicklung, Abnahme, Livegang und die Betreuung danach. Ich mag es, wenn aus einem Bedarf etwas wird, das tatsächlich läuft."
+      "d": "Spezifikation, Entwicklung, Abnahme, Livegang und die Betreuung danach. Ich debugge Web und Mobile gleichermaßen — dort entscheidet sich oft der Erfolg eines Projekts."
     }
   },
   "xp": {
@@ -262,5 +266,10 @@
         ]
       }
     ]
+  },
+  "lofi": {
+    "label": "Ambiente",
+    "play": "Lofi-Ambiente starten",
+    "pause": "Lofi-Ambiente stoppen"
   }
 }

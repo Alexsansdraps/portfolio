@@ -14,5 +14,8 @@ useHead(() => ({
     <SiteHeader />
     <NuxtPage />
     <SiteFooter />
+    <ClientOnly>
+      <LofiPlayer />
+    </ClientOnly>
   </div>
 </template>
