@@ -13,15 +13,16 @@ let crackle: AudioBufferSourceNode | null = null
 let timer: number | null = null
 let step = 0
 
-/* Progression jazzy classique : Am7 · Fmaj7 · Cmaj7 · G7 (fréquences en Hz) */
+/* Progression mineure sombre, une octave plus bas : Am · Fmaj7 · Dm7 · E7.
+   Le sol dièse du E7 (mineur harmonique) donne la tension mélancolique. */
 const CHORDS: number[][] = [
-  [220.00, 261.63, 329.63, 392.00], // Am7
-  [174.61, 220.00, 261.63, 329.63], // Fmaj7
-  [130.81, 196.00, 261.63, 329.63], // Cmaj7
-  [196.00, 246.94, 293.66, 349.23], // G7
+  [110.00, 130.81, 164.81, 220.00], // Am
+  [ 87.31, 130.81, 174.61, 220.00], // Fmaj7
+  [ 73.42, 110.00, 146.83, 174.61], // Dm7
+  [ 82.41, 103.83, 123.47, 164.81], // E7  (mi sol# si ré)
 ]
 
-const BAR = 3.4 // durée d'un accord, en secondes
+const BAR = 4.2 // durée d'un accord, en secondes — plus lent, plus lourd
 
 function makeCrackle(context: AudioContext) {
   // bruit filtré + micro-pops aléatoires = grain de vinyle
@@ -50,9 +51,21 @@ function playChord(at: number) {
   const notes = CHORDS[step % CHORDS.length]!
   step++
 
+  // sub-basse sur la fondamentale : le poids, sans saturer
+  const sub = ctx.createOscillator()
+  sub.type = 'sine'
+  sub.frequency.value = notes[0]! / 2
+  const subG = ctx.createGain()
+  subG.gain.setValueAtTime(0.0001, at)
+  subG.gain.exponentialRampToValueAtTime(0.1, at + 1.4)
+  subG.gain.exponentialRampToValueAtTime(0.0001, at + BAR + 0.5)
+  sub.connect(subG).connect(master)
+  sub.start(at)
+  sub.stop(at + BAR + 0.7)
+
   notes.forEach((freq, i) => {
     // deux oscillateurs légèrement désaccordés par note = épaisseur
-    for (const detune of [-4, 4]) {
+    for (const detune of [-5, 5]) {
       const osc = ctx!.createOscillator()
       osc.type = i === 0 ? 'triangle' : 'sine'
       osc.frequency.value = freq
@@ -60,19 +73,20 @@ function playChord(at: number) {
 
       const filt = ctx!.createBiquadFilter()
       filt.type = 'lowpass'
-      filt.frequency.setValueAtTime(700, at)
-      filt.frequency.linearRampToValueAtTime(1100, at + BAR * 0.5)
-      filt.frequency.linearRampToValueAtTime(600, at + BAR)
+      // cutoff plus bas = plus feutré, plus sombre
+      filt.frequency.setValueAtTime(480, at)
+      filt.frequency.linearRampToValueAtTime(820, at + BAR * 0.5)
+      filt.frequency.linearRampToValueAtTime(420, at + BAR)
 
       const g = ctx!.createGain()
-      const peak = (i === 0 ? 0.16 : 0.09) / 2
+      const peak = (i === 0 ? 0.15 : 0.085) / 2
       g.gain.setValueAtTime(0.0001, at)
-      g.gain.exponentialRampToValueAtTime(peak, at + 0.9)
-      g.gain.exponentialRampToValueAtTime(0.0001, at + BAR + 0.6)
+      g.gain.exponentialRampToValueAtTime(peak, at + 1.2)
+      g.gain.exponentialRampToValueAtTime(0.0001, at + BAR + 0.7)
 
       osc.connect(filt).connect(g).connect(master!)
       osc.start(at)
-      osc.stop(at + BAR + 0.8)
+      osc.stop(at + BAR + 0.9)
     }
   })
 }
