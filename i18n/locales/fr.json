@@ -18,7 +18,7 @@
   },
   "status": {
     "fl": "Disponible pour des missions web et mobile, en remote ou en hybride",
-    "cdi": "Ouverte aux opportunités en CDI, à Mulhouse et de l'autre côté de la frontière",
+    "cdi": "Ouverte aux opportunités en CDI, à Mulhouse comme de l'autre côté de la frontière — et prête à déménager pour le bon poste",
     "geo": "Français, anglais, allemand · et prête à faire la route"
   },
   "value": {
@@ -123,10 +123,11 @@
   "mob": {
     "title": "Mobilité",
     "range": "FR · CH · DE",
-    "text": "J'habite à Mulhouse et j'ai une voiture, donc me déplacer dans la région ne me pose aucun problème. Bâle, Freiburg, Zurich, Strasbourg : tout est à portée. Sur site, en hybride ou en remote, comme vous préférez.",
+    "text": "J'habite à Mulhouse et j'ai une voiture, donc me déplacer dans la région ne me pose aucun problème. Bâle, Freiburg, Zurich, Strasbourg : tout est à portée. Et surtout, je suis ouverte à déménager pour le bon poste. Sur site, en hybride ou en remote, comme vous préférez.",
     "home": "Mulhouse",
     "homeTag": "port d'attache",
     "chips": [
+      "OUVERTE À DÉMÉNAGER",
       "PERMIS B",
       "VÉHICULE PERSO",
       "REMOTE",

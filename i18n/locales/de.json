@@ -18,7 +18,7 @@
   },
   "status": {
     "fl": "Verfügbar für Web- und Mobile-Projekte, remote oder hybrid",
-    "cdi": "Offen für eine Festanstellung rund um Mulhouse und über der Grenze",
+    "cdi": "Offen für eine Festanstellung rund um Mulhouse und über der Grenze — und für die richtige Stelle umzugsbereit",
     "geo": "Französisch, Englisch, Deutsch · und gerne unterwegs"
   },
   "value": {
@@ -123,10 +123,11 @@
   "mob": {
     "title": "Mobilität",
     "range": "FR · CH · DE",
-    "text": "Ich wohne in Mulhouse und fahre Auto, unterwegs sein ist für mich also kein Problem. Basel, Freiburg, Zürich und Straßburg liegen alle in Reichweite. Vor Ort, hybrid oder remote — ganz wie es Ihnen passt.",
+    "text": "Ich wohne in Mulhouse und fahre Auto, unterwegs sein ist für mich also kein Problem. Basel, Freiburg, Zürich und Straßburg liegen alle in Reichweite. Und vor allem: Für die richtige Stelle bin ich umzugsbereit. Vor Ort, hybrid oder remote — ganz wie es Ihnen passt.",
     "home": "Mulhouse",
     "homeTag": "Homebase",
     "chips": [
+      "UMZUGSBEREIT",
       "FÜHRERSCHEIN B",
       "EIGENES AUTO",
       "REMOTE",

@@ -20,7 +20,8 @@ export function useAudienceMode() {
   const mode = useState<AudienceMode>('audience-mode', () => {
     const q = route.query.mode
     if (typeof q === 'string' && QUERY_VALUES[q]) return QUERY_VALUES[q]
-    return cookie.value === 'cdi' ? 'cdi' : 'fl'
+    // CDI par défaut ; le freelance reste accessible via le toggle ou ?mode=freelance
+    return cookie.value === 'fl' ? 'fl' : 'cdi'
   })
 
   function setMode(m: AudienceMode) {
