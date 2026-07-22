@@ -275,9 +275,6 @@
     ]
   },
   "lofi": {
-    "label": "Ambiente",
-    "play": "Lofi-Ambiente starten",
-    "pause": "Lofi-Ambiente stoppen",
     "real": "was ich wirklich höre"
   }
 }

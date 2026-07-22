@@ -275,9 +275,6 @@
     ]
   },
   "lofi": {
-    "label": "ambience",
-    "play": "Play lofi ambience",
-    "pause": "Stop lofi ambience",
     "real": "what I actually listen to"
   }
 }
