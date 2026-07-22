@@ -22,6 +22,7 @@ function bullets(id: string): Bullet[] {
         <p class="i-date-inline">{{ job.dates }}</p>
         <h3 class="i-role">{{ $t(`xp.jobs.${job.id}.role`) }}</h3>
         <p class="i-co"><b>{{ job.company }}</b> — {{ job.place }}</p>
+        <p class="i-ctx">{{ $t(`xp.jobs.${job.id}.context`) }}</p>
         <div class="bullets">
           <p v-for="(b, i) in bullets(job.id)" :key="i"><b>{{ b.k }}</b> — {{ b.t }}</p>
         </div>
@@ -75,6 +76,11 @@ function bullets(id: string): Bullet[] {
   color: var(--color-mute);
 }
 .i-co b { font-weight: 400; color: var(--color-wine); }
+.i-ctx {
+  margin-top: 5px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .03em;
+  color: var(--color-mute);
+}
 .i-date-inline { display: none; }
 .bullets { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; max-width: 62ch; }
 .bullets p { font-size: 14.5px; line-height: 1.65; font-weight: 380; color: color-mix(in srgb, var(--color-bone) 80%, var(--color-mute)); }

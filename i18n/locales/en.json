@@ -61,7 +61,8 @@
             "k": "Nuxt project",
             "t": "built and deployed a complete website with Nuxt.js."
           }
-        ]
+        ],
+        "context": "In-house development — clients and payroll managers"
       },
       "visiofactory": {
         "role": "PHP / PrestaShop Developer",
@@ -74,7 +75,8 @@
             "k": "Maintenance",
             "t": "tracked down complex bugs, improved platform stability and performance."
           }
-        ]
+        ],
+        "context": "Nageleisen Group"
       },
       "vivocaz": {
         "role": "Front-End Developer, Web & Mobile",
@@ -99,7 +101,8 @@
             "k": "Ops",
             "t": "worked with Docker and Git-based CI/CD."
           }
-        ]
+        ],
+        "context": "Startup — Agile, two-week sprints, code review, daily stand-ups"
       },
       "olihost": {
         "role": "Full-Stack Developer",
@@ -116,7 +119,8 @@
             "k": "Systems",
             "t": "administered Windows Server and Linux machines."
           }
-        ]
+        ],
+        "context": "Web agency — client development"
       }
     }
   },

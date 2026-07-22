@@ -61,7 +61,8 @@
             "k": "Projet Nuxt",
             "t": "création et déploiement complet d'un site sous Nuxt.js."
           }
-        ]
+        ],
+        "context": "Développement interne — clients et gestionnaires de paie"
       },
       "visiofactory": {
         "role": "Développeuse PHP / PrestaShop",
@@ -74,7 +75,8 @@
             "k": "Maintenance",
             "t": "résolution de bugs complexes, stabilité et performances de la plateforme."
           }
-        ]
+        ],
+        "context": "Groupe Nageleisen"
       },
       "vivocaz": {
         "role": "Développeuse Front-End Web & Mobile",
@@ -99,7 +101,8 @@
             "k": "Ops",
             "t": "travail sous Docker, intégration continue via Git (CI/CD)."
           }
-        ]
+        ],
+        "context": "Startup — agile, sprints de 2 semaines, code review, daily"
       },
       "olihost": {
         "role": "Développeuse Full-Stack",
@@ -116,7 +119,8 @@
             "k": "Systèmes",
             "t": "administration et maintenance de serveurs Windows Server / Linux."
           }
-        ]
+        ],
+        "context": "Agence web — développement pour les clients"
       }
     }
   },

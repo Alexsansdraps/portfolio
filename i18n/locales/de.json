@@ -61,7 +61,8 @@
             "k": "Nuxt-Projekt",
             "t": "Aufbau und Deployment einer kompletten Website mit Nuxt.js."
           }
-        ]
+        ],
+        "context": "Interne Entwicklung — Kunden und Lohnbuchhalter"
       },
       "visiofactory": {
         "role": "PHP-/PrestaShop-Entwicklerin",
@@ -74,7 +75,8 @@
             "k": "Wartung",
             "t": "Analyse komplexer Bugs, Verbesserung von Stabilität und Performance der Plattform."
           }
-        ]
+        ],
+        "context": "Nageleisen-Gruppe"
       },
       "vivocaz": {
         "role": "Front-End-Entwicklerin Web & Mobile",
@@ -99,7 +101,8 @@
             "k": "Ops",
             "t": "Arbeit mit Docker und Git-basierter CI/CD."
           }
-        ]
+        ],
+        "context": "Startup — Agile, zweiwöchige Sprints, Code-Reviews, Dailys"
       },
       "olihost": {
         "role": "Full-Stack-Entwicklerin",
@@ -116,7 +119,8 @@
             "k": "Systeme",
             "t": "Administration von Windows-Server- und Linux-Systemen."
           }
-        ]
+        ],
+        "context": "Webagentur — Entwicklung für Kunden"
       }
     }
   },
