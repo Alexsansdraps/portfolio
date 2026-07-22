@@ -19,27 +19,27 @@
   "status": {
     "fl": "Disponible pour des missions web et mobile, en remote ou en hybride",
     "cdi": "Ouverte aux opportunités en CDI, à Mulhouse comme de l'autre côté de la frontière — et prête à déménager pour le bon poste",
-    "geo": "Français, anglais, allemand · et prête à faire la route"
+    "geo": "Français, anglais, allemand · mobile et prête à déménager"
   },
   "value": {
     "title": "Ce que j'apporte",
     "range": "écouter · concevoir · développer · livrer",
-    "intro": "En sept ans j'ai travaillé dans pas mal de secteurs différents. Le code, au final, c'est rarement le plus compliqué. Le plus compliqué c'est de comprendre ce que les gens veulent vraiment, et d'aller jusqu'au bout.",
+    "intro": "En sept ans, j'ai travaillé dans des secteurs très variés. J'en retiens une chose : le code est rarement le plus difficile. Le plus difficile, c'est de bien comprendre le besoin, puis de le mener jusqu'au bout.",
     "s1": {
-      "t": "Je pose beaucoup de questions",
-      "d": "Au début d'un projet je pose beaucoup de questions, au client ou à l'équipe selon d'où vient le besoin. Ça finit en cahier des charges, avec des priorités claires."
+      "t": "J'écoute avant de développer",
+      "d": "Je commence par poser les bonnes questions, au client ou à l'équipe selon l'origine du besoin. J'en tire un cahier des charges clair, avec des priorités établies."
     },
     "s2": {
-      "t": "Le design, ça me parle",
-      "d": "Je viens du front et j'aime bien la partie design. Je fais mes maquettes sur Figma, je fais attention aux détails, et je préfère réfléchir à une interface plutôt qu'on me la donne toute faite."
+      "t": "Le design fait partie de mon métier",
+      "d": "Je viens du front-end et j'accorde une vraie importance au design. Je réalise mes maquettes sur Figma, je soigne les détails, et je préfère concevoir une interface plutôt que de me contenter de l'intégrer."
     },
     "s3": {
-      "t": "Je travaille avec l'IA, mais avec un plan",
-      "d": "Je développe avec Claude Code tous les jours, c'est parti de mon temps libre au départ. Je ne lance jamais l'agent sans avoir écrit un plan avant, c'est ce qui fait que je garde la main. Du coup je m'adapte assez vite à des langages que je ne pratique pas souvent. Et je tiens au code propre : Prettier, des conventions, des tests. L'IA ne remplace pas les standards."
+      "t": "Je développe avec l'IA, mais toujours à partir d'un plan",
+      "d": "J'utilise Claude Code au quotidien, une pratique que j'ai d'abord construite sur mon temps libre. Je ne lance jamais l'agent sans avoir rédigé un plan au préalable : c'est ce qui me permet de garder le contrôle. Cette méthode me rend aussi rapidement opérationnelle sur des langages que je pratique moins. Et je reste attachée à un code propre : Prettier, conventions, tests. L'IA ne dispense pas des standards."
     },
     "s4": {
-      "t": "Je vais jusqu'à la prod",
-      "d": "Specs, développement, recette, mise en ligne, et le suivi après. Je débugge le web comme le mobile."
+      "t": "Je vais jusqu'à la mise en production",
+      "d": "Spécifications, développement, recette, mise en ligne, puis le suivi. Je débogue aussi bien le web que le mobile."
     }
   },
   "xp": {
@@ -123,7 +123,7 @@
   "mob": {
     "title": "Mobilité",
     "range": "FR · CH · DE",
-    "text": "J'habite à Mulhouse et j'ai une voiture, donc me déplacer dans la région ne me pose aucun problème. Bâle, Freiburg, Zurich, Strasbourg : tout est à portée. Et surtout, je suis ouverte à déménager pour le bon poste. Sur site, en hybride ou en remote, comme vous préférez.",
+    "text": "Je vis à Mulhouse et je dispose d'un véhicule : me déplacer dans la région ne pose aucune difficulté. Bâle, Freiburg, Zurich et Strasbourg sont à portée. Et surtout, je suis ouverte à déménager pour le bon poste. Sur site, en hybride ou en remote, selon vos préférences.",
     "home": "Mulhouse",
     "homeTag": "port d'attache",
     "chips": [
@@ -156,19 +156,19 @@
     "en": {
       "name": "Anglais",
       "level": "B1 → B2",
-      "note": "Je comprends bien et je pratique tous les jours, ça continue de progresser"
+      "note": "Bonne compréhension, pratique quotidienne, en progression constante"
     },
     "de": {
       "name": "Allemand",
       "level": "A2 → B1",
-      "note": "Encore en apprentissage, je pratique régulièrement"
+      "note": "En cours d'apprentissage, pratique régulière"
     }
   },
   "cta": {
     "t1": "Un projet ?",
     "t2": "Un poste",
     "fl": "Parlez-moi de votre projet, je réponds dans la journée.",
-    "cdi": "Écrivez-moi, je réponds vite. Mon CV est dispo en français et en anglais.",
+    "cdi": "Écrivez-moi, je réponds rapidement. Mon CV est disponible en français et en anglais.",
     "btn": "Me contacter",
     "cvFr": "CV français (PDF)",
     "cvEn": "CV anglais (PDF)",
