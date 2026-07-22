@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import portrait from '~/assets/img/portrait.webp'
-
-const { mode } = useAudienceMode()
 </script>
 
 <template>
@@ -17,7 +15,7 @@ const { mode } = useAudienceMode()
         <span class="stack">{{ $t('hero.stack') }}</span>
       </div>
       <div class="hero-status rise d3">
-        <span><span class="pulse" aria-hidden="true" /><span class="st">{{ $t(`status.${mode}`) }}</span></span>
+        <span><span class="pulse" aria-hidden="true" /><span class="st">{{ $t('status.main') }}</span></span>
         <span>{{ $t('status.geo') }}</span>
       </div>
     </div>

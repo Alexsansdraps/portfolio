@@ -1,12 +1,8 @@
-<script setup lang="ts">
-const { mode } = useAudienceMode()
-</script>
-
 <template>
   <section class="cta wrap">
     <div class="cta-txt" data-reveal>
       <h2>{{ $t('cta.t1') }}<br>{{ $t('cta.t2') }}<span>.</span></h2>
-      <p>{{ $t(`cta.${mode}`) }}</p>
+      <p>{{ $t('cta.line') }}</p>
     </div>
     <div class="cta-actions" data-reveal>
       <a class="cta-btn" href="mailto:a.porhansl@icloud.com">{{ $t('cta.btn') }}</a>

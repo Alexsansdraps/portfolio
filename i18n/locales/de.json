@@ -5,9 +5,6 @@
   },
   "nav": {
     "aria": "Sprachen",
-    "modeAria": "Freelance oder Festanstellung",
-    "freelance": "Freelance",
-    "cdi": "Festanstellung",
     "cv": "Lebenslauf herunterladen (PDF)"
   },
   "hero": {
@@ -17,9 +14,8 @@
     "portraitAlt": "Porträt von Alexandra Porhansl"
   },
   "status": {
-    "fl": "Verfügbar für Web- und Mobile-Projekte, remote oder hybrid",
-    "cdi": "Offen für eine Festanstellung rund um Mulhouse und über der Grenze — und für die richtige Stelle umzugsbereit",
-    "geo": "Französisch, Englisch, Deutsch · und gerne unterwegs"
+    "main": "Offen für eine Festanstellung oder ein Projekt, in Mulhouse und über der Grenze",
+    "geo": "Französisch, Englisch, Deutsch · mobil und umzugsbereit"
   },
   "value": {
     "title": "Was ich mitbringe",
@@ -171,12 +167,11 @@
   "cta": {
     "t1": "Ein Projekt?",
     "t2": "Eine Stelle",
-    "fl": "Erzählen Sie mir von Ihrem Projekt — ich antworte meist am selben Tag.",
-    "cdi": "Schreiben Sie mir, ich antworte schnell. Mein Lebenslauf ist auf Französisch und Englisch verfügbar.",
     "btn": "Kontakt aufnehmen",
     "cvFr": "Lebenslauf FR (PDF)",
     "cvEn": "Lebenslauf EN (PDF)",
-    "github": "GitHub"
+    "github": "GitHub",
+    "line": "Eine Stelle oder ein Projekt? Schreiben Sie mir — ich antworte meist am selben Tag."
   },
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
@@ -267,7 +262,7 @@
         "h": "Datenschutz & Cookies",
         "p": [
           "Diese Website erhebt keine personenbezogenen Daten: keine Konten, keine Formulare, keine Analyse-Tools, keine Werbe-Tracker.",
-          "Es werden zwei rein funktionale Cookies verwendet: „lang“ (Anzeigesprache) und „aud“ (Modus Freelance / Festanstellung). Sie dienen ausschließlich dem Komfort und werden nicht an Dritte weitergegeben.",
+          "Es wird ein einziges rein funktionales Cookie verwendet: „lang“, das die Anzeigesprache speichert. Es dient ausschließlich dem Komfort und wird nicht an Dritte weitergegeben.",
           "Fragen zu Ihren Daten: a.porhansl{'@'}icloud.com."
         ]
       },

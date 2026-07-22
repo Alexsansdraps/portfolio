@@ -5,9 +5,6 @@
   },
   "nav": {
     "aria": "Langues",
-    "modeAria": "Freelance ou CDI",
-    "freelance": "Freelance",
-    "cdi": "CDI",
     "cv": "Télécharger mon CV (PDF)"
   },
   "hero": {
@@ -17,8 +14,7 @@
     "portraitAlt": "Portrait d'Alexandra Porhansl"
   },
   "status": {
-    "fl": "Disponible pour des missions web et mobile, en remote ou en hybride",
-    "cdi": "Ouverte aux opportunités en CDI, à Mulhouse comme de l'autre côté de la frontière — et prête à déménager pour le bon poste",
+    "main": "À l'écoute d'un CDI ou d'une mission, à Mulhouse et au-delà de la frontière",
     "geo": "Français, anglais, allemand · mobile et prête à déménager"
   },
   "value": {
@@ -171,12 +167,11 @@
   "cta": {
     "t1": "Un projet ?",
     "t2": "Un poste",
-    "fl": "Parlez-moi de votre projet, je réponds dans la journée.",
-    "cdi": "Écrivez-moi, je réponds rapidement. Mon CV est disponible en français et en anglais.",
     "btn": "Me contacter",
     "cvFr": "CV français (PDF)",
     "cvEn": "CV anglais (PDF)",
-    "github": "GitHub"
+    "github": "GitHub",
+    "line": "Un poste ou une mission ? Écrivez-moi, je réponds dans la journée."
   },
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
@@ -267,7 +262,7 @@
         "h": "Données personnelles & cookies",
         "p": [
           "Ce site ne collecte aucune donnée personnelle : pas de compte, pas de formulaire, pas d'outil de mesure d'audience, pas de traceur publicitaire.",
-          "Deux cookies strictement fonctionnels sont utilisés : « lang » (langue d'affichage) et « aud » (mode freelance / CDI). Exemptés de consentement au sens des recommandations CNIL, ils ne servent qu'au confort de navigation et ne sont transmis à aucun tiers.",
+          "Un seul cookie strictement fonctionnel est utilisé : « lang », qui mémorise la langue d'affichage. Exempté de consentement au sens des recommandations CNIL, il ne sert qu'au confort de navigation et n'est transmis à aucun tiers.",
           "Pour toute question relative à vos données : a.porhansl{'@'}icloud.com."
         ]
       },

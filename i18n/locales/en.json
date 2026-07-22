@@ -5,9 +5,6 @@
   },
   "nav": {
     "aria": "Languages",
-    "modeAria": "Freelance or permanent",
-    "freelance": "Freelance",
-    "cdi": "Permanent",
     "cv": "Download my CV (PDF)"
   },
   "hero": {
@@ -17,9 +14,8 @@
     "portraitAlt": "Portrait of Alexandra Porhansl"
   },
   "status": {
-    "fl": "Available for web and mobile projects, remote or hybrid",
-    "cdi": "Open to permanent roles around Mulhouse and across the border — and happy to relocate for the right one",
-    "geo": "French, English, German · and happy to travel"
+    "main": "Open to a permanent role or a project, in Mulhouse and across the border",
+    "geo": "French, English, German · mobile and happy to relocate"
   },
   "value": {
     "title": "What I bring",
@@ -171,12 +167,11 @@
   "cta": {
     "t1": "A project?",
     "t2": "A role",
-    "fl": "Tell me about your project — I usually reply the same day.",
-    "cdi": "Drop me a line, I reply quickly. My CV is available in French and English.",
     "btn": "Get in touch",
     "cvFr": "CV in French (PDF)",
     "cvEn": "CV in English (PDF)",
-    "github": "GitHub"
+    "github": "GitHub",
+    "line": "A role or a project? Drop me a line — I usually reply the same day."
   },
   "foot": {
     "left": "© 2026 Alexandra Porhansl",
@@ -267,7 +262,7 @@
         "h": "Personal data & cookies",
         "p": [
           "This site collects no personal data: no accounts, no forms, no audience analytics, no advertising trackers.",
-          "Two strictly functional cookies are used: “lang” (display language) and “aud” (freelance / permanent mode). They exist purely for browsing comfort and are never shared with third parties.",
+          "A single strictly functional cookie is used: “lang”, which remembers the display language. It exists purely for browsing comfort and is never shared with third parties.",
           "Any question about your data: a.porhansl{'@'}icloud.com."
         ]
       },
