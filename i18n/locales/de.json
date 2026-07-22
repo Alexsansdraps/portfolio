@@ -287,7 +287,7 @@
       "eyebrow": "Für Unternehmen · Mulhouse · Elsass · Dreiländereck",
       "t1": "Digitalisieren Sie Ihre Prozesse.",
       "t2": "Bringen Sie KI dorthin, wo sie zählt.",
-      "sub": "Ich verwandle Ihre manuellen Aufgaben in maßgeschneiderte Tools und bringe KI dort ein, wo sie Ihnen wirklich Zeit spart. Direkt, ohne die Kosten und Wartezeiten einer Agentur.",
+      "sub": "Von Ihrer täglichen IT bis zu maßgeschneiderten Tools: Ich betreue, ich baue, und ich bringe KI dort ein, wo sie Zeit spart. Direkt, ohne die Kosten und Wartezeiten einer Agentur.",
       "cta": "30 Minuten buchen",
       "back": "← Mein Werdegang"
     },
@@ -297,6 +297,7 @@
         "Sie jonglieren noch mit mehreren Excel-Dateien, die nicht zusammenpassen.",
         "Ihre Teams geben dieselben Daten von einem Tool ins nächste ein.",
         "Sie wollen eine Website, die wirklich etwas tut, nicht nur eine Visitenkarte.",
+        "Sie haben niemanden im Haus für Ihre tägliche IT.",
         "Überall ist von KI die Rede, aber Sie wissen nicht, wo Sie anfangen sollen."
       ]
     },
@@ -306,6 +307,10 @@
         {
           "t": "Digital-Diagnose",
           "d": "Ein halber bis zwei Tage gemeinsam: Ich sehe mir Ihre Prozesse an, finde heraus, wo Sie Zeit verlieren, und übergebe Ihnen einen klaren Plan mit den möglichen Einsparungen. Ohne Verpflichtung für das Weitere."
+        },
+        {
+          "t": "Ihre IT im Alltag",
+          "d": "Keine eigene IT-Abteilung? Ich kümmere mich darum: Arbeitsplätze, Drucker, Server, Wartung. Und weil ich Ihre Abläufe von innen kenne, sehe ich schnell, was sich vereinfachen oder automatisieren lässt."
         },
         {
           "t": "Maßgeschneidertes internes Tool",
@@ -348,6 +353,10 @@
         {
           "t": "Schneller und günstiger als eine Agentur",
           "d": "Ich entwickle täglich mit KI. Was anderswo Wochen dauert, kostet mich weniger Zeit — und das zeigt sich im Angebot."
+        },
+        {
+          "t": "Eine Person für Ihre gesamte IT",
+          "d": "Vom streikenden Arbeitsplatz bis zum maßgeschneiderten Tool, das Ihnen Stunden spart: eine einzige Ansprechpartnerin, die Ihren Alltag versteht und voranbringt — und die sich laufend weiterbildet."
         },
         {
           "t": "Eine einzige Ansprechpartnerin",

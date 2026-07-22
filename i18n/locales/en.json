@@ -287,7 +287,7 @@
       "eyebrow": "For businesses · Mulhouse · Alsace · tri-border",
       "t1": "Digitalise your processes.",
       "t2": "Bring in AI where it counts.",
-      "sub": "I turn your manual tasks into custom tools, and bring AI in where it genuinely saves you time. Direct, without the cost or the delays of an agency.",
+      "sub": "From your day-to-day IT to custom-built tools: I manage it, I build it, and I bring AI in where it saves you time. Direct, without the cost or the delays of an agency.",
       "cta": "Book 30 minutes",
       "back": "← See my background"
     },
@@ -297,6 +297,7 @@
         "You're still juggling several Excel files that don't talk to each other.",
         "Your teams re-enter the same data from one tool to the next.",
         "You want a website that actually does something, not just a brochure.",
+        "You have no one in-house to handle your day-to-day IT.",
         "You hear about AI everywhere, but don't know where to start."
       ]
     },
@@ -306,6 +307,10 @@
         {
           "t": "Digital assessment",
           "d": "Half a day to two days together: I look at your processes, spot where you lose time, and hand you a clear plan with the gains on the table. No commitment to go further."
+        },
+        {
+          "t": "Your day-to-day IT",
+          "d": "No in-house IT team? I take care of it: workstations, printers, servers, maintenance. And because I know how you work from the inside, I quickly spot what can be simplified or automated."
         },
         {
           "t": "Custom internal tool",
@@ -348,6 +353,10 @@
         {
           "t": "Faster and cheaper than an agency",
           "d": "I develop with AI every day. What takes weeks elsewhere takes me less time — and that shows on the quote."
+        },
+        {
+          "t": "One person for all your IT",
+          "d": "From the workstation that won't cooperate to the custom tool that saves you hours: a single contact who understands your day-to-day and moves it forward — and who keeps learning to stay current."
         },
         {
           "t": "One single contact",

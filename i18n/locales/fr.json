@@ -287,7 +287,7 @@
       "eyebrow": "Pour les entreprises · Mulhouse · Alsace · Dreiländereck",
       "t1": "Digitalisez vos process.",
       "t2": "Mettez l'IA là où elle compte.",
-      "sub": "Je transforme vos tâches manuelles en outils sur mesure, et j'intègre l'IA là où elle vous fait vraiment gagner du temps. En direct, sans le coût ni les délais d'une agence.",
+      "sub": "De votre informatique du quotidien jusqu'aux outils sur mesure : je gère, je construis, et j'intègre l'IA là où elle vous fait gagner du temps. En direct, sans le coût ni les délais d'une agence.",
       "cta": "Réserver 30 minutes",
       "back": "← Voir mon parcours"
     },
@@ -297,6 +297,7 @@
         "Vous jonglez encore avec plusieurs fichiers Excel qui ne se parlent pas.",
         "Vos équipes ressaisissent les mêmes données d'un outil à l'autre.",
         "Vous voulez un site qui fait vraiment quelque chose, pas juste une vitrine.",
+        "Vous n'avez personne en interne pour gérer votre informatique au quotidien.",
         "On vous parle d'IA partout, mais vous ne savez pas par où commencer."
       ]
     },
@@ -306,6 +307,10 @@
         {
           "t": "Diagnostic digital",
           "d": "Une demi-journée à deux jours ensemble : je regarde vos process, je repère où vous perdez du temps, et je vous remets un plan clair avec les gains possibles. Sans engagement pour la suite."
+        },
+        {
+          "t": "Votre informatique au quotidien",
+          "d": "Pas de service informatique en interne ? Je m'en occupe : postes de travail, imprimantes, serveurs, maintenance. Et comme je connais votre fonctionnement de l'intérieur, je repère vite ce qui peut être simplifié ou automatisé."
         },
         {
           "t": "Outil interne sur mesure",
@@ -348,6 +353,10 @@
         {
           "t": "Plus rapide, moins cher qu'une agence",
           "d": "Je développe avec l'IA au quotidien. Ce qui prend des semaines ailleurs me prend moins de temps — et ça se retrouve sur le devis."
+        },
+        {
+          "t": "Une seule personne pour toute votre informatique",
+          "d": "Du poste qui bugue à l'outil sur mesure qui vous fait gagner des heures : un seul interlocuteur, qui comprend votre quotidien et le fait avancer. Et qui se forme en continu pour rester à jour."
         },
         {
           "t": "Une seule interlocutrice",

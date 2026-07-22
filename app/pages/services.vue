@@ -157,6 +157,8 @@ useSeoMeta({
   transition: border-color .25s;
 }
 .card:hover { border-color: var(--color-wine); }
+/* si nombre impair, la dernière carte prend toute la largeur au lieu d'être seule */
+.cards .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .card .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--color-wine); }
 .card h3 {
   margin-top: 12px; font-weight: 640; font-stretch: 82%;
@@ -190,6 +192,7 @@ useSeoMeta({
 
 /* why */
 .why { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(24px, 3vw, 40px); }
+.why .why-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .why-item h3 {
   font-weight: 640; font-stretch: 82%; font-size: 15px; letter-spacing: .04em; text-transform: uppercase;
   color: var(--color-wine);
