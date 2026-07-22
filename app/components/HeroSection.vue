@@ -34,14 +34,14 @@ const { mode } = useAudienceMode()
   gap: clamp(28px, 5vw, 72px);
   align-items: end;
   /* plafonné : sur grand écran le contenu ne s'enfonce plus en bas de viewport */
-  min-height: min(calc(100svh - 58px), 700px);
-  padding-top: 40px;
+  min-height: min(calc(100svh - 58px), 460px);
+  padding-top: 24px;
 }
-.hero-txt { padding-bottom: clamp(32px, 6vh, 72px); }
+.hero-txt { padding-bottom: clamp(24px, 4vh, 48px); }
 .hero-eyebrow {
   font-family: var(--font-mono); font-size: clamp(10.5px, 1.05vw, 12.5px);
   color: var(--color-mute); letter-spacing: .06em;
-  margin-bottom: clamp(22px, 4.5vh, 56px);
+  margin-bottom: clamp(18px, 3vh, 32px);
 }
 .hero-name {
   font-weight: 700;
