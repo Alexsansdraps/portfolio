@@ -57,6 +57,11 @@ export default defineNuxtConfig({
         en: '/legal-notice',
         de: '/impressum',
       },
+      services: {
+        fr: '/services',
+        en: '/services',
+        de: '/leistungen',
+      },
     },
     locales: [
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },

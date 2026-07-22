@@ -177,7 +177,8 @@
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — mit",
     "right2": "in Mulhouse gebaut",
-    "legal": "Impressum"
+    "legal": "Impressum",
+    "services": "Leistungen"
   },
   "stack": {
     "title": "Stack",
@@ -276,5 +277,96 @@
   },
   "lofi": {
     "real": "was ich wirklich höre"
+  },
+  "svc": {
+    "meta": {
+      "title": "Alexandra Porhansl — Digitalisierung & KI für KMU · Elsass, Dreiländereck",
+      "description": "Ich verwandle Ihre manuellen Prozesse in maßgeschneiderte Tools und bringe KI dort ein, wo sie wirklich Zeit spart. Freiberufliche Full-Stack-Entwicklerin in Mulhouse, für KMU im Elsass und im Dreiländereck."
+    },
+    "hero": {
+      "eyebrow": "Für Unternehmen · Mulhouse · Elsass · Dreiländereck",
+      "t1": "Digitalisieren Sie Ihre Prozesse.",
+      "t2": "Bringen Sie KI dorthin, wo sie zählt.",
+      "sub": "Ich verwandle Ihre manuellen Aufgaben in maßgeschneiderte Tools und bringe KI dort ein, wo sie Ihnen wirklich Zeit spart. Direkt, ohne die Kosten und Wartezeiten einer Agentur.",
+      "cta": "30 Minuten buchen",
+      "back": "← Mein Werdegang"
+    },
+    "pain": {
+      "title": "Kommt Ihnen das bekannt vor?",
+      "items": [
+        "Sie jonglieren noch mit mehreren Excel-Dateien, die nicht zusammenpassen.",
+        "Ihre Teams geben dieselben Daten von einem Tool ins nächste ein.",
+        "Sie wollen eine Website, die wirklich etwas tut, nicht nur eine Visitenkarte.",
+        "Überall ist von KI die Rede, aber Sie wissen nicht, wo Sie anfangen sollen."
+      ]
+    },
+    "offer": {
+      "title": "Was ich für Sie tue",
+      "items": [
+        {
+          "t": "Digital-Diagnose",
+          "d": "Ein halber bis zwei Tage gemeinsam: Ich sehe mir Ihre Prozesse an, finde heraus, wo Sie Zeit verlieren, und übergebe Ihnen einen klaren Plan mit den möglichen Einsparungen. Ohne Verpflichtung für das Weitere."
+        },
+        {
+          "t": "Maßgeschneidertes internes Tool",
+          "d": "Ein Dashboard, eine Anwendung, die Ihre Tabellen und Doppelerfassungen ersetzt. Um Ihre Arbeitsweise herum gebaut, nicht umgekehrt."
+        },
+        {
+          "t": "Eine Website, die für Sie arbeitet",
+          "d": "Nicht nur eine Visitenkarte: Terminbuchung, nützliche Formulare, Kundenbereich, Anbindung an Ihre Tools. Eine Website, die Ihnen Zeit spart."
+        },
+        {
+          "t": "KI-Integration",
+          "d": "Ein Assistent, der aus Ihren Dokumenten antwortet, automatische E-Mail-Sortierung, Datenextraktion, Content-Erstellung. KI dort, wo sie wirklich hilft — nicht dem Trend zuliebe."
+        }
+      ]
+    },
+    "method": {
+      "title": "So läuft es ab",
+      "items": [
+        {
+          "t": "Wir sprechen",
+          "d": "30 Minuten, um Ihren Bedarf zu verstehen. Kostenlos, unverbindlich."
+        },
+        {
+          "t": "Ich plane und kalkuliere",
+          "d": "Ein klarer Plan und ein Angebot. Sie wissen genau, was Sie bekommen und zu welchem Preis."
+        },
+        {
+          "t": "Ich entwickle",
+          "d": "Ich baue, zeige Ihnen regelmäßig den Stand, passe an. Sie verfolgen den Fortschritt."
+        },
+        {
+          "t": "Ich liefere und begleite",
+          "d": "Inbetriebnahme, Einführung und Betreuung nach der Lieferung."
+        }
+      ]
+    },
+    "why": {
+      "title": "Warum mit mir arbeiten",
+      "items": [
+        {
+          "t": "Schneller und günstiger als eine Agentur",
+          "d": "Ich entwickle täglich mit KI. Was anderswo Wochen dauert, kostet mich weniger Zeit — und das zeigt sich im Angebot."
+        },
+        {
+          "t": "Eine einzige Ansprechpartnerin",
+          "d": "Sie sprechen direkt mit der Person, die baut. Kein Projektleiter, keine Zwischenebenen."
+        },
+        {
+          "t": "Sieben Jahre, vom Web bis zur Fachsoftware",
+          "d": "Ich habe Fachsoftware, SaaS-Plattformen und mobile Apps gebaut. Ich verstehe den Code und den Bedarf dahinter."
+        },
+        {
+          "t": "Der Beweis liegt vor Ihnen",
+          "d": "Diese Website habe ich selbst gestaltet und entwickelt, mit KI. Ihr Code ist öffentlich. Was ich für mich tue, kann ich für Sie tun."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sprechen wir über Ihr Projekt",
+      "sub": "30 Minuten, unverbindlich. Sagen Sie mir, wo Sie Zeit verlieren, ich sage Ihnen, was möglich ist.",
+      "btn": "Kontakt aufnehmen"
+    }
   }
 }

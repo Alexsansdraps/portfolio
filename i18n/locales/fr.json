@@ -177,7 +177,8 @@
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — fait avec",
     "right2": "à Mulhouse",
-    "legal": "Mentions légales"
+    "legal": "Mentions légales",
+    "services": "Services"
   },
   "stack": {
     "title": "Stack",
@@ -276,5 +277,96 @@
   },
   "lofi": {
     "real": "ce que j'écoute vraiment"
+  },
+  "svc": {
+    "meta": {
+      "title": "Alexandra Porhansl — Digitalisation & IA pour les PME · Alsace, tri-national",
+      "description": "Je transforme vos process manuels en outils sur mesure et j'intègre l'IA là où elle vous fait gagner du temps. Développeuse full-stack indépendante à Mulhouse, pour les PME d'Alsace et du Dreiländereck."
+    },
+    "hero": {
+      "eyebrow": "Pour les entreprises · Mulhouse · Alsace · Dreiländereck",
+      "t1": "Digitalisez vos process.",
+      "t2": "Mettez l'IA là où elle compte.",
+      "sub": "Je transforme vos tâches manuelles en outils sur mesure, et j'intègre l'IA là où elle vous fait vraiment gagner du temps. En direct, sans le coût ni les délais d'une agence.",
+      "cta": "Réserver 30 minutes",
+      "back": "← Voir mon parcours"
+    },
+    "pain": {
+      "title": "Ça vous parle ?",
+      "items": [
+        "Vous jonglez encore avec plusieurs fichiers Excel qui ne se parlent pas.",
+        "Vos équipes ressaisissent les mêmes données d'un outil à l'autre.",
+        "Vous voulez un site qui fait vraiment quelque chose, pas juste une vitrine.",
+        "On vous parle d'IA partout, mais vous ne savez pas par où commencer."
+      ]
+    },
+    "offer": {
+      "title": "Ce que je fais pour vous",
+      "items": [
+        {
+          "t": "Diagnostic digital",
+          "d": "Une demi-journée à deux jours ensemble : je regarde vos process, je repère où vous perdez du temps, et je vous remets un plan clair avec les gains possibles. Sans engagement pour la suite."
+        },
+        {
+          "t": "Outil interne sur mesure",
+          "d": "Un tableau de bord, une application qui remplace vos tableurs et vos ressaisies. Pensé autour de votre façon de travailler, pas l'inverse."
+        },
+        {
+          "t": "Site web qui travaille pour vous",
+          "d": "Pas seulement une vitrine : prise de rendez-vous, formulaires utiles, espace client, connexion à vos outils. Un site qui vous fait gagner du temps."
+        },
+        {
+          "t": "Intégration de l'IA",
+          "d": "Un assistant qui répond à partir de vos documents, du tri automatique d'e-mails, de l'extraction de données, de la génération de contenu. L'IA là où elle a un vrai intérêt, pas pour la mode."
+        }
+      ]
+    },
+    "method": {
+      "title": "Comment ça se passe",
+      "items": [
+        {
+          "t": "On échange",
+          "d": "30 minutes pour comprendre votre besoin. Gratuit, sans engagement."
+        },
+        {
+          "t": "Je cadre et je chiffre",
+          "d": "Un plan clair et un devis. Vous savez exactement ce que vous obtenez et à quel prix."
+        },
+        {
+          "t": "Je développe",
+          "d": "Je construis, je vous montre régulièrement, j'ajuste. Vous suivez l'avancement."
+        },
+        {
+          "t": "Je livre et j'accompagne",
+          "d": "Mise en production, prise en main, et un suivi après la livraison."
+        }
+      ]
+    },
+    "why": {
+      "title": "Pourquoi travailler avec moi",
+      "items": [
+        {
+          "t": "Plus rapide, moins cher qu'une agence",
+          "d": "Je développe avec l'IA au quotidien. Ce qui prend des semaines ailleurs me prend moins de temps — et ça se retrouve sur le devis."
+        },
+        {
+          "t": "Une seule interlocutrice",
+          "d": "Vous parlez directement à la personne qui construit. Pas de chef de projet, pas de couches intermédiaires."
+        },
+        {
+          "t": "Sept ans d'expérience, du web au métier",
+          "d": "J'ai construit des logiciels métiers, des plateformes SaaS, des applications mobiles. Je comprends le code comme le besoin derrière."
+        },
+        {
+          "t": "La preuve est sous vos yeux",
+          "d": "Ce site, je l'ai conçu et développé moi-même, avec l'IA. Son code est public. Ce que je fais pour moi, je peux le faire pour vous."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Parlons de votre projet",
+      "sub": "30 minutes, sans engagement. Dites-moi où vous perdez du temps, je vous dis ce qui est possible.",
+      "btn": "Me contacter"
+    }
   }
 }

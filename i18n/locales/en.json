@@ -177,7 +177,8 @@
     "left": "© 2026 Alexandra Porhansl",
     "right1": "Vue · Nuxt — made with",
     "right2": "in Mulhouse",
-    "legal": "Legal notice"
+    "legal": "Legal notice",
+    "services": "Services"
   },
   "stack": {
     "title": "Stack",
@@ -276,5 +277,96 @@
   },
   "lofi": {
     "real": "what I actually listen to"
+  },
+  "svc": {
+    "meta": {
+      "title": "Alexandra Porhansl — Digitalisation & AI for SMEs · Alsace, tri-border",
+      "description": "I turn your manual processes into custom tools and bring AI in where it actually saves time. Independent full-stack developer in Mulhouse, for SMEs across Alsace and the tri-border region."
+    },
+    "hero": {
+      "eyebrow": "For businesses · Mulhouse · Alsace · tri-border",
+      "t1": "Digitalise your processes.",
+      "t2": "Bring in AI where it counts.",
+      "sub": "I turn your manual tasks into custom tools, and bring AI in where it genuinely saves you time. Direct, without the cost or the delays of an agency.",
+      "cta": "Book 30 minutes",
+      "back": "← See my background"
+    },
+    "pain": {
+      "title": "Sound familiar?",
+      "items": [
+        "You're still juggling several Excel files that don't talk to each other.",
+        "Your teams re-enter the same data from one tool to the next.",
+        "You want a website that actually does something, not just a brochure.",
+        "You hear about AI everywhere, but don't know where to start."
+      ]
+    },
+    "offer": {
+      "title": "What I do for you",
+      "items": [
+        {
+          "t": "Digital assessment",
+          "d": "Half a day to two days together: I look at your processes, spot where you lose time, and hand you a clear plan with the gains on the table. No commitment to go further."
+        },
+        {
+          "t": "Custom internal tool",
+          "d": "A dashboard, an application that replaces your spreadsheets and double data entry. Built around the way you work, not the other way round."
+        },
+        {
+          "t": "A website that works for you",
+          "d": "Not just a brochure: bookings, useful forms, a client area, connections to your tools. A site that saves you time."
+        },
+        {
+          "t": "AI integration",
+          "d": "An assistant that answers from your documents, automatic email sorting, data extraction, content generation. AI where it genuinely helps, not for the hype."
+        }
+      ]
+    },
+    "method": {
+      "title": "How it works",
+      "items": [
+        {
+          "t": "We talk",
+          "d": "30 minutes to understand your need. Free, no commitment."
+        },
+        {
+          "t": "I scope and quote",
+          "d": "A clear plan and a quote. You know exactly what you get and at what price."
+        },
+        {
+          "t": "I build",
+          "d": "I build, I show you regularly, I adjust. You follow the progress."
+        },
+        {
+          "t": "I deliver and support",
+          "d": "Production release, onboarding, and follow-up after delivery."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why work with me",
+      "items": [
+        {
+          "t": "Faster and cheaper than an agency",
+          "d": "I develop with AI every day. What takes weeks elsewhere takes me less time — and that shows on the quote."
+        },
+        {
+          "t": "One single contact",
+          "d": "You talk directly to the person who builds. No project manager, no layers in between."
+        },
+        {
+          "t": "Seven years, from web to business software",
+          "d": "I've built business software, SaaS platforms, mobile apps. I understand the code and the need behind it."
+        },
+        {
+          "t": "The proof is in front of you",
+          "d": "This site, I designed and built myself, with AI. Its code is public. What I do for myself, I can do for you."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Let's talk about your project",
+      "sub": "30 minutes, no commitment. Tell me where you lose time, I'll tell you what's possible.",
+      "btn": "Get in touch"
+    }
   }
 }

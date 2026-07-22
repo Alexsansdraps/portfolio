@@ -4,7 +4,7 @@ const localePath = useLocalePath()
 
 <template>
   <footer class="foot wrap">
-    <span>{{ $t('foot.left') }} <span class="sep" aria-hidden="true">·</span> <NuxtLink class="legal-link" :to="localePath('mentions')">{{ $t('foot.legal') }}</NuxtLink></span>
+    <span>{{ $t('foot.left') }} <span class="sep" aria-hidden="true">·</span> <NuxtLink class="legal-link" :to="localePath('services')">{{ $t('foot.services') }}</NuxtLink> <span class="sep" aria-hidden="true">·</span> <NuxtLink class="legal-link" :to="localePath('mentions')">{{ $t('foot.legal') }}</NuxtLink></span>
     <span>{{ $t('foot.right1') }} <span class="heart" aria-hidden="true">♥</span> {{ $t('foot.right2') }}</span>
   </footer>
 </template>
