@@ -55,21 +55,18 @@ export default defineNuxtConfig({
       mentions: {
         fr: '/mentions-legales',
         en: '/legal-notice',
-        de: '/impressum',
       },
       services: {
         fr: '/services',
         en: '/services',
-        de: '/leistungen',
       },
     },
     locales: [
       { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
       { code: 'en', language: 'en-GB', name: 'English', file: 'en.json' },
-      { code: 'de', language: 'de-DE', name: 'Deutsch', file: 'de.json' },
     ],
     // Détection de la langue du navigateur à l'arrivée sur « / » :
-    // navigateur DE → /de, EN → /en, tout le reste → FR (defaultLocale).
+    // navigateur EN → /en, tout le reste → FR (defaultLocale).
     // Le choix manuel est ensuite mémorisé dans le cookie « lang ».
     detectBrowserLanguage: {
       useCookie: true,
