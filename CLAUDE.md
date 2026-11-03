@@ -1,27 +1,43 @@
-# Portfolio Alexandra Porhansl
+# alexandraporhansl.com — Agence web freelance en Alsace
 
-One-page Nuxt 4 SSG, trilingue FR/EN/DE, design sobre dark (pas de mode clair pour l'instant).
+Site vitrine de l'agence web d'Alexandra (Mulhouse). Nuxt 4, français uniquement, pages pré-générées
+et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 
 ## Commandes
 
-- `pnpm dev` — dev server
-- `pnpm generate` — build statique (`.output/public`), à faire passer avant tout push
-- CV : sources `cv/*.html`, régénérer via Chrome headless `--print-to-pdf` vers `public/cv/`
+- `pnpm dev` — dev server (le formulaire n'envoie rien en dev : le message s'affiche dans la console)
+- `pnpm build` — build + pré-génération de toutes les pages, à faire passer avant tout push
+- Mise en ligne : **push sur `main`** → Cloudflare Workers Builds reconstruit et déploie (worker `portfolio`)
 
 ## Règles du projet
 
-- **Tout le texte visible vit dans `i18n/locales/{fr,en,de}.json`** — jamais de texte en dur dans les composants. Toute modif de contenu = les 3 langues d'un coup.
-- Les données non traduites (dates, noms de boîtes, tags, positions carte) vivent dans `app/data/` ou dans le composant.
-- Design system : tokens CSS dans `app/assets/css/main.css` (`--color-void/carbon/ash/bone/mute/wine/deep`). Accent unique : wine `#b26270`. Pas d'arrondis, pas d'ombres portées, hairlines 1px `ash`.
-- Typo : Archivo variable (nom en `wdth 125/wght 700`, reste léger tracked uppercase) + JB Mono pour dates/méta. Fontes self-hostées dans `app/assets/fonts/`, ne pas ajouter de CDN.
-- Animations : GSAP ScrollTrigger via `app/plugins/scroll.client.ts` — tout élément `[data-reveal]` est révélé au scroll. Respecter `prefers-reduced-motion` pour toute nouvelle animation.
-- i18n : locale files rechargés seulement au restart du dev server si modifiés hors HMR (script externe).
-- **i18n PIÈGE : jamais de `@` brut dans les messages** (syntaxe vue-i18n de messages liés) — un email non échappé fait planter la compilation de TOUTE la locale (messages vides, clés brutes à l'écran). Écrire `a.porhansl{'@'}icloud.com`. Mêmes précautions avec `|` et `{ }`.
-- URL canonique : `siteUrl` dans `nuxt.config.ts` — une seule source de vérité (SEO, OG, sitemap, robots.txt à garder synchro).
+- **Français uniquement.** Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ;
+  `experience.ts` : parcours), le reste directement dans les pages.
+- **Côté clients, zéro jargon** (accueil, services, réalisations, contact). Le vocabulaire technique n'a sa place que sur `/parcours`.
+- **Pas de tarifs affichés** tant qu'Alexandra ne les a pas validés.
+- Positionnement : **agence web freelance en Alsace**. Une seule interlocutrice, sur mesure, référencement pensé dès le départ.
+- Design system : tokens dans `app/assets/css/main.css` (`paper`, `sand`, `ink`, `wine`, `plum`…). Thème clair papier,
+  bandeaux sombres `.on-dark`, accent unique wine `#a1264c` (échantillonné sur le portrait). Boutons en pilule, cartes arrondies.
+- Typo : Archivo variable (titres `font-stretch` 110–118 %, graisse 700–800) + JB Mono pour les méta. Fontes self-hostées
+  dans `public/fonts/` (préchargées), ne pas ajouter de CDN.
+- Animations : GSAP ScrollTrigger + Lenis via `app/plugins/scroll.client.ts` (`[data-reveal]`, `[data-depth]`, `[data-parallax]`,
+  `[data-count]`, carte de zone, frise en serpentine du parcours — tracé dans `app/utils/serpentine.ts`).
+  Respecter `prefers-reduced-motion` pour toute nouvelle animation.
+- Le téléphone d'Alexandra n'apparaît jamais sur le site.
 
-## Contenu — points sensibles
+## Référencement
 
-- Positionnement : **full-stack à appétence front-end** (pas « front-end » seul).
-- Niveaux de langues honnêtes : EN B1 → B2, DE A2 → B1. Jamais surjouer, jamais mentionner « avec des amis ».
-- Le téléphone n'apparaît QUE dans les CV PDF, jamais sur le site.
-- Claude Code : pratique construite sur le temps perso — formulation « je garde la main, l'outil démultiplie la vitesse », pas de multiplicateur chiffré inventé.
+- Chaque page appelle `usePageSeo()` (title ≈ 60 car., description ≈ 155, canonical, Open Graph) — `app/composables/usePageSeo.ts`.
+- Données structurées : `ProfessionalService` + `Person` + `WebSite` dans `app.vue`, `FAQPage` sur l'accueil uniquement,
+  `Service`, `CreativeWork`, `BreadcrumbList` sur les pages concernées.
+- URL canonique : `siteUrl` dans `nuxt.config.ts` (une seule source de vérité, `robots.txt` à garder synchro).
+- Pré-génération avec `autoSubfolderIndex: false` : `/parcours` est servi tel quel, sans redirection vers `/parcours/`.
+- Anciennes adresses (`/en/**`, `/de/**`, `/cv/**`) : vraies 301 via `routeRules`, exclues de la pré-génération.
+
+## Formulaire de contact
+
+`server/api/contact.post.ts` envoie un e-mail via **Cloudflare Email Routing** (binding `CONTACT_EMAIL`, déclaré dans
+`nuxt.config.ts` → `nitro.cloudflare.wrangler`, car Nitro génère lui-même la config wrangler au build Cloudflare).
+Destinataire : `a.porhansl@icloud.com` (doit être vérifié dans Email Routing). Sujet préfixé `[Site alexandraporhansl.com]`.
+Hors Cloudflare, `cloudflare:email` est remplacé par `server/shims/cloudflare-email.ts`.
+Protections : champ piège `site_web`, contrôle d'origine, longueurs max, pas de retour à la ligne dans les en-têtes.

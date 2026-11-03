@@ -1,79 +1,64 @@
 <script setup lang="ts">
-// Widget « pochette vinyle » → chaîne YouTube Music.
-// 100 % CSS, aucune ressource tierce : le site reste sans traceur.
+// Widget « pochette vinyle » → profil Spotify.
+// 100 % CSS, aucune ressource tierce chargée : le site reste sans traceur.
+import { business } from '~/data/site'
 </script>
 
 <template>
   <a
     class="mw"
-    href="https://music.youtube.com/@alexsansdraps2952"
+    :href="business.spotify"
     target="_blank" rel="noopener noreferrer"
-    :aria-label="$t('lofi.real')"
+    aria-label="Ce que j’écoute en ce moment, sur Spotify (nouvel onglet)"
   >
     <span class="disc" aria-hidden="true"><span class="label" /></span>
     <span class="txt">
-      <span class="l1">{{ $t('lofi.real') }}</span>
-      <span class="l2">YouTube Music <span class="arr">↗</span></span>
+      <span class="l1">ce que j’écoute en ce moment</span>
+      <span class="l2">Spotify <span class="arr">↗</span></span>
     </span>
   </a>
 </template>
 
 <style scoped>
 .mw {
-  position: fixed; right: clamp(16px, 3vw, 28px); bottom: clamp(16px, 3vw, 28px);
+  position: fixed; right: clamp(14px, 3vw, 28px); bottom: clamp(14px, 3vw, 28px);
   z-index: 20;
   display: flex; align-items: center; gap: 11px;
-  padding: 8px 14px 8px 8px;
-  background: color-mix(in srgb, var(--color-carbon) 90%, transparent);
+  padding: 7px 16px 7px 7px;
+  background: color-mix(in srgb, var(--color-paper) 88%, transparent);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--color-ash);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  box-shadow: 0 6px 24px -12px rgb(29 22 26 / .35);
   text-decoration: none;
-  transition: border-color .25s;
+  transition: border-color .25s, transform .25s;
 }
-.mw:hover { border-color: var(--color-wine); }
-.mw:focus-visible { outline: 1px solid var(--color-wine); outline-offset: 3px; }
+.mw:hover { border-color: var(--color-wine); transform: translateY(-2px); }
 
 /* ---- le disque ---- */
 .disc {
   position: relative; flex-shrink: 0;
   width: 34px; height: 34px; border-radius: 50%;
-  background:
-    repeating-radial-gradient(circle at 50% 50%,
-      #17171b 0, #17171b 1px, #0c0c0f 1px, #0c0c0f 2.5px);
+  background: repeating-radial-gradient(circle at 50% 50%, #1f1a1d 0, #1f1a1d 1px, #0e0b0d 1px, #0e0b0d 2.5px);
   box-shadow: inset 0 0 0 1px #000;
 }
-.disc .label {
-  position: absolute; inset: 34%;
-  border-radius: 50%;
-  background: var(--color-wine);
-  box-shadow: 0 0 0 1px #000;
-}
-.disc .label::after {
-  content: ""; position: absolute; inset: 42%;
-  border-radius: 50%; background: var(--color-void);
-}
+.disc .label { position: absolute; inset: 34%; border-radius: 50%; background: var(--color-wine); }
+.disc .label::after { content: ""; position: absolute; inset: 42%; border-radius: 50%; background: var(--color-paper); }
 
 /* ---- texte ---- */
-.txt { display: flex; flex-direction: column; gap: 2px; line-height: 1.2; }
-.l1 {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
-  color: var(--color-bone);
-}
-.l2 {
-  font-family: var(--font-mono); font-size: 8.5px; letter-spacing: .1em;
-  color: var(--color-mute); text-transform: uppercase;
-}
-.arr { color: var(--color-wine); }
+.txt { display: flex; flex-direction: column; gap: 1px; line-height: 1.2; }
+.l1 { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--color-ink); }
+.l2 { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .1em; color: var(--color-mute); text-transform: uppercase; }
+.arr { color: #1db954; }
 
-/* rotation au survol */
 @media (prefers-reduced-motion: no-preference) {
-  .disc { transition: box-shadow .25s; }
   .mw:hover .disc, .mw:focus-visible .disc { animation: spin 3.4s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 }
 
 @media (max-width: 640px) {
-  .mw { padding: 8px; gap: 0; }
+  .mw { padding: 6px; gap: 0; }
   .txt { display: none; }
 }
 </style>

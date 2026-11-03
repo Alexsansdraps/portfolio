@@ -1,85 +1,118 @@
 <script setup lang="ts">
-const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
+const nav = [
+  { to: '/services', label: 'Services' },
+  { to: '/realisations', label: 'Réalisations' },
+  { to: '/parcours', label: 'Mon parcours' },
+]
 
-/* CV dans la langue du visiteur — pas encore de version DE, l'anglais fait le pont */
-const cvHref = computed(() =>
-  locale.value === 'fr' ? '/cv/cv-alexandra-porhansl-fr.pdf' : '/cv/cv-alexandra-porhansl-en.pdf',
-)
+const open = ref(false)
+const route = useRoute()
+watch(() => route.fullPath, () => { open.value = false })
+
+/* Filet sous la barre une fois qu'on a commencé à défiler */
+const scrolled = ref(false)
+onMounted(() => {
+  const onScroll = () => { scrolled.value = window.scrollY > 8 }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
+})
 </script>
 
 <template>
-  <header class="bar">
+  <header class="bar" :class="{ scrolled, open }">
     <div class="wrap bar-in">
-      <div class="bar-id">
-        <span class="short" aria-hidden="true">AP<em>.</em></span>
-        <span class="long">Alexandra Porhansl <em>·</em> <span class="full">Full-Stack</span></span>
-      </div>
-      <div class="bar-right">
-        <nav class="langs" :aria-label="$t('nav.aria')">
-          <NuxtLink
-            v-for="l in locales"
-            :key="l.code"
-            :to="switchLocalePath(l.code)"
-            :aria-current="l.code === locale ? 'true' : undefined"
-            :title="l.name"
-          >{{ l.code.toUpperCase() }}</NuxtLink>
-        </nav>
-        <a class="cv-btn" :href="cvHref" download :title="$t('nav.cv')" :aria-label="$t('nav.cv')">CV <span aria-hidden="true">↓</span></a>
-      </div>
+      <NuxtLink to="/" class="brand" aria-label="Alexandra Porhansl, agence web — accueil">
+        <span class="b-name">Alexandra Porhansl<span class="dot">.</span></span>
+        <span class="b-tag">Agence web · Alsace</span>
+      </NuxtLink>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link">{{ n.label }}</NuxtLink>
+        <NuxtLink to="/contact" class="btn nav-cta">Demander un devis</NuxtLink>
+      </nav>
+
+      <button
+        class="burger" type="button"
+        :aria-expanded="open" aria-controls="menu-mobile"
+        @click="open = !open"
+      >
+        <span class="sr">{{ open ? 'Fermer le menu' : 'Ouvrir le menu' }}</span>
+        <span class="b-lines" aria-hidden="true"><span /><span /></span>
+      </button>
     </div>
+
+    <nav id="menu-mobile" class="m-nav" :hidden="!open" aria-label="Navigation mobile">
+      <div class="wrap">
+        <NuxtLink to="/" class="m-link">Accueil</NuxtLink>
+        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="m-link">{{ n.label }}</NuxtLink>
+        <NuxtLink to="/contact" class="btn m-cta">Demander un devis <span class="arr" aria-hidden="true">→</span></NuxtLink>
+      </div>
+    </nav>
   </header>
 </template>
 
 <style scoped>
 .bar {
-  position: sticky; top: 0; z-index: 10;
-  background: color-mix(in srgb, var(--color-void) 88%, transparent);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-ash);
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--color-paper) 86%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s;
 }
-.bar-in {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; height: 58px;
-}
-.bar-id {
-  font-family: var(--font-mono); font-size: 11.5px; font-weight: 500;
-  letter-spacing: .14em; color: var(--color-bone); text-transform: uppercase;
-  white-space: nowrap;
-}
-.bar-id em { font-style: normal; color: var(--color-wine); }
-.bar-id .short { display: none; }
-.bar-right { display: flex; align-items: center; gap: clamp(12px, 2.5vw, 28px); }
-.langs { display: flex; gap: 2px; }
-.langs a {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em;
-  color: var(--color-mute); padding: 6px 8px; text-decoration: none;
-}
-.langs a[aria-current="true"] {
-  color: var(--color-bone);
-  text-decoration: underline; text-underline-offset: 5px;
-  text-decoration-color: var(--color-wine);
-}
-.langs a:hover { color: var(--color-bone); }
-.langs a:focus-visible, .cv-btn:focus-visible {
-  outline: 1px solid var(--color-wine); outline-offset: 3px;
-}
+.bar.scrolled, .bar.open { border-bottom-color: var(--color-line); }
+.bar-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
 
-.cv-btn {
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em;
-  color: var(--color-bone); text-decoration: none; text-transform: uppercase;
-  border: 1px solid var(--color-ash); padding: 8px 12px;
-  transition: color .2s, border-color .2s;
-  white-space: nowrap;
-}
-.cv-btn span { color: var(--color-wine); }
-.cv-btn:hover { color: var(--color-wine); border-color: var(--color-wine); }
+.brand { display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: var(--color-ink); line-height: 1; }
+.b-name { font-weight: 780; font-stretch: 116%; font-size: 18px; letter-spacing: -.01em; }
+.b-name .dot { color: var(--color-wine); }
+.b-tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-mute); }
 
-@media (max-width: 640px) {
-  .bar-id .long { display: none; }
-  .bar-id .short { display: inline; font-size: 13px; }
-  .bar-right { gap: 12px; }
-  .langs a { padding: 5px 6px; font-size: 10.5px; }
-  .cv-btn { padding: 7px 10px; font-size: 10px; letter-spacing: .08em; }
+.nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
+.nav-link {
+  position: relative;
+  font-size: 15.5px; font-weight: 520; color: var(--color-ink); text-decoration: none;
+  padding: 6px 0;
+}
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--color-wine); transform: scaleX(0); transform-origin: left;
+  transition: transform .25s;
+}
+.nav-link:hover::after, .nav-link.router-link-active::after { transform: scaleX(1); }
+.nav-cta { padding: 11px 20px; font-size: 15px; }
+
+.burger { display: none; }
+.m-nav { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .burger {
+    display: grid; place-items: center;
+    width: 46px; height: 46px; border-radius: 50%;
+    border: 1px solid var(--color-line); background: var(--color-paper); cursor: pointer;
+  }
+  .b-lines { display: grid; gap: 6px; width: 18px; }
+  .b-lines span { height: 2px; background: var(--color-ink); border-radius: 2px; transition: transform .25s; }
+  .open .b-lines span:first-child { transform: translateY(4px) rotate(45deg); }
+  .open .b-lines span:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+  .m-nav:not([hidden]) {
+    display: block;
+    border-top: 1px solid var(--color-line);
+    padding: 12px 0 24px;
+    min-height: calc(100svh - 72px);
+    background: var(--color-paper);
+  }
+  .m-nav .wrap { display: flex; flex-direction: column; }
+  .m-link {
+    font-weight: 720; font-stretch: 112%; font-size: 30px; letter-spacing: -.01em;
+    color: var(--color-ink); text-decoration: none;
+    padding: 14px 0; border-bottom: 1px solid var(--color-line);
+  }
+  .m-link.router-link-exact-active { color: var(--color-wine); }
+  .m-cta { margin-top: 28px; align-self: flex-start; }
 }
 </style>
