@@ -16,10 +16,12 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 - **Côté clients, zéro jargon** (accueil, services, réalisations, contact). Le vocabulaire technique n'a sa place que sur `/parcours`.
 - **Pas de tarifs affichés** tant qu'Alexandra ne les a pas validés. Seule exception : l'**audit gratuit** (`/audit-gratuit`),
   à mettre en avant (accueil, menu, bandeau final, formulaire) — pour un site, un logiciel / des outils, ou sans site.
-- Positionnement : **agence web freelance basée en Alsace (Mulhouse), clients partout** : déplacement chez le client en Alsace,
-  à distance (visio) en France et à l'étranger. Ne jamais laisser croire « Alsace uniquement ».
+- Positionnement : **agence web freelance basée à Mulhouse, en Alsace**. Ne rien dire sur la zone de déplacement
+  ni sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
-- Petits clins d'œil alsaciens bienvenus (Hopla, Salü, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
+- Pas de « premier échange gratuit » : seul l'audit est gratuit. Pas de « Demander un devis » : « Parlons de votre projet ».
+- Ton naturel, à la première personne, sans slogans en deux temps ni formules toutes faites (« zéro jargon », « X, pas Y »…).
+- Petits clins d'œil alsaciens bienvenus (Hopla, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
 - Textes de l'audit gratuit à la 1re personne du pluriel : « on » (« on fait le point »), boutons « Audit gratuit ».
 - MemoryLine n'est pas alsacienne : pas de mention de l'Alsace pour elle. La Chance (Guebwiller) l'est.
@@ -28,7 +30,7 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 - Typo : Archivo variable (titres `font-stretch` 110–118 %, graisse 700–800) + JB Mono pour les méta. Fontes self-hostées
   dans `public/fonts/` (préchargées), ne pas ajouter de CDN.
 - Animations : GSAP ScrollTrigger + Lenis via `app/plugins/scroll.client.ts` (`[data-reveal]`, `[data-depth]`, `[data-parallax]`,
-  `[data-count]`, carte de zone, frise en serpentine du parcours — tracé dans `app/utils/serpentine.ts`).
+  `[data-count]`, carte de l'Alsace, frise en serpentine du parcours — tracé dans `app/utils/serpentine.ts`).
   Respecter `prefers-reduced-motion` pour toute nouvelle animation.
 - Le téléphone d'Alexandra n'apparaît jamais sur le site.
 - Page Parcours : « développeuse full-stack salariée » dans l'intro ; Infosat n'apparaît que dans la frise. Pas de chiffres-clés en tête de page.

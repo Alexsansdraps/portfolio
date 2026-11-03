@@ -3,7 +3,7 @@ import { business, zone } from '~/data/site'
 
 usePageSeo({
   title: 'Contact : parlons de votre projet | Alexandra Porhansl',
-  description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : audit et premier échange gratuits, réponse sous 24 h. Agence web basée à Mulhouse.',
+  description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : audit gratuit, réponse sous 24 h. Agence web basée à Mulhouse.',
   path: '/contact',
 })
 
@@ -26,8 +26,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
       <p class="eyebrow rise">Contact</p>
       <h1 class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
       <p class="lead rise d2">
-        Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte pour un
-        premier échange de 30 minutes, gratuit et sans engagement.
+        Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.
       </p>
     </section>
 
@@ -47,15 +46,14 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
         </div>
         <div class="c-card">
           <p class="c-k">Où ?</p>
-          <p class="c-v">Chez vous en Alsace, en visio partout ailleurs.</p>
-          <p class="c-small">Basée à Mulhouse, je travaille avec des clients en France et à l’étranger.</p>
-          <p class="c-small">Je me déplace notamment à {{ cities }}…</p>
+          <p class="c-v">Mulhouse, en Alsace</p>
+          <p class="c-small">Rendez-vous ou visio, comme vous préférez.</p>
         </div>
         <div class="c-card c-next">
           <p class="c-k">Et ensuite ?</p>
           <ol>
             <li>Je vous rappelle ou je vous réponds par e-mail.</li>
-            <li>On échange 30 minutes sur votre besoin, chez vous ou en visio.</li>
+            <li>On échange une demi-heure sur votre besoin.</li>
             <li>Je vous envoie une proposition détaillée.</li>
           </ol>
         </div>

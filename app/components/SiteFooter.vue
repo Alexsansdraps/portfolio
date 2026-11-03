@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { business, services, zone } from '~/data/site'
+import { business, services } from '~/data/site'
 
 const year = new Date().getFullYear()
-const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 </script>
 
 <template>
@@ -12,9 +11,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         <div class="f-brand">
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
-            Agence web freelance basée à Mulhouse. Sites vitrines, boutiques en ligne et outils sur mesure
-            pour les entreprises d’Alsace et d’ailleurs : je me déplace chez vous en Alsace, et je travaille
-            à distance partout dans le monde.
+            Agence web freelance basée à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
+            et outils sur mesure.
           </p>
           <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
         </div>
@@ -34,10 +32,9 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         </nav>
 
         <div class="f-col">
-          <p class="f-h">Où je travaille</p>
+          <p class="f-h">Où me trouver</p>
           <p class="f-zone">
-            Création de sites internet et référencement à {{ cities.join(', ') }}, partout en Alsace,
-            et à distance en France comme à l’étranger.
+            Mulhouse, Haut-Rhin (68)<br>Alsace
           </p>
         </div>
       </div>

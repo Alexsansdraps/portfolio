@@ -5,7 +5,7 @@ import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
   title: 'Agence web freelance en Alsace | Alexandra Porhansl, Mulhouse',
-  description: 'Agence web freelance à Mulhouse : sites vitrines, boutiques en ligne, référencement (SEO) et refontes, en Alsace et à distance partout. Audit gratuit.',
+  description: 'Agence web freelance à Mulhouse, en Alsace : sites vitrines, boutiques en ligne, référencement (SEO), refontes et outils sur mesure. Audit gratuit.',
   path: '/',
 })
 
@@ -18,7 +18,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- HERO -->
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-txt">
-        <p class="eyebrow rise">Basée à Mulhouse · clients partout</p>
         <h1 id="hero-title" class="hero-h1 rise d1">
           Agence web<br>freelance <em>en&nbsp;Alsace.</em>
         </h1>
@@ -28,7 +27,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         </p>
         <p class="hero-lead rise d2">
           Du premier échange à la mise en ligne, vous avez une seule interlocutrice&nbsp;: moi, Alexandra.
-          Je me déplace chez vous en Alsace, et je travaille à distance avec des clients partout ailleurs.
         </p>
         <div class="hero-ctas rise d3">
           <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
@@ -36,7 +34,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         </div>
         <ul class="hero-trust rise d4">
           <li>Audit offert</li>
-          <li>En Alsace et à distance</li>
+          <li>Basée à Mulhouse</li>
           <li>Réponse sous 24 h</li>
         </ul>
       </div>
@@ -148,12 +146,10 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section class="section zone-sec" aria-labelledby="zone-title">
       <div class="wrap zone">
         <div class="zone-txt" data-reveal>
-          <p class="eyebrow">Où je travaille</p>
+          <p class="eyebrow">Où me trouver</p>
           <h2 id="zone-title" class="h2">Je suis basée à Mulhouse</h2>
           <p class="lead">
-            Je me déplace volontiers en Alsace pour rencontrer mes clients, de Saint-Louis à Haguenau, en passant
-            par Colmar et Strasbourg. Pour les clients plus loin, en France ou à l’étranger, on fait tout en visio,
-            et ça marche très bien.
+            Mon agence est installée à Mulhouse, dans le sud de l’Alsace, entre les Vosges et le Rhin.
           </p>
         </div>
         <div class="zone-map" data-reveal>
@@ -169,7 +165,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
       </div>
       <div class="about-txt" data-reveal>
         <p class="eyebrow">Qui suis-je</p>
-        <h2 id="about-title" class="h2">Salü, <em>moi c’est Alexandra.</em></h2>
+        <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
         <p class="lead">
           Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de lancer mon agence, j’ai travaillé
           en agence web, dans une startup et chez des éditeurs de logiciels, sur des sites, des boutiques en ligne

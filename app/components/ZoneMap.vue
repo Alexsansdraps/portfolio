@@ -2,7 +2,7 @@
 import { zone } from '~/data/site'
 
 const { home, cities } = zone
-const aria = `Carte de l’Alsace : depuis Mulhouse, je me déplace notamment à ${cities.map(c => c.name).join(', ')}`
+const aria = `Carte de l’Alsace avec Mulhouse et ${cities.map(c => c.name).join(', ')}`
 
 /* Le Rhin, de Bâle à Lauterbourg (mêmes coordonnées projetées que les villes) */
 const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 320, 234 290 S 255 220, 268 189 S 300 140, 328 110 S 360 70, 371 49'
@@ -23,11 +23,6 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
     <text class="geo river" x="283" y="246" transform="rotate(-56 283 246)">RHIN</text>
     <text class="geo" x="330" y="300">ALLEMAGNE</text>
     <text class="geo" x="244" y="610">SUISSE</text>
-
-    <!-- trajets depuis Mulhouse -->
-    <g class="routes">
-      <line v-for="c in cities" :key="c.name" :x1="home.x" :y1="home.y" :x2="c.x" :y2="c.y" />
-    </g>
 
     <g v-for="c in cities" :key="`c-${c.name}`" class="city">
       <circle :cx="c.x" :cy="c.y" r="4" />
@@ -54,7 +49,6 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
 .wine-road { fill: none; stroke: #b7a06a; stroke-width: 2; stroke-dasharray: 1 5; stroke-linecap: round; }
 .geo.wine { fill: #8a7440; letter-spacing: .22em; }
 
-.routes line { stroke: var(--color-wine); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: .55; }
 .city circle { fill: var(--color-paper); stroke: var(--color-ink); stroke-width: 1.5; }
 .c-name { font-family: var(--font-display); font-weight: 680; font-size: 13.5px; fill: var(--color-ink); }
 .c-time { font-family: var(--font-mono); font-size: 10.5px; fill: var(--color-wine); letter-spacing: .04em; }

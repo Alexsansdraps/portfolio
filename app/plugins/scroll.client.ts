@@ -8,7 +8,7 @@ import { serpentinePath } from '~/utils/serpentine'
  * - [data-reveal] : apparition en fondu/translation à l'entrée du viewport
  * - [data-depth] (hero) et [data-parallax] (réalisations) : léger décalage au défilement
  * - [data-count] : compteurs qui montent
- * - carte de la zone d'intervention : les trajets depuis Mulhouse se dessinent
+ * - carte de l'Alsace : Mulhouse puis les villes apparaissent
  * - [data-timeline] (Mon parcours) : la serpentine se dessine, un point la parcourt, les étapes s'allument
  * - prefers-reduced-motion : aucun mouvement, états finaux directs (la frise reste fonctionnelle)
  */
@@ -64,24 +64,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       })
     })
 
-    // carte de la zone : trajets puis villes
+    // carte de la zone : Mulhouse puis les villes
     const map = document.querySelector('.zm')
     if (map) {
-      const routes = map.querySelectorAll<SVGLineElement>('.routes line')
-      routes.forEach((l) => {
-        const len = Math.hypot(
-          Number(l.getAttribute('x2')) - Number(l.getAttribute('x1')),
-          Number(l.getAttribute('y2')) - Number(l.getAttribute('y1')),
-        )
-        l.style.strokeDasharray = `${len}`
-        l.style.strokeDashoffset = `${len}`
-      })
       gsap.timeline({ scrollTrigger: { trigger: map, start: 'top 75%', once: true } })
         .fromTo(map.querySelector('.home'), { opacity: 0, scale: .6, transformOrigin: 'center' }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(2)' })
-        .to(routes, { strokeDashoffset: 0, duration: .9, ease: 'power2.inOut', stagger: .07 }, '-=.1')
-        .fromTo(map.querySelectorAll('.city'), { opacity: 0 }, { opacity: 1, duration: .4, stagger: .07 }, '-=.9')
-        // on rend les pointillés une fois dessinés
-        .set(routes, { strokeDasharray: '3 4', strokeDashoffset: 0 })
+        .fromTo(map.querySelectorAll('.city'), { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .45, stagger: .07 }, '-=.1')
     }
   }
 

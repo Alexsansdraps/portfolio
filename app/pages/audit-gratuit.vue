@@ -3,7 +3,7 @@ import { audit } from '~/data/site'
 
 usePageSeo({
   title: 'Audit gratuit de site web et de référencement (SEO)',
-  description: 'Audit gratuit de votre site, de votre référencement Google ou de vos outils, en Alsace ou à distance. Pas encore de site ? On fait le point sur votre situation.',
+  description: 'Audit gratuit de votre site, de votre référencement Google ou de vos outils, par une agence web basée à Mulhouse. Pas encore de site ? On fait le point.',
   path: '/audit-gratuit',
 })
 
@@ -28,7 +28,7 @@ useJsonLd([
 const steps = [
   { t: 'Vous décrivez votre situation', d: 'Avec le formulaire ci-dessous : votre site s’il existe, vos outils, ce qui vous gêne.' },
   { t: 'On analyse', d: 'Votre site, votre visibilité sur Google, vos outils ou votre présence en ligne actuelle.' },
-  { t: 'On vous présente le compte rendu', d: 'Chez vous si vous êtes en Alsace, en visio partout ailleurs. Avec les priorités et les prochaines étapes.' },
+  { t: 'On vous présente le compte rendu', d: 'En rendez-vous ou en visio, avec les priorités et les prochaines étapes.' },
 ]
 </script>
 
@@ -43,7 +43,7 @@ const steps = [
       </p>
       <div class="a-ctas rise d3">
         <a href="#demande" class="btn">Audit gratuit <span class="arr" aria-hidden="true">↓</span></a>
-        <span class="a-note">Gratuit · sans engagement · en Alsace ou à distance</span>
+        <span class="a-note">Gratuit · sans engagement</span>
       </div>
     </section>
 

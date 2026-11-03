@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string, text?: string }>(), {
   title: 'Un projet de site ? Hopla, on en parle !',
-  text: 'Racontez-moi ce que vous avez en tête. On peut se voir si vous êtes en Alsace, ou s’appeler en visio. Le premier échange est gratuit.',
+  text: 'Racontez-moi ce que vous avez en tête : un nouveau site, une refonte, un outil… On en discute, et je vous dis ce que je peux faire pour vous.',
 })
 </script>
 

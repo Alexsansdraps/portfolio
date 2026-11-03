@@ -123,8 +123,8 @@ export const reasons = [
     d: 'Le site, le nom de domaine et les contenus sont à vous. Et si vous voulez changer vos textes ou vos photos vous-même, je vous prévois un espace pour ça.',
   },
   {
-    t: 'Basée à Mulhouse',
-    d: 'Je me déplace en Alsace pour rencontrer mes clients. Pour ceux qui sont plus loin, en France ou ailleurs, on travaille en visio.',
+    t: 'Vous suivez l’avancement',
+    d: 'Je vous montre le site au fur et à mesure. Vous savez toujours où on en est, et vous pouvez réagir à chaque étape.',
   },
   {
     t: 'Je réponds vite',
@@ -133,7 +133,7 @@ export const reasons = [
 ]
 
 export const steps = [
-  { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. Chez vous si vous êtes en Alsace, sinon en visio. C’est gratuit.' },
+  { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. En rendez-vous ou en visio.' },
   { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
   { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
   { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
@@ -144,11 +144,11 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Tout dépend du projet : un site vitrine de quelques pages n’a rien à voir avec une boutique en ligne. Après un premier échange gratuit, je vous envoie un devis détaillé : vous savez exactement ce que vous payez, et pourquoi.',
+    a: 'Tout dépend du projet : un site vitrine de quelques pages n’a rien à voir avec une boutique en ligne. Après un premier échange, je vous envoie une proposition détaillée : vous savez exactement ce que vous payez, et pourquoi.',
   },
   {
     q: 'Votre audit est-il vraiment gratuit ?',
-    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, on fait le point et on vous remet un compte rendu clair avec les priorités. Vous en faites ce que vous voulez, avec moi ou sans moi.',
+    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, on fait le point et on vous remet un compte rendu clair avec les priorités.',
   },
   {
     q: 'Combien de temps faut-il pour créer mon site ?',
@@ -163,12 +163,8 @@ export const faq: Faq[] = [
     a: 'Le référencement est pensé dès la conception : site rapide, adapté au téléphone, textes et titres travaillés, informations structurées pour Google. Pour une refonte, les anciennes adresses sont redirigées pour ne pas perdre vos positions.',
   },
   {
-    q: 'Je suis sur Wix ou Shopify, est-ce que je peux changer ?',
-    a: 'Oui. Je reprends vos contenus, je m’occupe du nom de domaine et des redirections pour garder votre référencement, et vous ne payez plus d’abonnement inutile.',
-  },
-  {
-    q: 'Vous travaillez avec qui, et où ?',
-    a: 'Avec des entreprises de partout : en Alsace, ailleurs en France et à l’étranger. Je suis basée à Mulhouse et, en Alsace, je me déplace volontiers pour parler de votre projet (Mulhouse, Colmar, Strasbourg, Guebwiller, Saint-Louis, Thann, Altkirch, Sélestat…). Partout ailleurs, tout se fait très bien à distance, en visio.',
+    q: 'Si je refais mon site, est-ce que je vais perdre mes données ?',
+    a: 'Non. Je récupère vos contenus (textes, photos, produits…) et je redirige les adresses de votre site actuel vers les nouvelles pages, pour que vous gardiez aussi votre place sur Google. Ça vaut aussi si vous êtes sur Wix ou Shopify.',
   },
   {
     q: 'Et une fois le site en ligne ?',
@@ -195,7 +191,7 @@ export const audit = {
     'Un compte rendu clair, sans jargon',
     'Les 3 à 5 priorités, classées par impact',
     'Ce que vous pouvez faire vous-même, tout de suite',
-    'Aucun engagement : vous en faites ce que vous voulez',
+    'Aucun engagement de votre part',
   ],
 }
 

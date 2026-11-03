@@ -32,7 +32,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       <h1 class="s-h1 rise d1">Création de sites internet <em>et référencement</em></h1>
       <p class="lead rise d2">
         Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure : voici ce que je fais,
-        et comment ça se passe. Pour des entreprises en Alsace, ailleurs en France ou à l’étranger.
+        et comment ça se passe.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
         <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
