@@ -3,7 +3,7 @@ import { business, zone } from '~/data/site'
 
 usePageSeo({
   title: 'Contact et devis gratuit | Agence web à Mulhouse, Alsace',
-  description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : premier échange gratuit, réponse en général dans la journée. Agence web à Mulhouse.',
+  description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : audit et premier échange gratuits, réponse sous 24 h. Agence web basée à Mulhouse.',
   path: '/contact',
 })
 
@@ -26,7 +26,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
       <p class="eyebrow rise">Contact</p>
       <h1 class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
       <p class="lead rise d2">
-        Dites-m’en un peu plus, même si votre idée n’est pas encore très précise. Je vous recontacte pour un
+        Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte pour un
         premier échange de 30 minutes, gratuit et sans engagement.
       </p>
     </section>
@@ -39,7 +39,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
       <aside class="c-side rise d3" aria-label="Informations pratiques">
         <div class="c-card">
           <p class="c-k">Délai de réponse</p>
-          <p class="c-v">En général dans la journée</p>
+          <p class="c-v">Sous 24 h</p>
         </div>
         <div class="c-card">
           <p class="c-k">Par e-mail</p>
@@ -47,9 +47,9 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
         </div>
         <div class="c-card">
           <p class="c-k">Où ?</p>
-          <p class="c-v">Je me déplace chez vous, dans tout le Haut-Rhin et le Bas-Rhin.</p>
-          <p class="c-small">Basée à Mulhouse. Rendez-vous sur place ou en visio, comme vous préférez.</p>
-          <p class="c-small">{{ cities }}…</p>
+          <p class="c-v">Chez vous en Alsace, en visio partout ailleurs.</p>
+          <p class="c-small">Basée à Mulhouse, je travaille avec des clients en France et à l’étranger.</p>
+          <p class="c-small">Je me déplace notamment à {{ cities }}…</p>
         </div>
         <div class="c-card c-next">
           <p class="c-k">Et ensuite ?</p>

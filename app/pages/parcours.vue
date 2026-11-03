@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { steps, stack } from '~/data/experience'
-import { projects } from '~/data/projects'
 import portrait from '~/assets/img/portrait.webp'
 
 const years = new Date().getFullYear() - 2019
 
 usePageSeo({
   title: `Mon parcours : ${years} ans de développement web | Alexandra Porhansl`,
-  description: `Développeuse full-stack depuis 2019 : agence web, startup SaaS, e-commerce, éditeur de logiciels, puis mon agence web en Alsace. Aujourd’hui développeuse full-stack chez Infosat.`,
+  description: `Développeuse full-stack depuis 2019 : agence web, startup SaaS, e-commerce, éditeur de logiciels, puis mon agence web en Alsace. Aujourd’hui développeuse full-stack salariée, avec mon agence web en Alsace en parallèle.`,
   path: '/parcours',
   type: 'article',
 })
@@ -31,13 +30,8 @@ useJsonLd([
         <h1 class="p-h1 rise d1">{{ years }} ans de code, <em>de l’agence web à la mienne.</em></h1>
         <p class="lead rise d2">
           J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
-          de logiciels. Aujourd’hui je suis développeuse full-stack chez Infosat, et je mène en parallèle mon agence web en Alsace.
+          de logiciels. Aujourd’hui je suis développeuse full-stack salariée et je mène en parallèle mon agence web en Alsace.
         </p>
-        <ul class="p-stats rise d3">
-          <li><b :data-count="years">{{ years }}</b><span>ans de développement</span></li>
-          <li><b data-count="5">5</b><span>entreprises, de l’agence web à la startup</span></li>
-          <li><b :data-count="projects.length">{{ projects.length }}</b><span>réalisations en freelance en 2026</span></li>
-        </ul>
       </div>
       <div class="p-hero-pic rise d2">
         <img :src="portrait" width="720" height="938" alt="Portrait d’Alexandra Porhansl" fetchpriority="high">
@@ -150,10 +144,6 @@ useJsonLd([
 }
 .p-h1 em { font-style: normal; color: var(--color-wine); }
 .p-hero .lead { margin-top: 24px; }
-.p-stats { list-style: none; margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 680px; }
-.p-stats li { border-top: 2px solid var(--color-ink); padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
-.p-stats b { font-weight: 800; font-stretch: 118%; font-size: clamp(40px, 5vw, 64px); line-height: 1; color: var(--color-wine); }
-.p-stats span { font-size: 14.5px; line-height: 1.4; color: var(--color-graphite); }
 .p-hero-pic img { display: block; width: 100%; border-radius: 24px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
 
 /* ---------- frise en serpentine ----------
@@ -269,8 +259,6 @@ useJsonLd([
   .how { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .p-stats { grid-template-columns: 1fr 1fr; }
-  .p-stats li:last-child { grid-column: 1 / -1; }
   .st-row { grid-template-columns: 1fr; }
 }
 </style>

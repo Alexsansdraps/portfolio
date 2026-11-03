@@ -2,7 +2,7 @@
 // Page d'arrivée d'un envoi du formulaire sans JavaScript.
 usePageSeo({
   title: 'Message envoyé | Alexandra Porhansl',
-  description: 'Votre message est bien parti. Je vous réponds en général dans la journée.',
+  description: 'Votre message est bien parti. Je vous réponds sous 24 h.',
   path: '/contact/merci',
   noindex: true,
 })
@@ -11,8 +11,8 @@ usePageSeo({
 <template>
   <main class="m wrap">
     <p class="eyebrow">Message envoyé</p>
-    <h1 class="m-h1">Merci, votre message <em>est bien parti&nbsp;!</em></h1>
-    <p class="lead">Je vous réponds en général dans la journée, à l’adresse e-mail que vous avez indiquée.</p>
+    <h1 class="m-h1">Merci vielmols, votre message <em>est bien parti&nbsp;!</em></h1>
+    <p class="lead">Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
     <div class="m-links">
       <NuxtLink to="/realisations" class="btn">Voir mes réalisations</NuxtLink>
       <NuxtLink to="/" class="btn btn-ghost">Retour à l’accueil</NuxtLink>

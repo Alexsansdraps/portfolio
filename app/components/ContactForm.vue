@@ -5,7 +5,10 @@ import { business } from '~/data/site'
  * Formulaire de contact → POST /api/contact (e-mail via Cloudflare Email Routing).
  * Fonctionne sans JavaScript (redirection vers /contact/merci) ; avec JS, envoi sans recharger la page.
  */
-const projets = ['Site vitrine', 'Boutique en ligne', 'Refonte de site', 'Outil sur mesure', 'Autre / je ne sais pas encore']
+const projets = ['Audit gratuit', 'Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Refonte de site', 'Outil sur mesure', 'Autre / je ne sais pas encore']
+
+/** projet : choix coché au départ (« Audit gratuit » sur la page de l'audit, par exemple) */
+const props = withDefaults(defineProps<{ projet?: string }>(), { projet: 'Audit gratuit' })
 
 const etat = ref<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 const erreur = ref('')
@@ -44,8 +47,8 @@ async function envoyer(e: Event) {
 <template>
   <div id="formulaire" class="cf">
     <div v-if="etat === 'ok'" class="cf-ok" role="status">
-      <p class="cf-ok-t">Merci, votre message est bien parti&nbsp;!</p>
-      <p>Je vous réponds en général dans la journée, à l’adresse e-mail que vous avez indiquée.</p>
+      <p class="cf-ok-t">Merci vielmols, votre message est bien parti&nbsp;!</p>
+      <p>Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
       <button type="button" class="link cf-again" @click="etat = 'idle'">Envoyer un autre message</button>
     </div>
 
@@ -71,11 +74,16 @@ async function envoyer(e: Event) {
         </div>
       </div>
 
+      <div class="field">
+        <label for="cf-site-actuel">Votre site actuel <small>(facultatif)</small></label>
+        <input id="cf-site-actuel" name="site_actuel" type="text" inputmode="url" autocomplete="url" maxlength="300" placeholder="www.monsite.fr, ou rien si vous n’en avez pas encore">
+      </div>
+
       <fieldset class="field">
-        <legend>Votre projet</legend>
+        <legend>Votre demande</legend>
         <div class="choices">
-          <label v-for="(p, i) in projets" :key="p" class="choice">
-            <input type="radio" name="projet" :value="p" :checked="i === 0">
+          <label v-for="p in projets" :key="p" class="choice">
+            <input type="radio" name="projet" :value="p" :checked="p === props.projet">
             <span>{{ p }}</span>
           </label>
         </div>

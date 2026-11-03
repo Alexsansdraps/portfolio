@@ -39,7 +39,7 @@ export const services: Service[] = [
       'Un design unique, à votre image (pas un modèle tout fait)',
       'Parfaitement lisible sur téléphone, tablette et ordinateur',
       'Formulaire de contact ou de devis qui arrive dans votre boîte mail',
-      'Référencement local : être trouvé par les clients de votre secteur',
+      'Référencement naturel : être trouvé sur Google par les clients de votre secteur',
       'Mise en ligne, nom de domaine et adresse e-mail professionnelle',
     ],
     project: 'la-chance-animation',
@@ -57,6 +57,20 @@ export const services: Service[] = [
       'Un espace d’administration simple pour tout gérer',
     ],
     project: 'memoryline',
+  },
+  {
+    id: 'referencement',
+    title: 'Référencement naturel (SEO)',
+    short: 'Être trouvé sur Google par les bons clients : audit, optimisation de votre site, fiche Google et suivi des résultats.',
+    long: 'Un beau site que personne ne trouve ne sert à rien. Le référencement (SEO), c’est tout ce qui aide Google à comprendre ce que vous faites et pour qui, afin de vous montrer aux bonnes personnes. Je l’applique à chaque site que je crée, et je peux aussi améliorer un site existant, quel qu’il soit.',
+    includes: [
+      'Audit de votre visibilité actuelle, offert',
+      'Titres et textes pensés pour les recherches de vos clients',
+      'Site rapide et parfaitement adapté au téléphone',
+      'Fiche Google (Google Business Profile) : horaires, photos, avis',
+      'Suivi des positions et des visites, expliqué simplement',
+    ],
+    project: 'la-chance-animation',
   },
   {
     id: 'refonte',
@@ -109,8 +123,8 @@ export const reasons = [
     d: 'Vous pouvez modifier vos textes, prix et photos vous-même. Votre site, votre nom de domaine et vos contenus vous appartiennent.',
   },
   {
-    t: 'Une agence d’ici',
-    d: 'Basée à Mulhouse, je me déplace chez vous dans toute l’Alsace : rendez-vous, points d’avancement, prise en main du site. Et tout peut aussi se faire à distance.',
+    t: 'Ancrée en Alsace, ouverte au monde',
+    d: 'Basée à Mulhouse, je me déplace chez vous partout en Alsace. Vous êtes ailleurs en France ou à l’étranger ? On travaille à distance, avec le même suivi.',
   },
   {
     t: `${new Date().getFullYear() - 2019} ans de métier`,
@@ -119,7 +133,7 @@ export const reasons = [
 ]
 
 export const steps = [
-  { t: 'On échange', d: '30 minutes, gratuites et sans engagement, pour comprendre votre activité et votre besoin. Je me déplace chez vous, ou on se parle en visio.' },
+  { t: 'On échange', d: '30 minutes, gratuites et sans engagement, pour comprendre votre activité et votre besoin. Chez vous autour d’un café (ou d’un bretzel), ou en visio.' },
   { t: 'Je vous propose un devis clair', d: 'Ce qui sera fait, dans quel délai et pour quel prix. Pas de mauvaise surprise ensuite.' },
   { t: 'Je conçois et je construis', d: 'Je vous montre l’avancement régulièrement, vous donnez votre avis, j’ajuste.' },
   { t: 'Mise en ligne et suivi', d: 'Je mets votre site en ligne, je vous apprends à vous en servir, et je reste disponible ensuite.' },
@@ -133,12 +147,16 @@ export const faq: Faq[] = [
     a: 'Tout dépend du projet : un site vitrine de quelques pages n’a rien à voir avec une boutique en ligne. Après un premier échange gratuit, je vous envoie un devis détaillé : vous savez exactement ce que vous payez, et pourquoi.',
   },
   {
+    q: 'Votre audit est-il vraiment gratuit ?',
+    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, je fais le point et je vous remets un compte rendu clair avec les priorités. Vous en faites ce que vous voulez, avec moi ou sans moi.',
+  },
+  {
     q: 'Combien de temps faut-il pour créer mon site ?',
     a: 'Cela dépend de la taille du projet et du temps nécessaire pour réunir vos contenus (textes, photos). Le planning est fixé ensemble dans le devis, et vous suivez l’avancement à chaque étape.',
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est ce qu’utilise La Chance Animation pour mettre à jour ses formules et ses avis clients.',
+    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques.',
   },
   {
     q: 'Mon site sera-t-il bien référencé sur Google ?',
@@ -146,17 +164,40 @@ export const faq: Faq[] = [
   },
   {
     q: 'Je suis sur Wix ou Shopify, est-ce que je peux changer ?',
-    a: 'Oui, c’est même ce que j’ai fait pour La Chance Animation (Wix) et MemoryLine (Shopify). Je reprends vos contenus, je m’occupe du nom de domaine et des redirections, et vous ne payez plus d’abonnement inutile.',
+    a: 'Oui. Je reprends vos contenus, je m’occupe du nom de domaine et des redirections pour garder votre référencement, et vous ne payez plus d’abonnement inutile.',
   },
   {
-    q: 'Vous intervenez où ?',
-    a: 'Je suis basée à Mulhouse et je travaille avec les entreprises de tout le Haut-Rhin et du Bas-Rhin : Mulhouse, Colmar, Strasbourg, Guebwiller, Saint-Louis, Thann, Altkirch, Sélestat… Je me déplace chez vous pour vous rencontrer, et tout peut aussi se faire à distance.',
+    q: 'Vous travaillez avec qui, et où ?',
+    a: 'Avec des entreprises de partout : en Alsace, ailleurs en France et à l’étranger. Je suis basée à Mulhouse et, en Alsace, je me déplace volontiers pour parler de votre projet (Mulhouse, Colmar, Strasbourg, Guebwiller, Saint-Louis, Thann, Altkirch, Sélestat…). Partout ailleurs, tout se fait très bien à distance, en visio.',
   },
   {
     q: 'Et une fois le site en ligne ?',
     a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
   },
 ]
+
+/** Audit gratuit : page /audit-gratuit et encart de l'accueil. */
+export const audit = {
+  cases: [
+    { t: 'Vous avez un site', d: 'J’analyse sa vitesse, son affichage sur téléphone, son référencement Google et tout ce qui freine vos clients avant qu’ils vous contactent.' },
+    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel, boutique en ligne : je regarde comment vous travaillez et où vous perdez du temps (ressaisies, tâches répétitives, outils qui ne se parlent pas).' },
+    { t: 'Vous n’avez pas encore de site', d: 'On fait le point sur votre situation : comment vos clients vous trouvent aujourd’hui, ce que font vos concurrents, et ce dont vous avez vraiment besoin pour démarrer.' },
+  ],
+  checks: [
+    'Votre visibilité sur Google : sur quelles recherches vous apparaissez, et à quelle place',
+    'La vitesse de chargement et l’affichage sur téléphone',
+    'Les titres et les textes : Google comprend-il ce que vous faites, et pour qui ?',
+    'Votre fiche Google : horaires, photos, avis',
+    'Les erreurs techniques qui freinent votre référencement',
+    'Le parcours de vos clients : est-ce simple de vous contacter, de commander, de demander un devis ?',
+  ],
+  gets: [
+    'Un compte rendu clair, sans jargon',
+    'Les 3 à 5 priorités, classées par impact',
+    'Ce que vous pouvez faire vous-même, tout de suite',
+    'Aucun engagement : vous en faites ce que vous voulez',
+  ],
+}
 
 /**
  * Zone d'intervention — positions calculées depuis les coordonnées GPS

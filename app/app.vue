@@ -17,7 +17,7 @@ useJsonLd({
       '@id': `${siteUrl}/#agence`,
       'name': 'Alexandra Porhansl — Agence web',
       'alternateName': 'Alexandra Porhansl',
-      'description': 'Agence web freelance à Mulhouse : création de sites vitrines, boutiques en ligne, refontes et outils sur mesure pour les entreprises d’Alsace.',
+      'description': 'Agence web freelance basée à Mulhouse : création de sites vitrines, boutiques en ligne, référencement (SEO), refontes et outils sur mesure, en Alsace et à distance partout dans le monde. Audit gratuit.',
       'url': `${siteUrl}/`,
       'email': business.email,
       'image': `${siteUrl}/og/og.jpg`,
@@ -34,6 +34,7 @@ useJsonLd({
         { '@type': 'AdministrativeArea', 'name': 'Alsace' },
         { '@type': 'AdministrativeArea', 'name': 'Haut-Rhin' },
         { '@type': 'AdministrativeArea', 'name': 'Bas-Rhin' },
+        { '@type': 'Country', 'name': 'France' },
         { '@type': 'City', 'name': zone.home.name },
         ...zone.cities.map(c => ({ '@type': 'City', 'name': c.name })),
       ],
@@ -42,15 +43,27 @@ useJsonLd({
       'hasOfferCatalog': {
         '@type': 'OfferCatalog',
         'name': 'Création de sites internet',
-        'itemListElement': services.map(s => ({
-          '@type': 'Offer',
-          'itemOffered': {
-            '@type': 'Service',
-            'name': s.title,
-            'description': s.short,
-            'url': `${siteUrl}/services#${s.id}`,
+        'itemListElement': [
+          {
+            '@type': 'Offer',
+            'price': '0',
+            'priceCurrency': 'EUR',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'Audit gratuit de site web et de référencement',
+              'url': `${siteUrl}/audit-gratuit`,
+            },
           },
-        })),
+          ...services.map(s => ({
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': s.title,
+              'description': s.short,
+              'url': `${siteUrl}/services#${s.id}`,
+            },
+          })),
+        ],
       },
       'sameAs': [business.github],
     },

@@ -13,7 +13,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
             Agence web freelance basée à Mulhouse. Sites vitrines, boutiques en ligne et outils sur mesure
-            pour les entreprises du Haut-Rhin et du Bas-Rhin. Je me déplace chez vous.
+            pour les entreprises d’Alsace et d’ailleurs : je me déplace chez vous en Alsace, et je travaille
+            à distance partout dans le monde.
           </p>
           <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
         </div>
@@ -25,6 +26,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 
         <nav class="f-col" aria-label="Le site">
           <p class="f-h">L’agence</p>
+          <NuxtLink to="/audit-gratuit">Audit gratuit</NuxtLink>
           <NuxtLink to="/realisations">Réalisations</NuxtLink>
           <NuxtLink to="/parcours">Mon parcours</NuxtLink>
           <NuxtLink to="/contact">Contact &amp; devis</NuxtLink>
@@ -32,9 +34,10 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         </nav>
 
         <div class="f-col">
-          <p class="f-h">Zone d’intervention</p>
+          <p class="f-h">Où je travaille</p>
           <p class="f-zone">
-            Création de sites internet à {{ cities.join(', ') }}, et partout en Alsace.
+            Création de sites internet et référencement à {{ cities.join(', ') }}, partout en Alsace,
+            et à distance en France comme à l’étranger.
           </p>
         </div>
       </div>
@@ -44,7 +47,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         <span class="f-links">
           <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
           <span aria-hidden="true">·</span>
-          <span>Conçu et développé à Mulhouse</span>
+          <span>Conçu et développé à Mulhouse, entre Vosges et Rhin</span>
         </span>
       </div>
     </div>

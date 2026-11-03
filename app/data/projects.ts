@@ -5,7 +5,8 @@ import memorylineDesktop from '~/assets/img/realisations/memoryline-desktop.webp
 import memorylineMobile from '~/assets/img/realisations/memoryline-mobile.webp'
 import memorylineCatalogue from '~/assets/img/realisations/memoryline-catalogue.webp'
 
-export interface Shot { src: string, alt: string, w: number, h: number }
+/** theme : couleur de la barre d'état du téléphone (captures mobiles), selon le haut du site */
+export interface Shot { src: string, alt: string, w: number, h: number, theme?: 'light' | 'dark' }
 
 export interface Project {
   slug: string
@@ -72,7 +73,7 @@ export const projects: Project[] = [
       { v: '6', k: 'types de contenus que le gérant modifie seul' },
     ],
     cover: { src: lachanceDesktop, alt: 'Page d’accueil du site La Chance Animation : « Le casino s’invite à votre soirée », photo d’une table de blackjack', w: 1440, h: 900 },
-    mobile: { src: lachanceMobile, alt: 'Le site La Chance Animation sur téléphone', w: 600, h: 1200 },
+    mobile: { src: lachanceMobile, alt: 'Le site La Chance Animation sur téléphone', w: 600, h: 1200, theme: 'dark' },
     extra: { src: lachanceFormules, alt: 'Page Formules et tarifs du site La Chance Animation', w: 1440, h: 900 },
     tint: '#1a1210',
   },
@@ -83,7 +84,7 @@ export const projects: Project[] = [
     sector: 'Affiches personnalisées de villes et de paysages',
     kind: 'Boutique en ligne sur mesure',
     year: 2026,
-    status: 'Mise en ligne en cours',
+    status: 'En cours de développement',
     live: false,
     domain: 'memoryline.fr',
     url: null,
@@ -110,7 +111,7 @@ export const projects: Project[] = [
       { v: '2', k: 'canaux de vente : site et salons' },
     ],
     cover: { src: memorylineDesktop, alt: 'Configurateur d’affiche MemoryLine : aperçu de l’affiche « Mulhouse, Tour du Bollwerk » et choix des textes', w: 1440, h: 900 },
-    mobile: { src: memorylineMobile, alt: 'Le configurateur MemoryLine sur téléphone', w: 600, h: 1200 },
+    mobile: { src: memorylineMobile, alt: 'Le configurateur MemoryLine sur téléphone', w: 600, h: 1200, theme: 'light' },
     extra: { src: memorylineCatalogue, alt: 'Catalogue MemoryLine : affiches illustrées de Riquewihr', w: 1440, h: 900 },
     tint: '#1d3a8a',
   },

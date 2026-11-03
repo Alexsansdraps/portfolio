@@ -3,8 +3,8 @@ import { services, maintenance } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 usePageSeo({
-  title: 'Création de site internet en Alsace : vitrine, boutique, refonte',
-  description: 'Site vitrine, boutique en ligne, refonte de site Wix ou Shopify, outils sur mesure : les services de mon agence web à Mulhouse, pour les entreprises d’Alsace.',
+  title: 'Création de site internet et SEO en Alsace | Services',
+  description: 'Site vitrine, boutique en ligne, référencement (SEO), refonte de site Wix ou Shopify, outils sur mesure : les services de mon agence web à Mulhouse. Audit gratuit.',
   path: '/services',
 })
 
@@ -31,14 +31,25 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       <p class="eyebrow rise">Services</p>
       <h1 class="s-h1 rise d1">Un site qui travaille <em>pour votre entreprise.</em></h1>
       <p class="lead rise d2">
-        Création de site vitrine, boutique en ligne, refonte ou outil sur mesure : je m’occupe de tout,
-        du premier échange à la mise en ligne, pour les entreprises de Mulhouse et de toute l’Alsace.
+        Création de site vitrine, boutique en ligne, référencement, refonte ou outil sur mesure : je m’occupe de tout,
+        du premier échange à la mise en ligne, pour les entreprises d’Alsace, de toute la France et d’ailleurs.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
         <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
           <span>{{ String(i + 1).padStart(2, '0') }}</span>{{ s.title }}
         </a>
       </nav>
+    </section>
+
+    <section class="wrap s-audit" aria-label="Audit gratuit">
+      <div class="s-audit-in" data-reveal>
+        <div>
+          <p class="eyebrow">Pour commencer</p>
+          <p class="s-audit-t">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
+          <p class="s-audit-p">Je fais le point, je vous remets les priorités, sans engagement.</p>
+        </div>
+        <NuxtLink to="/audit-gratuit" class="btn">Mon audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+      </div>
     </section>
 
     <section v-for="(s, i) in list" :id="s.id" :key="s.id" class="s-block" :class="{ alt: i % 2 === 1 }" :aria-labelledby="`${s.id}-t`">
@@ -109,6 +120,13 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-toc a span { font-family: var(--font-mono); font-size: 11.5px; color: var(--color-wine); }
 .s-toc a:hover { border-color: var(--color-wine); background: #fff; }
 
+.s-audit { padding-bottom: clamp(40px, 6vw, 72px); }
+.s-audit-in {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
+  padding: clamp(24px, 3.5vw, 40px); border-radius: 24px; background: var(--color-blush);
+}
+.s-audit-t { margin-top: 10px; font-weight: 760; font-stretch: 110%; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.015em; max-width: 30ch; }
+.s-audit-p { margin-top: 8px; color: var(--color-graphite); }
 .s-block { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--color-line); }
 .s-block.alt { background: var(--color-sand); }
 .s-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: start; }

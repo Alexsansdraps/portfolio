@@ -3,6 +3,7 @@ const nav = [
   { to: '/services', label: 'Services' },
   { to: '/realisations', label: 'Réalisations' },
   { to: '/parcours', label: 'Mon parcours' },
+  { to: '/audit-gratuit', label: 'Audit gratuit', hot: true },
 ]
 
 const open = ref(false)
@@ -28,7 +29,7 @@ onMounted(() => {
       </NuxtLink>
 
       <nav class="nav" aria-label="Navigation principale">
-        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link">{{ n.label }}</NuxtLink>
+        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link" :class="{ hot: n.hot }">{{ n.label }}</NuxtLink>
         <NuxtLink to="/contact" class="btn nav-cta">Demander un devis</NuxtLink>
       </nav>
 
@@ -81,13 +82,18 @@ onMounted(() => {
   transition: transform .25s;
 }
 .nav-link:hover::after, .nav-link.router-link-active::after { transform: scaleX(1); }
+.nav-link.hot { color: var(--color-wine); font-weight: 650; }
+.nav-link.hot::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; vertical-align: 2px;
+  border-radius: 50%; background: var(--color-wine);
+}
 .nav-cta { padding: 11px 20px; font-size: 15px; }
 
 .burger { display: none; }
 .m-nav { display: none; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
   .nav { display: none; }
   .burger {
     display: grid; place-items: center;

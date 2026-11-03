@@ -11,6 +11,7 @@ const CHAMPS = [
   ['nom', 'Nom', 120, true],
   ['email', 'E-mail', 160, true],
   ['entreprise', 'Entreprise', 160, false],
+  ['site_actuel', 'Site actuel', 300, false],
   ['telephone', 'Téléphone', 40, false],
   ['projet', 'Type de projet', 80, false],
   ['message', 'Message', 5000, true],

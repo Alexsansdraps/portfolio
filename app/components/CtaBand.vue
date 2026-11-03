@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string, text?: string }>(), {
-  title: 'Un projet de site ? Parlons-en.',
-  text: '30 minutes chez vous, en visio ou au téléphone, gratuites et sans engagement : je me déplace partout en Alsace. Dites-moi ce dont vous avez besoin, je vous dis ce qui est possible.',
+  title: 'Un projet de site ? Hopla, on en parle !',
+  text: '30 minutes chez vous en Alsace, ou en visio où que vous soyez, gratuites et sans engagement. Dites-moi ce dont vous avez besoin, je vous dis ce qui est possible.',
 })
 </script>
 
@@ -15,7 +15,8 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
         </div>
         <div class="cta-actions">
           <NuxtLink to="/contact" class="btn cta-btn">Demander un devis gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
-          <p class="cta-note">Je réponds en général dans la journée.</p>
+          <NuxtLink to="/audit-gratuit" class="cta-alt">ou commencer par un audit gratuit →</NuxtLink>
+          <p class="cta-note">Je vous réponds sous 24 h.</p>
         </div>
       </div>
     </div>
@@ -43,6 +44,8 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
 .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; position: relative; z-index: 1; }
 .cta-btn { background: #fff; color: var(--color-wine-deep); border-color: #fff; }
 .cta-btn:hover { background: var(--color-plum); color: #fff; border-color: var(--color-plum); }
+.cta-alt { color: #fff; font-weight: 620; text-decoration: underline; text-underline-offset: 4px; }
+.cta-alt:hover { text-decoration-thickness: 2px; }
 .cta-note { font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: rgb(255 255 255 / .8); }
 .cta-in :focus-visible { outline-color: #fff; }
 @media (max-width: 860px) { .cta-in { grid-template-columns: 1fr; align-items: start; } }
