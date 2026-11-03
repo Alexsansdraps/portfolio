@@ -29,7 +29,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
           <NuxtLink to="/audit-gratuit">Audit gratuit</NuxtLink>
           <NuxtLink to="/realisations">Réalisations</NuxtLink>
           <NuxtLink to="/parcours">Mon parcours</NuxtLink>
-          <NuxtLink to="/contact">Contact &amp; devis</NuxtLink>
+          <NuxtLink to="/contact">Contact</NuxtLink>
           <a :href="`mailto:${business.email}`">{{ business.email }}</a>
         </nav>
 

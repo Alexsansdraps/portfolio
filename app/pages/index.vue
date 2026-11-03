@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services, reasons, maintenance, zone, audit } from '~/data/site'
+import { services, reasons, maintenance, audit } from '~/data/site'
 import { projects } from '~/data/projects'
 import portrait from '~/assets/img/portrait.webp'
 
@@ -11,7 +11,6 @@ usePageSeo({
 
 const [lachance, memoryline] = projects
 const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Outils sur mesure', 'Fait main en Alsace']
-const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 </script>
 
 <template>
@@ -52,7 +51,6 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         <div class="hv hv-phone" data-depth="0.24">
           <PhoneFrame v-bind="memoryline!.mobile" />
         </div>
-        <span class="hv-tag t1">La Chance Animation · Guebwiller</span>
       </div>
     </section>
 
@@ -70,8 +68,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
       <div class="wrap">
         <div class="sec-head" data-reveal>
           <p class="eyebrow">Réalisations</p>
-          <h2 id="real-title" class="h2">Deux entreprises d’Alsace, <em>deux sites sur mesure.</em></h2>
-          <p class="lead">Pas de modèle tout fait : chaque site est dessiné pour l’activité de mon client et pour ses propres clients.</p>
+          <h2 id="real-title" class="h2">Mes derniers projets</h2>
+          <p class="lead">Deux sites que j’ai conçus et développés cette année, pour une entreprise d’animation et une boutique d’affiches personnalisées.</p>
         </div>
         <div class="projects">
           <ProjectCard v-for="(p, i) in projects" :key="p.slug" :project="p" :flip="i % 2 === 1" />
@@ -84,10 +82,10 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
       <div class="wrap">
         <div class="sec-head" data-reveal>
           <p class="eyebrow">Audit gratuit</p>
-          <h2 id="audit-title" class="h2">Votre site est-il <em>bien trouvé sur Google ?</em></h2>
+          <h2 id="audit-title" class="h2">Votre site est-il bien trouvé sur&nbsp;Google&nbsp;?</h2>
           <p class="lead">
-            Je fais le point gratuitement et sans engagement, et je vous dis concrètement quoi améliorer.
-            Que vous ayez un site, un logiciel… ou rien du tout pour l’instant.
+            Je vous propose un audit gratuit : je regarde votre site (ou vos outils, ou votre présence en ligne si
+            vous n’avez pas encore de site) et je vous dis ce que je changerais en priorité. Vous n’êtes engagé à rien.
           </p>
         </div>
         <div class="audit-cases">
@@ -99,7 +97,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         </div>
         <div class="audit-cta" data-reveal>
           <NuxtLink to="/audit-gratuit" class="btn">Demander mon audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
-          <p>Compte rendu clair · priorités classées · zéro engagement</p>
+          <p>Gratuit et sans engagement</p>
         </div>
       </div>
     </section>
@@ -108,7 +106,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
     <section id="services" class="section wrap" aria-labelledby="svc-title">
       <div class="sec-head" data-reveal>
         <p class="eyebrow">Services</p>
-        <h2 id="svc-title" class="h2">Ce que je fais <em>pour vous.</em></h2>
+        <h2 id="svc-title" class="h2">Ce que je fais</h2>
       </div>
       <div class="svc-grid">
         <NuxtLink v-for="(s, i) in services" :key="s.id" :to="`/services#${s.id}`" class="svc" data-reveal>
@@ -125,8 +123,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
     <section class="section why-sec" aria-labelledby="why-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Pourquoi moi</p>
-          <h2 id="why-title" class="h2">Le sérieux d’une agence, <em>la proximité d’une freelance.</em></h2>
+          <p class="eyebrow">L’agence</p>
+          <h2 id="why-title" class="h2">Pourquoi travailler avec moi</h2>
         </div>
         <div class="why">
           <div v-for="r in reasons" :key="r.t" class="why-item" data-reveal>
@@ -141,7 +139,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
     <section class="section wrap" aria-labelledby="method-title">
       <div class="sec-head" data-reveal>
         <p class="eyebrow">Comment ça se passe</p>
-        <h2 id="method-title" class="h2">Quatre étapes, <em>zéro jargon.</em></h2>
+        <h2 id="method-title" class="h2">Comment on travaille ensemble</h2>
       </div>
       <MethodSteps />
     </section>
@@ -151,18 +149,11 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
       <div class="wrap zone">
         <div class="zone-txt" data-reveal>
           <p class="eyebrow">Où je travaille</p>
-          <h2 id="zone-title" class="h2">Ancrée en Alsace, <em>ouverte au monde.</em></h2>
+          <h2 id="zone-title" class="h2">Je suis basée à Mulhouse</h2>
           <p class="lead">
-            Basée à Mulhouse, je viens vous voir pour parler de votre projet, vous montrer l’avancement
-            ou vous apprendre à utiliser votre site. Entre Vosges et Rhin, voici où je me déplace le plus souvent :
-          </p>
-          <ul class="zone-chips">
-            <li v-for="c in cities" :key="c" class="chip">{{ c }}</li>
-            <li class="chip chip-open">et ailleurs !</li>
-          </ul>
-          <p class="zone-note">
-            <strong>Et je travaille avec le monde entier.</strong> Vous êtes à Paris, à Bruxelles ou à l’autre bout
-            de la planète ? On avance ensemble en visio, aussi simplement qu’en face à face.
+            Je me déplace volontiers en Alsace pour rencontrer mes clients, de Saint-Louis à Haguenau, en passant
+            par Colmar et Strasbourg. Pour les clients plus loin, en France ou à l’étranger, on fait tout en visio,
+            et ça marche très bien.
           </p>
         </div>
         <div class="zone-map" data-reveal>
@@ -185,9 +176,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
           et des applications mobiles.
         </p>
         <p class="about-p">
-          Ce que j’en retiens : le plus difficile n’est pas de construire le site, c’est de bien comprendre ce dont
-          vous avez besoin. Alors je commence toujours par vous écouter, et je vous explique chaque choix
-          avec des mots simples.
+          Pour moi, le plus important se passe avant de commencer : comprendre comment vous travaillez et ce que
+          vos clients cherchent. Je prends le temps de vous écouter, et je vous explique mes choix simplement.
         </p>
         <NuxtLink to="/parcours" class="link">Découvrir mon parcours →</NuxtLink>
       </div>
@@ -196,8 +186,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
     <!-- FAQ -->
     <section class="section wrap faq-sec" aria-labelledby="faq-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Questions fréquentes</p>
-        <h2 id="faq-title" class="h2">Vous vous demandez <em>sûrement…</em></h2>
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title" class="h2">Questions fréquentes</h2>
       </div>
       <FaqList />
     </section>
@@ -242,13 +232,6 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 .hv-back { top: 0; right: 0; width: 78%; transform: rotate(2.5deg); opacity: .96; }
 .hv-front { left: 0; top: 30%; width: 82%; transform: rotate(-2deg); }
 .hv-phone { right: 2%; bottom: -2%; width: 22%; transform: rotate(4deg); }
-.hv-tag {
-  position: absolute; z-index: 2;
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .03em;
-  background: var(--color-ink); color: var(--color-paper);
-  padding: 7px 12px; border-radius: 999px; white-space: nowrap;
-}
-.hv-tag.t1 { left: 4%; bottom: 4%; }
 
 /* ---------- bandeau défilant ---------- */
 .ticker {
@@ -318,10 +301,6 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 .zone { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .zone-txt .h2 { margin-top: 18px; }
 .zone-txt .lead { margin-top: 20px; }
-.zone-chips { list-style: none; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-.chip-open { background: var(--color-wine); border-color: var(--color-wine); color: #fff; }
-.zone-note { margin-top: 22px; max-width: 54ch; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
-.zone-note strong { color: var(--color-wine-deep); }
 .zone-map { max-width: 460px; justify-self: center; width: 100%; }
 
 /* ---------- à propos ---------- */
@@ -344,6 +323,5 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
 }
 @media (max-width: 640px) {
   .svc-grid, .why { grid-template-columns: 1fr; }
-  .hv-tag { font-size: 10px; padding: 5px 9px; }
 }
 </style>

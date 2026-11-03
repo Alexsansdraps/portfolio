@@ -30,7 +30,7 @@ onMounted(() => {
 
       <nav class="nav" aria-label="Navigation principale">
         <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link" :class="{ hot: n.hot }">{{ n.label }}</NuxtLink>
-        <NuxtLink to="/contact" class="btn nav-cta">Demander un devis</NuxtLink>
+        <NuxtLink to="/contact" class="btn nav-cta">Parlons de votre projet</NuxtLink>
       </nav>
 
       <button
@@ -47,7 +47,7 @@ onMounted(() => {
       <div class="wrap">
         <NuxtLink to="/" class="m-link">Accueil</NuxtLink>
         <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="m-link">{{ n.label }}</NuxtLink>
-        <NuxtLink to="/contact" class="btn m-cta">Demander un devis <span class="arr" aria-hidden="true">→</span></NuxtLink>
+        <NuxtLink to="/contact" class="btn m-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
       </div>
     </nav>
   </header>

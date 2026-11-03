@@ -81,8 +81,8 @@ useJsonLd([
     <section class="on-dark section" aria-labelledby="done-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Ce que j’ai réalisé</p>
-          <h2 id="done-title" class="h2">Du premier échange <em>à la mise en ligne.</em></h2>
+          <p class="eyebrow">Le projet</p>
+          <h2 id="done-title" class="h2">Ce que j’ai fait</h2>
         </div>
         <ol class="cs-done">
           <li v-for="(d, i) in p.done" :key="i" data-reveal>

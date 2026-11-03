@@ -34,7 +34,7 @@ export const services: Service[] = [
     id: 'site-vitrine',
     title: 'Site vitrine',
     short: 'Présentez votre activité, rassurez vos clients et recevez des demandes directement dans votre boîte mail.',
-    long: 'Votre site est souvent le premier contact avec un client. Je le conçois pour qu’il donne confiance en quelques secondes, qu’il se lise parfaitement sur téléphone, et qu’il pousse à vous contacter.',
+    long: 'Votre site est souvent la première chose que vos clients voient de vous. Je le conçois pour qu’il présente clairement votre activité, qu’il soit agréable à lire sur téléphone, et qu’on ait envie de vous contacter.',
     includes: [
       'Un design unique, à votre image (pas un modèle tout fait)',
       'Parfaitement lisible sur téléphone, tablette et ordinateur',
@@ -48,7 +48,7 @@ export const services: Service[] = [
     id: 'boutique-en-ligne',
     title: 'Boutique en ligne',
     short: 'Vendez vos produits en ligne avec une boutique pensée pour eux, paiement sécurisé compris.',
-    long: 'Une boutique taillée pour vos produits plutôt qu’une plateforme qui vous impose ses limites. Personnalisation, paiement, livraisons, factures : tout est prévu pour vous faire gagner du temps au quotidien.',
+    long: 'Je crée des boutiques adaptées à vos produits, plutôt que de vous faire entrer dans une plateforme toute faite. Paiement, livraisons, factures, personnalisation : on prévoit ce dont vous avez besoin au quotidien.',
     includes: [
       'Paiement par carte bancaire et PayPal, directement sur votre site',
       'Produits personnalisables par vos clients, avec aperçu en direct',
@@ -62,7 +62,7 @@ export const services: Service[] = [
     id: 'referencement',
     title: 'Référencement naturel (SEO)',
     short: 'Être trouvé sur Google par les bons clients : audit, optimisation de votre site, fiche Google et suivi des résultats.',
-    long: 'Un beau site que personne ne trouve ne sert à rien. Le référencement (SEO), c’est tout ce qui aide Google à comprendre ce que vous faites et pour qui, afin de vous montrer aux bonnes personnes. Je l’applique à chaque site que je crée, et je peux aussi améliorer un site existant, quel qu’il soit.',
+    long: 'Le référencement naturel (SEO), c’est ce qui aide Google à comprendre ce que vous faites et à vous montrer aux personnes qui cherchent vos services. Je m’en occupe sur chaque site que je crée, et je peux aussi améliorer un site existant.',
     includes: [
       'Audit de votre visibilité actuelle, offert',
       'Titres et textes pensés pour les recherches de vos clients',
@@ -76,7 +76,7 @@ export const services: Service[] = [
     id: 'refonte',
     title: 'Refonte de site',
     short: 'Votre site a vieilli, ou vous voulez quitter Wix ou Shopify ? Je le reconstruis sans perdre votre place sur Google.',
-    long: 'Un site daté fait fuir les clients, et un abonnement Wix ou Shopify coûte cher pour ce qu’il offre. Je reprends vos contenus, je modernise tout, et je m’occupe de la transition pour que Google suive.',
+    long: 'Si votre site a pris un coup de vieux, ou si vous payez cher un abonnement Wix ou Shopify, je peux le refaire. Je reprends vos contenus et je m’occupe de la transition pour que vous ne perdiez pas votre place sur Google.',
     includes: [
       'Reprise et réécriture de vos contenus existants',
       'Anciennes adresses redirigées : vous gardez votre référencement',
@@ -89,7 +89,7 @@ export const services: Service[] = [
     id: 'outils-sur-mesure',
     title: 'Outils sur mesure',
     short: 'Espace client, réservation, tableau de bord : l’outil qui colle à votre façon de travailler.',
-    long: 'Vous jonglez avec des fichiers Excel qui ne se parlent pas, ou vous ressaisissez les mêmes informations d’un outil à l’autre ? Je construis l’outil qui fait ce travail à votre place, et j’intègre l’intelligence artificielle là où elle vous fait vraiment gagner du temps.',
+    long: 'Vous jonglez entre plusieurs fichiers Excel, ou vous saisissez les mêmes informations à plusieurs endroits ? Je peux développer un outil qui s’en charge, et utiliser l’IA quand elle vous fait vraiment gagner du temps.',
     includes: [
       'Espace d’administration pour modifier votre site vous-même',
       'Prise de rendez-vous, espace client, formulaires utiles',
@@ -102,41 +102,41 @@ export const services: Service[] = [
 
 export const maintenance = {
   title: 'Et après la mise en ligne ?',
-  text: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions, corrections. Vous n’êtes jamais seul face à votre site.',
+  text: 'Je reste là après la mise en ligne : hébergement, mises à jour, petites modifications. Si quelque chose ne va pas, vous savez qui appeler.',
 }
 
 export const reasons = [
   {
-    t: 'Une seule interlocutrice',
-    d: 'Vous parlez directement à la personne qui conçoit et construit votre site. Pas de chef de projet, pas d’intermédiaire, pas de message qui se perd.',
+    t: 'Vous me parlez directement',
+    d: 'C’est moi qui conçois et développe votre site, donc c’est avec moi que vous échangez du début à la fin. Il n’y a personne entre nous.',
   },
   {
-    t: 'Du sur mesure, pas un modèle',
-    d: 'Votre site est dessiné pour votre activité et vos clients. Il ne ressemble pas à celui de votre concurrent.',
+    t: 'Un site fait pour vous',
+    d: 'Je ne pars pas d’un thème acheté en ligne. Le design est pensé pour votre activité et pour vos clients.',
   },
   {
-    t: 'Pensé pour Google dès le départ',
-    d: 'Site rapide, adapté au téléphone, textes travaillés, informations claires pour les moteurs de recherche : le référencement fait partie du projet.',
+    t: 'Le référencement dès le départ',
+    d: 'Un site rapide, agréable sur téléphone, avec des textes qui parlent de ce que vous faites vraiment : c’est la base pour que Google vous montre.',
   },
   {
-    t: 'Vous gardez la main',
-    d: 'Vous pouvez modifier vos textes, prix et photos vous-même. Votre site, votre nom de domaine et vos contenus vous appartiennent.',
+    t: 'Tout vous appartient',
+    d: 'Le site, le nom de domaine et les contenus sont à vous. Et si vous voulez changer vos textes ou vos photos vous-même, je vous prévois un espace pour ça.',
   },
   {
-    t: 'Ancrée en Alsace, ouverte au monde',
-    d: 'Basée à Mulhouse, je me déplace chez vous partout en Alsace. Vous êtes ailleurs en France ou à l’étranger ? On travaille à distance, avec le même suivi.',
+    t: 'Basée à Mulhouse',
+    d: 'Je me déplace en Alsace pour rencontrer mes clients. Pour ceux qui sont plus loin, en France ou ailleurs, on travaille en visio.',
   },
   {
-    t: `${new Date().getFullYear() - 2019} ans de métier`,
-    d: 'Agence web, startup, éditeurs de logiciels : j’ai construit des sites, des boutiques et des applications mobiles avant de lancer mon agence.',
+    t: 'Je réponds vite',
+    d: 'Une question, un souci sur votre site ? Je vous réponds sous 24 h.',
   },
 ]
 
 export const steps = [
-  { t: 'On échange', d: '30 minutes, gratuites et sans engagement, pour comprendre votre activité et votre besoin. Chez vous autour d’un café (ou d’un bretzel), ou en visio.' },
-  { t: 'Je vous propose un devis clair', d: 'Ce qui sera fait, dans quel délai et pour quel prix. Pas de mauvaise surprise ensuite.' },
-  { t: 'Je conçois et je construis', d: 'Je vous montre l’avancement régulièrement, vous donnez votre avis, j’ajuste.' },
-  { t: 'Mise en ligne et suivi', d: 'Je mets votre site en ligne, je vous apprends à vous en servir, et je reste disponible ensuite.' },
+  { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. Chez vous si vous êtes en Alsace, sinon en visio. C’est gratuit.' },
+  { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
+  { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
+  { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
 ]
 
 export interface Faq { q: string, a: string }
@@ -201,19 +201,19 @@ export const audit = {
 
 /**
  * Zone d'intervention — positions calculées depuis les coordonnées GPS
- * (x = 40 + (lon − 6,85) × 240, y = 20 + (49,05 − lat) × 360), temps de route indicatifs depuis Mulhouse.
+ * (x = 40 + (lon − 6,85) × 240, y = 20 + (49,05 − lat) × 360).
  * side → côté de l'étiquette.
  */
 export const zone = {
   home: { name: 'Mulhouse', x: 157, y: 488 },
   cities: [
-    { name: 'Thann', x: 101, y: 468, time: '25 min', side: 'left' },
-    { name: 'Guebwiller', x: 126, y: 430, time: '25 min', side: 'left' },
-    { name: 'Altkirch', x: 134, y: 533, time: '25 min', side: 'left' },
-    { name: 'Saint-Louis', x: 210, y: 546, time: '30 min', side: 'right' },
-    { name: 'Colmar', x: 162, y: 370, time: '35 min', side: 'right' },
-    { name: 'Sélestat', x: 185, y: 305, time: '50 min', side: 'right' },
-    { name: 'Strasbourg', x: 257, y: 192, time: '1 h', side: 'right' },
-    { name: 'Haguenau', x: 265, y: 104, time: '1 h 20', side: 'right' },
+    { name: 'Thann', x: 101, y: 468, side: 'left' },
+    { name: 'Guebwiller', x: 126, y: 430, side: 'left' },
+    { name: 'Altkirch', x: 134, y: 533, side: 'left' },
+    { name: 'Saint-Louis', x: 210, y: 546, side: 'right' },
+    { name: 'Colmar', x: 162, y: 370, side: 'right' },
+    { name: 'Sélestat', x: 185, y: 305, side: 'right' },
+    { name: 'Strasbourg', x: 257, y: 192, side: 'right' },
+    { name: 'Haguenau', x: 265, y: 104, side: 'right' },
   ],
 } as const

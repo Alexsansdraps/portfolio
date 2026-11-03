@@ -2,7 +2,7 @@
 import { business, zone } from '~/data/site'
 
 usePageSeo({
-  title: 'Contact et devis gratuit | Agence web à Mulhouse, Alsace',
+  title: 'Contact : parlons de votre projet | Alexandra Porhansl',
   description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : audit et premier échange gratuits, réponse sous 24 h. Agence web basée à Mulhouse.',
   path: '/contact',
 })
@@ -56,7 +56,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
           <ol>
             <li>Je vous rappelle ou je vous réponds par e-mail.</li>
             <li>On échange 30 minutes sur votre besoin, chez vous ou en visio.</li>
-            <li>Je vous envoie un devis clair et détaillé.</li>
+            <li>Je vous envoie une proposition détaillée.</li>
           </ol>
         </div>
       </aside>

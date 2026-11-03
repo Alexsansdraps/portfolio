@@ -26,10 +26,10 @@ useJsonLd([
   <main>
     <section class="r-hero wrap">
       <p class="eyebrow rise">Réalisations</p>
-      <h1 class="r-h1 rise d1">Des sites sur mesure, <em>pour des entreprises d’ici.</em></h1>
+      <h1 class="r-h1 rise d1">Mes réalisations</h1>
       <p class="lead rise d2">
-        Chaque projet part de la même question : qu’est-ce qui fera venir vos clients&nbsp;? Voici ce que
-        j’ai construit pour deux entreprises alsaciennes.
+        Deux projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
+        et une boutique en ligne sur mesure pour des affiches personnalisées.
       </p>
     </section>
 

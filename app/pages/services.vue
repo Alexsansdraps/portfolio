@@ -29,10 +29,10 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
   <main>
     <section class="s-hero wrap">
       <p class="eyebrow rise">Services</p>
-      <h1 class="s-h1 rise d1">Un site qui travaille <em>pour votre entreprise.</em></h1>
+      <h1 class="s-h1 rise d1">Création de sites internet <em>et référencement</em></h1>
       <p class="lead rise d2">
-        Création de site vitrine, boutique en ligne, référencement, refonte ou outil sur mesure : je m’occupe de tout,
-        du premier échange à la mise en ligne, pour les entreprises d’Alsace, de toute la France et d’ailleurs.
+        Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure : voici ce que je fais,
+        et comment ça se passe. Pour des entreprises en Alsace, ailleurs en France ou à l’étranger.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
         <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
@@ -85,7 +85,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
     <section class="section wrap" aria-labelledby="m-title">
       <div class="sec-head" data-reveal>
         <p class="eyebrow">Comment ça se passe</p>
-        <h2 id="m-title" class="h2">Quatre étapes, <em>zéro jargon.</em></h2>
+        <h2 id="m-title" class="h2">Comment on travaille ensemble</h2>
       </div>
       <MethodSteps />
     </section>
@@ -93,7 +93,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
     <section class="section wrap faq-sec" aria-labelledby="f-title">
       <div class="sec-head" data-reveal>
         <p class="eyebrow">Questions fréquentes</p>
-        <h2 id="f-title" class="h2">Avant de vous lancer</h2>
+        <h2 id="f-title" class="h2">Questions fréquentes</h2>
       </div>
       <FaqList :schema="false" />
     </section>

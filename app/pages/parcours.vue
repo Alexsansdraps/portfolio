@@ -27,7 +27,7 @@ useJsonLd([
     <section class="p-hero wrap">
       <div class="p-hero-txt">
         <p class="eyebrow rise">Mon parcours</p>
-        <h1 class="p-h1 rise d1">{{ years }} ans de code, <em>de l’agence web à la mienne.</em></h1>
+        <h1 class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
         <p class="lead rise d2">
           J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
           de logiciels. Aujourd’hui je suis développeuse full-stack salariée et je mène en parallèle mon agence web en Alsace.
@@ -89,7 +89,7 @@ useJsonLd([
       <div class="wrap">
         <div class="sec-head" data-reveal>
           <p class="eyebrow">Côté technique</p>
-          <h2 id="stack-title" class="h2">Les outils <em>que je maîtrise.</em></h2>
+          <h2 id="stack-title" class="h2">Les outils que j’utilise</h2>
         </div>
         <div class="st-rows">
           <div v-for="g in stack" :key="g.label" class="st-row" data-reveal>
@@ -106,7 +106,7 @@ useJsonLd([
     <section class="section wrap" aria-labelledby="how-title">
       <div class="sec-head" data-reveal>
         <p class="eyebrow">Ma façon de travailler</p>
-        <h2 id="how-title" class="h2">Écouter, concevoir, <em>développer, livrer.</em></h2>
+        <h2 id="how-title" class="h2">Comment je travaille</h2>
       </div>
       <div class="how">
         <div class="how-item" data-reveal>

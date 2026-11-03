@@ -74,7 +74,7 @@ const steps = [
       <div class="wrap">
         <div class="sec-head" data-reveal>
           <p class="eyebrow">Comment ça se passe</p>
-          <h2 id="a-how" class="h2">Trois étapes, <em>c’est tout.</em></h2>
+          <h2 id="a-how" class="h2">Comment ça marche</h2>
         </div>
         <ol class="a-steps">
           <li v-for="(s, i) in steps" :key="s.t" data-reveal>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string, text?: string }>(), {
   title: 'Un projet de site ? Hopla, on en parle !',
-  text: '30 minutes chez vous en Alsace, ou en visio où que vous soyez, gratuites et sans engagement. Dites-moi ce dont vous avez besoin, je vous dis ce qui est possible.',
+  text: 'Racontez-moi ce que vous avez en tête. On peut se voir si vous êtes en Alsace, ou s’appeler en visio. Le premier échange est gratuit.',
 })
 </script>
 
@@ -14,7 +14,7 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
           <p class="cta-p">{{ text }}</p>
         </div>
         <div class="cta-actions">
-          <NuxtLink to="/contact" class="btn cta-btn">Demander un devis gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <NuxtLink to="/contact" class="btn cta-btn">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
           <NuxtLink to="/audit-gratuit" class="cta-alt">ou commencer par un audit gratuit →</NuxtLink>
           <p class="cta-note">Je vous réponds sous 24 h.</p>
         </div>

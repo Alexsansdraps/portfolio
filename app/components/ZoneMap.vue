@@ -2,7 +2,7 @@
 import { zone } from '~/data/site'
 
 const { home, cities } = zone
-const aria = `Carte de l’Alsace : depuis Mulhouse, ${cities.map(c => `${c.name} ${c.time}`).join(', ')}`
+const aria = `Carte de l’Alsace : depuis Mulhouse, je me déplace notamment à ${cities.map(c => c.name).join(', ')}`
 
 /* Le Rhin, de Bâle à Lauterbourg (mêmes coordonnées projetées que les villes) */
 const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 320, 234 290 S 255 220, 268 189 S 300 140, 328 110 S 360 70, 371 49'
@@ -31,8 +31,7 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
 
     <g v-for="c in cities" :key="`c-${c.name}`" class="city">
       <circle :cx="c.x" :cy="c.y" r="4" />
-      <text class="c-name" :x="c.x + (c.side === 'left' ? -10 : 10)" :y="c.y - 1" :text-anchor="c.side === 'left' ? 'end' : 'start'">{{ c.name }}</text>
-      <text class="c-time" :x="c.x + (c.side === 'left' ? -10 : 10)" :y="c.y + 12" :text-anchor="c.side === 'left' ? 'end' : 'start'">{{ c.time }}</text>
+      <text class="c-name" :x="c.x + (c.side === 'left' ? -10 : 10)" :y="c.y + 4" :text-anchor="c.side === 'left' ? 'end' : 'start'">{{ c.name }}</text>
     </g>
 
     <g class="home">
