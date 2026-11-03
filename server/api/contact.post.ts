@@ -27,10 +27,11 @@ interface CloudflareEnv {
 export default defineEventHandler(async (event) => {
   // Avec JS, le formulaire attend du JSON ; sans JS, une redirection vers /contact/merci ou /contact?erreur=1.
   const enJson = (getHeader(event, 'accept') || '').includes('application/json')
-  const repondre = (ok: boolean, message: string, statut: number) => {
+  // detail : message d'erreur de Cloudflare, pour le diagnostic (le formulaire n'affiche que message)
+  const repondre = (ok: boolean, message: string, statut: number, detail?: string) => {
     if (!enJson) return sendRedirect(event, ok ? '/contact/merci' : '/contact?erreur=1#formulaire', 303)
     setResponseStatus(event, statut)
-    return { ok, message }
+    return detail ? { ok, message, detail } : { ok, message }
   }
 
   // Un navigateur envoie toujours son Origin sur un POST : on refuse les envois depuis un autre site.
@@ -99,7 +100,7 @@ export default defineEventHandler(async (event) => {
   }
   catch (err) {
     console.error('[contact] envoi impossible :', (err as Error)?.message)
-    return repondre(false, 'L’envoi a échoué.', 502)
+    return repondre(false, 'L’envoi a échoué.', 502, (err as Error)?.message)
   }
   return repondre(true, 'Message envoyé.', 200)
 })
