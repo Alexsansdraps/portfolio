@@ -111,10 +111,13 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           <span class="svc-num">{{ String(i + 1).padStart(2, '0') }}</span>
           <h3>{{ s.title }}</h3>
           <p>{{ s.short }}</p>
-          <span class="svc-more">En savoir plus <span class="arr" aria-hidden="true">→</span></span>
+          <span class="svc-foot">
+            <span class="svc-price">{{ s.price }}</span>
+            <span class="svc-more">En savoir plus <span class="arr" aria-hidden="true">→</span></span>
+          </span>
         </NuxtLink>
       </div>
-      <p class="svc-after" data-reveal><strong>{{ maintenance.title }}</strong> {{ maintenance.text }}</p>
+      <p class="svc-after" data-reveal><strong>{{ maintenance.title }}</strong> {{ maintenance.text }} {{ maintenance.price }}</p>
     </section>
 
     <!-- POURQUOI -->
@@ -276,7 +279,12 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 .svc-num { font-family: var(--font-mono); font-size: 13px; color: var(--color-wine); }
 .svc h3 { margin-top: 18px; font-weight: 760; font-stretch: 112%; font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -.015em; line-height: 1.1; }
 .svc p { margin-top: 12px; color: var(--color-graphite); font-size: 16.5px; line-height: 1.6; flex: 1; }
-.svc-more { margin-top: 22px; font-weight: 650; color: var(--color-wine); }
+.svc-foot {
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--color-line);
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px;
+}
+.svc-price { font-weight: 720; font-stretch: 106%; font-size: 16.5px; color: var(--color-ink); }
+.svc-more { font-weight: 650; color: var(--color-wine); }
 .svc-more .arr { display: inline-block; transition: transform .2s; }
 .svc:hover .svc-more .arr { transform: translateX(4px); }
 .svc-after {

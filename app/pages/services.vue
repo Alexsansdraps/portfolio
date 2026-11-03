@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { services, maintenance } from '~/data/site'
+import { services, maintenance, priceNote } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 usePageSeo({
-  title: 'Création de site internet et SEO en Alsace | Services',
-  description: 'Site vitrine, boutique en ligne, référencement (SEO), refonte de site Wix ou Shopify, outils sur mesure : les services de mon agence web à Mulhouse. Audit gratuit.',
+  title: 'Création de site et SEO en Alsace | Services et tarifs',
+  description: 'Site vitrine dès 990 €, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
   path: '/services',
 })
 
@@ -32,7 +32,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       <h1 class="s-h1 rise d1">Création de sites internet <em>et référencement</em></h1>
       <p class="lead rise d2">
         Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure : voici ce que je fais,
-        et comment ça se passe.
+        combien ça coûte, et comment ça se passe.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
         <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
@@ -58,6 +58,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
           <span class="s-num">{{ String(i + 1).padStart(2, '0') }}</span>
           <h2 :id="`${s.id}-t`" class="h2">{{ s.title }}</h2>
           <p class="lead">{{ s.long }}</p>
+          <PriceList :prices="s.prices" :note="priceNote" />
           <NuxtLink to="/contact" class="btn s-cta">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
         </div>
         <div class="s-side" data-reveal>
@@ -77,9 +78,12 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       </div>
     </section>
 
-    <section class="wrap s-maint" data-reveal>
-      <h2 class="h2">{{ maintenance.title }}</h2>
-      <p class="lead">{{ maintenance.text }}</p>
+    <section id="maintenance" class="wrap s-maint" data-reveal>
+      <div>
+        <h2 class="h2">{{ maintenance.title }}</h2>
+        <p class="lead">{{ maintenance.text }}</p>
+      </div>
+      <PriceList :prices="maintenance.prices" :note="priceNote" />
     </section>
 
     <section class="section wrap" aria-labelledby="m-title">
@@ -159,9 +163,11 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-maint {
   margin-top: clamp(48px, 7vw, 88px);
   padding: clamp(28px, 4vw, 48px); border-radius: 24px; background: var(--color-blush);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center;
 }
 .s-maint .lead { margin-top: 12px; color: var(--color-ink); }
+.s-maint .pl { margin-top: 0; }
 .faq-sec { padding-bottom: clamp(24px, 4vw, 48px); }
 
-@media (max-width: 900px) { .s-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .s-grid, .s-maint { grid-template-columns: 1fr; } }
 </style>

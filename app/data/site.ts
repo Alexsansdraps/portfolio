@@ -26,6 +26,15 @@ export const business = {
   },
 }
 
+/** Une ligne de tarif de la page Services. Grille validée par Alexandra (base 400 € HT / jour). */
+export interface Price {
+  label: string
+  value: string
+}
+
+/** Sous chaque grille de prix. */
+export const priceNote = 'Prix hors taxes. Le devis fixe le prix exact, selon votre projet.'
+
 export interface Service {
   id: string
   title: string
@@ -34,6 +43,12 @@ export interface Service {
   /** paragraphe de la page Services */
   long: string
   includes: string[]
+  /** prix résumé, sur les cartes de l'accueil */
+  price: string
+  /** prix plancher en € HT, pour les données structurées */
+  minPrice?: number
+  /** détail des prix, page Services */
+  prices: Price[]
   /** réalisation qui l'illustre */
   project?: string
 }
@@ -51,6 +66,13 @@ export const services: Service[] = [
       'Référencement naturel : être trouvé sur Google par les clients de votre secteur',
       'Mise en ligne, nom de domaine et adresse e-mail professionnelle',
     ],
+    price: 'À partir de 990 € HT',
+    minPrice: 990,
+    prices: [
+      { label: 'Site d’une page', value: 'à partir de 990 €' },
+      { label: 'Site de 5 à 7 pages', value: 'à partir de 1 990 €' },
+      { label: 'Option : modifier vos textes et photos vous-même', value: '+ 490 €' },
+    ],
     project: 'la-chance-animation',
   },
   {
@@ -64,6 +86,11 @@ export const services: Service[] = [
       'Suivi des commandes, livraisons, factures et promotions',
       'Ventes sur les salons et marchés depuis une tablette',
       'Un espace d’administration simple pour tout gérer',
+    ],
+    price: 'À partir de 5 900 € HT',
+    minPrice: 5900,
+    prices: [
+      { label: 'Boutique en ligne sur mesure', value: 'à partir de 5 900 €' },
     ],
     project: 'memoryline',
   },
@@ -79,6 +106,11 @@ export const services: Service[] = [
       'Fiche Google (Google Business Profile) : horaires, photos, avis',
       'Suivi des positions et des visites, expliqué simplement',
     ],
+    price: 'Audit offert, puis sur devis',
+    prices: [
+      { label: 'Audit de votre site et de votre visibilité', value: 'offert' },
+      { label: 'Amélioration du référencement', value: 'sur devis' },
+    ],
     project: 'la-chance-animation',
   },
   {
@@ -91,6 +123,10 @@ export const services: Service[] = [
       'Anciennes adresses redirigées : vous gardez votre référencement',
       'Transfert du nom de domaine, sans coupure pour vos clients',
       'Fin des abonnements inutiles, hébergement à coût maîtrisé',
+    ],
+    price: 'Autour de 3 500 € HT',
+    prices: [
+      { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 3 500 €' },
     ],
     project: 'la-chance-animation',
   },
@@ -105,6 +141,10 @@ export const services: Service[] = [
       'Tableaux de bord qui remplacent vos tableurs',
       'Automatisation des tâches répétitives, IA quand elle a du sens',
     ],
+    price: 'Sur devis',
+    prices: [
+      { label: 'Outil ou application sur mesure', value: 'sur devis' },
+    ],
     project: 'memoryline',
   },
 ]
@@ -112,6 +152,13 @@ export const services: Service[] = [
 export const maintenance = {
   title: 'Et après la mise en ligne ?',
   text: 'Je reste là après la mise en ligne : hébergement, mises à jour, petites modifications. Si quelque chose ne va pas, vous savez qui appeler.',
+  price: 'À partir de 39 € HT par mois.',
+  minPrice: 39,
+  prices: [
+    { label: 'Hébergement et mises à jour', value: '39 € / mois' },
+    { label: 'Avec 1 h de modifications chaque mois', value: '79 € / mois' },
+    { label: 'Petites modifications ponctuelles', value: '50 € / heure' },
+  ] as Price[],
 }
 
 export const reasons = [
@@ -153,7 +200,7 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Tout dépend du projet : un site vitrine de quelques pages n’a rien à voir avec une boutique en ligne. Après un premier échange, je vous envoie une proposition détaillée : vous savez exactement ce que vous payez, et pourquoi.',
+    a: 'Un site d’une page démarre à 990 €, un site vitrine de 5 à 7 pages à 1 990 € et une boutique en ligne sur mesure à 5 900 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
   },
   {
     q: 'Votre audit est-il vraiment gratuit ?',
@@ -165,7 +212,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques.',
+    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est une option à 490 € HT.',
   },
   {
     q: 'Mon site sera-t-il bien référencé sur Google ?',
@@ -177,7 +224,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Et une fois le site en ligne ?',
-    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
+    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections, à partir de 39 € HT par mois. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
   },
 ]
 

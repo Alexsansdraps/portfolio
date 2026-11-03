@@ -14,8 +14,12 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 - **Français uniquement.** Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ;
   `experience.ts` : parcours), le reste directement dans les pages.
 - **Côté clients, zéro jargon** (accueil, services, réalisations, contact). Le vocabulaire technique n'a sa place que sur `/parcours`.
-- **Pas de tarifs affichés** tant qu'Alexandra ne les a pas validés. Seule exception : l'**audit gratuit** (`/audit-gratuit`),
-  à mettre en avant (accueil, menu, bandeau final, formulaire) — pour un site, un logiciel / des outils, ou sans site.
+- **Tarifs** : grille validée par Alexandra (base 400 € HT / jour, vendue au forfait), dans `app/data/site.ts`
+  (`price` sur les cartes de l'accueil, `prices` sur la page Services via `PriceList`, `minPrice` pour les données structurées,
+  `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
+  la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.
+- L'**audit gratuit** (`/audit-gratuit`) est à mettre en avant (accueil, menu, bandeau final, formulaire) — pour un site,
+  un logiciel / des outils, ou sans site.
 - Positionnement : **agence web freelance basée à Mulhouse, en Alsace**. Ne rien dire sur la zone de déplacement
   ni sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { business, services, zone } from '~/data/site'
+import { business, maintenance, services, zone } from '~/data/site'
 import portrait from '~/assets/img/portrait.webp'
 
 const { public: { siteUrl } } = useRuntimeConfig()
@@ -7,6 +7,19 @@ const { public: { siteUrl } } = useRuntimeConfig()
 useHead({
   titleTemplate: t => t || 'Alexandra Porhansl — Agence web freelance en Alsace',
 })
+
+/* Prix plancher HT d'une offre (grille de site.ts). */
+const fromPrice = (min?: number, unitText?: string) => min === undefined
+  ? {}
+  : {
+      priceSpecification: {
+        '@type': unitText ? 'UnitPriceSpecification' : 'PriceSpecification',
+        'minPrice': min,
+        'priceCurrency': 'EUR',
+        'valueAddedTaxIncluded': false,
+        ...(unitText ? { unitText } : {}),
+      },
+    }
 
 /* Données structurées globales : l'agence (entreprise locale), sa fondatrice, le site. */
 useJsonLd({
@@ -60,6 +73,7 @@ useJsonLd({
           },
           ...services.map(s => ({
             '@type': 'Offer',
+            ...fromPrice(s.minPrice),
             'itemOffered': {
               '@type': 'Service',
               'name': s.title,
@@ -67,6 +81,16 @@ useJsonLd({
               'url': `${siteUrl}/services#${s.id}`,
             },
           })),
+          {
+            '@type': 'Offer',
+            ...fromPrice(maintenance.minPrice, 'mois'),
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'Suivi et maintenance de site',
+              'description': maintenance.text,
+              'url': `${siteUrl}/services#maintenance`,
+            },
+          },
         ],
       },
       'sameAs': [business.github],
