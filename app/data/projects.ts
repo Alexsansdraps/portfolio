@@ -42,8 +42,8 @@ export const projects: Project[] = [
   {
     slug: 'la-chance-animation',
     name: 'La Chance Animation',
-    place: 'Guebwiller, Haut-Rhin',
-    sector: 'Animation casino pour événements',
+    place: 'Guebwiller, au pied des Vosges',
+    sector: 'Animation casino en Alsace',
     kind: 'Refonte de site vitrine',
     year: 2026,
     status: 'En ligne',
@@ -80,7 +80,7 @@ export const projects: Project[] = [
   {
     slug: 'memoryline',
     name: 'MemoryLine',
-    place: 'Alsace',
+    place: '',
     sector: 'Affiches personnalisées de villes et de paysages',
     kind: 'Boutique en ligne sur mesure',
     year: 2026,
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     url: null,
     hook: 'Une boutique sur mesure où chaque client compose son affiche, sur le site comme au stand des salons.',
     summary: 'Remplacement d’une boutique Shopify par une boutique sur mesure : configurateur d’affiche, paiement intégré, ventes sur les salons et espace d’administration complet.',
-    context: 'MemoryLine crée des affiches illustrées de villes et de paysages, de Mulhouse à Riquewihr, que chaque client personnalise avec ses textes et ses personnages. La boutique tournait sur Shopify avec un module de personnalisation ajouté à part : difficile à faire évoluer, et les ventes des salons se mélangeaient à celles du site.',
+    context: 'MemoryLine crée des affiches illustrées de villes et de paysages, que chaque client personnalise avec ses textes et ses personnages. La boutique tournait sur Shopify avec un module de personnalisation ajouté à part : difficile à faire évoluer, et les ventes des salons se mélangeaient à celles du site.',
     goals: [
       'Un configurateur simple, sur ordinateur comme sur téléphone',
       'Vendre aussi sur les salons, depuis une tablette',

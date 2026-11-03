@@ -46,9 +46,9 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
         <div>
           <p class="eyebrow">Pour commencer</p>
           <p class="s-audit-t">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
-          <p class="s-audit-p">Je fais le point, je vous remets les priorités, sans engagement.</p>
+          <p class="s-audit-p">On fait le point et on vous donne les priorités, sans engagement.</p>
         </div>
-        <NuxtLink to="/audit-gratuit" class="btn">Mon audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+        <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
       </div>
     </section>
 

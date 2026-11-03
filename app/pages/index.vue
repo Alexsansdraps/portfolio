@@ -10,7 +10,7 @@ usePageSeo({
 })
 
 const [lachance, memoryline] = projects
-const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Outils sur mesure', 'Fait main en Alsace']
+const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Outils sur mesure', 'Suivi & maintenance']
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           Je me déplace chez vous en Alsace, et je travaille à distance avec des clients partout ailleurs.
         </p>
         <div class="hero-ctas rise d3">
-          <NuxtLink to="/audit-gratuit" class="btn">Mon audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
           <NuxtLink to="/realisations" class="btn btn-ghost">Voir mes réalisations</NuxtLink>
         </div>
         <ul class="hero-trust rise d4">
@@ -84,8 +84,8 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           <p class="eyebrow">Audit gratuit</p>
           <h2 id="audit-title" class="h2">Votre site est-il bien trouvé sur&nbsp;Google&nbsp;?</h2>
           <p class="lead">
-            Je vous propose un audit gratuit : je regarde votre site (ou vos outils, ou votre présence en ligne si
-            vous n’avez pas encore de site) et je vous dis ce que je changerais en priorité. Vous n’êtes engagé à rien.
+            On vous propose un audit gratuit : on regarde votre site (ou vos outils, ou votre présence en ligne si
+            vous n’avez pas encore de site) et on vous dit ce qu’on changerait en priorité. Vous n’êtes engagé à rien.
           </p>
         </div>
         <div class="audit-cases">
@@ -96,7 +96,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           </div>
         </div>
         <div class="audit-cta" data-reveal>
-          <NuxtLink to="/audit-gratuit" class="btn">Demander mon audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
           <p>Gratuit et sans engagement</p>
         </div>
       </div>
@@ -165,7 +165,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- À PROPOS -->
     <section class="section wrap about" aria-labelledby="about-title">
       <div class="about-pic" data-reveal>
-        <img :src="portrait" width="720" height="938" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
+        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
       </div>
       <div class="about-txt" data-reveal>
         <p class="eyebrow">Qui suis-je</p>

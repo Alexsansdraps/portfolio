@@ -21,6 +21,8 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
 - Petits clins d'œil alsaciens bienvenus (Hopla, Salü, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
+- Textes de l'audit gratuit à la 1re personne du pluriel : « on » (« on fait le point »), boutons « Audit gratuit ».
+- MemoryLine n'est pas alsacienne : pas de mention de l'Alsace pour elle. La Chance (Guebwiller) l'est.
 - Design system : tokens dans `app/assets/css/main.css` (`paper`, `sand`, `ink`, `wine`, `plum`…). Thème clair papier,
   bandeaux sombres `.on-dark`, accent unique wine `#a1264c` (échantillonné sur le portrait). Boutons en pilule, cartes arrondies.
 - Typo : Archivo variable (titres `font-stretch` 110–118 %, graisse 700–800) + JB Mono pour les méta. Fontes self-hostées

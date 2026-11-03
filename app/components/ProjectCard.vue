@@ -22,7 +22,7 @@ defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
       <component :is="as || 'h3'" class="pc-name">
         <NuxtLink :to="`/realisations/${project.slug}`">{{ project.name }}</NuxtLink>
       </component>
-      <p class="pc-place">{{ project.sector }} · {{ project.place }}</p>
+      <p class="pc-place">{{ [project.sector, project.place].filter(Boolean).join(' · ') }}</p>
       <p class="pc-hook">{{ project.hook }}</p>
 
       <ul class="pc-figs">

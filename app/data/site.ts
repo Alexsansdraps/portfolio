@@ -148,7 +148,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Votre audit est-il vraiment gratuit ?',
-    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, je fais le point et je vous remets un compte rendu clair avec les priorités. Vous en faites ce que vous voulez, avec moi ou sans moi.',
+    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, on fait le point et on vous remet un compte rendu clair avec les priorités. Vous en faites ce que vous voulez, avec moi ou sans moi.',
   },
   {
     q: 'Combien de temps faut-il pour créer mon site ?',
@@ -179,8 +179,8 @@ export const faq: Faq[] = [
 /** Audit gratuit : page /audit-gratuit et encart de l'accueil. */
 export const audit = {
   cases: [
-    { t: 'Vous avez un site', d: 'J’analyse sa vitesse, son affichage sur téléphone, son référencement Google et tout ce qui freine vos clients avant qu’ils vous contactent.' },
-    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel, boutique en ligne : je regarde comment vous travaillez et où vous perdez du temps (ressaisies, tâches répétitives, outils qui ne se parlent pas).' },
+    { t: 'Vous avez un site', d: 'On analyse sa vitesse, son affichage sur téléphone, son référencement Google et tout ce qui freine vos clients avant qu’ils vous contactent.' },
+    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel, boutique en ligne : on regarde comment vous travaillez et où vous perdez du temps (ressaisies, tâches répétitives, outils qui ne se parlent pas).' },
     { t: 'Vous n’avez pas encore de site', d: 'On fait le point sur votre situation : comment vos clients vous trouvent aujourd’hui, ce que font vos concurrents, et ce dont vous avez vraiment besoin pour démarrer.' },
   ],
   checks: [

@@ -2,8 +2,8 @@
 import { projects } from '~/data/projects'
 
 usePageSeo({
-  title: 'Réalisations : sites créés pour des entreprises d’Alsace',
-  description: 'Refonte du site de La Chance Animation (Guebwiller) et boutique en ligne sur mesure pour MemoryLine : découvrez les sites que j’ai conçus et développés en Alsace.',
+  title: 'Réalisations : sites vitrines et boutiques en ligne sur mesure',
+  description: 'Refonte du site de La Chance Animation (Guebwiller) et boutique en ligne sur mesure pour MemoryLine : découvrez les sites que j’ai conçus et développés.',
   path: '/realisations',
 })
 

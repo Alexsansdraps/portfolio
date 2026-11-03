@@ -34,7 +34,7 @@ useJsonLd([
         </p>
       </div>
       <div class="p-hero-pic rise d2">
-        <img :src="portrait" width="720" height="938" alt="Portrait d’Alexandra Porhansl" fetchpriority="high">
+        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl" fetchpriority="high">
       </div>
     </section>
 

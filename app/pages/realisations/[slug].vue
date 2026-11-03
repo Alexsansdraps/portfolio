@@ -52,7 +52,7 @@ useJsonLd([
       </p>
       <h1 class="cs-h1 rise d1">{{ p.name }}</h1>
       <p class="cs-hook rise d2">{{ p.hook }}</p>
-      <p class="cs-place rise d2">{{ p.sector }} · {{ p.place }}</p>
+      <p class="cs-place rise d2">{{ [p.sector, p.place].filter(Boolean).join(' · ') }}</p>
       <div class="cs-ctas rise d3">
         <a v-if="p.url" :href="p.url" class="btn" target="_blank" rel="noopener">
           Visiter {{ p.domain }} <span aria-hidden="true">↗</span>

@@ -26,9 +26,9 @@ useJsonLd([
 ])
 
 const steps = [
-  { t: 'Vous me décrivez votre situation', d: 'Avec le formulaire ci-dessous : votre site s’il existe, vos outils, ce qui vous gêne.' },
-  { t: 'J’analyse', d: 'Votre site, votre visibilité sur Google, vos outils ou votre présence en ligne actuelle.' },
-  { t: 'Je vous présente le compte rendu', d: 'Chez vous si vous êtes en Alsace, en visio partout ailleurs. Avec les priorités et les prochaines étapes.' },
+  { t: 'Vous décrivez votre situation', d: 'Avec le formulaire ci-dessous : votre site s’il existe, vos outils, ce qui vous gêne.' },
+  { t: 'On analyse', d: 'Votre site, votre visibilité sur Google, vos outils ou votre présence en ligne actuelle.' },
+  { t: 'On vous présente le compte rendu', d: 'Chez vous si vous êtes en Alsace, en visio partout ailleurs. Avec les priorités et les prochaines étapes.' },
 ]
 </script>
 
@@ -39,10 +39,10 @@ const steps = [
       <h1 class="a-h1 rise d1">Audit gratuit de votre site <em>et de votre référencement.</em></h1>
       <p class="lead rise d2">
         Votre site ne vous amène pas assez de clients ? Vos outils vous font perdre du temps ? Vous n’avez pas encore
-        de site ? Je fais le point gratuitement, sans engagement, et je vous dis concrètement quoi faire.
+        de site ? On fait le point gratuitement, sans engagement, et on vous dit concrètement quoi faire.
       </p>
       <div class="a-ctas rise d3">
-        <a href="#demande" class="btn">Demander mon audit <span class="arr" aria-hidden="true">↓</span></a>
+        <a href="#demande" class="btn">Audit gratuit <span class="arr" aria-hidden="true">↓</span></a>
         <span class="a-note">Gratuit · sans engagement · en Alsace ou à distance</span>
       </div>
     </section>
@@ -57,7 +57,7 @@ const steps = [
 
     <section class="section wrap a-grid">
       <div data-reveal>
-        <p class="eyebrow">Ce que je regarde</p>
+        <p class="eyebrow">Ce qu’on regarde</p>
         <ul class="a-list">
           <li v-for="c in audit.checks" :key="c">{{ c }}</li>
         </ul>
