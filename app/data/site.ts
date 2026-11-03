@@ -110,7 +110,7 @@ export const reasons = [
   },
   {
     t: 'Une agence d’ici',
-    d: 'Je suis basée à Mulhouse et je me déplace dans toute l’Alsace pour vous rencontrer. Le reste se fait aussi très bien à distance.',
+    d: 'Basée à Mulhouse, je me déplace chez vous dans toute l’Alsace : rendez-vous, points d’avancement, prise en main du site. Et tout peut aussi se faire à distance.',
   },
   {
     t: `${new Date().getFullYear() - 2019} ans de métier`,
@@ -119,7 +119,7 @@ export const reasons = [
 ]
 
 export const steps = [
-  { t: 'On échange', d: '30 minutes, gratuites et sans engagement, pour comprendre votre activité et votre besoin. En visio ou autour d’un café.' },
+  { t: 'On échange', d: '30 minutes, gratuites et sans engagement, pour comprendre votre activité et votre besoin. Je me déplace chez vous, ou on se parle en visio.' },
   { t: 'Je vous propose un devis clair', d: 'Ce qui sera fait, dans quel délai et pour quel prix. Pas de mauvaise surprise ensuite.' },
   { t: 'Je conçois et je construis', d: 'Je vous montre l’avancement régulièrement, vous donnez votre avis, j’ajuste.' },
   { t: 'Mise en ligne et suivi', d: 'Je mets votre site en ligne, je vous apprends à vous en servir, et je reste disponible ensuite.' },
@@ -150,7 +150,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Vous intervenez où ?',
-    a: 'Je suis basée à Mulhouse et je travaille avec les entreprises de tout le Haut-Rhin et du Bas-Rhin : Mulhouse, Colmar, Strasbourg, Guebwiller, Saint-Louis, Thann, Altkirch, Sélestat… Je me déplace pour vous rencontrer, et tout peut aussi se faire à distance.',
+    a: 'Je suis basée à Mulhouse et je travaille avec les entreprises de tout le Haut-Rhin et du Bas-Rhin : Mulhouse, Colmar, Strasbourg, Guebwiller, Saint-Louis, Thann, Altkirch, Sélestat… Je me déplace chez vous pour vous rencontrer, et tout peut aussi se faire à distance.',
   },
   {
     q: 'Et une fois le site en ligne ?',

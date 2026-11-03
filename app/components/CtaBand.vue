@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string, text?: string }>(), {
   title: 'Un projet de site ? Parlons-en.',
-  text: '30 minutes au téléphone, en visio ou autour d’un café, gratuites et sans engagement. Dites-moi ce dont vous avez besoin, je vous dis ce qui est possible.',
+  text: '30 minutes chez vous, en visio ou au téléphone, gratuites et sans engagement : je me déplace partout en Alsace. Dites-moi ce dont vous avez besoin, je vous dis ce qui est possible.',
 })
 </script>
 

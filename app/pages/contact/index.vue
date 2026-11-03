@@ -47,14 +47,15 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
         </div>
         <div class="c-card">
           <p class="c-k">Où ?</p>
-          <p class="c-v">Basée à Mulhouse, je me déplace dans tout le Haut-Rhin et le Bas-Rhin.</p>
+          <p class="c-v">Je me déplace chez vous, dans tout le Haut-Rhin et le Bas-Rhin.</p>
+          <p class="c-small">Basée à Mulhouse. Rendez-vous sur place ou en visio, comme vous préférez.</p>
           <p class="c-small">{{ cities }}…</p>
         </div>
         <div class="c-card c-next">
           <p class="c-k">Et ensuite ?</p>
           <ol>
             <li>Je vous rappelle ou je vous réponds par e-mail.</li>
-            <li>On échange 30 minutes sur votre besoin.</li>
+            <li>On échange 30 minutes sur votre besoin, chez vous ou en visio.</li>
             <li>Je vous envoie un devis clair et détaillé.</li>
           </ol>
         </div>

@@ -13,7 +13,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
             Agence web freelance basée à Mulhouse. Sites vitrines, boutiques en ligne et outils sur mesure
-            pour les entreprises du Haut-Rhin et du Bas-Rhin.
+            pour les entreprises du Haut-Rhin et du Bas-Rhin. Je me déplace chez vous.
           </p>
           <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
         </div>

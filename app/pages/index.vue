@@ -5,7 +5,7 @@ import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
   title: 'Agence web freelance en Alsace | Alexandra Porhansl, Mulhouse',
-  description: 'Agence web freelance à Mulhouse : création de sites vitrines, boutiques en ligne, refontes et outils sur mesure pour les entreprises d’Alsace. Devis gratuit.',
+  description: 'Agence web freelance à Mulhouse qui se déplace dans toute l’Alsace : sites vitrines, boutiques en ligne, refontes et outils sur mesure. Devis gratuit.',
   path: '/',
 })
 
@@ -29,6 +29,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         </p>
         <p class="hero-lead rise d2">
           Du premier échange à la mise en ligne, vous avez une seule interlocutrice&nbsp;: moi, Alexandra.
+          Et je me déplace chez vous, partout en Alsace.
         </p>
         <div class="hero-ctas rise d3">
           <NuxtLink to="/contact" class="btn">Demander un devis gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
@@ -36,8 +37,8 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
         </div>
         <ul class="hero-trust rise d4">
           <li>Premier échange offert</li>
+          <li>Je me déplace chez vous</li>
           <li>Réponse dans la journée</li>
-          <li>Basée à Mulhouse</li>
         </ul>
       </div>
 
@@ -128,8 +129,9 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)]
           <p class="eyebrow">Zone d’intervention</p>
           <h2 id="zone-title" class="h2">Une agence web <em>d’ici.</em></h2>
           <p class="lead">
-            Basée à Mulhouse, je travaille avec les entreprises de tout le Haut-Rhin et du Bas-Rhin.
-            Je me déplace pour vous rencontrer, et tout le reste peut se faire à distance.
+            Basée à Mulhouse, je me déplace chez vous dans tout le Haut-Rhin et le Bas-Rhin : pour le premier
+            rendez-vous, pour vous montrer l’avancement, pour vous apprendre à utiliser votre site.
+            Et si vous préférez, tout peut aussi se faire à distance.
           </p>
           <ul class="zone-chips">
             <li v-for="c in cities" :key="c" class="chip">{{ c }}</li>
