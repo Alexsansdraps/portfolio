@@ -12,10 +12,17 @@ const sections = [
   {
     h: 'Éditeur du site',
     p: [
-      'Alexandra Porhansl — création de sites internet.',
+      `Alexandra Porhansl, ${business.legal.form} — création de sites internet.`,
       'Mulhouse (Haut-Rhin), France.',
+      `SIREN : ${business.legal.siren} — SIRET : ${business.legal.siret}`,
+      `N° de TVA intracommunautaire : ${business.legal.vat}`,
+      `Activité : ${business.legal.naf}`,
       `Contact : ${business.email}`,
     ],
+  },
+  {
+    h: 'Directrice de la publication',
+    p: ['Alexandra Porhansl.'],
   },
   {
     h: 'Hébergement',

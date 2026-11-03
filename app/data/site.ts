@@ -15,6 +15,15 @@ export const business = {
   github: 'https://github.com/Alexsansdraps',
   spotify: 'https://open.spotify.com/user/6j2surqecwtez6nsx9etex4zd',
   since: 2019,
+  /** immatriculation (Insee / RNE) */
+  legal: {
+    form: 'Entrepreneur individuel (EI)',
+    siren: '107 939 654',
+    siret: '107 939 654 00011',
+    vat: 'FR91107939654',
+    naf: 'Programmation informatique (NAF 6201Z)',
+    founded: '2026-07-27',
+  },
 }
 
 export interface Service {

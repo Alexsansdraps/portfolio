@@ -40,6 +40,10 @@ useJsonLd({
       ],
       'founder': { '@id': `${siteUrl}/#alexandra` },
       'knowsLanguage': 'fr',
+      'legalName': 'Alexandra Porhansl',
+      'foundingDate': business.legal.founded,
+      'vatID': business.legal.vat,
+      'identifier': { '@type': 'PropertyValue', 'propertyID': 'SIRET', 'value': business.legal.siret.replaceAll(' ', '') },
       'hasOfferCatalog': {
         '@type': 'OfferCatalog',
         'name': 'Création de sites internet',

@@ -40,7 +40,7 @@ const year = new Date().getFullYear()
       </div>
 
       <div class="f-bottom">
-        <span>© {{ year }} Alexandra Porhansl</span>
+        <span>© {{ year }} Alexandra Porhansl · EI · SIRET {{ business.legal.siret }}</span>
         <span class="f-links">
           <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
           <span aria-hidden="true">·</span>
