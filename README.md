@@ -29,7 +29,7 @@ Cloudflare et génère la config wrangler (avec le binding d'envoi d'e-mail déc
 
 **Une fois, pour le formulaire de contact** : Cloudflare → zone `alexandraporhansl.com` → Email → Email Routing →
 activer (Cloudflare remplace les anciens enregistrements MX/SPF d'IONOS), puis Destination addresses → ajouter
-`a.porhansl@icloud.com` et cliquer le lien de vérification reçu. Tant que ce n'est pas fait, le formulaire affiche
+`a.porhansl96@gmail.com` et cliquer le lien de vérification reçu. Tant que ce n'est pas fait, le formulaire affiche
 une erreur propre avec l'adresse e-mail en secours.
 
 ## Structure

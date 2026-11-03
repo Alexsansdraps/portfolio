@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite'
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://alexandraporhansl.com'
 
 /** Adresse qui reçoit les messages du formulaire de contact (doit être vérifiée dans Cloudflare Email Routing). */
-const contactTo = 'a.porhansl@icloud.com'
+const contactTo = 'a.porhansl96@gmail.com'
 
 /**
  * Build Cloudflare (Workers Builds pose WORKERS_CI) : `cloudflare:email` est fourni par le runtime.

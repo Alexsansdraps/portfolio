@@ -48,6 +48,6 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 
 `server/api/contact.post.ts` envoie un e-mail via **Cloudflare Email Routing** (binding `CONTACT_EMAIL`, déclaré dans
 `nuxt.config.ts` → `nitro.cloudflare.wrangler`, car Nitro génère lui-même la config wrangler au build Cloudflare).
-Destinataire : `a.porhansl@icloud.com` (doit être vérifié dans Email Routing). Sujet préfixé `[Site alexandraporhansl.com]`.
+Destinataire : `a.porhansl96@gmail.com` (`contactTo` dans `nuxt.config.ts`, doit être vérifié dans Email Routing). Sujet préfixé `[Site alexandraporhansl.com]`.
 Hors Cloudflare, `cloudflare:email` est remplacé par `server/shims/cloudflare-email.ts`.
 Protections : champ piège `site_web`, contrôle d'origine, longueurs max, pas de retour à la ligne dans les en-têtes.
