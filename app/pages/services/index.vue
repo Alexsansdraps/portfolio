@@ -3,23 +3,24 @@ import { services, maintenance, priceNote } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 usePageSeo({
-  title: 'Création de site et SEO en Alsace | Services et tarifs',
-  description: 'Site vitrine dès 990 €, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
+  title: 'Services et tarifs : création de site et SEO à Mulhouse',
+  description: 'Site vitrine dès 990 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
   path: '/services',
 })
 
+/* Le détail de chaque service (données structurées Service comprises) est sur sa propre page. */
 useJsonLd([
   breadcrumb([['Accueil', '/'], ['Services', '/services']]),
-  ...services.map(s => ({
+  {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    'name': s.title,
-    'serviceType': s.title,
-    'description': s.long,
-    'url': absoluteUrl(`/services#${s.id}`),
-    'provider': { '@id': absoluteUrl('/#agence') },
-    'areaServed': { '@type': 'AdministrativeArea', 'name': 'Alsace' },
-  })),
+    '@type': 'ItemList',
+    'itemListElement': services.map((s, i) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'url': absoluteUrl(`/services/${s.id}`),
+      'name': s.title,
+    })),
+  },
 ])
 
 const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) : undefined }))
@@ -56,10 +57,13 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       <div class="wrap s-grid">
         <div class="s-main" data-reveal>
           <span class="s-num">{{ String(i + 1).padStart(2, '0') }}</span>
-          <h2 :id="`${s.id}-t`" class="h2">{{ s.title }}</h2>
+          <h2 :id="`${s.id}-t`" class="h2"><NuxtLink :to="`/services/${s.id}`" class="s-h2-link">{{ s.title }}</NuxtLink></h2>
           <p class="lead">{{ s.long }}</p>
           <PriceList :prices="s.prices" :note="priceNote" />
-          <NuxtLink to="/contact" class="btn s-cta">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <div class="s-actions">
+            <NuxtLink to="/contact" class="btn">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+            <NuxtLink :to="`/services/${s.id}`" class="link">{{ s.linkText }} →</NuxtLink>
+          </div>
         </div>
         <div class="s-side" data-reveal>
           <p class="s-label">Ce qui est compris</p>
@@ -137,7 +141,9 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-num { font-family: var(--font-mono); font-size: 14px; color: var(--color-wine); }
 .s-main .h2 { margin-top: 10px; }
 .s-main .lead { margin-top: 20px; }
-.s-cta { margin-top: 28px; }
+.s-actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.s-h2-link { color: inherit; text-decoration: none; }
+.s-h2-link:hover { color: var(--color-wine); }
 .s-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-mute); }
 .s-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; }
 .s-list li {

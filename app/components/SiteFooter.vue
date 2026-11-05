@@ -19,7 +19,7 @@ const year = new Date().getFullYear()
 
         <nav class="f-col" aria-label="Services">
           <p class="f-h">Services</p>
-          <NuxtLink v-for="s in services" :key="s.id" :to="`/services#${s.id}`">{{ s.title }}</NuxtLink>
+          <NuxtLink v-for="s in services" :key="s.id" :to="`/services/${s.id}`">{{ s.title }}</NuxtLink>
         </nav>
 
         <nav class="f-col" aria-label="Le site">

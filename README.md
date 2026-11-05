@@ -40,7 +40,7 @@ app/
 ├─ components/    en-tête, pied de page, cartes de réalisation, carte de zone, FAQ, formulaire…
 ├─ composables/   usePageSeo, useJsonLd, breadcrumb
 ├─ data/          site.ts (services, FAQ, zone) · projects.ts (réalisations) · experience.ts (parcours)
-├─ pages/         index, services, realisations/, parcours, contact/, mentions-legales
+├─ pages/         index, services/ (récap + une page par service), realisations/, parcours, contact/, mentions-legales
 ├─ plugins/       scroll.client.ts — Lenis + ScrollTrigger
 └─ utils/         serpentine.ts — tracé de la frise
 server/

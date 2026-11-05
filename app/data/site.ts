@@ -51,6 +51,19 @@ export interface Service {
   prices: Price[]
   /** réalisation qui l'illustre */
   project?: string
+  /* ---- page dédiée /services/{id} (référencement : une page par recherche visée) ---- */
+  /** titre affiché : [début, fin en couleur] */
+  h1: [string, string]
+  /** balise title (≈ 60 caractères) */
+  seoTitle: string
+  /** meta description (≈ 155 caractères) */
+  seoDescription: string
+  /** texte des liens vers la page dédiée (ancre descriptive pour Google) */
+  linkText: string
+  /** « Pour qui ? » : des phrases qui commencent par « Vous » */
+  forWho: string[]
+  /** questions propres au service, différentes de la FAQ générale (aucune référence aux clients) */
+  faq: Faq[]
 }
 
 export const services: Service[] = [
@@ -74,6 +87,29 @@ export const services: Service[] = [
       { label: 'Option : modifier vos textes et photos vous-même', value: '+ 490 €' },
     ],
     project: 'la-chance-animation',
+    h1: ['Création de site vitrine', 'à Mulhouse.'],
+    seoTitle: 'Création de site vitrine à Mulhouse, dès 990 € HT',
+    seoDescription: 'Un site vitrine sur mesure pour présenter votre activité et recevoir des demandes : design unique, adapté au téléphone, pensé pour Google. Dès 990 € HT.',
+    linkText: 'Tout sur la création de site vitrine',
+    forWho: [
+      'Vous n’avez pas encore de site, ou une simple page qui ne vous ressemble plus.',
+      'Vous voulez que vos futurs clients vous trouvent sur Google quand ils cherchent votre métier.',
+      'Vous voulez recevoir des demandes de devis directement dans votre boîte mail.',
+    ],
+    faq: [
+      {
+        q: 'Quelle différence entre un site d’une page et un site de 5 à 7 pages ?',
+        a: 'Un site d’une page rassemble l’essentiel : votre activité, vos services, vos coordonnées et un formulaire. C’est idéal pour démarrer, à partir de 990 € HT. Avec 5 à 7 pages, à partir de 1 990 € HT, chaque service a sa propre page, ce qui aide aussi Google à vous montrer sur davantage de recherches.',
+      },
+      {
+        q: 'Vous occupez-vous du nom de domaine et de l’adresse e-mail ?',
+        a: 'Oui. Je m’occupe de la mise en ligne, du nom de domaine et d’une adresse e-mail professionnelle. Le site, le nom de domaine et les contenus restent à vous.',
+      },
+      {
+        q: 'Mon site s’affichera-t-il bien sur téléphone ?',
+        a: 'Oui. Chaque page est pensée d’abord pour le téléphone, puisque c’est souvent là que vos clients vous découvrent, puis pour la tablette et l’ordinateur.',
+      },
+    ],
   },
   {
     id: 'boutique-en-ligne',
@@ -93,6 +129,29 @@ export const services: Service[] = [
       { label: 'Boutique en ligne sur mesure', value: 'à partir de 5 900 €' },
     ],
     project: 'memoryline',
+    h1: ['Création de boutique', 'en ligne sur mesure.'],
+    seoTitle: 'Création de boutique en ligne sur mesure | Mulhouse, Alsace',
+    seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, dès 5 900 € HT.',
+    linkText: 'Tout sur la création de boutique en ligne',
+    forWho: [
+      'Vous vendez des produits et vous voulez une boutique qui vous ressemble.',
+      'Vous êtes sur Shopify ou Wix et les abonnements ou les modules payants s’accumulent.',
+      'Vos produits se personnalisent, ou vous vendez aussi sur des salons et des marchés.',
+    ],
+    faq: [
+      {
+        q: 'Pourquoi une boutique sur mesure plutôt qu’une plateforme toute faite ?',
+        a: 'Une plateforme convient bien pour démarrer. Quand vos produits ont des particularités (personnalisation, ventes sur les salons, livraisons spécifiques), on finit souvent par empiler des modules payants. Une boutique sur mesure fait exactement ce dont vous avez besoin, et vous ne dépendez plus des tarifs d’une plateforme.',
+      },
+      {
+        q: 'Quels moyens de paiement puis-je proposer ?',
+        a: 'La carte bancaire et PayPal, directement sur votre site. Les paiements arrivent sur votre compte.',
+      },
+      {
+        q: 'Vais-je pouvoir gérer la boutique moi-même ?',
+        a: 'Oui. Vous avez un espace d’administration simple pour ajouter vos produits, suivre les commandes et les livraisons, retrouver vos factures et lancer vos promotions.',
+      },
+    ],
   },
   {
     id: 'referencement',
@@ -112,6 +171,29 @@ export const services: Service[] = [
       { label: 'Amélioration du référencement', value: 'sur devis' },
     ],
     project: 'la-chance-animation',
+    h1: ['Référencement naturel', '(SEO) à Mulhouse.'],
+    seoTitle: 'Référencement naturel (SEO) à Mulhouse | Audit offert',
+    seoDescription: 'Être trouvé sur Google par vos clients : audit offert, titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Agence web à Mulhouse.',
+    linkText: 'Tout sur le référencement naturel (SEO)',
+    forWho: [
+      'Vous avez un site, mais il n’apparaît pas quand on cherche votre métier et votre ville.',
+      'Vous voulez apparaître sur Google Maps avec vos horaires, vos photos et vos avis.',
+      'Vous ne savez pas d’où viennent vos visites, ni si votre site vous amène des clients.',
+    ],
+    faq: [
+      {
+        q: 'Combien de temps faut-il pour voir des résultats ?',
+        a: 'Les premiers effets se voient en général après quelques semaines, et le référencement se construit sur plusieurs mois. Tout dépend de la concurrence dans votre secteur et de l’état de votre site au départ : l’audit gratuit sert justement à le savoir.',
+      },
+      {
+        q: 'C’est quoi, une fiche Google ?',
+        a: 'C’est la fiche qui s’affiche sur Google et Google Maps quand on cherche votre entreprise : adresse, horaires, photos, avis. Elle est gratuite et compte beaucoup pour les recherches locales, du type « plombier Mulhouse ». Je peux la créer ou l’améliorer avec vous.',
+      },
+      {
+        q: 'Pouvez-vous améliorer un site que vous n’avez pas créé ?',
+        a: 'Oui. On commence par l’audit gratuit pour voir ce qui freine votre site, puis je vous propose les améliorations sur devis : textes, titres, vitesse, erreurs techniques, fiche Google.',
+      },
+    ],
   },
   {
     id: 'refonte',
@@ -129,6 +211,29 @@ export const services: Service[] = [
       { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 3 500 €' },
     ],
     project: 'la-chance-animation',
+    h1: ['Refonte de', 'site internet.'],
+    seoTitle: 'Refonte de site internet, quitter Wix ou Shopify | Alsace',
+    seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Autour de 3 500 € HT.',
+    linkText: 'Tout sur la refonte de site',
+    forWho: [
+      'Vous avez un site depuis quelques années et il ne donne plus une bonne image de votre activité.',
+      'Vous payez chaque mois un abonnement Wix ou Shopify pour un site qui évolue peu.',
+      'Votre site s’affiche mal sur téléphone ou met du temps à charger.',
+    ],
+    faq: [
+      {
+        q: 'Comment se passe le changement de site, sans coupure ?',
+        a: 'Je prépare le nouveau site à côté de l’ancien, que vous continuez d’utiliser. Quand tout est validé, je bascule le nom de domaine et les redirections en une fois : vos clients ne voient pas de coupure.',
+      },
+      {
+        q: 'Puis-je garder mon nom de domaine ?',
+        a: 'Oui. Je le transfère si besoin, et votre adresse reste la même pour vos clients comme pour Google.',
+      },
+      {
+        q: 'Que deviennent mes abonnements Wix ou Shopify ?',
+        a: 'Une fois le nouveau site en ligne et les anciennes adresses redirigées, vous pouvez les résilier. Pour l’hébergement et les mises à jour du nouveau site, je propose un suivi à partir de 39 € HT par mois.',
+      },
+    ],
   },
   {
     id: 'outils-sur-mesure',
@@ -146,6 +251,29 @@ export const services: Service[] = [
       { label: 'Outil ou application sur mesure', value: 'sur devis' },
     ],
     project: 'memoryline',
+    h1: ['Outils et applications', 'sur mesure.'],
+    seoTitle: 'Logiciel et outils sur mesure à Mulhouse | Agence web',
+    seoDescription: 'Espace client, prise de rendez-vous, tableau de bord, automatisation : un outil sur mesure qui remplace vos tableurs et vos ressaisies. Sur devis, à Mulhouse.',
+    linkText: 'Tout sur les outils sur mesure',
+    forWho: [
+      'Vous gérez votre activité avec plusieurs fichiers Excel qui ne se parlent pas.',
+      'Vous ressaisissez les mêmes informations dans plusieurs logiciels.',
+      'Vos clients aimeraient réserver, suivre une commande ou retrouver leurs documents en ligne.',
+    ],
+    faq: [
+      {
+        q: 'À quoi peut servir un outil sur mesure ?',
+        a: 'À ce qui vous fait perdre du temps aujourd’hui : un planning partagé, la prise de rendez-vous en ligne, un espace où vos clients retrouvent leurs documents, un tableau de bord qui remplace vos tableurs, l’envoi automatique de devis et de relances.',
+      },
+      {
+        q: 'Utilisez-vous l’intelligence artificielle ?',
+        a: 'Quand elle vous fait vraiment gagner du temps : trier des demandes, résumer des documents, préremplir des fiches. Si une solution plus simple fait l’affaire, je vous la propose.',
+      },
+      {
+        q: 'Combien coûte un outil sur mesure ?',
+        a: 'Le prix dépend de ce que l’outil doit faire. On commence par l’audit gratuit de vos outils actuels, puis je vous envoie un devis détaillé.',
+      },
+    ],
   },
 ]
 

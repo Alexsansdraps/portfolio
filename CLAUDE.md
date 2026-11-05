@@ -42,8 +42,16 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 ## Référencement
 
 - Chaque page appelle `usePageSeo()` (title ≈ 60 car., description ≈ 155, canonical, Open Graph) — `app/composables/usePageSeo.ts`.
-- Données structurées : `ProfessionalService` + `Person` + `WebSite` dans `app.vue`, `FAQPage` sur l'accueil uniquement,
-  `Service`, `CreativeWork`, `BreadcrumbList` sur les pages concernées.
+- Requêtes visées : « création site internet Mulhouse », « agence web Mulhouse » (accueil : title + H1),
+  puis une page par service `/services/{id}` (`pages/services/[id].vue`, textes dans `site.ts` : `h1`, `seoTitle`,
+  `seoDescription`, `linkText`, `forWho`, `faq`). `/services` reste la page récapitulative avec les tarifs.
+  Les liens vers un service pointent vers sa page dédiée (accueil, pied de page, réalisations), plus vers `#ancre`.
+- Données structurées : `ProfessionalService` + `Person` + `WebSite` dans `app.vue`, `FAQPage` sur l'accueil (FAQ générale)
+  et sur chaque page de service (ses propres questions : jamais la même question deux fois),
+  `Service`, `CreativeWork`, `BreadcrumbList`, `ItemList` sur les pages concernées.
+- Page d'erreur `app/error.vue` (404 en `noindex`, avec en-tête, pied de page et liens utiles).
+- Validation Google Search Console : `server/routes/google085bf728f0919f61.html.ts` (servie par le Worker, car Cloudflare
+  redirige les fichiers `.html` statiques et Google refuse une validation qui redirige).
 - URL canonique : `siteUrl` dans `nuxt.config.ts` (une seule source de vérité, `robots.txt` à garder synchro).
 - Pré-génération avec `autoSubfolderIndex: false` : `/parcours` est servi tel quel, sans redirection vers `/parcours/`.
 - Anciennes adresses (`/en/**`, `/de/**`, `/cv/**`) : vraies 301 via `routeRules`, exclues de la pré-génération.

@@ -16,6 +16,8 @@ export interface Project {
   sector: string
   /** type de prestation, lien avec les services */
   kind: string
+  /** id du service correspondant (lien vers /services/{id}) */
+  service: string
   year: number
   /** « En ligne », ou état de la mise en ligne */
   status: string
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     place: 'Guebwiller, au pied des Vosges',
     sector: 'Animation casino en Alsace',
     kind: 'Refonte de site vitrine',
+    service: 'refonte',
     year: 2026,
     status: 'En ligne',
     live: true,
@@ -83,6 +86,7 @@ export const projects: Project[] = [
     place: '',
     sector: 'Affiches personnalisées de villes et de paysages',
     kind: 'Boutique en ligne sur mesure',
+    service: 'boutique-en-ligne',
     year: 2026,
     status: 'En cours de développement',
     live: false,

@@ -2,7 +2,7 @@
 import { business, zone } from '~/data/site'
 
 usePageSeo({
-  title: 'Contact : parlons de votre projet | Alexandra Porhansl',
+  title: 'Contact : votre projet de site internet à Mulhouse',
   description: 'Un projet de site vitrine, de boutique en ligne ou de refonte ? Écrivez-moi : audit gratuit, réponse sous 24 h. Agence web basée à Mulhouse.',
   path: '/contact',
 })

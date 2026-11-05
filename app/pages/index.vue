@@ -4,8 +4,8 @@ import { projects } from '~/data/projects'
 import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
-  title: 'Agence web freelance en Alsace | Alexandra Porhansl, Mulhouse',
-  description: 'Agence web freelance à Mulhouse, en Alsace : sites vitrines, boutiques en ligne, référencement (SEO), refontes et outils sur mesure. Audit gratuit.',
+  title: 'Création de site internet à Mulhouse | Agence web en Alsace',
+  description: 'Agence web freelance à Mulhouse : création de sites internet, sites vitrines, boutiques en ligne, référencement Google et refontes. Audit gratuit.',
   path: '/',
 })
 
@@ -19,11 +19,11 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-txt">
         <h1 id="hero-title" class="hero-h1 rise d1">
-          Agence web<br>freelance <em>en&nbsp;Alsace.</em>
+          Agence web<br> freelance <em>à&nbsp;Mulhouse.</em>
         </h1>
         <p class="hero-sub rise d2">
-          Sites vitrines, boutiques en ligne et outils sur mesure, pensés pour être trouvés sur Google
-          et pour vous amener des clients.
+          Je crée des sites internet, des boutiques en ligne et des outils sur mesure, pensés pour être trouvés
+          sur Google et pour vous amener des clients.
         </p>
         <p class="hero-lead rise d2">
           Du premier échange à la mise en ligne, vous avez une seule interlocutrice&nbsp;: moi, Alexandra.
@@ -107,7 +107,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         <h2 id="svc-title" class="h2">Ce que je fais</h2>
       </div>
       <div class="svc-grid">
-        <NuxtLink v-for="(s, i) in services" :key="s.id" :to="`/services#${s.id}`" class="svc" data-reveal>
+        <NuxtLink v-for="(s, i) in services" :key="s.id" :to="`/services/${s.id}`" class="svc" data-reveal>
           <span class="svc-num">{{ String(i + 1).padStart(2, '0') }}</span>
           <h3>{{ s.title }}</h3>
           <p>{{ s.short }}</p>

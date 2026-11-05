@@ -2,7 +2,7 @@
 import { audit } from '~/data/site'
 
 usePageSeo({
-  title: 'Audit gratuit de site web et de référencement (SEO)',
+  title: 'Audit gratuit de site web et de référencement (SEO) à Mulhouse',
   description: 'Audit gratuit de votre site, de votre référencement Google ou de vos outils, par une agence web basée à Mulhouse. Pas encore de site ? On fait le point.',
   path: '/audit-gratuit',
 })

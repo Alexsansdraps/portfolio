@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { faq } from '~/data/site'
+import { faq, type Faq } from '~/data/site'
 
 /* Données structurées FAQPage : les mêmes questions/réponses que celles affichées.
-   Google demande de ne les baliser qu'une fois sur le site : seulement sur la page d'accueil. */
-const props = withDefaults(defineProps<{ schema?: boolean }>(), { schema: true })
+   Une même question ne se balise qu'une fois sur le site : la FAQ générale seulement sur l'accueil,
+   les questions propres à un service (items) sur la page de ce service. */
+const props = withDefaults(defineProps<{ schema?: boolean, items?: Faq[] }>(), { schema: true })
+const list = props.items ?? faq
 if (props.schema) useJsonLd({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  'mainEntity': faq.map(f => ({
+  'mainEntity': list.map(f => ({
     '@type': 'Question',
     'name': f.q,
     'acceptedAnswer': { '@type': 'Answer', 'text': f.a },
@@ -17,7 +19,7 @@ if (props.schema) useJsonLd({
 
 <template>
   <div class="faq">
-    <details v-for="(f, i) in faq" :key="f.q" class="fq" :open="i === 0" data-reveal>
+    <details v-for="(f, i) in list" :key="f.q" class="fq" :open="i === 0" data-reveal>
       <summary>
         <h3>{{ f.q }}</h3>
         <span class="ic" aria-hidden="true" />

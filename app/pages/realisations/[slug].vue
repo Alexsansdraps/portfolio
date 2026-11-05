@@ -48,7 +48,7 @@ useJsonLd([
 
       <p class="cs-meta rise d1">
         <span class="status" :class="{ live: p.live }">{{ p.status }}</span>
-        <span>{{ p.kind }}</span><span aria-hidden="true">·</span><span>{{ p.year }}</span>
+        <NuxtLink :to="`/services/${p.service}`" class="cs-kind">{{ p.kind }}</NuxtLink><span aria-hidden="true">·</span><span>{{ p.year }}</span>
       </p>
       <h1 class="cs-h1 rise d1">{{ p.name }}</h1>
       <p class="cs-hook rise d2">{{ p.hook }}</p>
@@ -131,6 +131,8 @@ useJsonLd([
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-graphite);
 }
+.cs-kind { color: inherit; text-decoration: underline; text-decoration-color: var(--color-line); text-underline-offset: 4px; }
+.cs-kind:hover { color: var(--color-wine); text-decoration-color: currentColor; }
 .status {
   display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; border-radius: 999px;
   border: 1px solid var(--color-line); background: #fff;

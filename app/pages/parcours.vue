@@ -6,7 +6,7 @@ const years = new Date().getFullYear() - 2019
 
 usePageSeo({
   title: `Mon parcours : ${years} ans de développement web | Alexandra Porhansl`,
-  description: `Développeuse full-stack depuis 2019 : agence web, startup SaaS, e-commerce, éditeur de logiciels, puis mon agence web en Alsace. Aujourd’hui développeuse full-stack salariée, avec mon agence web en Alsace en parallèle.`,
+  description: 'Développeuse full-stack depuis 2019 (agence web, startup SaaS, e-commerce, éditeur de logiciels), aujourd’hui salariée, avec mon agence web à Mulhouse.',
   path: '/parcours',
   type: 'article',
 })
