@@ -54,8 +54,8 @@ export const projects: Project[] = [
     domain: 'lachanceanimation.com',
     url: 'https://www.lachanceanimation.com',
     hook: 'Un site qui donne envie de réserver, et que le gérant met à jour lui-même.',
-    summary: 'Refonte complète du site Wix d’une entreprise d’animation casino : nouveau design, pages par type d’événement, formulaire de devis et espace d’administration.',
-    context: 'La Chance Animation fait venir le casino dans les mariages, les soirées d’entreprise et les anniversaires partout en Alsace : roulette, blackjack, poker, croupiers en tenue. Leur ancien site Wix ne rendait justice ni à l’ambiance de leurs soirées, ni au sérieux de leur travail, et il coûtait un abonnement chaque mois.',
+    summary: 'Refonte complète du site d’une entreprise d’animation casino : nouveau design, pages par type d’événement, formulaire de devis et espace d’administration.',
+    context: 'La Chance Animation fait venir le casino dans les mariages, les soirées d’entreprise et les anniversaires partout en Alsace : roulette, blackjack, poker, croupiers en tenue. Leur ancien site ne rendait justice ni à l’ambiance de leurs soirées, ni au sérieux de leur travail : je l’ai entièrement refait, en reprenant leurs contenus.',
     goals: [
       'Donner envie de réserver dès la première photo',
       'Recevoir des demandes de devis plus complètes',
@@ -68,10 +68,10 @@ export const projects: Project[] = [
       'Un formulaire de devis (type d’événement, formule envisagée, coordonnées) qui arrive directement dans la boîte mail du gérant, protégé contre les robots.',
       'Un espace d’administration simple : le gérant modifie lui-même ses formules et ses prix, ses avis clients, sa FAQ, son équipe, ses photos et ses horaires.',
       'Toutes les anciennes adresses du site redirigées vers les nouvelles pages, pour garder les positions acquises sur Google.',
-      'Un site très rapide, avec des photos optimisées automatiquement, et plus aucun abonnement Wix à payer pour l’hébergement.',
+      'Un site très rapide, avec des photos optimisées automatiquement pour s’afficher vite, même sur téléphone.',
     ],
     figures: [
-      { v: '0 €', k: 'd’abonnement Wix' },
+      { v: '100 %', k: 'des anciennes adresses reprises' },
       { v: '3', k: 'pages par type d’événement' },
       { v: '6', k: 'types de contenus que le gérant modifie seul' },
     ],
