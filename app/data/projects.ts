@@ -110,7 +110,7 @@ export const projects: Project[] = [
       'Un site en cinq langues, et toutes les anciennes adresses Shopify reprises pour ne pas perdre le référencement.',
     ],
     figures: [
-      { v: '202', k: 'affiches personnalisables' },
+      { v: '200+', k: 'affiches personnalisables' },
       { v: '5', k: 'langues' },
       { v: '2', k: 'canaux de vente : site et salons' },
     ],
