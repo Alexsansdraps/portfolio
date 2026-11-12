@@ -38,7 +38,7 @@ const sections = [
   {
     h: 'Formulaire de contact',
     p: [
-      'Les informations envoyées par le formulaire de contact (nom, entreprise, e-mail, téléphone facultatif, type de projet et message) sont transmises par e-mail à Alexandra Porhansl, uniquement pour répondre à votre demande et, le cas échéant, établir un devis.',
+      'Les informations envoyées par le formulaire de contact (nom, e-mail, téléphone facultatif, type de demande et message) sont transmises par e-mail à Alexandra Porhansl, uniquement pour répondre à votre demande et, le cas échéant, établir un devis.',
       'Elles ne sont pas enregistrées sur ce site, ne sont transmises à aucun tiers et ne servent à aucune prospection. Les échanges sont conservés le temps nécessaire au suivi de votre demande, puis au plus trois ans après le dernier contact.',
       `Vous pouvez à tout moment demander l’accès à vos données, leur rectification ou leur suppression en écrivant à ${business.email}. Vous pouvez aussi adresser une réclamation à la CNIL (www.cnil.fr).`,
     ],

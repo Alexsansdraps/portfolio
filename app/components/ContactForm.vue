@@ -59,14 +59,16 @@ async function envoyer(e: Event) {
           <input id="cf-nom" name="nom" type="text" autocomplete="name" required maxlength="120">
         </div>
         <div class="field">
-          <label for="cf-entreprise">Entreprise</label>
-          <input id="cf-entreprise" name="entreprise" type="text" autocomplete="organization" maxlength="160">
+          <label for="cf-email">E-mail <span aria-hidden="true">*</span></label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160">
         </div>
       </div>
       <div class="row two">
         <div class="field">
-          <label for="cf-email">E-mail <span aria-hidden="true">*</span></label>
-          <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160">
+          <label for="cf-projet">Votre demande</label>
+          <select id="cf-projet" name="projet">
+            <option v-for="p in projets" :key="p" :value="p" :selected="p === props.projet">{{ p }}</option>
+          </select>
         </div>
         <div class="field">
           <label for="cf-tel">Téléphone <small>(facultatif)</small></label>
@@ -75,25 +77,10 @@ async function envoyer(e: Event) {
       </div>
 
       <div class="field">
-        <label for="cf-site-actuel">Votre site actuel <small>(facultatif)</small></label>
-        <input id="cf-site-actuel" name="site_actuel" type="text" inputmode="url" autocomplete="url" maxlength="300" placeholder="www.monsite.fr, ou rien si vous n’en avez pas encore">
-      </div>
-
-      <fieldset class="field">
-        <legend>Votre demande</legend>
-        <div class="choices">
-          <label v-for="p in projets" :key="p" class="choice">
-            <input type="radio" name="projet" :value="p" :checked="p === props.projet">
-            <span>{{ p }}</span>
-          </label>
-        </div>
-      </fieldset>
-
-      <div class="field">
         <label for="cf-message">Votre message <span aria-hidden="true">*</span></label>
         <textarea
-          id="cf-message" name="message" rows="6" required maxlength="5000"
-          placeholder="Votre activité, ce que vous aimeriez, un site qui vous plaît, une échéance…"
+          id="cf-message" name="message" rows="5" required maxlength="5000"
+          placeholder="Votre activité, votre site si vous en avez un, ce que vous aimeriez…"
         />
       </div>
 
@@ -113,8 +100,7 @@ async function envoyer(e: Event) {
           {{ etat === 'envoi' ? 'Envoi…' : 'Envoyer mon message' }} <span class="arr" aria-hidden="true">→</span>
         </button>
         <p class="cf-note">
-          Vos informations servent uniquement à vous répondre : elles ne sont ni stockées sur ce site, ni transmises à des tiers.
-          <NuxtLink to="/mentions-legales">En savoir plus</NuxtLink>
+          Vos informations servent uniquement à vous répondre. <NuxtLink to="/mentions-legales">En savoir plus</NuxtLink>
         </p>
       </div>
     </form>
@@ -129,26 +115,21 @@ async function envoyer(e: Event) {
 label, legend { font-weight: 620; font-size: 15px; }
 label span, legend span { color: var(--color-wine); }
 label small { font-weight: 400; color: var(--color-mute); }
-input[type="text"], input[type="email"], input[type="tel"], textarea {
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
   width: 100%; font: inherit; font-size: 16px; color: var(--color-ink);
   background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 12px;
   padding: 13px 14px; transition: border-color .2s, background .2s;
 }
-textarea { resize: vertical; min-height: 150px; line-height: 1.55; }
-input:hover, textarea:hover { border-color: color-mix(in srgb, var(--color-ink) 30%, var(--color-line)); }
-input:focus, textarea:focus { outline: none; border-color: var(--color-wine); background: #fff; box-shadow: 0 0 0 3px var(--color-blush); }
-legend { margin-bottom: 10px; }
-.choices { display: flex; flex-wrap: wrap; gap: 8px; }
-.choice { position: relative; cursor: pointer; font-weight: 500; }
-.choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-.choice span {
-  display: inline-block; padding: 10px 16px; border-radius: 999px;
-  border: 1px solid var(--color-line); background: var(--color-paper); font-size: 15px;
-  transition: background .2s, border-color .2s, color .2s;
+/* liste déroulante : flèche dessinée, même allure que les champs */
+select {
+  appearance: none; cursor: pointer; padding-right: 40px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-ink) 50%), linear-gradient(-45deg, transparent 50%, var(--color-ink) 50%);
+  background-position: calc(100% - 20px) 52%, calc(100% - 15px) 52%;
+  background-size: 5px 5px; background-repeat: no-repeat;
 }
-.choice:hover span { border-color: var(--color-wine); }
-.choice input:checked + span { background: var(--color-wine); border-color: var(--color-wine); color: #fff; }
-.choice input:focus-visible + span { outline: 2px solid var(--color-wine); outline-offset: 3px; }
+textarea { resize: vertical; min-height: 140px; line-height: 1.55; }
+input:hover, select:hover, textarea:hover { border-color: color-mix(in srgb, var(--color-ink) 30%, var(--color-line)); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--color-wine); background-color: #fff; box-shadow: 0 0 0 3px var(--color-blush); }
 
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
