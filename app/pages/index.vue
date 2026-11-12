@@ -10,7 +10,7 @@ usePageSeo({
 })
 
 const [lachance, memoryline] = projects
-const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Outils sur mesure', 'Suivi & maintenance']
+const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Logiciel métier sur mesure', 'Suivi & maintenance']
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           Je crée des sites internet <em>à&nbsp;Mulhouse.</em>
         </h1>
         <p class="hero-sub rise d2">
-          Des sites vitrines, des boutiques en ligne et des outils sur mesure pour les entreprises du coin.
+          Des sites vitrines, des boutiques en ligne et des logiciels métier sur mesure pour les entreprises du coin.
           Je soigne le design, et je fais en sorte qu’on vous trouve sur Google.
         </p>
         <p class="hero-lead rise d2">
@@ -88,7 +88,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         </div>
         <div class="audit-cta" data-reveal>
           <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
-          <p>Gratuit et sans engagement</p>
         </div>
       </div>
     </section>
@@ -240,7 +239,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 .audit-case h3 { margin-top: 18px; font-weight: 740; font-stretch: 110%; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
 .audit-case p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
 .audit-cta { margin-top: clamp(28px, 4vw, 44px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
-.audit-cta p { font-size: 14px; color: var(--color-wine-deep); }
 
 /* ---------- services ---------- */
 .svc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }

@@ -12,7 +12,7 @@ const year = new Date().getFullYear()
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
             Agence web freelance basée à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
-            et outils sur mesure.
+            et logiciels métier sur mesure.
           </p>
           <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
         </div>

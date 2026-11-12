@@ -42,7 +42,6 @@ const steps = [
       </p>
       <div class="a-ctas rise d3">
         <a href="#demande" class="btn">Audit gratuit <span class="arr" aria-hidden="true">↓</span></a>
-        <span class="a-note">Gratuit · sans engagement</span>
       </div>
     </section>
 
@@ -56,11 +55,13 @@ const steps = [
 
     <section class="section wrap a-grid">
       <div data-reveal>
+        <h2 class="a-k">Ce qu’on regarde</h2>
         <ul class="a-list">
           <li v-for="c in audit.checks" :key="c">{{ c }}</li>
         </ul>
       </div>
       <div class="a-gets" data-reveal>
+        <h2 class="a-k">Ce que vous recevez</h2>
         <ul class="a-list check">
           <li v-for="g in audit.gets" :key="g">{{ g }}</li>
         </ul>
@@ -101,7 +102,6 @@ const steps = [
 .a-h1 em { font-style: normal; color: var(--color-wine); }
 .a-hero .lead { margin-top: 24px; }
 .a-ctas { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
-.a-note { font-size: 14px; color: var(--color-graphite); }
 
 .a-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
 .a-case { padding: clamp(24px, 3vw, 34px); border-radius: 22px; background: var(--color-blush); }
@@ -113,6 +113,7 @@ const steps = [
 .a-case p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
 
 .a-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+.a-k { font-weight: 740; font-stretch: 110%; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
 .a-list { list-style: none; margin-top: 18px; }
 .a-list li {
   position: relative; padding: 14px 0 14px 32px; border-bottom: 1px solid var(--color-line);

@@ -33,7 +33,7 @@ export interface Price {
 }
 
 /** Sous chaque grille de prix. */
-export const priceNote = 'Prix hors taxes. Le devis fixe le prix exact, selon votre projet.'
+export const priceNote = 'Prix hors taxes. Le devis fixe le prix exact, selon votre projet. Paiement possible en plusieurs fois.'
 
 export interface Service {
   id: string
@@ -84,7 +84,6 @@ export const services: Service[] = [
     prices: [
       { label: 'Site d’une page', value: 'à partir de 690 €' },
       { label: 'Site de 5 à 7 pages', value: 'à partir de 1 390 €' },
-      { label: 'Option : modifier vos textes et photos vous-même', value: '+ 340 €' },
     ],
     project: 'la-chance-animation',
     h1: ['Je crée', 'votre site vitrine.'],
@@ -120,7 +119,6 @@ export const services: Service[] = [
       'Paiement par carte bancaire et PayPal, directement sur votre site',
       'Produits personnalisables par vos clients, avec aperçu en direct',
       'Suivi des commandes, livraisons, factures et promotions',
-      'Ventes sur les salons et marchés depuis une tablette',
       'Un espace d’administration simple pour tout gérer',
     ],
     price: 'À partir de 4 130 € HT',
@@ -135,13 +133,13 @@ export const services: Service[] = [
     linkText: 'La boutique en ligne en détail',
     forWho: [
       'Vous vendez des produits et la plateforme que vous utilisez vous limite.',
-      'Vous êtes sur Shopify ou Wix et les abonnements s’additionnent chaque mois.',
-      'Vos clients personnalisent leurs commandes, ou vous vendez aussi sur des salons.',
+      'Wix ou Shopify ne sont pas assez spécialisés pour votre métier.',
+      'Vos clients personnalisent leurs commandes.',
     ],
     faq: [
       {
         q: 'Pourquoi une boutique sur mesure plutôt qu’une plateforme toute faite ?',
-        a: 'Une plateforme convient bien pour démarrer. Quand vos produits ont des particularités (personnalisation, ventes sur les salons, livraisons spécifiques), on finit souvent par empiler des modules payants. Une boutique sur mesure fait ce qu’il faut pour vos produits, sans module en plus, et vous ne dépendez plus des tarifs d’une plateforme.',
+        a: 'Une plateforme convient bien pour démarrer. Quand vos produits ont des particularités (personnalisation, livraisons spécifiques, règles propres à votre métier), on finit souvent par empiler des modules payants. Une boutique sur mesure fait ce qu’il faut pour vos produits, sans module en plus, et vous ne dépendez plus des tarifs d’une plateforme.',
       },
       {
         q: 'Quels moyens de paiement puis-je proposer ?',
@@ -237,40 +235,40 @@ export const services: Service[] = [
   },
   {
     id: 'outils-sur-mesure',
-    title: 'Outils sur mesure',
-    short: 'Espace client, réservation, tableau de bord : l’outil qui colle à votre façon de travailler.',
-    long: 'Vous jonglez entre plusieurs fichiers Excel, ou vous saisissez les mêmes informations à plusieurs endroits ? Je peux développer un outil qui s’en charge, et utiliser l’IA quand elle vous fait vraiment gagner du temps.',
+    title: 'Logiciel métier sur mesure',
+    short: 'Un logiciel métier, un espace client ou un outil de réservation, construit autour de votre façon de travailler.',
+    long: 'Vous jonglez entre plusieurs fichiers Excel, ou les logiciels du marché ne collent pas à votre métier ? Je développe des logiciels métier sur mesure, et des outils plus simples quand c’est suffisant, avec l’IA là où elle vous fait vraiment gagner du temps.',
     includes: [
-      'Espace d’administration pour modifier votre site vous-même',
+      'Un logiciel métier qui suit votre façon de travailler',
       'Prise de rendez-vous, espace client, formulaires utiles',
       'Tableaux de bord qui remplacent vos tableurs',
       'Automatisation des tâches répétitives, IA quand elle a du sens',
     ],
     price: 'Sur devis',
     prices: [
-      { label: 'Outil ou application sur mesure', value: 'sur devis' },
+      { label: 'Logiciel métier ou outil sur mesure', value: 'sur devis' },
     ],
     project: 'memoryline',
-    h1: ['Je développe', 'l’outil qui vous manque.'],
-    seoTitle: 'Logiciel et outils sur mesure à Mulhouse | Agence web',
-    seoDescription: 'Espace client, prise de rendez-vous, tableau de bord, automatisation : un outil sur mesure qui remplace vos tableurs et vos ressaisies. Sur devis, à Mulhouse.',
-    linkText: 'Les outils sur mesure en détail',
+    h1: ['Je développe', 'votre logiciel métier.'],
+    seoTitle: 'Logiciel métier sur mesure à Mulhouse | Agence web',
+    seoDescription: 'Logiciel métier, espace client, prise de rendez-vous, tableau de bord : un outil sur mesure qui remplace vos tableurs et vos ressaisies. Sur devis, à Mulhouse.',
+    linkText: 'Le logiciel métier en détail',
     forWho: [
       'Vous jonglez avec plusieurs fichiers Excel qui ne se parlent pas.',
-      'Vous tapez les mêmes informations dans deux ou trois logiciels.',
+      'Les logiciels du marché ne correspondent pas à votre métier.',
       'Vos clients aimeraient réserver ou retrouver leurs documents en ligne.',
     ],
     faq: [
       {
-        q: 'À quoi peut servir un outil sur mesure ?',
-        a: 'À ce qui vous fait perdre du temps aujourd’hui : un planning partagé, la prise de rendez-vous en ligne, un espace où vos clients retrouvent leurs documents, un tableau de bord qui remplace vos tableurs, l’envoi automatique de devis et de relances.',
+        q: 'À quoi peut servir un logiciel métier sur mesure ?',
+        a: 'À ce qui vous fait perdre du temps aujourd’hui : le suivi de vos chantiers ou de vos commandes, un planning partagé, la prise de rendez-vous en ligne, un espace où vos clients retrouvent leurs documents, un tableau de bord qui remplace vos tableurs, l’envoi automatique de devis et de relances.',
       },
       {
         q: 'Utilisez-vous l’intelligence artificielle ?',
         a: 'Quand elle vous fait vraiment gagner du temps : trier des demandes, résumer des documents, préremplir des fiches. Si une solution plus simple fait l’affaire, je vous la propose.',
       },
       {
-        q: 'Combien coûte un outil sur mesure ?',
+        q: 'Combien coûte un logiciel sur mesure ?',
         a: 'Le prix dépend de ce que l’outil doit faire. On commence par l’audit gratuit de vos outils actuels, puis je vous envoie un devis détaillé.',
       },
     ],
@@ -331,6 +329,10 @@ export const faq: Faq[] = [
     a: 'Un site d’une page démarre à 690 €, un site vitrine de 5 à 7 pages à 1 390 € et une boutique en ligne sur mesure à 4 130 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
   },
   {
+    q: 'Puis-je payer en plusieurs fois ?',
+    a: 'Oui. Le paiement peut se faire en plusieurs fois, on fixe l’échéancier ensemble dans le devis.',
+  },
+  {
     q: 'Votre audit est-il vraiment gratuit ?',
     a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, on fait le point et on vous remet un compte rendu clair avec les priorités.',
   },
@@ -340,7 +342,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est une option à 340 € HT.',
+    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. On en parle au moment du devis.',
   },
   {
     q: 'Mon site sera-t-il bien référencé sur Google ?',

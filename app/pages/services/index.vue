@@ -4,7 +4,7 @@ import { findProject } from '~/data/projects'
 
 usePageSeo({
   title: 'Services et tarifs : création de site et SEO à Mulhouse',
-  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
+  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, logiciel métier : services et tarifs de mon agence web à Mulhouse.',
   path: '/services',
 })
 
@@ -31,7 +31,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
     <section class="s-hero wrap">
       <h1 class="s-h1 rise d1">Ce que je fais, <em>et combien ça coûte.</em></h1>
       <p class="lead rise d2">
-        Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure. Pour chaque service,
+        Sites vitrines, boutiques en ligne, référencement, refontes et logiciels métier sur mesure. Pour chaque service,
         vous trouverez ce qui est compris, les prix et la façon dont on travaille.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">

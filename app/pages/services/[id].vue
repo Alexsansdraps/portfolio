@@ -60,11 +60,26 @@ useJsonLd([
         <NuxtLink to="/services">Services</NuxtLink><span aria-hidden="true">/</span>
         <span aria-current="page">{{ s.title }}</span>
       </nav>
-      <h1 class="sv-h1 rise d1">{{ s.h1[0] }} <em>{{ s.h1[1] }}</em></h1>
-      <p class="lead sv-lead rise d2">{{ s.long }}</p>
-      <div class="sv-ctas rise d3">
-        <NuxtLink to="/contact" class="btn">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
-        <NuxtLink to="/audit-gratuit" class="btn btn-ghost">Audit gratuit</NuxtLink>
+      <div class="sv-hero-grid">
+        <div>
+          <h1 class="sv-h1 rise d1">{{ s.h1[0] }} <em>{{ s.h1[1] }}</em></h1>
+          <p class="lead sv-lead rise d2">{{ s.long }}</p>
+          <div class="sv-ctas rise d3">
+            <NuxtLink to="/contact" class="btn">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+            <NuxtLink to="/audit-gratuit" class="btn btn-ghost">Audit gratuit</NuxtLink>
+          </div>
+        </div>
+
+        <!-- à droite : la réalisation qui illustre le service, sur un fond travaillé -->
+        <div v-if="example" class="sv-visual rise d2" aria-hidden="true">
+          <div class="sv-bg" />
+          <div class="sv-shot" data-depth="0.08">
+            <BrowserFrame v-bind="example.cover" :url="example.domain" eager />
+          </div>
+          <div class="sv-phone" data-depth="0.18">
+            <PhoneFrame v-bind="example.mobile" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -134,13 +149,41 @@ useJsonLd([
 .crumbs a { color: var(--color-graphite); text-decoration: none; }
 .crumbs a:hover { color: var(--color-wine); text-decoration: underline; }
 
+.sv-hero-grid {
+  margin-top: clamp(28px, 4vw, 48px);
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(32px, 5vw, 72px); align-items: center;
+}
 .sv-h1 {
-  margin-top: clamp(28px, 4vw, 48px); font-weight: 800; font-stretch: 116%;
-  font-size: clamp(40px, 6.2vw, 84px); line-height: .98; letter-spacing: -.03em; max-width: 16ch;
+  font-weight: 800; font-stretch: 116%;
+  font-size: clamp(40px, 5vw, 72px); line-height: .98; letter-spacing: -.03em; max-width: 14ch;
 }
 .sv-h1 em { font-style: normal; color: var(--color-wine); }
-.sv-lead { margin-top: 24px; max-width: 62ch; }
+.sv-lead { margin-top: 24px; max-width: 54ch; }
 .sv-ctas { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* visuel de droite : aplat rose incliné + trame de points, capture et téléphone par-dessus */
+.sv-visual { position: relative; aspect-ratio: 1 / .86; }
+.sv-bg {
+  position: absolute; inset: 4% -6% 2% 12%; border-radius: 36px; transform: rotate(-3deg);
+  background:
+    radial-gradient(circle at 78% 22%, color-mix(in srgb, var(--color-wine) 26%, transparent), transparent 58%),
+    var(--color-blush);
+  overflow: hidden;
+}
+.sv-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-wine) 30%, transparent) 1.3px, transparent 1.6px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(135deg, transparent 30%, #000 85%);
+}
+.sv-shot { position: absolute; left: 0; top: 16%; width: 84%; transform: rotate(-2deg); will-change: transform; }
+.sv-phone { position: absolute; right: 2%; bottom: 0; width: 23%; min-width: 88px; transform: rotate(4deg); will-change: transform; }
+
+@media (max-width: 960px) {
+  .sv-hero-grid { grid-template-columns: 1fr; }
+  .sv-visual { max-width: 560px; width: 100%; margin-top: 8px; }
+}
 
 .sv-offer { padding-block: clamp(56px, 8vw, 104px); background: var(--color-sand); border-top: 1px solid var(--color-line); }
 .sv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }

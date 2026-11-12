@@ -5,7 +5,7 @@ import { business } from '~/data/site'
  * Formulaire de contact → POST /api/contact (e-mail via Cloudflare Email Routing).
  * Fonctionne sans JavaScript (redirection vers /contact/merci) ; avec JS, envoi sans recharger la page.
  */
-const projets = ['Audit gratuit', 'Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Refonte de site', 'Outil sur mesure', 'Autre / je ne sais pas encore']
+const projets = ['Audit gratuit', 'Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Refonte de site', 'Logiciel ou outil sur mesure', 'Autre / je ne sais pas encore']
 
 /** projet : choix coché au départ (« Audit gratuit » sur la page de l'audit, par exemple) */
 const props = withDefaults(defineProps<{ projet?: string }>(), { projet: 'Audit gratuit' })

@@ -30,7 +30,7 @@ useJsonLd({
       '@id': `${siteUrl}/#agence`,
       'name': 'Alexandra Porhansl — Agence web',
       'alternateName': 'Alexandra Porhansl',
-      'description': 'Agence web freelance basée à Mulhouse, en Alsace : création de sites internet, sites vitrines, boutiques en ligne, référencement (SEO), refontes et outils sur mesure. Audit gratuit.',
+      'description': 'Agence web freelance basée à Mulhouse, en Alsace : création de sites internet, sites vitrines, boutiques en ligne, référencement (SEO), refontes et logiciels métier sur mesure. Audit gratuit.',
       'slogan': 'Création de sites internet à Mulhouse',
       'priceRange': '€€',
       'currenciesAccepted': 'EUR',
