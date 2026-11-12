@@ -29,7 +29,7 @@ export function usePageSeo(o: PageSeo) {
     ogDescription: o.description,
     ogUrl: url,
     ogType: o.type ?? 'website',
-    ogSiteName: 'Alexandra Porhansl, agence web en Alsace',
+    ogSiteName: 'Alexandra Porhansl — Agence web en Alsace',
     ogLocale: 'fr_FR',
     ogImage: image,
     ogImageWidth: custom ? o.imageWidth : 1200,

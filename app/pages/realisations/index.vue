@@ -24,17 +24,19 @@ useJsonLd([
 
 <template>
   <main>
-    <section class="head wrap">
-      <h1 class="t-h1">Réalisations</h1>
-      <p class="lead head-lead">
-        Trois projets réalisés cette année. La refonte du site d’une entreprise d’animation casino, une boutique en ligne
-        sur mesure pour des affiches personnalisées, et la refonte du site d’un photographe avec un espace pour ses clients.
+    <section class="r-hero wrap">
+      <p class="eyebrow rise">Réalisations</p>
+      <h1 class="r-h1 rise d1">Mes réalisations</h1>
+      <p class="lead rise d2">
+        Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
+        une boutique en ligne sur mesure pour des affiches personnalisées, et la refonte du site
+        d’un photographe, avec un espace pour ses clients.
       </p>
     </section>
 
-    <section class="sec" aria-label="Projets">
+    <section class="section on-dark" aria-label="Projets">
       <div class="wrap projects">
-        <ProjectCard v-for="p in projects" :key="p.slug" :project="p" as="h2" data-reveal />
+        <ProjectCard v-for="(p, i) in projects" :key="p.slug" :project="p" :flip="i % 2 === 1" as="h2" />
       </div>
     </section>
 
@@ -43,8 +45,12 @@ useJsonLd([
 </template>
 
 <style scoped>
-.head { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(40px, 6vw, 80px); }
-.head-lead { margin-top: 24px; }
-.projects { display: flex; flex-direction: column; }
-.projects > * + * { margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--color-hair); }
+.r-hero { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(48px, 6vw, 80px); }
+.r-h1 {
+  margin-top: 20px; font-weight: 800; font-stretch: 116%;
+  font-size: clamp(40px, 6.2vw, 84px); line-height: .98; letter-spacing: -.03em; max-width: 17ch;
+}
+.r-h1 em { font-style: normal; color: var(--color-wine); }
+.r-hero .lead { margin-top: 24px; }
+.projects { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 140px); }
 </style>

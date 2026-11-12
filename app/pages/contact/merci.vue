@@ -10,18 +10,20 @@ usePageSeo({
 
 <template>
   <main class="m wrap">
-    <h1 class="t-h1">Merci, votre message est bien parti.</h1>
-    <p class="lead m-lead muted">Je vous réponds sous 24 heures, à l’adresse e-mail que vous avez indiquée.</p>
-    <p class="go-list m-links">
-      <NuxtLink to="/realisations" class="go">Voir mes réalisations</NuxtLink>
-      <NuxtLink to="/" class="go">Retour à l’accueil</NuxtLink>
-    </p>
+    <p class="eyebrow">Message envoyé</p>
+    <h1 class="m-h1">Merci vielmols, votre message <em>est bien parti&nbsp;!</em></h1>
+    <p class="lead">Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
+    <div class="m-links">
+      <NuxtLink to="/realisations" class="btn">Voir mes réalisations</NuxtLink>
+      <NuxtLink to="/" class="btn btn-ghost">Retour à l’accueil</NuxtLink>
+    </div>
   </main>
 </template>
 
 <style scoped>
 .m { padding-block: clamp(64px, 12vw, 160px); min-height: 60svh; }
-.m .t-h1 { max-width: 14em; }
-.m-lead { margin-top: 22px; }
-.m-links { margin-top: 32px; }
+.m-h1 { margin-top: 20px; font-weight: 800; font-stretch: 116%; font-size: clamp(38px, 5.6vw, 72px); line-height: 1; letter-spacing: -.03em; max-width: 18ch; }
+.m-h1 em { font-style: normal; color: var(--color-wine); }
+.m .lead { margin-top: 22px; }
+.m-links { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
 </style>

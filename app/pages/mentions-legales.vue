@@ -12,9 +12,9 @@ const sections = [
   {
     h: 'Éditeur du site',
     p: [
-      `Alexandra Porhansl, ${business.legal.form}, création de sites internet.`,
+      `Alexandra Porhansl, ${business.legal.form} — création de sites internet.`,
       'Mulhouse (Haut-Rhin), France.',
-      `SIREN ${business.legal.siren}, SIRET ${business.legal.siret}`,
+      `SIREN : ${business.legal.siren} — SIRET : ${business.legal.siret}`,
       `N° de TVA intracommunautaire : ${business.legal.vat}`,
       `Activité : ${business.legal.naf}`,
       `Contact : ${business.email}`,
@@ -26,7 +26,7 @@ const sections = [
   },
   {
     h: 'Hébergement',
-    p: ['Ce site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis (www.cloudflare.com).'],
+    p: ['Ce site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis — www.cloudflare.com.'],
   },
   {
     h: 'Propriété intellectuelle',
@@ -59,21 +59,25 @@ const sections = [
 
 <template>
   <main class="legal wrap">
-    <h1 class="t-h1">Mentions légales</h1>
-    <p class="small l-up">Dernière mise à jour en novembre 2026</p>
+    <NuxtLink class="back" to="/">← Retour à l’accueil</NuxtLink>
 
-    <section v-for="s in sections" :key="s.h" class="l-sec cols">
-      <h2 class="t-sec">{{ s.h }}</h2>
-      <div>
-        <p v-for="(par, i) in s.p" :key="i">{{ par }}</p>
-      </div>
+    <h1 class="l-h1">Mentions légales</h1>
+    <p class="l-up">Dernière mise à jour : novembre 2026</p>
+
+    <section v-for="s in sections" :key="s.h" class="l-sec">
+      <h2>{{ s.h }}</h2>
+      <p v-for="(par, i) in s.p" :key="i">{{ par }}</p>
     </section>
   </main>
 </template>
 
 <style scoped>
-.legal { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(56px, 8vw, 104px); }
-.l-up { margin-top: 14px; margin-bottom: clamp(32px, 5vw, 56px); }
-.l-sec { padding: 22px 0; border-top: 1px solid var(--color-hair); }
-.l-sec p { max-width: 40em; color: var(--color-gray); font-size: 18px; }
+.legal { padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(56px, 8vw, 104px); }
+.back { font-family: var(--font-mono); font-size: 13px; color: var(--color-graphite); text-decoration: none; }
+.back:hover { color: var(--color-wine); }
+.l-h1 { margin-top: 28px; font-weight: 800; font-stretch: 116%; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: -.03em; }
+.l-up { margin-top: 12px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); }
+.l-sec { margin-top: clamp(32px, 4vw, 44px); max-width: 72ch; }
+.l-sec h2 { font-weight: 740; font-stretch: 110%; font-size: 21px; letter-spacing: -.01em; margin-bottom: 10px; }
+.l-sec p { font-size: 16px; line-height: 1.7; color: var(--color-graphite); margin-bottom: 8px; }
 </style>

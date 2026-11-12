@@ -1,117 +1,145 @@
 @import "tailwindcss";
 
-/* ---------- fonte self-hostée : Newsreader (variable, tailles optiques + graisses, subset latin) ---------- */
+/* ---------- fontes self-hostées (subsets latin, préchargées depuis /public/fonts) ---------- */
 @font-face {
-  font-family: 'Newsreader Var';
-  src: url('/fonts/newsreader.woff2') format('woff2-variations'), url('/fonts/newsreader.woff2') format('woff2');
-  font-weight: 200 800;
+  font-family: 'Archivo Var';
+  src: url('/fonts/archivo.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JB Mono';
+  src: url('/fonts/jbmono.woff2') format('woff2');
+  font-weight: 100 800;
   font-display: swap;
 }
 
-/* ---------- tokens : noir sur blanc, deux gris, des filets. Pas d'accent de couleur :
-   la couleur vient des captures des projets et du portrait. ---------- */
+/* ---------- tokens ---------- */
 @theme {
-  --color-paper: #ffffff;
-  --color-ink:   #111111; /* texte, filets forts */
-  --color-gray:  #555555; /* texte secondaire */
-  --color-mute:  #707070; /* méta, légendes (AA sur blanc) */
-  --color-hair:  #dedede; /* filets fins */
-  --color-soft:  #f4f4f4; /* fonds très légers (champs, carte) */
-  --font-serif: 'Newsreader Var', 'Newsreader', Georgia, 'Times New Roman', serif;
+  --color-paper:    #f6f2ec; /* fond principal, papier chaud */
+  --color-sand:     #ede6dc; /* fonds secondaires, cartes */
+  --color-line:     #ddd3c6; /* filets 1px */
+  --color-ink:      #1d161a; /* texte */
+  --color-graphite: #4d4449; /* texte secondaire */
+  --color-mute:     #6e6469; /* méta (AA sur paper) */
+  --color-wine:     #a1264c; /* accent, échantillonné sur le portrait (AA sur paper) */
+  --color-wine-deep:#7d1a3a;
+  --color-blush:    #f2dde3;
+  --color-plum:     #221419; /* bandeaux sombres */
+  --color-plum-2:   #2e1c23;
+  --color-bone:     #f3ece6; /* texte sur plum */
+  --color-rose:     #e07a98; /* accent sur plum (AA) */
+  --font-display: 'Archivo Var', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JB Mono', 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* ---------- base ---------- */
-html { background: var(--color-paper); overflow-x: clip; }
+html { background: var(--color-paper); overflow-x: clip; scroll-padding-top: 88px; }
 body {
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-serif);
-  font-optical-sizing: auto;
-  font-size: 19px;
-  line-height: 1.55;
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
 }
-@media (max-width: 640px) { body { font-size: 18px; } }
-::selection { background: var(--color-ink); color: var(--color-paper); }
-:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+::selection { background: var(--color-wine); color: var(--color-paper); }
+:focus-visible { outline: 2px solid var(--color-wine); outline-offset: 3px; border-radius: 4px; }
 img { max-width: 100%; height: auto; }
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
-a:hover { text-decoration-thickness: 2px; }
 
-.wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 48px); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); }
+.section { padding-block: clamp(72px, 10vw, 136px); }
 
 .skip {
   position: absolute; left: 12px; top: -60px; z-index: 100;
   background: var(--color-ink); color: var(--color-paper);
-  padding: 10px 16px; text-decoration: none;
+  padding: 10px 16px; border-radius: 8px; text-decoration: none;
 }
 .skip:focus { top: 12px; }
 
-/* ---------- mise en page éditoriale ----------
-   .sec : une section, ouverte par un filet noir.
-   .cols : titre de section dans la colonne de gauche, contenu à droite. */
-.sec { padding-block: clamp(48px, 7vw, 104px); border-top: 1px solid var(--color-ink); }
-.cols {
-  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
-  gap: 24px clamp(24px, 4vw, 64px);
-}
-.cols > :first-child { align-self: start; }
-@media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
-
 /* ---------- typo ---------- */
-.t-display {
-  font-weight: 400; font-size: clamp(44px, 7.4vw, 108px);
-  line-height: .98; letter-spacing: -.028em; text-wrap: balance;
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--color-wine);
 }
-.t-h1 {
-  font-weight: 400; font-size: clamp(40px, 6vw, 84px);
-  line-height: 1; letter-spacing: -.025em; text-wrap: balance;
-}
-.t-h2 {
-  font-weight: 400; font-size: clamp(30px, 3.6vw, 48px);
-  line-height: 1.08; letter-spacing: -.018em; text-wrap: balance;
-}
-/* titre de section, colonne de gauche */
-.t-sec { font-weight: 500; font-size: 21px; line-height: 1.25; letter-spacing: -.005em; }
-.t-h3 { font-weight: 500; font-size: clamp(22px, 2vw, 26px); line-height: 1.2; letter-spacing: -.01em; }
-.lead { font-size: clamp(21px, 2vw, 25px); line-height: 1.42; max-width: 36em; text-wrap: pretty; }
-.muted { color: var(--color-gray); }
-.small { font-size: 16px; line-height: 1.5; color: var(--color-mute); }
-.num { font-variant-numeric: lining-nums tabular-nums; }
-p + p { margin-top: .8em; }
+.eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
 
-/* ---------- liens d'action et bouton ---------- */
-.go {
-  display: inline-block; font-size: 20px; font-weight: 500;
-  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .22em;
+.h2 {
+  font-weight: 760; font-stretch: 112%;
+  font-size: clamp(30px, 4.4vw, 54px); line-height: 1.04;
+  letter-spacing: -.02em; text-wrap: balance;
 }
-.go:hover { text-decoration-thickness: 3px; }
-.go-list { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; }
+.h2 em { font-style: normal; color: var(--color-wine); }
+.lead {
+  font-size: clamp(17px, 1.6vw, 20px); line-height: 1.6;
+  color: var(--color-graphite); max-width: 60ch; text-wrap: pretty;
+}
+.sec-head { display: flex; flex-direction: column; gap: 18px; margin-bottom: clamp(36px, 5vw, 64px); }
 
-/* bouton plein, réservé aux formulaires */
+/* ---------- boutons ---------- */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  font: inherit; font-size: 18px; font-weight: 500;
-  padding: 14px 28px; border: 1px solid var(--color-ink);
-  background: var(--color-ink); color: var(--color-paper);
-  text-decoration: none; cursor: pointer; transition: background .2s, color .2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 650; font-size: 16px; font-stretch: 105%;
+  padding: 15px 26px; border-radius: 999px; text-decoration: none;
+  background: var(--color-wine); color: #fff;
+  border: 1px solid var(--color-wine);
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+  cursor: pointer;
 }
-.btn:hover { background: var(--color-paper); color: var(--color-ink); }
+.btn:hover { background: var(--color-wine-deep); border-color: var(--color-wine-deep); transform: translateY(-1px); }
+.btn .arr { transition: transform .2s; }
+.btn:hover .arr { transform: translateX(3px); }
+.btn-ghost { background: transparent; color: var(--color-ink); border-color: var(--color-ink); }
+.btn-ghost:hover { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+.on-dark .btn-ghost { color: var(--color-bone); border-color: color-mix(in srgb, var(--color-bone) 50%, transparent); }
+.on-dark .btn-ghost:hover { background: var(--color-bone); color: var(--color-plum); border-color: var(--color-bone); }
 
-/* ---------- listes à filets ---------- */
-.lines { list-style: none; border-top: 1px solid var(--color-hair); }
-.lines > li { padding: 14px 0; border-bottom: 1px solid var(--color-hair); }
+.link {
+  color: var(--color-wine); font-weight: 600; text-decoration: underline;
+  text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.link:hover { color: var(--color-wine-deep); }
 
-/* fil d'Ariane */
-.crumbs { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 16px; color: var(--color-mute); }
-.crumbs a { color: var(--color-gray); text-decoration: none; }
-.crumbs a:hover { text-decoration: underline; }
+/* ---------- bandeaux sombres ---------- */
+.on-dark { background: var(--color-plum); color: var(--color-bone); }
+.on-dark .eyebrow { color: var(--color-rose); }
+.on-dark .h2 em { color: var(--color-rose); }
+.on-dark .lead { color: color-mix(in srgb, var(--color-bone) 78%, var(--color-plum)); }
+.on-dark :focus-visible { outline-color: var(--color-rose); }
 
-/* ---------- apparition discrète au défilement (plugins/scroll.client.ts) ----------
-   La classe reveal-on n'est posée que si JS tourne et que le mouvement n'est pas réduit :
-   sinon tout est visible d'emblée. */
-.reveal-on [data-reveal]:not(.vu) { opacity: 0; transform: translateY(12px); }
-.reveal-on [data-reveal] { transition: opacity .7s ease, transform .7s ease; }
+/* ---------- puces ---------- */
+.chip {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--color-line); color: var(--color-graphite); background: var(--color-paper);
+}
+
+.pulse {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  background: #2f9e62; box-shadow: 0 0 0 0 rgb(47 158 98 / .5);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgb(47 158 98 / .45); }
+  70%, 100% { box-shadow: 0 0 0 9px rgb(47 158 98 / 0); }
+}
+
+/* ---------- entrée du hero ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { opacity: 0; transform: translateY(22px); animation: rise .9s cubic-bezier(.2, .65, .25, 1) forwards; }
+  .rise.d1 { animation-delay: .08s; }
+  .rise.d2 { animation-delay: .18s; }
+  .rise.d3 { animation-delay: .3s; }
+  .rise.d4 { animation-delay: .42s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; }
+}

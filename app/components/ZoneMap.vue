@@ -12,31 +12,54 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
   <svg class="zm" viewBox="40 30 380 600" role="img" :aria-label="aria">
     <!-- relief des Vosges, simple ombrage -->
     <ellipse class="vosges" cx="118" cy="300" rx="70" ry="210" />
-    <text class="geo" x="78" y="250" transform="rotate(-72 78 250)">Vosges</text>
+    <text class="geo" x="78" y="250" transform="rotate(-72 78 250)">VOSGES</text>
+
+    <!-- Route des vins, au pied des Vosges (Thann → Marlenheim) -->
+    <path class="wine-road" d="M 101 468 L 122 432 L 148 337 L 184 250 L 194 175" />
+    <text class="geo wine" x="146" y="296" transform="rotate(-70 146 296)">ROUTE DES VINS</text>
 
     <!-- Rhin + pays voisins -->
     <path class="rhine" :d="rhine" />
-    <text class="geo" x="283" y="246" transform="rotate(-56 283 246)">Rhin</text>
-    <text class="geo" x="330" y="300">Allemagne</text>
-    <text class="geo" x="244" y="610">Suisse</text>
+    <text class="geo river" x="283" y="246" transform="rotate(-56 283 246)">RHIN</text>
+    <text class="geo" x="330" y="300">ALLEMAGNE</text>
+    <text class="geo" x="244" y="610">SUISSE</text>
 
-    <g v-for="c in cities" :key="`c-${c.name}`">
-      <circle class="city" :cx="c.x" :cy="c.y" r="3.5" />
-      <text class="c-name" :x="c.x + (c.side === 'left' ? -9 : 9)" :y="c.y + 4" :text-anchor="c.side === 'left' ? 'end' : 'start'">{{ c.name }}</text>
+    <g v-for="c in cities" :key="`c-${c.name}`" class="city">
+      <circle :cx="c.x" :cy="c.y" r="4" />
+      <text class="c-name" :x="c.x + (c.side === 'left' ? -10 : 10)" :y="c.y + 4" :text-anchor="c.side === 'left' ? 'end' : 'start'">{{ c.name }}</text>
     </g>
 
-    <circle class="home-dot" :cx="home.x" :cy="home.y" r="6" />
-    <text class="c-name home-name" :x="home.x + 13" :y="home.y + 19">{{ home.name }}</text>
+    <g class="home">
+      <circle class="home-halo" :cx="home.x" :cy="home.y" r="16" />
+      <circle class="home-dot" :cx="home.x" :cy="home.y" r="6.5" />
+      <text class="c-name home-name" :x="home.x + 14" :y="home.y + 20">{{ home.name }}</text>
+    </g>
   </svg>
 </template>
 
 <style scoped>
-.zm { display: block; width: 100%; height: auto; max-height: 600px; overflow: visible; font-family: var(--font-serif); }
-.vosges { fill: var(--color-soft); }
-.geo { font-size: 12px; letter-spacing: .12em; font-variant-caps: all-small-caps; fill: var(--color-mute); }
-.rhine { fill: none; stroke: #a9a9a9; stroke-width: 2; stroke-linecap: round; }
-.city { fill: var(--color-paper); stroke: var(--color-ink); stroke-width: 1.2; }
-.c-name { font-size: 14px; fill: var(--color-ink); paint-order: stroke; stroke: var(--color-paper); stroke-width: 4px; stroke-linejoin: round; }
-.home-dot { fill: var(--color-ink); }
-.home-name { font-size: 17px; font-weight: 600; }
+.zm { display: block; width: 100%; height: auto; max-height: 640px; overflow: visible; }
+.vosges { fill: color-mix(in srgb, var(--color-sand) 80%, var(--color-line)); }
+.geo {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .3em;
+  fill: var(--color-mute); opacity: .8;
+}
+.rhine { fill: none; stroke: #8db3cf; stroke-width: 3; stroke-linecap: round; opacity: .75; }
+.river { fill: #5d87a6; }
+.wine-road { fill: none; stroke: #b7a06a; stroke-width: 2; stroke-dasharray: 1 5; stroke-linecap: round; }
+.geo.wine { fill: #8a7440; letter-spacing: .22em; }
+
+.city circle { fill: var(--color-paper); stroke: var(--color-ink); stroke-width: 1.5; }
+.c-name { font-family: var(--font-display); font-weight: 680; font-size: 13.5px; fill: var(--color-ink); }
+.c-time { font-family: var(--font-mono); font-size: 10.5px; fill: var(--color-wine); letter-spacing: .04em; }
+/* liseré couleur papier : étiquettes lisibles par-dessus le Rhin et les trajets */
+.c-name, .c-time { paint-order: stroke; stroke: var(--color-paper); stroke-width: 4px; stroke-linejoin: round; }
+.home-dot { fill: var(--color-wine); }
+.home-halo { fill: var(--color-wine); opacity: .18; transform-box: fill-box; transform-origin: center; }
+.home-name { font-size: 16px; font-weight: 780; fill: var(--color-wine); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-halo { animation: halo 2.6s ease-out infinite; }
+  @keyframes halo { 0% { transform: scale(.6); opacity: .35; } 100% { transform: scale(1.8); opacity: 0; } }
+}
 </style>

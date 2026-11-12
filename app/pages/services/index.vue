@@ -28,81 +28,82 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 
 <template>
   <main>
-    <section class="head wrap">
-      <h1 class="t-h1">Création de sites internet et référencement</h1>
-      <div class="head-foot">
-        <p class="lead">
-          Voici ce que je fais, combien cela coûte et comment ça se passe. Tous les prix sont hors taxes, et l’audit
-          de votre site est offert.
-        </p>
-        <nav aria-label="Services">
-          <ul class="lines">
-            <li v-for="s in services" :key="s.id"><a :href="`#${s.id}`">{{ s.title }}</a></li>
-            <li><a href="#maintenance">{{ maintenance.title }}</a></li>
-          </ul>
-        </nav>
-      </div>
+    <section class="s-hero wrap">
+      <p class="eyebrow rise">Services</p>
+      <h1 class="s-h1 rise d1">Ce que je fais, <em>et combien ça coûte.</em></h1>
+      <p class="lead rise d2">
+        Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure. Pour chaque service,
+        vous trouverez ce qui est compris, les prix et la façon dont on travaille.
+      </p>
+      <nav class="s-toc rise d3" aria-label="Services">
+        <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
+          <span>{{ String(i + 1).padStart(2, '0') }}</span>{{ s.title }}
+        </a>
+      </nav>
     </section>
 
-    <section v-for="s in list" :id="s.id" :key="s.id" class="sec" :aria-labelledby="`${s.id}-t`">
-      <div class="wrap cols">
+    <section class="wrap s-audit" aria-label="Audit gratuit">
+      <div class="s-audit-in" data-reveal>
         <div>
-          <h2 :id="`${s.id}-t`" class="t-h2"><NuxtLink :to="`/services/${s.id}`" class="h-link">{{ s.title }}</NuxtLink></h2>
-          <p class="small num s-price">{{ s.price }}</p>
+          <p class="eyebrow">Pour commencer</p>
+          <p class="s-audit-t">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
+          <p class="s-audit-p">On fait le point et on vous donne les priorités, sans engagement.</p>
         </div>
-        <div class="s-body" data-reveal>
-          <div>
-            <p class="lead">{{ s.long }}</p>
-            <h3 class="s-k">Ce qui est compris</h3>
-            <ul class="lines">
-              <li v-for="it in s.includes" :key="it">{{ it }}</li>
-            </ul>
+        <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+      </div>
+    </section>
+
+    <section v-for="(s, i) in list" :id="s.id" :key="s.id" class="s-block" :class="{ alt: i % 2 === 1 }" :aria-labelledby="`${s.id}-t`">
+      <div class="wrap s-grid">
+        <div class="s-main" data-reveal>
+          <span class="s-num">{{ String(i + 1).padStart(2, '0') }}</span>
+          <h2 :id="`${s.id}-t`" class="h2"><NuxtLink :to="`/services/${s.id}`" class="s-h2-link">{{ s.title }}</NuxtLink></h2>
+          <p class="lead">{{ s.long }}</p>
+          <PriceList :prices="s.prices" :note="priceNote" />
+          <div class="s-actions">
+            <NuxtLink to="/contact" class="btn">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+            <NuxtLink :to="`/services/${s.id}`" class="link">{{ s.linkText }} →</NuxtLink>
           </div>
-          <div>
-            <h3 class="s-k s-k-first">Tarifs</h3>
-            <PriceList :prices="s.prices" :note="priceNote" />
-            <p class="go-list s-links">
-              <NuxtLink :to="`/services/${s.id}`" class="go">{{ s.linkText }}</NuxtLink>
-              <NuxtLink v-if="s.ref" :to="`/realisations/${s.ref.slug}`">Exemple : {{ s.ref.name }}</NuxtLink>
-            </p>
-          </div>
+        </div>
+        <div class="s-side" data-reveal>
+          <p class="s-label">Ce qui est compris</p>
+          <ul class="s-list">
+            <li v-for="it in s.includes" :key="it">{{ it }}</li>
+          </ul>
+          <NuxtLink v-if="s.ref" :to="`/realisations/${s.ref.slug}`" class="s-ref">
+            <img :src="s.ref.cover.src" :alt="''" width="1440" height="900" loading="lazy" decoding="async">
+            <span class="s-ref-t">
+              <small>Exemple</small>
+              {{ s.ref.name }}
+              <span class="arr" aria-hidden="true">→</span>
+            </span>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
-    <section id="maintenance" class="sec" aria-labelledby="maint-t">
-      <div class="wrap cols">
-        <h2 id="maint-t" class="t-h2">{{ maintenance.title }}</h2>
-        <div class="s-body" data-reveal>
-          <p class="lead">{{ maintenance.text }}</p>
-          <PriceList :prices="maintenance.prices" :note="priceNote" />
-        </div>
+    <section id="maintenance" class="wrap s-maint" data-reveal>
+      <div>
+        <h2 class="h2">{{ maintenance.title }}</h2>
+        <p class="lead">{{ maintenance.text }}</p>
       </div>
+      <PriceList :prices="maintenance.prices" :note="priceNote" />
     </section>
 
-    <section class="sec" aria-labelledby="audit-t">
-      <div class="wrap cols">
-        <h2 id="audit-t" class="t-sec">Pour commencer</h2>
-        <div data-reveal>
-          <p class="t-h2">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
-          <p class="lead muted audit-p">On fait le point et on vous donne les priorités, sans engagement.</p>
-          <p class="go-list audit-links"><NuxtLink to="/audit-gratuit" class="go">Demander l’audit gratuit</NuxtLink></p>
-        </div>
+    <section class="section wrap" aria-labelledby="m-title">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Comment ça se passe</p>
+        <h2 id="m-title" class="h2">Comment on travaille ensemble</h2>
       </div>
+      <MethodSteps />
     </section>
 
-    <section class="sec" aria-labelledby="m-title">
-      <div class="wrap cols">
-        <h2 id="m-title" class="t-sec">Comment on travaille ensemble</h2>
-        <MethodSteps />
+    <section class="section wrap faq-sec" aria-labelledby="f-title">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 id="f-title" class="h2">Questions fréquentes</h2>
       </div>
-    </section>
-
-    <section class="sec" aria-labelledby="f-title">
-      <div class="wrap cols">
-        <h2 id="f-title" class="t-sec">Questions fréquentes</h2>
-        <FaqList :schema="false" />
-      </div>
+      <FaqList :schema="false" />
     </section>
 
     <CtaBand />
@@ -110,27 +111,69 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 </template>
 
 <style scoped>
-.head { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(40px, 6vw, 80px); }
-.head .t-h1 { max-width: 14em; }
-.head-foot {
-  margin-top: clamp(28px, 4vw, 56px);
-  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px clamp(32px, 6vw, 96px); align-items: start;
+.s-hero { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(48px, 6vw, 80px); }
+.s-h1 {
+  margin-top: 20px; font-weight: 800; font-stretch: 116%;
+  font-size: clamp(40px, 6.2vw, 84px); line-height: .98; letter-spacing: -.03em; max-width: 16ch;
 }
-.head-foot .lines li { padding: 10px 0; }
-.head-foot a { text-decoration: none; }
-.head-foot a:hover { text-decoration: underline; }
-
-.h-link { text-decoration: none; }
-.h-link:hover { text-decoration: underline; text-decoration-thickness: 1.5px; }
-.s-price { margin-top: 10px; }
-.s-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 4vw, 64px); align-items: start; }
-.s-k { margin: 28px 0 10px; font-weight: 500; font-size: 18px; }
-.s-k-first { margin-top: 0; }
-.s-links { margin-top: 24px; }
-.audit-p { margin-top: 14px; }
-.audit-links { margin-top: 24px; }
-
-@media (max-width: 960px) {
-  .head-foot, .s-body { grid-template-columns: 1fr; }
+.s-h1 em { font-style: normal; color: var(--color-wine); }
+.s-hero .lead { margin-top: 24px; }
+.s-toc { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; }
+.s-toc a {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px; border: 1px solid var(--color-line);
+  color: var(--color-ink); text-decoration: none; font-weight: 560; font-size: 15px;
+  transition: border-color .2s, background .2s;
 }
+.s-toc a span { font-family: var(--font-mono); font-size: 11.5px; color: var(--color-wine); }
+.s-toc a:hover { border-color: var(--color-wine); background: #fff; }
+
+.s-audit { padding-bottom: clamp(40px, 6vw, 72px); }
+.s-audit-in {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
+  padding: clamp(24px, 3.5vw, 40px); border-radius: 24px; background: var(--color-blush);
+}
+.s-audit-t { margin-top: 10px; font-weight: 760; font-stretch: 110%; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.015em; max-width: 30ch; }
+.s-audit-p { margin-top: 8px; color: var(--color-graphite); }
+.s-block { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--color-line); }
+.s-block.alt { background: var(--color-sand); }
+.s-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.s-num { font-family: var(--font-mono); font-size: 14px; color: var(--color-wine); }
+.s-main .h2 { margin-top: 10px; }
+.s-main .lead { margin-top: 20px; }
+.s-actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.s-h2-link { color: inherit; text-decoration: none; }
+.s-h2-link:hover { color: var(--color-wine); }
+.s-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-mute); }
+.s-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; }
+.s-list li {
+  position: relative; padding: 13px 0 13px 32px; border-bottom: 1px solid var(--color-line);
+  font-size: 16.5px; line-height: 1.5;
+}
+.s-list li::before {
+  content: "✓"; position: absolute; left: 0; top: 14px;
+  display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--color-wine); color: #fff; font-size: 11px; font-weight: 700;
+}
+.s-ref {
+  margin-top: 24px; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center;
+  padding: 10px; border-radius: 16px; background: #fff; border: 1px solid var(--color-line);
+  color: var(--color-ink); text-decoration: none; transition: border-color .2s;
+}
+.s-ref:hover { border-color: var(--color-wine); }
+.s-ref img { width: 120px; height: 75px; object-fit: cover; object-position: top; border-radius: 9px; }
+.s-ref-t { font-weight: 700; font-size: 17px; }
+.s-ref-t small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-mute); margin-bottom: 2px; }
+.s-ref-t .arr { color: var(--color-wine); }
+
+.s-maint {
+  margin-top: clamp(48px, 7vw, 88px);
+  padding: clamp(28px, 4vw, 48px); border-radius: 24px; background: var(--color-blush);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center;
+}
+.s-maint .lead { margin-top: 12px; color: var(--color-ink); }
+.s-maint .pl { margin-top: 0; }
+.faq-sec { padding-bottom: clamp(24px, 4vw, 48px); }
+
+@media (max-width: 900px) { .s-grid, .s-maint { grid-template-columns: 1fr; } }
 </style>

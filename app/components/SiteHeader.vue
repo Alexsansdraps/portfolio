@@ -2,30 +2,44 @@
 const nav = [
   { to: '/services', label: 'Services' },
   { to: '/realisations', label: 'Réalisations' },
-  { to: '/parcours', label: 'Parcours' },
-  { to: '/audit-gratuit', label: 'Audit gratuit' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/parcours', label: 'Mon parcours' },
+  { to: '/audit-gratuit', label: 'Audit gratuit', hot: true },
 ]
 
 const open = ref(false)
 const route = useRoute()
 watch(() => route.fullPath, () => { open.value = false })
+
+/* Filet sous la barre une fois qu'on a commencé à défiler */
+const scrolled = ref(false)
+onMounted(() => {
+  const onScroll = () => { scrolled.value = window.scrollY > 8 }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
+})
 </script>
 
 <template>
-  <header class="bar">
+  <header class="bar" :class="{ scrolled, open }">
     <div class="wrap bar-in">
-      <NuxtLink to="/" class="brand">
-        Alexandra Porhansl
-        <span class="brand-sub">agence web, Mulhouse</span>
+      <NuxtLink to="/" class="brand" aria-label="Alexandra Porhansl, agence web — accueil">
+        <span class="b-name">Alexandra Porhansl<span class="dot">.</span></span>
+        <span class="b-tag">Agence web · Alsace</span>
       </NuxtLink>
 
       <nav class="nav" aria-label="Navigation principale">
-        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link">{{ n.label }}</NuxtLink>
+        <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link" :class="{ hot: n.hot }">{{ n.label }}</NuxtLink>
+        <NuxtLink to="/contact" class="btn nav-cta">Parlons de votre projet</NuxtLink>
       </nav>
 
-      <button class="menu" type="button" :aria-expanded="open" aria-controls="menu-mobile" @click="open = !open">
-        {{ open ? 'Fermer' : 'Menu' }}
+      <button
+        class="burger" type="button"
+        :aria-expanded="open" aria-controls="menu-mobile"
+        @click="open = !open"
+      >
+        <span class="sr">{{ open ? 'Fermer le menu' : 'Ouvrir le menu' }}</span>
+        <span class="b-lines" aria-hidden="true"><span /><span /></span>
       </button>
     </div>
 
@@ -33,32 +47,78 @@ watch(() => route.fullPath, () => { open.value = false })
       <div class="wrap">
         <NuxtLink to="/" class="m-link">Accueil</NuxtLink>
         <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="m-link">{{ n.label }}</NuxtLink>
+        <NuxtLink to="/contact" class="btn m-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
       </div>
     </nav>
   </header>
 </template>
 
 <style scoped>
-.bar { border-bottom: 1px solid var(--color-ink); background: var(--color-paper); }
-.bar-in { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-block: 22px 18px; }
+.bar {
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--color-paper) 86%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s;
+}
+.bar.scrolled, .bar.open { border-bottom-color: var(--color-line); }
+.bar-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
 
-.brand { text-decoration: none; font-size: 22px; font-weight: 500; letter-spacing: -.01em; line-height: 1.2; }
-.brand-sub { margin-left: 8px; font-size: 16px; font-weight: 400; color: var(--color-mute); }
+.brand { display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: var(--color-ink); line-height: 1; }
+.b-name { font-weight: 780; font-stretch: 116%; font-size: 18px; letter-spacing: -.01em; }
+.b-name .dot { color: var(--color-wine); }
+.b-tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-mute); }
 
-.nav { display: flex; gap: clamp(16px, 2.2vw, 30px); }
-.nav-link { font-size: 18px; text-decoration: none; }
-.nav-link:hover, .nav-link.router-link-active { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+.nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
+.nav-link {
+  position: relative;
+  font-size: 15.5px; font-weight: 520; color: var(--color-ink); text-decoration: none;
+  padding: 6px 0;
+}
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--color-wine); transform: scaleX(0); transform-origin: left;
+  transition: transform .25s;
+}
+.nav-link:hover::after, .nav-link.router-link-active::after { transform: scaleX(1); }
+.nav-link.hot { color: var(--color-wine); font-weight: 650; }
+.nav-link.hot::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; vertical-align: 2px;
+  border-radius: 50%; background: var(--color-wine);
+}
+.nav-cta { padding: 11px 20px; font-size: 15px; }
 
-.menu { display: none; font: inherit; font-size: 18px; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+.burger { display: none; }
 .m-nav { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav { display: none; }
-  .brand-sub { display: none; }
-  .menu { display: block; }
-  .m-nav:not([hidden]) { display: block; border-top: 1px solid var(--color-hair); padding: 8px 0 28px; }
+  .burger {
+    display: grid; place-items: center;
+    width: 46px; height: 46px; border-radius: 50%;
+    border: 1px solid var(--color-line); background: var(--color-paper); cursor: pointer;
+  }
+  .b-lines { display: grid; gap: 6px; width: 18px; }
+  .b-lines span { height: 2px; background: var(--color-ink); border-radius: 2px; transition: transform .25s; }
+  .open .b-lines span:first-child { transform: translateY(4px) rotate(45deg); }
+  .open .b-lines span:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+  .m-nav:not([hidden]) {
+    display: block;
+    border-top: 1px solid var(--color-line);
+    padding: 12px 0 24px;
+    min-height: calc(100svh - 72px);
+    background: var(--color-paper);
+  }
   .m-nav .wrap { display: flex; flex-direction: column; }
-  .m-link { padding: 12px 0; border-bottom: 1px solid var(--color-hair); font-size: 28px; text-decoration: none; }
-  .m-link.router-link-exact-active { text-decoration: underline; text-decoration-thickness: 1px; }
+  .m-link {
+    font-weight: 720; font-stretch: 112%; font-size: 30px; letter-spacing: -.01em;
+    color: var(--color-ink); text-decoration: none;
+    padding: 14px 0; border-bottom: 1px solid var(--color-line);
+  }
+  .m-link.router-link-exact-active { color: var(--color-wine); }
+  .m-cta { margin-top: 28px; align-self: flex-start; }
 }
 </style>

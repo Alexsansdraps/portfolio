@@ -24,7 +24,7 @@ useJsonLd([
   {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
-    'name': `${p.name}, ${p.kind}`,
+    'name': `${p.name} — ${p.kind}`,
     'description': p.summary,
     'image': absoluteUrl(p.cover.src),
     'dateCreated': String(p.year),
@@ -39,130 +39,166 @@ useJsonLd([
 
 <template>
   <main>
-    <section class="head wrap">
-      <nav class="crumbs" aria-label="Fil d’Ariane">
+    <section class="cs-hero wrap">
+      <nav class="crumbs rise" aria-label="Fil d’Ariane">
         <NuxtLink to="/">Accueil</NuxtLink><span aria-hidden="true">/</span>
         <NuxtLink to="/realisations">Réalisations</NuxtLink><span aria-hidden="true">/</span>
         <span aria-current="page">{{ p.name }}</span>
       </nav>
-      <h1 class="t-display cs-h1">{{ p.name }}</h1>
-      <div class="cs-intro">
-        <p class="lead">{{ p.hook }}</p>
-        <dl class="cs-facts">
-          <div><dt>Client</dt><dd>{{ [p.sector, p.place].filter(Boolean).join(', ') }}</dd></div>
-          <div><dt>Prestation</dt><dd><NuxtLink :to="`/services/${p.service}`">{{ p.kind }}</NuxtLink></dd></div>
-          <div><dt>Année</dt><dd class="num">{{ p.year }}</dd></div>
-          <div><dt>État</dt><dd>{{ p.status }}</dd></div>
-          <div v-if="p.url"><dt>Adresse</dt><dd><a :href="p.url" target="_blank" rel="noopener">{{ p.domain }}</a></dd></div>
-        </dl>
+
+      <p class="cs-meta rise d1">
+        <span class="status" :class="{ live: p.live }">{{ p.status }}</span>
+        <NuxtLink :to="`/services/${p.service}`" class="cs-kind">{{ p.kind }}</NuxtLink><span aria-hidden="true">·</span><span>{{ p.year }}</span>
+      </p>
+      <h1 class="cs-h1 rise d1">{{ p.name }}</h1>
+      <p class="cs-hook rise d2">{{ p.hook }}</p>
+      <p class="cs-place rise d2">{{ [p.sector, p.place].filter(Boolean).join(' · ') }}</p>
+      <div class="cs-ctas rise d3">
+        <a v-if="p.url" :href="p.url" class="btn" target="_blank" rel="noopener">
+          Visiter {{ p.domain }} <span aria-hidden="true">↗</span>
+        </a>
+        <NuxtLink to="/contact" class="btn" :class="{ 'btn-ghost': p.url }">Un projet similaire ? Parlons-en</NuxtLink>
       </div>
     </section>
 
-    <div class="wrap cs-shot">
-      <Capture v-bind="p.cover" eager />
+    <div class="wrap cs-shot rise d3">
+      <BrowserFrame v-bind="p.cover" :url="p.domain" eager />
     </div>
 
-    <section class="sec" aria-labelledby="ctx-t">
-      <div class="wrap cols">
-        <h2 id="ctx-t" class="t-sec">Le client</h2>
-        <div class="cs-two">
-          <p class="cs-text" data-reveal>{{ p.context }}</p>
-          <div data-reveal>
-            <h3 class="cs-k">Les objectifs</h3>
-            <ul class="lines">
-              <li v-for="g in p.goals" :key="g">{{ g }}</li>
-            </ul>
-          </div>
-        </div>
+    <section class="wrap cs-grid section">
+      <div class="cs-col" data-reveal>
+        <h2 class="cs-h2">Le client</h2>
+        <p class="cs-text">{{ p.context }}</p>
       </div>
-    </section>
-
-    <section class="sec" aria-labelledby="done-t">
-      <div class="wrap cols">
-        <h2 id="done-t" class="t-sec">Ce que j’ai fait</h2>
-        <div>
-          <ol class="cs-done">
-            <li v-for="(d, i) in p.done" :key="i" data-reveal>
-              <span class="num muted" aria-hidden="true">{{ i + 1 }}.</span>
-              <p>{{ d }}</p>
-            </li>
-          </ol>
-          <dl class="cs-figs" data-reveal>
-            <div v-for="f in p.figures" :key="f.k">
-              <dt class="num">{{ f.v }}</dt>
-              <dd class="muted">{{ f.k }}</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec" aria-label="Aperçus">
-      <div class="wrap cs-gallery">
-        <Capture v-bind="p.extra" data-reveal />
-        <Capture v-bind="p.mobile" caption="Sur téléphone" data-reveal />
-      </div>
-    </section>
-
-    <nav class="sec" aria-labelledby="next-t">
-      <div class="wrap cols">
-        <h2 id="next-t" class="t-sec">{{ others.length > 1 ? 'Les autres réalisations' : 'Une autre réalisation' }}</h2>
-        <ul class="lines cs-next">
-          <li v-for="o in others" :key="o.slug">
-            <NuxtLink :to="`/realisations/${o.slug}`" class="next">
-              <img :src="o.cover.src" alt="" width="1440" height="900" loading="lazy" decoding="async">
-              <span>
-                <strong class="t-h3">{{ o.name }}</strong>
-                <span class="small">{{ o.kind }}</span>
-              </span>
-            </NuxtLink>
-          </li>
+      <div class="cs-col" data-reveal>
+        <h2 class="cs-h2">Les objectifs</h2>
+        <ul class="cs-goals">
+          <li v-for="g in p.goals" :key="g">{{ g }}</li>
         </ul>
       </div>
-    </nav>
+    </section>
+
+    <section class="on-dark section" aria-labelledby="done-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Le projet</p>
+          <h2 id="done-title" class="h2">Ce que j’ai fait</h2>
+        </div>
+        <ol class="cs-done">
+          <li v-for="(d, i) in p.done" :key="i" data-reveal>
+            <span class="n">{{ String(i + 1).padStart(2, '0') }}</span>
+            <p>{{ d }}</p>
+          </li>
+        </ol>
+        <ul class="cs-figs" data-reveal>
+          <li v-for="f in p.figures" :key="f.k"><b>{{ f.v }}</b><span>{{ f.k }}</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section wrap cs-gallery" aria-label="Aperçus">
+      <div class="g-wide" data-reveal>
+        <BrowserFrame v-bind="p.extra" :url="p.domain" />
+      </div>
+      <div class="g-phone" data-reveal>
+        <PhoneFrame v-bind="p.mobile" />
+      </div>
+    </section>
+
+    <section class="wrap cs-next" aria-labelledby="next-title">
+      <h2 id="next-title" class="cs-h2">{{ others.length > 1 ? 'Les autres réalisations' : 'Une autre réalisation' }}</h2>
+      <NuxtLink v-for="o in others" :key="o.slug" :to="`/realisations/${o.slug}`" class="next">
+        <img :src="o.cover.src" alt="" width="1440" height="900" loading="lazy" decoding="async">
+        <span>
+          <small>{{ o.kind }}</small>
+          <strong>{{ o.name }}</strong>
+        </span>
+        <span class="arr" aria-hidden="true">→</span>
+      </NuxtLink>
+    </section>
 
     <CtaBand title="Un projet comme celui-ci ?" />
   </main>
 </template>
 
 <style scoped>
-.head { padding-top: clamp(28px, 4vw, 48px); padding-bottom: clamp(32px, 5vw, 64px); }
-.cs-h1 { margin-top: clamp(28px, 4vw, 56px); }
-.cs-intro {
-  margin-top: clamp(24px, 4vw, 48px);
-  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px clamp(32px, 6vw, 96px); align-items: start;
+.cs-hero { padding-top: clamp(32px, 5vw, 64px); }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); }
+.crumbs a { color: var(--color-graphite); text-decoration: none; }
+.crumbs a:hover { color: var(--color-wine); text-decoration: underline; }
+.cs-meta {
+  margin-top: clamp(28px, 4vw, 48px);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-graphite);
 }
-.cs-facts { border-top: 1px solid var(--color-ink); font-size: 17px; }
-.cs-facts > div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--color-hair); }
-.cs-facts dt { color: var(--color-mute); }
-.cs-shot { padding-bottom: clamp(48px, 7vw, 96px); }
+.cs-kind { color: inherit; text-decoration: underline; text-decoration-color: var(--color-line); text-underline-offset: 4px; }
+.cs-kind:hover { color: var(--color-wine); text-decoration-color: currentColor; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--color-line); background: #fff;
+}
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #d9a441; }
+.status.live::before { background: #39b36e; }
+.cs-h1 {
+  margin-top: 18px; font-weight: 800; font-stretch: 118%;
+  font-size: clamp(44px, 8vw, 112px); line-height: .94; letter-spacing: -.035em;
+}
+.cs-hook { margin-top: 22px; font-size: clamp(19px, 2vw, 25px); line-height: 1.4; font-weight: 500; max-width: 36ch; text-wrap: pretty; }
+.cs-place { margin-top: 12px; color: var(--color-graphite); }
+.cs-ctas { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+.cs-shot { margin-top: clamp(40px, 6vw, 72px); }
 
-.cs-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 4vw, 64px); align-items: start; }
-.cs-text { font-size: clamp(19px, 1.6vw, 21px); }
-.cs-k { font-weight: 500; font-size: 18px; margin-bottom: 10px; }
+.cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+.cs-h2 {
+  font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-wine);
+}
+.cs-text { margin-top: 16px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.65; }
+.cs-goals { list-style: none; margin-top: 16px; }
+.cs-goals li {
+  position: relative; padding: 13px 0 13px 30px; border-bottom: 1px solid var(--color-line);
+  font-size: 17px; line-height: 1.45; font-weight: 520;
+}
+.cs-goals li::before { content: "→"; position: absolute; left: 0; color: var(--color-wine); }
 
-.cs-done { list-style: none; border-top: 1px solid var(--color-hair); }
-.cs-done li { display: grid; grid-template-columns: 2.2em 1fr; padding: 16px 0; border-bottom: 1px solid var(--color-hair); }
-.cs-done p { max-width: 38em; }
-.cs-figs { margin-top: clamp(32px, 4vw, 48px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px clamp(24px, 3vw, 40px); }
-.cs-figs dt { font-size: clamp(36px, 4vw, 52px); line-height: 1; letter-spacing: -.02em; }
-.cs-figs dd { margin-top: 8px; font-size: 17px; }
+.cs-done { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(32px, 5vw, 72px); }
+.cs-done li {
+  display: grid; grid-template-columns: 44px 1fr; gap: 12px;
+  padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent);
+}
+.cs-done .n { font-family: var(--font-mono); font-size: 13px; color: var(--color-rose); padding-top: 3px; }
+.cs-done p { font-size: 16.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-bone) 88%, var(--color-plum)); }
+.cs-figs {
+  list-style: none; margin-top: clamp(40px, 6vw, 72px);
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;
+}
+.cs-figs li { padding: 24px; border-radius: 20px; background: var(--color-plum-2); display: flex; flex-direction: column; gap: 8px; }
+.cs-figs b { font-weight: 800; font-stretch: 116%; font-size: clamp(34px, 4vw, 52px); line-height: 1; color: var(--color-rose); }
+.cs-figs span { font-size: 15px; color: color-mix(in srgb, var(--color-bone) 80%, var(--color-plum)); }
 
-.cs-gallery { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .3fr); gap: clamp(24px, 4vw, 56px); align-items: end; }
+.cs-gallery { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .32fr); gap: clamp(24px, 4vw, 56px); align-items: end; }
 
-.next { display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: center; text-decoration: none; }
-.next img { width: 160px; height: 100px; object-fit: cover; object-position: top; border: 1px solid var(--color-hair); }
-.next strong { display: block; }
-.next:hover strong { text-decoration: underline; text-decoration-thickness: 1px; }
+.cs-next { padding-bottom: clamp(8px, 2vw, 24px); display: flex; flex-direction: column; gap: 14px; }
+.next {
+  display: grid; grid-template-columns: 140px 1fr auto; gap: 20px; align-items: center;
+  padding: 12px; border-radius: 18px; background: #fff; border: 1px solid var(--color-line);
+  color: var(--color-ink); text-decoration: none; transition: border-color .2s, transform .2s;
+}
+.next:hover { border-color: var(--color-wine); transform: translateY(-2px); }
+.next img { width: 140px; height: 88px; object-fit: cover; object-position: top; border-radius: 10px; }
+.next small { display: block; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-mute); }
+.next strong { font-weight: 760; font-stretch: 112%; font-size: 24px; }
+.next .arr { font-size: 22px; color: var(--color-wine); padding-right: 12px; }
 
 @media (max-width: 860px) {
-  .cs-intro, .cs-two { grid-template-columns: 1fr; }
+  .cs-grid, .cs-done { grid-template-columns: 1fr; }
   .cs-figs { grid-template-columns: 1fr; }
   .cs-gallery { grid-template-columns: 1fr; }
-  .cs-gallery > :last-child { max-width: 260px; }
+  .g-phone { max-width: 240px; margin: 0 auto; }
 }
 @media (max-width: 520px) {
-  .next { grid-template-columns: 100px 1fr; gap: 14px; }
-  .next img { width: 100px; height: 64px; }
+  .next { grid-template-columns: 96px 1fr auto; gap: 14px; }
+  .next img { width: 96px; height: 64px; }
+  .next strong { font-size: 19px; }
 }
 </style>
