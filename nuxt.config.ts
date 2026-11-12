@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 
   site: {
     url: siteUrl,
-    name: 'Alexandra Porhansl — Agence web en Alsace',
+    name: 'Alexandra Porhansl, agence web en Alsace',
     defaultLocale: 'fr',
   },
 
@@ -46,12 +46,12 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'fr' },
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#f6f2ec' },
+        { name: 'theme-color', content: '#ffffff' },
         { name: 'author', content: 'Alexandra Porhansl' },
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [
-        { rel: 'preload', href: '/fonts/archivo.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/newsreader.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
         { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
         { rel: 'icon', type: 'image/png', href: '/favicon-48.png', sizes: '48x48' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },

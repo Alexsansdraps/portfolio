@@ -25,21 +25,28 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
 - Pas de « premier échange gratuit » : seul l'audit est gratuit. Pas de « Demander un devis » : « Parlons de votre projet ».
 - Ton naturel, à la première personne, sans slogans en deux temps ni formules toutes faites (« zéro jargon », « X, pas Y »…).
-- Petits clins d'œil alsaciens bienvenus (Hopla, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
+  Le site ne doit pas « faire généré » (refonte du 12/11/2026, à sa demande) : phrases simples, peu de deux-points,
+  pas de tirets cadratins dans les textes, pas de listes de trois par réflexe, pas de questions rhétoriques en série.
+- Plus de clins d'œil alsaciens (« Hopla », « Merci vielmols », sous-bock, « entre les Vosges et le Rhin ») : retirés le 12/11/2026.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
 - Textes de l'audit gratuit à la 1re personne du pluriel : « on » (« on fait le point »), boutons « Audit gratuit ».
 - MemoryLine n'est pas alsacienne : pas de mention de l'Alsace pour elle. La Chance Animation et La Chance Production (Guebwiller) le sont.
 - Réalisations (`app/data/projects.ts`) : parler de « refonte », jamais de Wix ni d'abonnement économisé ; chiffres clés
   qui ne bougent pas (« 200+ » plutôt qu'un compte exact). Captures : 1440 × 900 (ordinateur), 600 × 1200 (téléphone), en WebP.
-- Design system : tokens dans `app/assets/css/main.css` (`paper`, `sand`, `ink`, `wine`, `plum`…). Thème clair papier,
-  bandeaux sombres `.on-dark`, accent unique wine `#a1264c` (échantillonné sur le portrait). Boutons en pilule, cartes arrondies.
-- Typo : Archivo variable (titres `font-stretch` 110–118 %, graisse 700–800) + JB Mono pour les méta. Fontes self-hostées
-  dans `public/fonts/` (préchargées), ne pas ajouter de CDN.
-- Animations : GSAP ScrollTrigger + Lenis via `app/plugins/scroll.client.ts` (`[data-reveal]`, `[data-depth]`, `[data-parallax]`,
-  `[data-count]`, carte de l'Alsace, frise en serpentine du parcours — tracé dans `app/utils/serpentine.ts`).
-  Respecter `prefers-reduced-motion` pour toute nouvelle animation.
+- **Direction visuelle « éditorial sobre »** (choisie le 12/11/2026 : ses autres sites, lachanceanimation et lachanceproduction,
+  partagent une autre recette et celui-ci ne doit pas leur ressembler). Noir sur blanc, deux gris, aucune couleur d'accent :
+  la couleur vient des captures et du portrait. Mise en page de magazine : sections ouvertes par un filet noir (`.sec`),
+  titre de section dans la colonne de gauche (`.cols`, `.t-sec`), listes à filets fins (`.lines`).
+  À ne pas réintroduire : sur-titres en capitales espacées, titres en deux tons ou avec une fin colorée, boutons en pilule,
+  flèches dans les liens, cartes arrondies, bandeaux sombres, chiffres clés en tuiles, étapes « 01 / 02 », bandeau défilant,
+  faux navigateur ou faux téléphone autour des captures (`Capture.vue` : l'image et un filet).
+- Actions : liens soulignés (`.go`). Le seul bouton plein (`.btn`, rectangle noir) est celui des formulaires.
+- Typo : une seule police, Newsreader variable (tailles optiques), self-hostée dans `public/fonts/newsreader.woff2`
+  (préchargée, subset latin : pas de flèches ni de ✓ dans les textes). Ne pas ajouter de CDN.
+- Animations : seulement une apparition discrète (`[data-reveal]`, fondu + 12 px) via `app/plugins/scroll.client.ts`,
+  sans bibliothèque. Rien n'est masqué sans JS ni en `prefers-reduced-motion`.
 - Le téléphone d'Alexandra n'apparaît jamais sur le site.
-- Page Parcours : « développeuse full-stack salariée » dans l'intro ; Infosat n'apparaît que dans la frise. Pas de chiffres-clés en tête de page.
+- Page Parcours : « développeuse full-stack salariée » dans l'intro ; Infosat n'apparaît que dans la chronologie. Pas de chiffres-clés en tête de page.
 
 ## Référencement
 

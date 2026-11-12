@@ -5,89 +5,67 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="foot on-dark">
+  <footer class="foot">
     <div class="wrap">
       <div class="f-grid">
-        <div class="f-brand">
-          <p class="f-name">Alexandra Porhansl<span>.</span></p>
+        <div>
+          <p class="f-name">Alexandra Porhansl</p>
           <p class="f-desc">
-            Agence web freelance basée à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
+            Agence web freelance à Mulhouse, dans le Haut-Rhin. Sites vitrines, boutiques en ligne, référencement
             et outils sur mesure.
           </p>
-          <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <p class="f-mail"><a :href="`mailto:${business.email}`">{{ business.email }}</a></p>
         </div>
 
-        <nav class="f-col" aria-label="Services">
+        <nav aria-label="Services">
           <p class="f-h">Services</p>
-          <NuxtLink v-for="s in services" :key="s.id" :to="`/services/${s.id}`">{{ s.title }}</NuxtLink>
+          <ul>
+            <li v-for="s in services" :key="s.id"><NuxtLink :to="`/services/${s.id}`">{{ s.title }}</NuxtLink></li>
+          </ul>
         </nav>
 
-        <nav class="f-col" aria-label="Le site">
-          <p class="f-h">L’agence</p>
-          <NuxtLink to="/audit-gratuit">Audit gratuit</NuxtLink>
-          <NuxtLink to="/realisations">Réalisations</NuxtLink>
-          <NuxtLink to="/parcours">Mon parcours</NuxtLink>
-          <NuxtLink to="/contact">Contact</NuxtLink>
-          <a :href="`mailto:${business.email}`">{{ business.email }}</a>
+        <nav aria-label="Le site">
+          <p class="f-h">Le site</p>
+          <ul>
+            <li><NuxtLink to="/audit-gratuit">Audit gratuit</NuxtLink></li>
+            <li><NuxtLink to="/realisations">Réalisations</NuxtLink></li>
+            <li><NuxtLink to="/parcours">Parcours</NuxtLink></li>
+            <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+          </ul>
         </nav>
 
-        <div class="f-col">
-          <p class="f-h">Où me trouver</p>
-          <p class="f-zone">
-            Mulhouse, Haut-Rhin (68)<br>Alsace
-          </p>
-        </div>
+        <nav aria-label="Ailleurs">
+          <p class="f-h">Ailleurs</p>
+          <ul>
+            <li><a :href="business.github" target="_blank" rel="noopener noreferrer">Mon code sur GitHub</a></li>
+            <li><a :href="business.spotify" target="_blank" rel="noopener noreferrer">Ce que j’écoute en ce moment</a></li>
+          </ul>
+        </nav>
       </div>
 
       <div class="f-bottom">
-        <span>© {{ year }} Alexandra Porhansl · EI · SIRET {{ business.legal.siret }}</span>
-        <span class="f-links">
-          <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
-          <span aria-hidden="true">·</span>
-          <span>Conçu et développé à Mulhouse, entre Vosges et Rhin</span>
-        </span>
+        <span>© {{ year }} Alexandra Porhansl, entrepreneuse individuelle, SIRET <span class="num">{{ business.legal.siret }}</span></span>
+        <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
       </div>
     </div>
   </footer>
 </template>
 
 <style scoped>
-.foot { padding: clamp(56px, 8vw, 96px) 0 28px; }
-.f-grid {
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: clamp(32px, 4vw, 56px);
-}
-.f-name { font-weight: 780; font-stretch: 116%; font-size: 24px; letter-spacing: -.01em; }
-.f-name span { color: var(--color-rose); }
-.f-desc {
-  margin-top: 14px; max-width: 38ch; font-size: 15.5px; line-height: 1.6;
-  color: color-mix(in srgb, var(--color-bone) 72%, var(--color-plum));
-}
-.f-cta { margin-top: 24px; padding: 12px 20px; font-size: 15px; }
-.f-h {
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--color-rose); margin-bottom: 14px;
-}
-.f-col { display: flex; flex-direction: column; gap: 10px; }
-.f-col a {
-  color: var(--color-bone); text-decoration: none; font-size: 15.5px; width: fit-content;
-  border-bottom: 1px solid transparent; transition: border-color .2s, color .2s;
-  overflow-wrap: anywhere;
-}
-.f-col a:hover { border-bottom-color: var(--color-rose); }
-.f-zone { font-size: 14.5px; line-height: 1.65; color: color-mix(in srgb, var(--color-bone) 72%, var(--color-plum)); }
-
+.foot { border-top: 1px solid var(--color-ink); padding: clamp(40px, 6vw, 72px) 0 28px; font-size: 17px; }
+.f-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 32px clamp(24px, 4vw, 56px); }
+.f-name { font-size: 22px; font-weight: 500; }
+.f-desc { margin-top: 10px; max-width: 32em; color: var(--color-gray); }
+.f-mail { margin-top: 14px; overflow-wrap: anywhere; }
+.f-h { font-weight: 500; margin-bottom: 10px; }
+ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+ul a { text-decoration: none; }
+ul a:hover { text-decoration: underline; }
 .f-bottom {
-  margin-top: clamp(40px, 6vw, 72px); padding-top: 20px;
-  border-top: 1px solid color-mix(in srgb, var(--color-bone) 14%, transparent);
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px;
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
-  color: color-mix(in srgb, var(--color-bone) 64%, var(--color-plum));
+  margin-top: clamp(36px, 5vw, 64px); padding-top: 16px; border-top: 1px solid var(--color-hair);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  font-size: 15px; color: var(--color-mute);
 }
-.f-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
-.f-links a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-.f-links a:hover { color: var(--color-bone); }
-
 @media (max-width: 960px) { .f-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .f-grid { grid-template-columns: 1fr; } }
 </style>

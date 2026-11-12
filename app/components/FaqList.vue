@@ -19,36 +19,29 @@ if (props.schema) useJsonLd({
 
 <template>
   <div class="faq">
-    <details v-for="(f, i) in list" :key="f.q" class="fq" :open="i === 0" data-reveal>
+    <details v-for="(f, i) in list" :key="f.q" class="fq" :open="i === 0">
       <summary>
         <h3>{{ f.q }}</h3>
         <span class="ic" aria-hidden="true" />
       </summary>
-      <p>{{ f.a }}</p>
+      <p class="muted">{{ f.a }}</p>
     </details>
   </div>
 </template>
 
 <style scoped>
-.faq { border-top: 1px solid var(--color-line); }
-.fq { border-bottom: 1px solid var(--color-line); }
+.faq { border-top: 1px solid var(--color-ink); }
+.fq { border-bottom: 1px solid var(--color-hair); }
 summary {
   list-style: none; cursor: pointer;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 22px 0;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  padding: 18px 0;
 }
 summary::-webkit-details-marker { display: none; }
-summary h3 { font-weight: 680; font-stretch: 106%; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.35; }
-summary:hover h3 { color: var(--color-wine); }
-.ic { position: relative; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--color-line); transition: background .2s, border-color .2s; }
-.ic::before, .ic::after {
-  content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px;
-  background: var(--color-ink); transform: translate(-50%, -50%); transition: transform .25s;
-}
-.ic::after { transform: translate(-50%, -50%) rotate(90deg); }
-.fq[open] .ic { background: var(--color-wine); border-color: var(--color-wine); }
-.fq[open] .ic::before, .fq[open] .ic::after { background: #fff; }
-.fq[open] .ic::after { transform: translate(-50%, -50%) rotate(0); }
-.fq p { padding: 0 56px 24px 0; font-size: 16.5px; line-height: 1.65; color: var(--color-graphite); max-width: 72ch; }
+summary h3 { font-weight: 500; font-size: clamp(20px, 1.8vw, 23px); line-height: 1.3; }
+summary:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.ic::before { content: "+"; font-size: 26px; line-height: 1; color: var(--color-mute); }
+.fq[open] .ic::before { content: "−"; }
+.fq p { padding: 0 3em 22px 0; max-width: 40em; }
 @media (max-width: 560px) { .fq p { padding-right: 0; } }
 </style>

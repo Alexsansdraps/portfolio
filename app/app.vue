@@ -5,7 +5,7 @@ import portrait from '~/assets/img/portrait.webp'
 const { public: { siteUrl } } = useRuntimeConfig()
 
 useHead({
-  titleTemplate: t => t || 'Alexandra Porhansl — Agence web freelance en Alsace',
+  titleTemplate: t => t || 'Alexandra Porhansl, agence web freelance en Alsace',
 })
 
 /* Prix plancher HT d'une offre (grille de site.ts). */
@@ -28,7 +28,7 @@ useJsonLd({
     {
       '@type': 'ProfessionalService',
       '@id': `${siteUrl}/#agence`,
-      'name': 'Alexandra Porhansl — Agence web',
+      'name': 'Alexandra Porhansl, agence web',
       'alternateName': 'Alexandra Porhansl',
       'description': 'Agence web freelance basée à Mulhouse, en Alsace : création de sites internet, sites vitrines, boutiques en ligne, référencement (SEO), refontes et outils sur mesure. Audit gratuit.',
       'slogan': 'Création de sites internet à Mulhouse',
@@ -136,6 +136,5 @@ useJsonLd({
       <NuxtPage />
     </div>
     <SiteFooter />
-    <MusicLink />
   </div>
 </template>

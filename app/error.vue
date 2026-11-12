@@ -12,6 +12,7 @@ useSeoMeta({
 })
 
 const liens = [
+  { to: '/', label: 'Accueil' },
   { to: '/services', label: 'Services et tarifs' },
   { to: '/realisations', label: 'Réalisations' },
   { to: '/audit-gratuit', label: 'Audit gratuit' },
@@ -23,33 +24,24 @@ const liens = [
   <div>
     <SiteHeader />
     <main class="e wrap">
-      <p class="eyebrow">{{ introuvable ? 'Erreur 404' : `Erreur ${error.statusCode}` }}</p>
-      <h1 class="e-h1">
-        <template v-if="introuvable">Cette page s’est perdue <em>entre les Vosges et le Rhin.</em></template>
-        <template v-else>Oups, quelque chose <em>s’est mal passé.</em></template>
-      </h1>
-      <p class="lead">
+      <p class="small">{{ introuvable ? 'Erreur 404' : `Erreur ${error.statusCode}` }}</p>
+      <h1 class="t-h1 e-h1">{{ introuvable ? 'Cette page n’existe pas, ou plus.' : 'Quelque chose s’est mal passé.' }}</h1>
+      <p class="lead e-lead muted">
         {{ introuvable
-          ? 'L’adresse a peut-être changé, ou la page n’existe plus. Voici par où continuer :'
-          : 'Réessayez dans un instant, ou continuez par ici :' }}
+          ? 'L’adresse a peut-être changé. Vous pouvez continuer par l’une de ces pages.'
+          : 'Réessayez dans un instant, ou continuez par l’une de ces pages.' }}
       </p>
-      <div class="e-links">
-        <NuxtLink to="/" class="btn">Retour à l’accueil <span class="arr" aria-hidden="true">→</span></NuxtLink>
-        <NuxtLink v-for="l in liens" :key="l.to" :to="l.to" class="btn btn-ghost">{{ l.label }}</NuxtLink>
-      </div>
+      <ul class="lines e-links">
+        <li v-for="l in liens" :key="l.to"><NuxtLink :to="l.to">{{ l.label }}</NuxtLink></li>
+      </ul>
     </main>
     <SiteFooter />
   </div>
 </template>
 
 <style scoped>
-.e { padding-block: clamp(64px, 10vw, 140px); }
-.e-h1 {
-  margin-top: 20px; max-width: 18ch;
-  font-weight: 800; font-stretch: 116%;
-  font-size: clamp(38px, 6vw, 76px); line-height: 1; letter-spacing: -.03em;
-}
-.e-h1 em { font-style: normal; color: var(--color-wine); }
-.e .lead { margin-top: 24px; }
-.e-links { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+.e { padding-block: clamp(56px, 9vw, 128px); }
+.e-h1 { margin-top: 14px; max-width: 14em; }
+.e-lead { margin-top: 22px; }
+.e-links { margin-top: 32px; max-width: 480px; font-size: 21px; }
 </style>

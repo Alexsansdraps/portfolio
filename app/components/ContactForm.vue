@@ -47,9 +47,9 @@ async function envoyer(e: Event) {
 <template>
   <div id="formulaire" class="cf">
     <div v-if="etat === 'ok'" class="cf-ok" role="status">
-      <p class="cf-ok-t">Merci vielmols, votre message est bien parti&nbsp;!</p>
-      <p>Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
-      <button type="button" class="link cf-again" @click="etat = 'idle'">Envoyer un autre message</button>
+      <p class="t-h2">Merci, votre message est bien parti.</p>
+      <p class="muted">Je vous réponds sous 24 heures, à l’adresse e-mail que vous avez indiquée.</p>
+      <button type="button" class="cf-again" @click="etat = 'idle'">Envoyer un autre message</button>
     </div>
 
     <form v-else action="/api/contact" method="post" class="cf-form" @submit.prevent="envoyer">
@@ -110,10 +110,10 @@ async function envoyer(e: Event) {
 
       <div class="cf-foot">
         <button class="btn" type="submit" :disabled="etat === 'envoi'">
-          {{ etat === 'envoi' ? 'Envoi…' : 'Envoyer mon message' }} <span class="arr" aria-hidden="true">→</span>
+          {{ etat === 'envoi' ? 'Envoi…' : 'Envoyer mon message' }}
         </button>
-        <p class="cf-note">
-          Vos informations servent uniquement à vous répondre : elles ne sont ni stockées sur ce site, ni transmises à des tiers.
+        <p class="small cf-note">
+          Vos informations servent uniquement à vous répondre. Elles ne sont ni enregistrées sur ce site, ni transmises à qui que ce soit.
           <NuxtLink to="/mentions-legales">En savoir plus</NuxtLink>
         </p>
       </div>
@@ -122,49 +122,34 @@ async function envoyer(e: Event) {
 </template>
 
 <style scoped>
-.cf { background: #fff; border: 1px solid var(--color-line); border-radius: 24px; padding: clamp(22px, 3.5vw, 40px); }
-.cf-form { display: flex; flex-direction: column; gap: 20px; }
-.row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.field { display: flex; flex-direction: column; gap: 8px; border: 0; min-width: 0; }
-label, legend { font-weight: 620; font-size: 15px; }
-label span, legend span { color: var(--color-wine); }
+.cf-form { display: flex; flex-direction: column; gap: 22px; }
+.row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.field { display: flex; flex-direction: column; gap: 6px; border: 0; min-width: 0; }
+label, legend { font-weight: 500; font-size: 17px; }
 label small { font-weight: 400; color: var(--color-mute); }
 input[type="text"], input[type="email"], input[type="tel"], textarea {
-  width: 100%; font: inherit; font-size: 16px; color: var(--color-ink);
-  background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 12px;
-  padding: 13px 14px; transition: border-color .2s, background .2s;
+  width: 100%; font: inherit; font-size: 18px; color: var(--color-ink);
+  background: var(--color-paper); border: 1px solid #8c8c8c; border-radius: 0;
+  padding: 11px 12px; transition: border-color .2s;
 }
-textarea { resize: vertical; min-height: 150px; line-height: 1.55; }
-input:hover, textarea:hover { border-color: color-mix(in srgb, var(--color-ink) 30%, var(--color-line)); }
-input:focus, textarea:focus { outline: none; border-color: var(--color-wine); background: #fff; box-shadow: 0 0 0 3px var(--color-blush); }
-legend { margin-bottom: 10px; }
-.choices { display: flex; flex-wrap: wrap; gap: 8px; }
-.choice { position: relative; cursor: pointer; font-weight: 500; }
-.choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-.choice span {
-  display: inline-block; padding: 10px 16px; border-radius: 999px;
-  border: 1px solid var(--color-line); background: var(--color-paper); font-size: 15px;
-  transition: background .2s, border-color .2s, color .2s;
-}
-.choice:hover span { border-color: var(--color-wine); }
-.choice input:checked + span { background: var(--color-wine); border-color: var(--color-wine); color: #fff; }
-.choice input:focus-visible + span { outline: 2px solid var(--color-wine); outline-offset: 3px; }
+textarea { resize: vertical; min-height: 160px; line-height: 1.5; }
+input:hover, textarea:hover { border-color: var(--color-ink); }
+input:focus, textarea:focus { outline: 2px solid var(--color-ink); outline-offset: 0; border-color: var(--color-ink); }
+::placeholder { color: #8c8c8c; }
+legend { margin-bottom: 8px; }
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; }
+.choice { display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 400; font-size: 18px; }
+.choice input { width: 18px; height: 18px; margin: 0; accent-color: var(--color-ink); flex-shrink: 0; }
 
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
-.cf-err {
-  padding: 14px 16px; border-radius: 12px; background: #fdecec; color: #8a1c1c; font-size: 15px; line-height: 1.5;
-}
-.cf-err a { color: inherit; font-weight: 650; }
-.cf-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.cf-err { padding: 12px 14px; border-left: 3px solid #a11a1a; background: #fbeeee; color: #7a1414; font-size: 17px; line-height: 1.5; }
+.cf-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
 .cf-foot .btn:disabled { opacity: .6; cursor: progress; }
-.cf-note { flex: 1; min-width: 220px; font-size: 13px; line-height: 1.5; color: var(--color-mute); }
-.cf-note a { color: inherit; }
+.cf-note { flex: 1; min-width: 240px; }
 
-.cf-ok { padding: 12px 4px; }
-.cf-ok-t { font-weight: 780; font-stretch: 112%; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.01em; color: var(--color-wine); }
-.cf-ok p + p { margin-top: 10px; color: var(--color-graphite); }
-.cf-again { margin-top: 18px; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-weight: 600; }
+.cf-ok .muted { margin-top: 12px; }
+.cf-again { margin-top: 20px; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: .2em; }
 
-@media (max-width: 640px) { .row.two { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .row.two, .choices { grid-template-columns: 1fr; } }
 </style>

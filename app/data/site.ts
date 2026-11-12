@@ -2,6 +2,7 @@
  * Infos de l'agence et contenus partagés entre plusieurs pages.
  * Le site est en français uniquement : les textes vivent ici ou directement dans les pages.
  * Côté clients (accueil, services, réalisations) : vocabulaire simple, pas de jargon technique.
+ * Ton : phrases simples, à la première personne, sans formules toutes faites ni deux-points à répétition.
  */
 
 export const business = {
@@ -38,12 +39,12 @@ export const priceNote = 'Prix hors taxes. Le devis fixe le prix exact, selon vo
 export interface Service {
   id: string
   title: string
-  /** une phrase, sur les cartes */
+  /** une phrase, sur les listes de services */
   short: string
   /** paragraphe de la page Services */
   long: string
   includes: string[]
-  /** prix résumé, sur les cartes de l'accueil */
+  /** prix résumé, sur l'accueil */
   price: string
   /** prix plancher en € HT, pour les données structurées */
   minPrice?: number
@@ -52,7 +53,7 @@ export interface Service {
   /** réalisation qui l'illustre */
   project?: string
   /* ---- page dédiée /services/{id} (référencement : une page par recherche visée) ---- */
-  /** titre affiché : [début, fin en couleur] */
+  /** titre H1 de la page dédiée, en deux morceaux (affichés à la suite) */
   h1: [string, string]
   /** balise title (≈ 60 caractères) */
   seoTitle: string
@@ -70,57 +71,57 @@ export const services: Service[] = [
   {
     id: 'site-vitrine',
     title: 'Site vitrine',
-    short: 'Présentez votre activité, rassurez vos clients et recevez des demandes directement dans votre boîte mail.',
-    long: 'Votre site est souvent la première chose que vos clients voient de vous. Je le conçois pour qu’il présente clairement votre activité, qu’il soit agréable à lire sur téléphone, et qu’on ait envie de vous contacter.',
+    short: 'Un site pour présenter votre activité et recevoir par e-mail les demandes de vos clients.',
+    long: 'C’est souvent par votre site que vos clients font connaissance avec vous. Je le construis autour de votre activité, je soigne la lecture sur téléphone et je fais en sorte qu’on ait envie de vous contacter.',
     includes: [
-      'Un design unique, à votre image (pas un modèle tout fait)',
-      'Parfaitement lisible sur téléphone, tablette et ordinateur',
-      'Formulaire de contact ou de devis qui arrive dans votre boîte mail',
-      'Référencement naturel : être trouvé sur Google par les clients de votre secteur',
-      'Mise en ligne, nom de domaine et adresse e-mail professionnelle',
+      'Un design créé pour vous, sans thème acheté en ligne',
+      'Une lecture confortable sur téléphone, tablette et ordinateur',
+      'Un formulaire dont les messages arrivent dans votre boîte mail',
+      'Le référencement Google travaillé dès la conception',
+      'La mise en ligne, le nom de domaine et une adresse e-mail professionnelle',
     ],
     price: 'À partir de 990 € HT',
     minPrice: 990,
     prices: [
       { label: 'Site d’une page', value: 'à partir de 990 €' },
       { label: 'Site de 5 à 7 pages', value: 'à partir de 1 990 €' },
-      { label: 'Option : modifier vos textes et photos vous-même', value: '+ 490 €' },
+      { label: 'En option, modifier vos textes et vos photos vous-même', value: '+ 490 €' },
     ],
     project: 'la-chance-animation',
-    h1: ['Création de site vitrine', 'à Mulhouse.'],
+    h1: ['Création de site vitrine', 'à Mulhouse'],
     seoTitle: 'Création de site vitrine à Mulhouse, dès 990 € HT',
     seoDescription: 'Un site vitrine sur mesure pour présenter votre activité et recevoir des demandes : design unique, adapté au téléphone, pensé pour Google. Dès 990 € HT.',
     linkText: 'Tout sur la création de site vitrine',
     forWho: [
-      'Vous n’avez pas encore de site, ou une simple page qui ne vous ressemble plus.',
-      'Vous voulez que vos futurs clients vous trouvent sur Google quand ils cherchent votre métier.',
-      'Vous voulez recevoir des demandes de devis directement dans votre boîte mail.',
+      'Vous n’avez pas encore de site, ou seulement une page qui ne vous ressemble plus.',
+      'Vous aimeriez qu’on vous trouve sur Google quand on cherche votre métier.',
+      'Vous voulez recevoir les demandes de devis directement par e-mail.',
     ],
     faq: [
       {
         q: 'Quelle différence entre un site d’une page et un site de 5 à 7 pages ?',
-        a: 'Un site d’une page rassemble l’essentiel : votre activité, vos services, vos coordonnées et un formulaire. C’est idéal pour démarrer, à partir de 990 € HT. Avec 5 à 7 pages, à partir de 1 990 € HT, chaque service a sa propre page, ce qui aide aussi Google à vous montrer sur davantage de recherches.',
+        a: 'Un site d’une page rassemble l’essentiel au même endroit, avec vos services, vos coordonnées et un formulaire. Il convient bien pour démarrer et coûte à partir de 990 € HT. Avec 5 à 7 pages, à partir de 1 990 € HT, chaque service a sa propre page, et Google peut vous montrer sur davantage de recherches.',
       },
       {
         q: 'Vous occupez-vous du nom de domaine et de l’adresse e-mail ?',
-        a: 'Oui. Je m’occupe de la mise en ligne, du nom de domaine et d’une adresse e-mail professionnelle. Le site, le nom de domaine et les contenus restent à vous.',
+        a: 'Oui. Je m’occupe de la mise en ligne, du nom de domaine et d’une adresse e-mail professionnelle. Le site, le nom de domaine et les contenus vous appartiennent.',
       },
       {
         q: 'Mon site s’affichera-t-il bien sur téléphone ?',
-        a: 'Oui. Chaque page est pensée d’abord pour le téléphone, puisque c’est souvent là que vos clients vous découvrent, puis pour la tablette et l’ordinateur.',
+        a: 'Oui. Vos clients vous découvrent souvent sur leur téléphone, alors je conçois chaque page d’abord pour cet écran, puis pour la tablette et l’ordinateur.',
       },
     ],
   },
   {
     id: 'boutique-en-ligne',
     title: 'Boutique en ligne',
-    short: 'Vendez vos produits en ligne avec une boutique pensée pour eux, paiement sécurisé compris.',
-    long: 'Je crée des boutiques adaptées à vos produits, plutôt que de vous faire entrer dans une plateforme toute faite. Paiement, livraisons, factures, personnalisation : on prévoit ce dont vous avez besoin au quotidien.',
+    short: 'Une boutique construite autour de vos produits, avec le paiement sécurisé directement sur votre site.',
+    long: 'Plutôt que de faire entrer vos produits dans une plateforme toute faite, je construis la boutique autour d’eux. On prévoit ensemble ce dont vous avez besoin au quotidien, du paiement aux livraisons en passant par les factures.',
     includes: [
-      'Paiement par carte bancaire et PayPal, directement sur votre site',
-      'Produits personnalisables par vos clients, avec aperçu en direct',
-      'Suivi des commandes, livraisons, factures et promotions',
-      'Ventes sur les salons et marchés depuis une tablette',
+      'Le paiement par carte bancaire et PayPal sur votre site',
+      'Des produits que vos clients personnalisent, avec un aperçu en direct',
+      'Le suivi des commandes, des livraisons, des factures et des promotions',
+      'La vente sur les salons et les marchés depuis une tablette',
       'Un espace d’administration simple pour tout gérer',
     ],
     price: 'À partir de 5 900 € HT',
@@ -129,7 +130,7 @@ export const services: Service[] = [
       { label: 'Boutique en ligne sur mesure', value: 'à partir de 5 900 €' },
     ],
     project: 'memoryline',
-    h1: ['Création de boutique', 'en ligne sur mesure.'],
+    h1: ['Création de boutique', 'en ligne sur mesure'],
     seoTitle: 'Création de boutique en ligne sur mesure | Mulhouse, Alsace',
     seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, dès 5 900 € HT.',
     linkText: 'Tout sur la création de boutique en ligne',
@@ -141,7 +142,7 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Pourquoi une boutique sur mesure plutôt qu’une plateforme toute faite ?',
-        a: 'Une plateforme convient bien pour démarrer. Quand vos produits ont des particularités (personnalisation, ventes sur les salons, livraisons spécifiques), on finit souvent par empiler des modules payants. Une boutique sur mesure fait exactement ce dont vous avez besoin, et vous ne dépendez plus des tarifs d’une plateforme.',
+        a: 'Une plateforme convient bien pour démarrer. Quand vos produits ont des particularités, comme la personnalisation, la vente sur les salons ou des livraisons spécifiques, on finit souvent par empiler des modules payants. Une boutique sur mesure fait ce dont vous avez besoin, et vous ne dépendez plus des tarifs d’une plateforme.',
       },
       {
         q: 'Quels moyens de paiement puis-je proposer ?',
@@ -149,21 +150,21 @@ export const services: Service[] = [
       },
       {
         q: 'Vais-je pouvoir gérer la boutique moi-même ?',
-        a: 'Oui. Vous avez un espace d’administration simple pour ajouter vos produits, suivre les commandes et les livraisons, retrouver vos factures et lancer vos promotions.',
+        a: 'Oui. Depuis un espace d’administration simple, vous ajoutez vos produits, suivez les commandes et les livraisons, retrouvez vos factures et lancez vos promotions.',
       },
     ],
   },
   {
     id: 'referencement',
     title: 'Référencement naturel (SEO)',
-    short: 'Être trouvé sur Google par les bons clients : audit, optimisation de votre site, fiche Google et suivi des résultats.',
-    long: 'Le référencement naturel (SEO), c’est ce qui aide Google à comprendre ce que vous faites et à vous montrer aux personnes qui cherchent vos services. Je m’en occupe sur chaque site que je crée, et je peux aussi améliorer un site existant.',
+    short: 'Être trouvé sur Google par les personnes qui cherchent vos services, près de chez vous.',
+    long: 'Le référencement naturel (SEO) aide Google à comprendre ce que vous faites et à vous montrer aux personnes qui cherchent vos services. Je m’en occupe sur chaque site que je crée, et je peux aussi améliorer un site existant.',
     includes: [
-      'Audit de votre visibilité actuelle, offert',
-      'Titres et textes pensés pour les recherches de vos clients',
-      'Site rapide et parfaitement adapté au téléphone',
-      'Fiche Google (Google Business Profile) : horaires, photos, avis',
-      'Suivi des positions et des visites, expliqué simplement',
+      'Un audit de votre visibilité actuelle, offert',
+      'Des titres et des textes écrits pour les recherches de vos clients',
+      'Un site rapide et agréable sur téléphone',
+      'Votre fiche Google, avec vos horaires, vos photos et vos avis',
+      'Un suivi des positions et des visites, expliqué simplement',
     ],
     price: 'Audit offert, puis sur devis',
     prices: [
@@ -171,7 +172,7 @@ export const services: Service[] = [
       { label: 'Amélioration du référencement', value: 'sur devis' },
     ],
     project: 'la-chance-animation',
-    h1: ['Référencement naturel', '(SEO) à Mulhouse.'],
+    h1: ['Référencement naturel', '(SEO) à Mulhouse'],
     seoTitle: 'Référencement naturel (SEO) à Mulhouse | Audit offert',
     seoDescription: 'Être trouvé sur Google par vos clients : audit offert, titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Agence web à Mulhouse.',
     linkText: 'Tout sur le référencement naturel (SEO)',
@@ -183,35 +184,35 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Combien de temps faut-il pour voir des résultats ?',
-        a: 'Les premiers effets se voient en général après quelques semaines, et le référencement se construit sur plusieurs mois. Tout dépend de la concurrence dans votre secteur et de l’état de votre site au départ : l’audit gratuit sert justement à le savoir.',
+        a: 'Les premiers effets se voient en général après quelques semaines, et le référencement se construit sur plusieurs mois. Cela dépend de la concurrence dans votre secteur et de l’état de votre site au départ. L’audit gratuit sert justement à le savoir.',
       },
       {
         q: 'C’est quoi, une fiche Google ?',
-        a: 'C’est la fiche qui s’affiche sur Google et Google Maps quand on cherche votre entreprise : adresse, horaires, photos, avis. Elle est gratuite et compte beaucoup pour les recherches locales, du type « plombier Mulhouse ». Je peux la créer ou l’améliorer avec vous.',
+        a: 'C’est la fiche qui apparaît sur Google et Google Maps quand on cherche votre entreprise, avec votre adresse, vos horaires, vos photos et vos avis. Elle est gratuite et compte beaucoup dans les recherches locales, comme « plombier Mulhouse ». Je peux la créer ou l’améliorer avec vous.',
       },
       {
         q: 'Pouvez-vous améliorer un site que vous n’avez pas créé ?',
-        a: 'Oui. On commence par l’audit gratuit pour voir ce qui freine votre site, puis je vous propose les améliorations sur devis : textes, titres, vitesse, erreurs techniques, fiche Google.',
+        a: 'Oui. On commence par l’audit gratuit pour voir ce qui freine votre site, puis je vous propose des améliorations sur devis, qu’il s’agisse des textes, des titres, de la vitesse, d’erreurs techniques ou de votre fiche Google.',
       },
     ],
   },
   {
     id: 'refonte',
     title: 'Refonte de site',
-    short: 'Votre site a vieilli, ou vous voulez quitter Wix ou Shopify ? Je le reconstruis sans perdre votre place sur Google.',
-    long: 'Si votre site a pris un coup de vieux, ou si vous payez cher un abonnement Wix ou Shopify, je peux le refaire. Je reprends vos contenus et je m’occupe de la transition pour que vous ne perdiez pas votre place sur Google.',
+    short: 'Votre site a vieilli, ou vous voulez quitter Wix ou Shopify ? Je le refais sans que vous perdiez votre place sur Google.',
+    long: 'Si votre site a pris un coup de vieux, ou si votre abonnement Wix ou Shopify vous coûte cher, je peux le refaire. Je reprends vos contenus et je m’occupe de la transition pour que vous gardiez votre place sur Google.',
     includes: [
-      'Reprise et réécriture de vos contenus existants',
-      'Anciennes adresses redirigées : vous gardez votre référencement',
-      'Transfert du nom de domaine, sans coupure pour vos clients',
-      'Fin des abonnements inutiles, hébergement à coût maîtrisé',
+      'La reprise et la réécriture de vos contenus',
+      'Vos anciennes adresses redirigées vers les nouvelles pages, pour garder votre référencement',
+      'Le transfert du nom de domaine, sans coupure pour vos clients',
+      'Un hébergement dont vous maîtrisez le coût',
     ],
     price: 'Autour de 3 500 € HT',
     prices: [
       { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 3 500 €' },
     ],
     project: 'la-chance-animation',
-    h1: ['Refonte de', 'site internet.'],
+    h1: ['Refonte de', 'site internet'],
     seoTitle: 'Refonte de site internet, quitter Wix ou Shopify | Alsace',
     seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Autour de 3 500 € HT.',
     linkText: 'Tout sur la refonte de site',
@@ -223,7 +224,7 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Comment se passe le changement de site, sans coupure ?',
-        a: 'Je prépare le nouveau site à côté de l’ancien, que vous continuez d’utiliser. Quand tout est validé, je bascule le nom de domaine et les redirections en une fois : vos clients ne voient pas de coupure.',
+        a: 'Je prépare le nouveau site à côté de l’ancien, que vous continuez d’utiliser. Une fois tout validé, je bascule le nom de domaine et les redirections en une seule fois, et vos clients ne voient aucune coupure.',
       },
       {
         q: 'Puis-je garder mon nom de domaine ?',
@@ -231,27 +232,27 @@ export const services: Service[] = [
       },
       {
         q: 'Que deviennent mes abonnements Wix ou Shopify ?',
-        a: 'Une fois le nouveau site en ligne et les anciennes adresses redirigées, vous pouvez les résilier. Pour l’hébergement et les mises à jour du nouveau site, je propose un suivi à partir de 39 € HT par mois.',
+        a: 'Vous pouvez les résilier une fois le nouveau site en ligne et les anciennes adresses redirigées. Pour l’hébergement et les mises à jour du nouveau site, je propose un suivi à partir de 39 € HT par mois.',
       },
     ],
   },
   {
     id: 'outils-sur-mesure',
     title: 'Outils sur mesure',
-    short: 'Espace client, réservation, tableau de bord : l’outil qui colle à votre façon de travailler.',
-    long: 'Vous jonglez entre plusieurs fichiers Excel, ou vous saisissez les mêmes informations à plusieurs endroits ? Je peux développer un outil qui s’en charge, et utiliser l’IA quand elle vous fait vraiment gagner du temps.',
+    short: 'Un espace client, un outil de réservation ou un tableau de bord qui suit votre façon de travailler.',
+    long: 'Vous jonglez entre plusieurs fichiers Excel, ou vous saisissez les mêmes informations à plusieurs endroits ? Je peux développer un outil qui s’en charge, et utiliser l’IA là où elle vous fait vraiment gagner du temps.',
     includes: [
-      'Espace d’administration pour modifier votre site vous-même',
-      'Prise de rendez-vous, espace client, formulaires utiles',
-      'Tableaux de bord qui remplacent vos tableurs',
-      'Automatisation des tâches répétitives, IA quand elle a du sens',
+      'Un espace d’administration pour modifier votre site vous-même',
+      'La prise de rendez-vous, un espace client, des formulaires utiles',
+      'Des tableaux de bord qui remplacent vos tableurs',
+      'L’automatisation des tâches répétitives, avec l’IA quand elle a du sens',
     ],
     price: 'Sur devis',
     prices: [
       { label: 'Outil ou application sur mesure', value: 'sur devis' },
     ],
     project: 'memoryline',
-    h1: ['Outils et applications', 'sur mesure.'],
+    h1: ['Outils et applications', 'sur mesure'],
     seoTitle: 'Logiciel et outils sur mesure à Mulhouse | Agence web',
     seoDescription: 'Espace client, prise de rendez-vous, tableau de bord, automatisation : un outil sur mesure qui remplace vos tableurs et vos ressaisies. Sur devis, à Mulhouse.',
     linkText: 'Tout sur les outils sur mesure',
@@ -263,11 +264,11 @@ export const services: Service[] = [
     faq: [
       {
         q: 'À quoi peut servir un outil sur mesure ?',
-        a: 'À ce qui vous fait perdre du temps aujourd’hui : un planning partagé, la prise de rendez-vous en ligne, un espace où vos clients retrouvent leurs documents, un tableau de bord qui remplace vos tableurs, l’envoi automatique de devis et de relances.',
+        a: 'À ce qui vous fait perdre du temps aujourd’hui. Par exemple un planning partagé, la prise de rendez-vous en ligne, un espace où vos clients retrouvent leurs documents, un tableau de bord à la place de vos tableurs, ou l’envoi automatique des devis et des relances.',
       },
       {
         q: 'Utilisez-vous l’intelligence artificielle ?',
-        a: 'Quand elle vous fait vraiment gagner du temps : trier des demandes, résumer des documents, préremplir des fiches. Si une solution plus simple fait l’affaire, je vous la propose.',
+        a: 'Oui, quand elle vous fait vraiment gagner du temps, pour trier des demandes, résumer des documents ou préremplir des fiches. Si une solution plus simple suffit, je vous la propose.',
       },
       {
         q: 'Combien coûte un outil sur mesure ?',
@@ -278,8 +279,8 @@ export const services: Service[] = [
 ]
 
 export const maintenance = {
-  title: 'Et après la mise en ligne ?',
-  text: 'Je reste là après la mise en ligne : hébergement, mises à jour, petites modifications. Si quelque chose ne va pas, vous savez qui appeler.',
+  title: 'Après la mise en ligne',
+  text: 'Je reste là ensuite pour l’hébergement, les mises à jour et les petites modifications. Si quelque chose ne va pas, vous savez qui appeler.',
   price: 'À partir de 39 € HT par mois.',
   minPrice: 39,
   prices: [
@@ -289,36 +290,9 @@ export const maintenance = {
   ] as Price[],
 }
 
-export const reasons = [
-  {
-    t: 'Vous me parlez directement',
-    d: 'C’est moi qui conçois et développe votre site, donc c’est avec moi que vous échangez du début à la fin. Il n’y a personne entre nous.',
-  },
-  {
-    t: 'Un site fait pour vous',
-    d: 'Je ne pars pas d’un thème acheté en ligne. Le design est pensé pour votre activité et pour vos clients.',
-  },
-  {
-    t: 'Le référencement dès le départ',
-    d: 'Un site rapide, agréable sur téléphone, avec des textes qui parlent de ce que vous faites vraiment : c’est la base pour que Google vous montre.',
-  },
-  {
-    t: 'Tout vous appartient',
-    d: 'Le site, le nom de domaine et les contenus sont à vous. Et si vous voulez changer vos textes ou vos photos vous-même, je vous prévois un espace pour ça.',
-  },
-  {
-    t: 'Vous suivez l’avancement',
-    d: 'Je vous montre le site au fur et à mesure. Vous savez toujours où on en est, et vous pouvez réagir à chaque étape.',
-  },
-  {
-    t: 'Je réponds vite',
-    d: 'Une question, un souci sur votre site ? Je vous réponds sous 24 h.',
-  },
-]
-
 export const steps = [
-  { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. En rendez-vous ou en visio.' },
-  { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
+  { t: 'On se rencontre', d: 'Une demi-heure pour parler de votre activité et de ce que vous attendez, en rendez-vous ou en visio.' },
+  { t: 'Je vous envoie une proposition', d: 'Elle détaille ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en parle.' },
   { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
   { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
 ]
@@ -328,7 +302,7 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Un site d’une page démarre à 990 €, un site vitrine de 5 à 7 pages à 1 990 € et une boutique en ligne sur mesure à 5 900 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
+    a: 'Un site d’une page coûte à partir de 990 € HT, un site vitrine de 5 à 7 pages à partir de 1 990 € HT et une boutique en ligne sur mesure à partir de 5 900 € HT. Le prix exact dépend de votre projet. Après un premier échange, je vous envoie une proposition détaillée pour que vous sachiez ce que vous payez, et pourquoi.',
   },
   {
     q: 'Votre audit est-il vraiment gratuit ?',
@@ -336,45 +310,45 @@ export const faq: Faq[] = [
   },
   {
     q: 'Combien de temps faut-il pour créer mon site ?',
-    a: 'Cela dépend de la taille du projet et du temps nécessaire pour réunir vos contenus (textes, photos). Le planning est fixé ensemble dans le devis, et vous suivez l’avancement à chaque étape.',
+    a: 'Cela dépend de la taille du projet et du temps qu’il faut pour réunir vos textes et vos photos. On fixe le planning ensemble dans le devis, et vous suivez l’avancement à chaque étape.',
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est une option à 490 € HT.',
+    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, vos photos, vos prix ou vos horaires sans connaissances techniques. C’est une option à 490 € HT.',
   },
   {
     q: 'Mon site sera-t-il bien référencé sur Google ?',
-    a: 'Le référencement est pensé dès la conception : site rapide, adapté au téléphone, textes et titres travaillés, informations structurées pour Google. Pour une refonte, les anciennes adresses sont redirigées pour ne pas perdre vos positions.',
+    a: 'Je m’en occupe dès la conception, avec un site rapide et adapté au téléphone, des textes et des titres travaillés et des informations structurées pour Google. Pour une refonte, je redirige les anciennes adresses pour que vous gardiez vos positions.',
   },
   {
     q: 'Si je refais mon site, est-ce que je vais perdre mes données ?',
-    a: 'Non. Je récupère vos contenus (textes, photos, produits…) et je redirige les adresses de votre site actuel vers les nouvelles pages, pour que vous gardiez aussi votre place sur Google. Ça vaut aussi si vous êtes sur Wix ou Shopify.',
+    a: 'Non. Je récupère vos textes, vos photos et vos produits, et je redirige les adresses de votre site actuel vers les nouvelles pages pour que vous gardiez votre place sur Google. C’est aussi valable si vous êtes sur Wix ou Shopify.',
   },
   {
     q: 'Et une fois le site en ligne ?',
-    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections, à partir de 39 € HT par mois. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
+    a: 'Je reste votre interlocutrice pour l’hébergement, les mises à jour, les petites évolutions et les corrections, à partir de 39 € HT par mois. Si quelque chose ne va pas, vous avez quelqu’un à appeler.',
   },
 ]
 
-/** Audit gratuit : page /audit-gratuit et encart de l'accueil. */
+/** Audit gratuit : page /audit-gratuit et encart de l'accueil (textes à la 1re personne du pluriel, « on »). */
 export const audit = {
   cases: [
-    { t: 'Vous avez un site', d: 'On analyse sa vitesse, son affichage sur téléphone, son référencement Google et tout ce qui freine vos clients avant qu’ils vous contactent.' },
-    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel, boutique en ligne : on regarde comment vous travaillez et où vous perdez du temps (ressaisies, tâches répétitives, outils qui ne se parlent pas).' },
-    { t: 'Vous n’avez pas encore de site', d: 'On fait le point sur votre situation : comment vos clients vous trouvent aujourd’hui, ce que font vos concurrents, et ce dont vous avez vraiment besoin pour démarrer.' },
+    { t: 'Vous avez un site', d: 'On regarde sa vitesse, son affichage sur téléphone, son référencement et tout ce qui peut freiner vos clients avant qu’ils vous contactent.' },
+    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel ou boutique en ligne, on regarde comment vous travaillez et où vous perdez du temps.' },
+    { t: 'Vous n’avez pas encore de site', d: 'On fait le point sur la façon dont vos clients vous trouvent aujourd’hui, sur ce que font vos concurrents et sur ce dont vous avez besoin pour démarrer.' },
   ],
   checks: [
-    'Votre visibilité sur Google : sur quelles recherches vous apparaissez, et à quelle place',
+    'Votre visibilité sur Google, les recherches où vous apparaissez et à quelle place',
     'La vitesse de chargement et l’affichage sur téléphone',
-    'Les titres et les textes : Google comprend-il ce que vous faites, et pour qui ?',
-    'Votre fiche Google : horaires, photos, avis',
+    'Les titres et les textes, et si Google comprend ce que vous faites',
+    'Votre fiche Google, avec vos horaires, vos photos et vos avis',
     'Les erreurs techniques qui freinent votre référencement',
-    'Le parcours de vos clients : est-ce simple de vous contacter, de commander, de demander un devis ?',
+    'La facilité, pour vos clients, de vous contacter, de commander ou de demander un devis',
   ],
   gets: [
-    'Un compte rendu clair, sans jargon',
-    'Les 3 à 5 priorités, classées par impact',
-    'Ce que vous pouvez faire vous-même, tout de suite',
+    'Un compte rendu clair, sans termes techniques',
+    'Vos priorités, de la plus importante à la moins urgente',
+    'Ce que vous pouvez faire vous-même tout de suite',
     'Aucun engagement de votre part',
   ],
 }

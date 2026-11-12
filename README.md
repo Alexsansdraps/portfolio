@@ -3,16 +3,16 @@
 Site de l'agence web freelance d'Alexandra Porhansl, à Mulhouse : sites vitrines, boutiques en ligne,
 refontes et outils sur mesure pour les entreprises d'Alsace.
 
-Pages : accueil, services et tarifs, audit gratuit, réalisations (La Chance Animation, MemoryLine),
-mon parcours (frise animée en serpentine), contact (formulaire → e-mail), mentions légales.
+Pages : accueil, services et tarifs, audit gratuit, réalisations (La Chance Animation, MemoryLine, La Chance Production),
+parcours (chronologie), contact (formulaire → e-mail), mentions légales.
 Les prix (HT) sont dans `app/data/site.ts`.
 
 ## Stack
 
 - [Nuxt 4](https://nuxt.com) + [@nuxtjs/sitemap](https://nuxtseo.com/sitemap), pages pré-générées
 - Tailwind CSS v4 (tokens dans `app/assets/css/main.css`)
-- GSAP ScrollTrigger + Lenis (`prefers-reduced-motion` respecté)
-- Fontes self-hostées : Archivo variable + JetBrains Mono
+- Design éditorial noir et blanc, une seule fonte self-hostée : Newsreader variable
+- Apparition discrète au défilement, sans bibliothèque (`prefers-reduced-motion` respecté)
 - Cloudflare Workers (assets statiques + `/api/contact` avec Email Routing)
 
 ## Commandes
@@ -41,8 +41,7 @@ app/
 ├─ composables/   usePageSeo, useJsonLd, breadcrumb
 ├─ data/          site.ts (services, FAQ, zone) · projects.ts (réalisations) · experience.ts (parcours)
 ├─ pages/         index, services/ (récap + une page par service), realisations/, parcours, contact/, mentions-legales
-├─ plugins/       scroll.client.ts — Lenis + ScrollTrigger
-└─ utils/         serpentine.ts — tracé de la frise
+└─ plugins/       scroll.client.ts — apparition des blocs [data-reveal]
 server/
 └─ api/contact.post.ts — envoi du formulaire par Cloudflare Email Routing
 public/           favicons, fonts/, og/, robots.txt
