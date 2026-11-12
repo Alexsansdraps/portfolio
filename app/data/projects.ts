@@ -4,6 +4,9 @@ import lachanceFormules from '~/assets/img/realisations/lachance-formules.webp'
 import memorylineDesktop from '~/assets/img/realisations/memoryline-desktop.webp'
 import memorylineMobile from '~/assets/img/realisations/memoryline-mobile.webp'
 import memorylineCatalogue from '~/assets/img/realisations/memoryline-catalogue.webp'
+import lachanceproductionDesktop from '~/assets/img/realisations/lachanceproduction-desktop.webp'
+import lachanceproductionMobile from '~/assets/img/realisations/lachanceproduction-mobile.webp'
+import lachanceproductionIris from '~/assets/img/realisations/lachanceproduction-iris.webp'
 
 /** theme : couleur de la barre d'état du téléphone (captures mobiles), selon le haut du site */
 export interface Shot { src: string, alt: string, w: number, h: number, theme?: 'light' | 'dark' }
@@ -118,6 +121,44 @@ export const projects: Project[] = [
     mobile: { src: memorylineMobile, alt: 'Le configurateur MemoryLine sur téléphone', w: 600, h: 1200, theme: 'light' },
     extra: { src: memorylineCatalogue, alt: 'Catalogue MemoryLine : affiches illustrées de Riquewihr', w: 1440, h: 900 },
     tint: '#1d3a8a',
+  },
+  {
+    slug: 'la-chance-production',
+    name: 'La Chance Production',
+    place: 'Guebwiller, Haut-Rhin',
+    sector: 'Photographe et vidéaste en Alsace',
+    kind: 'Refonte de site avec espace client',
+    service: 'refonte',
+    year: 2026,
+    status: 'En cours de développement',
+    live: false,
+    domain: 'lachanceproduction.com',
+    url: null,
+    hook: 'Un site qui met le grand jour en avant, avec un espace où chaque client retrouve ses photos.',
+    summary: 'Refonte du site d’un photographe et vidéaste de Guebwiller : nouveau design, une page par prestation, espace de gestion et espace client avec galeries privées.',
+    context: 'La Chance Production, c’est un studio photo et vidéo à Guebwiller : le reportage de mariage avant tout, mais aussi les séances en studio, les photos d’iris, la location de photobooth et la numérisation de vieux films et cassettes. Le site devait mettre le mariage au premier plan, laisser le photographe gérer ses contenus seul et offrir à ses clients un endroit où retrouver leurs photos. Je le refais entièrement, en reprenant ses contenus et ses photos.',
+    goals: [
+      'Mettre le reportage de mariage au premier plan, sans oublier les autres prestations',
+      'Permettre au photographe de modifier ses textes, ses tarifs et ses photos sans passer par moi',
+      'Remettre les photos aux clients dans un espace privé',
+      'Bientôt : réserver le photobooth ou une séance photo d’iris en ligne, avec un acompte payé par carte',
+    ],
+    done: [
+      'Un nouveau design lumineux aux couleurs du logo, construit autour de ses propres photos et vidéos.',
+      'Une page par prestation (mariage, photo d’iris, studio, photobooth, numérisation), pour que chacun trouve vite ce qu’il cherche, sur Google comme sur le site.',
+      'Un formulaire de réservation adapté à chaque prestation : devis, rendez-vous ou location. Les demandes arrivent dans l’espace de gestion, où le photographe les suit.',
+      'Un espace de gestion simple : le photographe modifie lui-même tous les textes, les tarifs, les photos, les avis clients et les vidéos.',
+      'Un espace client : chacun a son compte et y retrouve ses galeries privées, avec ou sans téléchargement des photos.',
+    ],
+    figures: [
+      { v: '5', k: 'prestations, chacune avec sa page' },
+      { v: '3', k: 'espaces : le site, la gestion et l’espace client' },
+      { v: '100 %', k: 'des textes et photos modifiables par le photographe' },
+    ],
+    cover: { src: lachanceproductionDesktop, alt: 'Page d’accueil du site La Chance Production : « Votre grand jour en photos & vidéos », sur une photo de mariage en plein air', w: 1440, h: 900 },
+    mobile: { src: lachanceproductionMobile, alt: 'Le site La Chance Production sur téléphone', w: 600, h: 1200, theme: 'light' },
+    extra: { src: lachanceproductionIris, alt: 'Page Photo d’iris du site La Chance Production : « Transformez une partie de vous en œuvre d’art »', w: 1440, h: 900 },
+    tint: '#278274',
   },
 ]
 

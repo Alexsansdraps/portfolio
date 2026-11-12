@@ -106,7 +106,7 @@ useJsonLd([
     </section>
 
     <section class="wrap cs-next" aria-labelledby="next-title">
-      <h2 id="next-title" class="cs-h2">Une autre réalisation</h2>
+      <h2 id="next-title" class="cs-h2">{{ others.length > 1 ? 'Les autres réalisations' : 'Une autre réalisation' }}</h2>
       <NuxtLink v-for="o in others" :key="o.slug" :to="`/realisations/${o.slug}`" class="next">
         <img :src="o.cover.src" alt="" width="1440" height="900" loading="lazy" decoding="async">
         <span>

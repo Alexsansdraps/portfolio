@@ -3,7 +3,7 @@ import { projects } from '~/data/projects'
 
 usePageSeo({
   title: 'Réalisations : sites vitrines et boutiques en ligne sur mesure',
-  description: 'Refonte du site de La Chance Animation (Guebwiller) et boutique en ligne sur mesure pour MemoryLine : découvrez les sites que j’ai conçus et développés.',
+  description: 'Refontes des sites de La Chance Animation et La Chance Production (Guebwiller), boutique en ligne sur mesure pour MemoryLine : mes sites sur mesure.',
   path: '/realisations',
 })
 
@@ -28,8 +28,9 @@ useJsonLd([
       <p class="eyebrow rise">Réalisations</p>
       <h1 class="r-h1 rise d1">Mes réalisations</h1>
       <p class="lead rise d2">
-        Deux projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
-        et une boutique en ligne sur mesure pour des affiches personnalisées.
+        Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
+        une boutique en ligne sur mesure pour des affiches personnalisées, et la refonte du site
+        d’un photographe, avec un espace pour ses clients.
       </p>
     </section>
 

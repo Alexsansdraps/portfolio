@@ -67,7 +67,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         <div class="sec-head" data-reveal>
           <p class="eyebrow">Réalisations</p>
           <h2 id="real-title" class="h2">Mes derniers projets</h2>
-          <p class="lead">Deux sites que j’ai conçus et développés cette année, pour une entreprise d’animation et une boutique d’affiches personnalisées.</p>
+          <p class="lead">Trois sites que j’ai conçus et développés cette année, pour une entreprise d’animation, une boutique d’affiches personnalisées et un studio photo et vidéo.</p>
         </div>
         <div class="projects">
           <ProjectCard v-for="(p, i) in projects" :key="p.slug" :project="p" :flip="i % 2 === 1" />

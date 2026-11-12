@@ -92,6 +92,7 @@ export const steps: Step[] = [
     bullets: [
       { k: 'La Chance Animation', t: 'refonte Wix → Astro statique sur Cloudflare, back-office Pages CMS, formulaire de devis via Email Routing, redirections 301.' },
       { k: 'MemoryLine', t: 'sortie de Shopify : monorepo Astro + SolidJS, API Node / Hono, PostgreSQL, paiement Stripe et PayPal, configurateur d’affiches, mode stand, back-office complet, 5 langues, VPS Docker.' },
+      { k: 'La Chance Production', t: 'refonte en Astro rendu à la demande sur un Worker Cloudflare, base D1 et fichiers R2, back-office, comptes clients (e-mail ou Google) et galeries privées, réservations.' },
     ],
     tags: ['ASTRO', 'SOLIDJS', 'NODE', 'POSTGRESQL', 'STRIPE', 'CLOUDFLARE', 'DOCKER'],
     now: true,
