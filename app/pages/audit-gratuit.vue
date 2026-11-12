@@ -34,7 +34,8 @@ const steps = [
 
 <template>
   <main>
-    <section class="a-hero wrap">
+    <section class="a-hero wrap hero-split">
+      <div>
       <h1 class="a-h1 rise d1">On regarde votre site, <em>gratuitement.</em></h1>
       <p class="lead rise d2">
         Votre site ne vous amène pas assez de clients ? Vos outils vous font perdre du temps ? Vous n’avez pas encore
@@ -43,6 +44,19 @@ const steps = [
       <div class="a-ctas rise d3">
         <a href="#demande" class="btn">Audit gratuit <span class="arr" aria-hidden="true">↓</span></a>
       </div>
+      </div>
+      <HeroVisual class="rise d2">
+        <div class="rp">
+          <p class="rp-t">Compte rendu d’audit</p>
+          <p class="rp-s">votre-site.fr</p>
+          <ol class="rp-l">
+            <li><span>1</span>Afficher le site plus vite sur téléphone</li>
+            <li><span>2</span>Réécrire les titres des pages</li>
+            <li><span>3</span>Compléter votre fiche Google</li>
+          </ol>
+          <p class="rp-n">Vos priorités, de la plus importante à la moins urgente</p>
+        </div>
+      </HeroVisual>
     </section>
 
     <section class="wrap a-cases" aria-label="Pour qui ?">
@@ -101,6 +115,18 @@ const steps = [
 }
 .a-h1 em { font-style: normal; color: var(--color-wine); }
 .a-hero .lead { margin-top: 24px; }
+.rp {
+  position: absolute; left: 4%; top: 14%; width: 80%;
+  padding: clamp(20px, 2.6vw, 32px); border-radius: 20px; background: #fff;
+  box-shadow: 0 1px 2px rgb(29 22 26 / .06), 0 28px 60px -30px rgb(29 22 26 / .45);
+  transform: rotate(-2deg);
+}
+.rp-t { font-weight: 780; font-stretch: 112%; font-size: clamp(20px, 2vw, 26px); letter-spacing: -.01em; }
+.rp-s { margin-top: 4px; font-size: 14px; color: var(--color-mute); }
+.rp-l { list-style: none; margin-top: 18px; }
+.rp-l li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--color-line); font-weight: 600; font-size: clamp(15px, 1.4vw, 17px); }
+.rp-l span { display: grid; place-items: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--color-wine); color: #fff; font-weight: 760; font-size: 14px; }
+.rp-n { margin-top: 12px; font-size: 14px; color: var(--color-graphite); }
 .a-ctas { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
 
 .a-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }

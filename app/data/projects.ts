@@ -73,11 +73,8 @@ export const projects: Project[] = [
       'Toutes les anciennes adresses du site redirigées vers les nouvelles pages, pour garder les positions acquises sur Google.',
       'Un site très rapide, avec des photos optimisées automatiquement pour s’afficher vite, même sur téléphone.',
     ],
-    figures: [
-      { v: '100 %', k: 'des anciennes adresses reprises' },
-      { v: '3', k: 'pages par type d’événement' },
-      { v: '6', k: 'types de contenus que le gérant modifie seul' },
-    ],
+    // pas de chiffres clés (12/11/2026 : ça faisait « cahier des charges »)
+    figures: [],
     cover: { src: lachanceDesktop, alt: 'Page d’accueil du site La Chance Animation : « Le casino s’invite à votre soirée », photo d’une table de blackjack', w: 1440, h: 900 },
     mobile: { src: lachanceMobile, alt: 'Le site La Chance Animation sur téléphone', w: 600, h: 1200, theme: 'dark' },
     extra: { src: lachanceFormules, alt: 'Page Formules et tarifs du site La Chance Animation', w: 1440, h: 900 },

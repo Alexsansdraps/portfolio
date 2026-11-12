@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services, maintenance, priceNote } from '~/data/site'
+import { services, maintenance } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 usePageSeo({
@@ -29,10 +29,11 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 <template>
   <main>
     <section class="s-hero wrap">
-      <h1 class="s-h1 rise d1">Ce que je fais, <em>et combien ça coûte.</em></h1>
+      <h1 class="s-h1 rise d1">Ce que je propose, <em>et combien ça coûte.</em></h1>
       <p class="lead rise d2">
         Sites vitrines, boutiques en ligne, référencement, refontes et logiciels métier sur mesure. Pour chaque service,
-        vous trouverez ce qui est compris, les prix et la façon dont on travaille.
+        vous trouverez ce qui est compris, les prix et la façon dont on travaille. Les prix sont hors taxes,
+        le devis fixe le prix exact, et vous pouvez payer en plusieurs fois.
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
         <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
@@ -57,7 +58,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
           <span class="s-num">{{ String(i + 1).padStart(2, '0') }}</span>
           <h2 :id="`${s.id}-t`" class="h2"><NuxtLink :to="`/services/${s.id}`" class="s-h2-link">{{ s.title }}</NuxtLink></h2>
           <p class="lead">{{ s.long }}</p>
-          <PriceList :prices="s.prices" :note="priceNote" />
+          <PriceList :prices="s.prices" />
           <div class="s-actions">
             <NuxtLink to="/contact" class="btn">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
             <NuxtLink :to="`/services/${s.id}`" class="link">{{ s.linkText }} →</NuxtLink>
@@ -85,7 +86,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
         <h2 class="h2">{{ maintenance.title }}</h2>
         <p class="lead">{{ maintenance.text }}</p>
       </div>
-      <PriceList :prices="maintenance.prices" :note="priceNote" />
+      <PriceList :prices="maintenance.prices" />
     </section>
 
     <section class="section wrap" aria-labelledby="m-title">

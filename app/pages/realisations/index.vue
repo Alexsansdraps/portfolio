@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
 
+const memoryline = projects.find(p => p.slug === 'memoryline')
+
 usePageSeo({
   title: 'Réalisations : sites vitrines et boutiques en ligne sur mesure',
   description: 'Refontes des sites de La Chance Animation et La Chance Production (Guebwiller), boutique en ligne sur mesure pour MemoryLine : mes sites sur mesure.',
@@ -24,13 +26,16 @@ useJsonLd([
 
 <template>
   <main>
-    <section class="r-hero wrap">
+    <section class="r-hero wrap hero-split">
+      <div>
       <h1 class="r-h1 rise d1">Mes réalisations</h1>
       <p class="lead rise d2">
         Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
         une boutique en ligne sur mesure pour des affiches personnalisées, et la refonte du site
         d’un photographe, avec un espace pour ses clients.
       </p>
+      </div>
+      <HeroVisual v-if="memoryline" class="rise d2" :cover="memoryline.extra" :url="memoryline.domain" :mobile="memoryline.mobile" />
     </section>
 
     <section class="section on-dark" aria-label="Projets">

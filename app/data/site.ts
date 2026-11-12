@@ -287,32 +287,28 @@ export const maintenance = {
   ] as Price[],
 }
 
+/** Les arguments de la présentation (accueil, sous « Bonjour, moi c’est Alexandra »). */
 export const reasons = [
   {
     t: 'Vous me parlez directement',
-    d: 'C’est moi qui conçois et développe votre site, donc c’est avec moi que vous échangez du début à la fin. Il n’y a personne entre nous.',
+    d: 'C’est moi qui conçois et développe votre site, du premier rendez-vous à la mise en ligne. Il n’y a personne entre nous.',
   },
   {
     t: 'Un site fait pour vous',
     d: 'Je ne pars pas d’un thème acheté en ligne. Le design est pensé pour votre activité et pour vos clients.',
   },
   {
-    t: 'Le référencement dès le départ',
-    d: 'Un site rapide, agréable sur téléphone, avec des textes qui parlent de ce que vous faites vraiment : c’est la base pour que Google vous montre.',
-  },
-  {
     t: 'Tout vous appartient',
-    d: 'Le site, le nom de domaine et les contenus sont à vous. Et si vous voulez changer vos textes ou vos photos vous-même, je vous prévois un espace pour ça.',
-  },
-  {
-    t: 'Vous suivez l’avancement',
-    d: 'Je vous montre le site au fur et à mesure. Vous savez toujours où on en est, et vous pouvez réagir à chaque étape.',
-  },
-  {
-    t: 'Je réponds vite',
-    d: 'Une question, un souci sur votre site ? Je vous réponds sous 24 h.',
+    d: 'Le site, le nom de domaine et les contenus sont à vous.',
   },
 ]
+
+/**
+ * Témoignages clients : uniquement des phrases réellement données par les clients, avec leur accord.
+ * Tant que la liste est vide, la section n'apparaît nulle part.
+ */
+export interface Temoignage { quote: string, name: string, role: string, project?: string }
+export const testimonials: Temoignage[] = []
 
 export const steps = [
   { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. En rendez-vous ou en visio.' },

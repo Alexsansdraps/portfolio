@@ -69,6 +69,32 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
       </div>
     </section>
 
+    <!-- À PROPOS -->
+    <section class="section wrap about" aria-labelledby="about-title">
+      <div class="about-pic" data-reveal>
+        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
+      </div>
+      <div class="about-txt" data-reveal>
+        <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
+        <p class="lead">
+          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de lancer mon agence, j’ai travaillé
+          en agence web, dans une startup et chez des éditeurs de logiciels, sur des sites, des boutiques en ligne
+          et des applications mobiles.
+        </p>
+        <p class="about-p">
+          Pour moi, le plus important se passe avant de commencer : comprendre comment vous travaillez et ce que
+          vos clients cherchent. Je prends le temps de vous écouter, et je vous explique mes choix simplement.
+        </p>
+        <ul class="about-why">
+          <li v-for="r in reasons" :key="r.t"><strong>{{ r.t }}.</strong> {{ r.d }}</li>
+        </ul>
+        <NuxtLink to="/parcours" class="link">Découvrir mon parcours →</NuxtLink>
+      </div>
+    </section>
+
+    <!-- TÉMOIGNAGES (affichés dès qu’il y en a) -->
+    <Temoignages />
+
     <!-- AUDIT GRATUIT -->
     <section class="section audit-sec" aria-labelledby="audit-title">
       <div class="wrap">
@@ -95,7 +121,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- SERVICES -->
     <section id="services" class="section wrap" aria-labelledby="svc-title">
       <div class="sec-head" data-reveal>
-        <h2 id="svc-title" class="h2">Ce que je fais</h2>
+        <h2 id="svc-title" class="h2">Ce que je propose</h2>
       </div>
       <div class="svc-grid">
         <NuxtLink v-for="(s, i) in services" :key="s.id" :to="`/services/${s.id}`" class="svc" data-reveal>
@@ -111,20 +137,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
       <p class="svc-after" data-reveal><strong>{{ maintenance.title }}</strong> {{ maintenance.text }} {{ maintenance.price }}</p>
     </section>
 
-    <!-- POURQUOI -->
-    <section class="section why-sec" aria-labelledby="why-title">
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <h2 id="why-title" class="h2">Pourquoi travailler avec moi</h2>
-        </div>
-        <div class="why">
-          <div v-for="r in reasons" :key="r.t" class="why-item" data-reveal>
-            <h3>{{ r.t }}</h3>
-            <p>{{ r.d }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- MÉTHODE -->
     <section class="section wrap" aria-labelledby="method-title">
@@ -146,26 +158,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         <div class="zone-map" data-reveal>
           <ZoneMap />
         </div>
-      </div>
-    </section>
-
-    <!-- À PROPOS -->
-    <section class="section wrap about" aria-labelledby="about-title">
-      <div class="about-pic" data-reveal>
-        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
-      </div>
-      <div class="about-txt" data-reveal>
-        <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
-        <p class="lead">
-          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de lancer mon agence, j’ai travaillé
-          en agence web, dans une startup et chez des éditeurs de logiciels, sur des sites, des boutiques en ligne
-          et des applications mobiles.
-        </p>
-        <p class="about-p">
-          Pour moi, le plus important se passe avant de commencer : comprendre comment vous travaillez et ce que
-          vos clients cherchent. Je prends le temps de vous écouter, et je vous explique mes choix simplement.
-        </p>
-        <NuxtLink to="/parcours" class="link">Découvrir mon parcours →</NuxtLink>
       </div>
     </section>
 
@@ -268,12 +260,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 }
 .svc-after strong { color: var(--color-wine-deep); margin-right: 4px; }
 
-/* ---------- pourquoi ---------- */
-.why-sec { background: var(--color-sand); }
-.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3.5vw, 48px) clamp(24px, 3vw, 40px); }
-.why-item { padding-top: 20px; border-top: 2px solid var(--color-ink); }
-.why-item h3 { font-weight: 740; font-stretch: 110%; font-size: 21px; line-height: 1.2; letter-spacing: -.01em; }
-.why-item p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
 
 /* ---------- zone ---------- */
 .zone-sec { background: linear-gradient(var(--color-paper), var(--color-sand)); }
@@ -288,6 +274,10 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 .about-txt .h2 { margin-top: 18px; }
 .about-txt .lead { margin-top: 22px; }
 .about-p { margin-top: 16px; color: var(--color-graphite); max-width: 60ch; }
+.about-why { list-style: none; margin-top: 22px; display: flex; flex-direction: column; }
+.about-why li { padding: 12px 0; border-top: 1px solid var(--color-line); font-size: 16.5px; line-height: 1.55; color: var(--color-graphite); }
+.about-why li:last-child { border-bottom: 1px solid var(--color-line); }
+.about-why strong { color: var(--color-ink); font-weight: 720; }
 .about-txt .link { display: inline-block; margin-top: 24px; }
 
 .faq-sec { padding-bottom: clamp(24px, 4vw, 48px); }
@@ -295,12 +285,11 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .hero-visual { max-width: 620px; width: 100%; margin: 12px auto 0; }
-  .why { grid-template-columns: 1fr 1fr; }
   .audit-cases { grid-template-columns: 1fr; }
   .zone, .about { grid-template-columns: 1fr; }
   .about-pic { max-width: 420px; }
 }
 @media (max-width: 640px) {
-  .svc-grid, .why { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
 }
 </style>

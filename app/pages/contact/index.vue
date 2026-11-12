@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { business, zone } from '~/data/site'
+import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
   title: 'Contact : votre projet de site internet à Mulhouse',
@@ -22,11 +23,19 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
 
 <template>
   <main>
-    <section class="c-hero wrap">
+    <section class="c-hero wrap hero-split">
+      <div>
       <h1 class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
       <p class="lead rise d2">
         Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.
       </p>
+      </div>
+      <HeroVisual class="rise d2">
+        <figure class="c-pic">
+          <img :src="portrait" width="720" height="900" alt="" fetchpriority="high">
+        </figure>
+        <p class="c-badge">Réponse sous 24 h</p>
+      </HeroVisual>
     </section>
 
     <section class="wrap c-grid">
@@ -35,10 +44,6 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
       </div>
 
       <aside class="c-side rise d3" aria-label="Informations pratiques">
-        <div class="c-card">
-          <p class="c-k">Délai de réponse</p>
-          <p class="c-v">Sous 24 h</p>
-        </div>
         <div class="c-card">
           <p class="c-k">Par e-mail</p>
           <p class="c-v"><a :href="`mailto:${business.email}`">{{ business.email }}</a></p>
@@ -65,6 +70,12 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
 .c-hero { padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(32px, 5vw, 56px); }
 .c-h1 { margin-top: 20px; font-weight: 800; font-stretch: 116%; font-size: clamp(42px, 6.4vw, 88px); line-height: .98; letter-spacing: -.03em; }
 .c-h1 em { font-style: normal; color: var(--color-wine); }
+.c-pic { position: absolute; left: 22%; top: 2%; width: 52%; margin: 0; transform: rotate(2deg); }
+.c-pic img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 24px; box-shadow: 0 28px 60px -30px rgb(29 22 26 / .5); }
+.c-badge {
+  position: absolute; left: 6%; bottom: 10%; padding: 14px 20px; border-radius: 16px; background: #fff;
+  font-weight: 720; font-size: 17px; box-shadow: 0 18px 40px -24px rgb(29 22 26 / .45); transform: rotate(-3deg);
+}
 .c-hero .lead { margin-top: 22px; }
 
 .c-grid {
