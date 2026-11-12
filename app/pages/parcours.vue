@@ -26,7 +26,6 @@ useJsonLd([
   <main>
     <section class="p-hero wrap">
       <div class="p-hero-txt">
-        <p class="eyebrow rise">Mon parcours</p>
         <h1 class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
         <p class="lead rise d2">
           J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
@@ -42,7 +41,6 @@ useJsonLd([
     <section class="tl section" data-timeline aria-labelledby="tl-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">La frise</p>
           <h2 id="tl-title" class="h2">De 2019 <em>à aujourd’hui.</em></h2>
         </div>
 
@@ -88,7 +86,6 @@ useJsonLd([
     <section class="section on-dark" aria-labelledby="stack-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Côté technique</p>
           <h2 id="stack-title" class="h2">Les outils que j’utilise</h2>
         </div>
         <div class="st-rows">
@@ -105,7 +102,6 @@ useJsonLd([
     <!-- MÉTHODE -->
     <section class="section wrap" aria-labelledby="how-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Ma façon de travailler</p>
         <h2 id="how-title" class="h2">Comment je travaille</h2>
       </div>
       <div class="how">
@@ -189,7 +185,7 @@ useJsonLd([
   transition: color .5s, -webkit-text-stroke-color .5s;
 }
 .tl-item.active .tl-yr-n, .tl-item.passed .tl-yr-n { color: var(--color-wine); -webkit-text-stroke-color: var(--color-wine); }
-.tl-yr-co { display: block; margin-top: 10px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-mute); }
+.tl-yr-co { font-weight: 650; display: block; margin-top: 10px; font-size: 14.5px; color: var(--color-mute); }
 
 .tl-card {
   padding: clamp(22px, 2.6vw, 32px); border-radius: 22px;
@@ -206,7 +202,7 @@ useJsonLd([
 .tl-item.own .link { color: #fff; }
 .tl-item.own :focus-visible { outline-color: #fff; }
 
-.tl-dates { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 13px; color: var(--color-mute); }
+.tl-dates { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; color: var(--color-mute); }
 .tl-now {
   display: inline-flex; align-items: center; gap: 8px; padding: 3px 10px; border-radius: 999px;
   background: rgb(47 158 98 / .12); color: #217a4a; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
@@ -215,7 +211,7 @@ useJsonLd([
 .tl-role { margin-top: 10px; font-weight: 760; font-stretch: 112%; font-size: clamp(21px, 2.1vw, 27px); line-height: 1.12; letter-spacing: -.015em; }
 .tl-co { margin-top: 6px; font-size: 16.5px; color: var(--color-graphite); }
 .tl-co strong { color: var(--color-wine); font-weight: 700; }
-.tl-ctx { margin-top: 4px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); line-height: 1.5; }
+.tl-ctx { margin-top: 4px; font-size: 14px; color: var(--color-mute); line-height: 1.5; }
 .tl-bullets { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
 .tl-bullets li { font-size: 15px; line-height: 1.6; color: var(--color-graphite); }
 .tl-bullets strong { color: var(--color-ink); font-weight: 650; }
@@ -229,10 +225,10 @@ useJsonLd([
   padding: 20px 0; border-top: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent);
 }
 .st-row:last-child { border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent); }
-.st-k { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-rose); }
+.st-k { font-weight: 650; font-size: 14.5px; color: var(--color-rose); }
 .st-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .st-tags li {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em;
+ font-size: 14px;
   padding: 7px 13px; border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--color-bone) 22%, transparent);
   color: var(--color-bone);

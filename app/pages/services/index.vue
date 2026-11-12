@@ -4,7 +4,7 @@ import { findProject } from '~/data/projects'
 
 usePageSeo({
   title: 'Services et tarifs : création de site et SEO à Mulhouse',
-  description: 'Site vitrine dès 990 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
+  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, outils sur mesure : services et tarifs de mon agence web à Mulhouse.',
   path: '/services',
 })
 
@@ -29,7 +29,6 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 <template>
   <main>
     <section class="s-hero wrap">
-      <p class="eyebrow rise">Services</p>
       <h1 class="s-h1 rise d1">Ce que je fais, <em>et combien ça coûte.</em></h1>
       <p class="lead rise d2">
         Sites vitrines, boutiques en ligne, référencement, refontes et outils sur mesure. Pour chaque service,
@@ -45,7 +44,6 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
     <section class="wrap s-audit" aria-label="Audit gratuit">
       <div class="s-audit-in" data-reveal>
         <div>
-          <p class="eyebrow">Pour commencer</p>
           <p class="s-audit-t">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
           <p class="s-audit-p">On fait le point et on vous donne les priorités, sans engagement.</p>
         </div>
@@ -92,7 +90,6 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 
     <section class="section wrap" aria-labelledby="m-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Comment ça se passe</p>
         <h2 id="m-title" class="h2">Comment on travaille ensemble</h2>
       </div>
       <MethodSteps />
@@ -100,7 +97,6 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 
     <section class="section wrap faq-sec" aria-labelledby="f-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Questions fréquentes</p>
         <h2 id="f-title" class="h2">Questions fréquentes</h2>
       </div>
       <FaqList :schema="false" />
@@ -125,7 +121,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
   color: var(--color-ink); text-decoration: none; font-weight: 560; font-size: 15px;
   transition: border-color .2s, background .2s;
 }
-.s-toc a span { font-family: var(--font-mono); font-size: 11.5px; color: var(--color-wine); }
+.s-toc a span { font-size: 14px; color: var(--color-wine); }
 .s-toc a:hover { border-color: var(--color-wine); background: #fff; }
 
 .s-audit { padding-bottom: clamp(40px, 6vw, 72px); }
@@ -138,13 +134,13 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-block { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--color-line); }
 .s-block.alt { background: var(--color-sand); }
 .s-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
-.s-num { font-family: var(--font-mono); font-size: 14px; color: var(--color-wine); }
+.s-num { font-size: 14px; color: var(--color-wine); }
 .s-main .h2 { margin-top: 10px; }
 .s-main .lead { margin-top: 20px; }
 .s-actions { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
 .s-h2-link { color: inherit; text-decoration: none; }
 .s-h2-link:hover { color: var(--color-wine); }
-.s-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-mute); }
+.s-label { font-weight: 650; font-size: 14.5px; color: var(--color-mute); }
 .s-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; }
 .s-list li {
   position: relative; padding: 13px 0 13px 32px; border-bottom: 1px solid var(--color-line);
@@ -163,7 +159,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-ref:hover { border-color: var(--color-wine); }
 .s-ref img { width: 120px; height: 75px; object-fit: cover; object-position: top; border-radius: 9px; }
 .s-ref-t { font-weight: 700; font-size: 17px; }
-.s-ref-t small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-mute); margin-bottom: 2px; }
+.s-ref-t small { display: block; font-weight: 400; font-size: 14.5px; color: var(--color-mute); margin-bottom: 2px; }
 .s-ref-t .arr { color: var(--color-wine); }
 
 .s-maint {

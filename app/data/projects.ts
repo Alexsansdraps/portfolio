@@ -150,11 +150,8 @@ export const projects: Project[] = [
       'Un espace de gestion simple : le photographe modifie lui-même tous les textes, les tarifs, les photos, les avis clients et les vidéos.',
       'Un espace client : chacun a son compte et y retrouve ses galeries privées, avec ou sans téléchargement des photos.',
     ],
-    figures: [
-      { v: '5', k: 'prestations, chacune avec sa page' },
-      { v: '3', k: 'espaces : le site, la gestion et l’espace client' },
-      { v: '100 %', k: 'des textes et photos modifiables par le photographe' },
-    ],
+    // pas de chiffres clés pour ce projet (à sa demande, 12/11/2026 : ça faisait « cahier des charges »)
+    figures: [],
     cover: { src: lachanceproductionDesktop, alt: 'Page d’accueil du site La Chance Production : « Votre grand jour en photos & vidéos », sur une photo de mariage en plein air', w: 1440, h: 900 },
     mobile: { src: lachanceproductionMobile, alt: 'Le site La Chance Production sur téléphone', w: 600, h: 1200, theme: 'light' },
     extra: { src: lachanceproductionIris, alt: 'Page Photo d’iris du site La Chance Production : « Transformez une partie de vous en œuvre d’art »', w: 1440, h: 900 },

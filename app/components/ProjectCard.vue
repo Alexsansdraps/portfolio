@@ -25,7 +25,7 @@ defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
       <p class="pc-place">{{ [project.sector, project.place].filter(Boolean).join(' · ') }}</p>
       <p class="pc-hook">{{ project.hook }}</p>
 
-      <ul class="pc-figs">
+      <ul v-if="project.figures.length" class="pc-figs">
         <li v-for="f in project.figures" :key="f.k"><b>{{ f.v }}</b><span>{{ f.k }}</span></li>
       </ul>
 
@@ -59,7 +59,7 @@ defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
 
 .pc-meta {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+ font-weight: 650; font-size: 14.5px;
   color: color-mix(in srgb, currentColor 70%, transparent);
 }
 .status {

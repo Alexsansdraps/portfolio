@@ -60,7 +60,6 @@ useJsonLd([
         <NuxtLink to="/services">Services</NuxtLink><span aria-hidden="true">/</span>
         <span aria-current="page">{{ s.title }}</span>
       </nav>
-      <p class="eyebrow sv-eyebrow rise d1">{{ s.title }}</p>
       <h1 class="sv-h1 rise d1">{{ s.h1[0] }} <em>{{ s.h1[1] }}</em></h1>
       <p class="lead sv-lead rise d2">{{ s.long }}</p>
       <div class="sv-ctas rise d3">
@@ -86,7 +85,6 @@ useJsonLd([
 
     <section class="section wrap" aria-labelledby="sv-who-t">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Pour qui</p>
         <h2 id="sv-who-t" class="h2">C’est pour vous <em>si…</em></h2>
       </div>
       <ul class="sv-who">
@@ -97,7 +95,6 @@ useJsonLd([
     <section v-if="example" class="section on-dark" aria-labelledby="sv-ex-t">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Un exemple</p>
           <h2 id="sv-ex-t" class="h2">Un projet que j’ai réalisé</h2>
         </div>
         <ProjectCard :project="example" />
@@ -106,7 +103,6 @@ useJsonLd([
 
     <section class="section wrap" aria-labelledby="sv-how-t">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Comment ça se passe</p>
         <h2 id="sv-how-t" class="h2">Comment on travaille ensemble</h2>
       </div>
       <MethodSteps />
@@ -114,7 +110,6 @@ useJsonLd([
 
     <section class="section wrap faq-sec" aria-labelledby="sv-faq-t">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Questions fréquentes</p>
         <h2 id="sv-faq-t" class="h2">Vos questions</h2>
       </div>
       <FaqList :items="s.faq" />
@@ -135,12 +130,12 @@ useJsonLd([
 
 <style scoped>
 .sv-hero { padding-top: clamp(32px, 5vw, 64px); padding-bottom: clamp(48px, 6vw, 80px); }
-.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--color-mute); }
 .crumbs a { color: var(--color-graphite); text-decoration: none; }
 .crumbs a:hover { color: var(--color-wine); text-decoration: underline; }
-.sv-eyebrow { margin-top: clamp(28px, 4vw, 48px); }
+
 .sv-h1 {
-  margin-top: 20px; font-weight: 800; font-stretch: 116%;
+  margin-top: clamp(28px, 4vw, 48px); font-weight: 800; font-stretch: 116%;
   font-size: clamp(40px, 6.2vw, 84px); line-height: .98; letter-spacing: -.03em; max-width: 16ch;
 }
 .sv-h1 em { font-style: normal; color: var(--color-wine); }
@@ -149,7 +144,7 @@ useJsonLd([
 
 .sv-offer { padding-block: clamp(56px, 8vw, 104px); background: var(--color-sand); border-top: 1px solid var(--color-line); }
 .sv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
-.sv-k { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--color-mute); }
+.sv-k { font-size: 14.5px; font-weight: 650; color: var(--color-mute); }
 .sv-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; }
 .sv-list li {
   position: relative; padding: 13px 0 13px 32px; border-bottom: 1px solid var(--color-line);

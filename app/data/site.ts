@@ -26,7 +26,7 @@ export const business = {
   },
 }
 
-/** Une ligne de tarif de la page Services. Grille validée par Alexandra (base 400 € HT / jour). */
+/** Une ligne de tarif de la page Services. Grille validée par Alexandra (base 280 € HT / jour, après la baisse de 30 % du 12/11/2026). */
 export interface Price {
   label: string
   value: string
@@ -79,17 +79,17 @@ export const services: Service[] = [
       'Référencement naturel : être trouvé sur Google par les clients de votre secteur',
       'Mise en ligne, nom de domaine et adresse e-mail professionnelle',
     ],
-    price: 'À partir de 990 € HT',
-    minPrice: 990,
+    price: 'À partir de 690 € HT',
+    minPrice: 690,
     prices: [
-      { label: 'Site d’une page', value: 'à partir de 990 €' },
-      { label: 'Site de 5 à 7 pages', value: 'à partir de 1 990 €' },
-      { label: 'Option : modifier vos textes et photos vous-même', value: '+ 490 €' },
+      { label: 'Site d’une page', value: 'à partir de 690 €' },
+      { label: 'Site de 5 à 7 pages', value: 'à partir de 1 390 €' },
+      { label: 'Option : modifier vos textes et photos vous-même', value: '+ 340 €' },
     ],
     project: 'la-chance-animation',
     h1: ['Je crée', 'votre site vitrine.'],
-    seoTitle: 'Création de site vitrine à Mulhouse, dès 990 € HT',
-    seoDescription: 'Un site vitrine sur mesure pour présenter votre activité et recevoir des demandes : design unique, adapté au téléphone, pensé pour Google. Dès 990 € HT.',
+    seoTitle: 'Création de site vitrine à Mulhouse, dès 690 € HT',
+    seoDescription: 'Un site vitrine sur mesure pour présenter votre activité et recevoir des demandes : design unique, adapté au téléphone, pensé pour Google. Dès 690 € HT.',
     linkText: 'Le site vitrine en détail',
     forWho: [
       'Vous n’avez pas encore de site, ou seulement une page Facebook.',
@@ -99,7 +99,7 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Quelle différence entre un site d’une page et un site de 5 à 7 pages ?',
-        a: 'Le site d’une page met l’essentiel au même endroit, avec votre activité, vos services, vos coordonnées et un formulaire. Pour démarrer, c’est souvent suffisant, et ça commence à 990 € HT. Avec 5 à 7 pages (à partir de 1 990 € HT), chaque service a sa propre page, et vous avez plus de chances d’apparaître sur Google pour chacun.',
+        a: 'Le site d’une page met l’essentiel au même endroit, avec votre activité, vos services, vos coordonnées et un formulaire. Pour démarrer, c’est souvent suffisant, et ça commence à 690 € HT. Avec 5 à 7 pages (à partir de 1 390 € HT), chaque service a sa propre page, et vous avez plus de chances d’apparaître sur Google pour chacun.',
       },
       {
         q: 'Vous occupez-vous du nom de domaine et de l’adresse e-mail ?',
@@ -123,15 +123,15 @@ export const services: Service[] = [
       'Ventes sur les salons et marchés depuis une tablette',
       'Un espace d’administration simple pour tout gérer',
     ],
-    price: 'À partir de 5 900 € HT',
-    minPrice: 5900,
+    price: 'À partir de 4 130 € HT',
+    minPrice: 4130,
     prices: [
-      { label: 'Boutique en ligne sur mesure', value: 'à partir de 5 900 €' },
+      { label: 'Boutique en ligne sur mesure', value: 'à partir de 4 130 €' },
     ],
     project: 'memoryline',
     h1: ['Je crée', 'votre boutique en ligne.'],
     seoTitle: 'Création de boutique en ligne sur mesure | Mulhouse, Alsace',
-    seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, dès 5 900 € HT.',
+    seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, dès 4 130 € HT.',
     linkText: 'La boutique en ligne en détail',
     forWho: [
       'Vous vendez des produits et la plateforme que vous utilisez vous limite.',
@@ -206,14 +206,14 @@ export const services: Service[] = [
       'Transfert du nom de domaine, sans coupure pour vos clients',
       'Fin des abonnements inutiles, hébergement à coût maîtrisé',
     ],
-    price: 'Autour de 3 500 € HT',
+    price: 'Autour de 2 450 € HT',
     prices: [
-      { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 3 500 €' },
+      { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 2 450 €' },
     ],
     project: 'la-chance-animation',
     h1: ['Je refais', 'votre site.'],
     seoTitle: 'Refonte de site internet, quitter Wix ou Shopify | Alsace',
-    seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Autour de 3 500 € HT.',
+    seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Autour de 2 450 € HT.',
     linkText: 'La refonte en détail',
     forWho: [
       'Votre site a quelques années et ne donne plus une bonne image de votre activité.',
@@ -231,7 +231,7 @@ export const services: Service[] = [
       },
       {
         q: 'Que deviennent mes abonnements Wix ou Shopify ?',
-        a: 'Une fois le nouveau site en ligne et les anciennes adresses redirigées, vous pouvez les résilier. Pour l’hébergement et les mises à jour du nouveau site, je propose un suivi à partir de 39 € HT par mois.',
+        a: 'Une fois le nouveau site en ligne et les anciennes adresses redirigées, vous pouvez les résilier. Pour l’hébergement et les mises à jour du nouveau site, je propose un suivi à partir de 27 € HT par mois.',
       },
     ],
   },
@@ -280,12 +280,12 @@ export const services: Service[] = [
 export const maintenance = {
   title: 'Et après la mise en ligne ?',
   text: 'Je reste là après la mise en ligne : hébergement, mises à jour, petites modifications. Si quelque chose ne va pas, vous savez qui appeler.',
-  price: 'À partir de 39 € HT par mois.',
-  minPrice: 39,
+  price: 'À partir de 27 € HT par mois.',
+  minPrice: 27,
   prices: [
-    { label: 'Hébergement et mises à jour', value: '39 € / mois' },
-    { label: 'Avec 1 h de modifications chaque mois', value: '79 € / mois' },
-    { label: 'Petites modifications ponctuelles', value: '50 € / heure' },
+    { label: 'Hébergement et mises à jour', value: '27 € / mois' },
+    { label: 'Avec 1 h de modifications chaque mois', value: '55 € / mois' },
+    { label: 'Petites modifications ponctuelles', value: '35 € / heure' },
   ] as Price[],
 }
 
@@ -328,7 +328,7 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Un site d’une page démarre à 990 €, un site vitrine de 5 à 7 pages à 1 990 € et une boutique en ligne sur mesure à 5 900 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
+    a: 'Un site d’une page démarre à 690 €, un site vitrine de 5 à 7 pages à 1 390 € et une boutique en ligne sur mesure à 4 130 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
   },
   {
     q: 'Votre audit est-il vraiment gratuit ?',
@@ -340,7 +340,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est une option à 490 € HT.',
+    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. C’est une option à 340 € HT.',
   },
   {
     q: 'Mon site sera-t-il bien référencé sur Google ?',
@@ -352,7 +352,7 @@ export const faq: Faq[] = [
   },
   {
     q: 'Et une fois le site en ligne ?',
-    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections, à partir de 39 € HT par mois. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
+    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections, à partir de 27 € HT par mois. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
   },
 ]
 

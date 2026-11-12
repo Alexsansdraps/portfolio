@@ -23,7 +23,6 @@ const liens = [
   <div>
     <SiteHeader />
     <main class="e wrap">
-      <p class="eyebrow">{{ introuvable ? 'Erreur 404' : `Erreur ${error.statusCode}` }}</p>
       <h1 class="e-h1">
         <template v-if="introuvable">Cette page s’est perdue <em>entre les Vosges et le Rhin.</em></template>
         <template v-else>Oups, quelque chose <em>s’est mal passé.</em></template>

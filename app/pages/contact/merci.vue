@@ -10,7 +10,6 @@ usePageSeo({
 
 <template>
   <main class="m wrap">
-    <p class="eyebrow">Message envoyé</p>
     <h1 class="m-h1">Merci vielmols, votre message <em>est bien parti&nbsp;!</em></h1>
     <p class="lead">Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
     <div class="m-links">

@@ -14,7 +14,7 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 - **Français uniquement.** Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ;
   `experience.ts` : parcours), le reste directement dans les pages.
 - **Côté clients, zéro jargon** (accueil, services, réalisations, contact). Le vocabulaire technique n'a sa place que sur `/parcours`.
-- **Tarifs** : grille validée par Alexandra (base 400 € HT / jour, vendue au forfait), dans `app/data/site.ts`
+- **Tarifs** : grille validée par Alexandra (base 280 € HT / jour, après la baisse de 30 % du 12/11/2026, vendue au forfait), dans `app/data/site.ts`
   (`price` sur les cartes de l'accueil, `prices` sur la page Services via `PriceList`, `minPrice` pour les données structurées,
   `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
   la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.

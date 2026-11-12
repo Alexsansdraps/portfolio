@@ -65,7 +65,7 @@ const year = new Date().getFullYear()
 }
 .f-cta { margin-top: 24px; padding: 12px 20px; font-size: 15px; }
 .f-h {
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+ font-weight: 650; font-size: 14.5px;
   color: var(--color-rose); margin-bottom: 14px;
 }
 .f-col { display: flex; flex-direction: column; gap: 10px; }
@@ -81,7 +81,7 @@ const year = new Date().getFullYear()
   margin-top: clamp(40px, 6vw, 72px); padding-top: 20px;
   border-top: 1px solid color-mix(in srgb, var(--color-bone) 14%, transparent);
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px;
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+ font-size: 14px;
   color: color-mix(in srgb, var(--color-bone) 64%, var(--color-plum));
 }
 .f-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }

@@ -46,7 +46,7 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
 .cta-btn:hover { background: var(--color-plum); color: #fff; border-color: var(--color-plum); }
 .cta-alt { color: #fff; font-weight: 620; text-decoration: underline; text-underline-offset: 4px; }
 .cta-alt:hover { text-decoration-thickness: 2px; }
-.cta-note { font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: rgb(255 255 255 / .8); }
+.cta-note { font-size: 14px; color: rgb(255 255 255 / .8); }
 .cta-in :focus-visible { outline-color: #fff; }
 @media (max-width: 860px) { .cta-in { grid-template-columns: 1fr; align-items: start; } }
 </style>

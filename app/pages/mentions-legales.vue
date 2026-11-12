@@ -73,10 +73,10 @@ const sections = [
 
 <style scoped>
 .legal { padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(56px, 8vw, 104px); }
-.back { font-family: var(--font-mono); font-size: 13px; color: var(--color-graphite); text-decoration: none; }
+.back { font-size: 14px; color: var(--color-graphite); text-decoration: none; }
 .back:hover { color: var(--color-wine); }
 .l-h1 { margin-top: 28px; font-weight: 800; font-stretch: 116%; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: -.03em; }
-.l-up { margin-top: 12px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); }
+.l-up { margin-top: 12px; font-size: 14px; color: var(--color-mute); }
 .l-sec { margin-top: clamp(32px, 4vw, 44px); max-width: 72ch; }
 .l-sec h2 { font-weight: 740; font-stretch: 110%; font-size: 21px; letter-spacing: -.01em; margin-bottom: 10px; }
 .l-sec p { font-size: 16px; line-height: 1.7; color: var(--color-graphite); margin-bottom: 8px; }

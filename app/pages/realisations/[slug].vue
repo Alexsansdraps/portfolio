@@ -81,7 +81,6 @@ useJsonLd([
     <section class="on-dark section" aria-labelledby="done-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Le projet</p>
           <h2 id="done-title" class="h2">Ce que j’ai fait</h2>
         </div>
         <ol class="cs-done">
@@ -90,7 +89,7 @@ useJsonLd([
             <p>{{ d }}</p>
           </li>
         </ol>
-        <ul class="cs-figs" data-reveal>
+        <ul v-if="p.figures.length" class="cs-figs" data-reveal>
           <li v-for="f in p.figures" :key="f.k"><b>{{ f.v }}</b><span>{{ f.k }}</span></li>
         </ul>
       </div>
@@ -123,13 +122,13 @@ useJsonLd([
 
 <style scoped>
 .cs-hero { padding-top: clamp(32px, 5vw, 64px); }
-.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 12.5px; color: var(--color-mute); }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--color-mute); }
 .crumbs a { color: var(--color-graphite); text-decoration: none; }
 .crumbs a:hover { color: var(--color-wine); text-decoration: underline; }
 .cs-meta {
   margin-top: clamp(28px, 4vw, 48px);
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--color-graphite);
+ font-weight: 650; font-size: 14.5px; color: var(--color-graphite);
 }
 .cs-kind { color: inherit; text-decoration: underline; text-decoration-color: var(--color-line); text-underline-offset: 4px; }
 .cs-kind:hover { color: var(--color-wine); text-decoration-color: currentColor; }
@@ -150,7 +149,7 @@ useJsonLd([
 
 .cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
 .cs-h2 {
-  font-family: var(--font-mono); font-size: 12.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+ font-size: 14.5px; font-weight: 650;
   color: var(--color-wine);
 }
 .cs-text { margin-top: 16px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.65; }
@@ -166,7 +165,7 @@ useJsonLd([
   display: grid; grid-template-columns: 44px 1fr; gap: 12px;
   padding: 22px 0; border-top: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent);
 }
-.cs-done .n { font-family: var(--font-mono); font-size: 13px; color: var(--color-rose); padding-top: 3px; }
+.cs-done .n { font-size: 14px; color: var(--color-rose); padding-top: 3px; }
 .cs-done p { font-size: 16.5px; line-height: 1.6; color: color-mix(in srgb, var(--color-bone) 88%, var(--color-plum)); }
 .cs-figs {
   list-style: none; margin-top: clamp(40px, 6vw, 72px);
@@ -186,7 +185,7 @@ useJsonLd([
 }
 .next:hover { border-color: var(--color-wine); transform: translateY(-2px); }
 .next img { width: 140px; height: 88px; object-fit: cover; object-position: top; border-radius: 10px; }
-.next small { display: block; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-mute); }
+.next small { font-weight: 650; display: block; font-size: 14.5px; color: var(--color-mute); }
 .next strong { font-weight: 760; font-stretch: 112%; font-size: 24px; }
 .next .arr { font-size: 22px; color: var(--color-wine); padding-right: 12px; }
 

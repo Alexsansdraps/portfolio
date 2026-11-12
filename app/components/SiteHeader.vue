@@ -25,7 +25,6 @@ onMounted(() => {
     <div class="wrap bar-in">
       <NuxtLink to="/" class="brand" aria-label="Alexandra Porhansl, agence web — accueil">
         <span class="b-name">Alexandra Porhansl<span class="dot">.</span></span>
-        <span class="b-tag">Agence web · Alsace</span>
       </NuxtLink>
 
       <nav class="nav" aria-label="Navigation principale">
@@ -65,10 +64,9 @@ onMounted(() => {
 .bar.scrolled, .bar.open { border-bottom-color: var(--color-line); }
 .bar-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
 
-.brand { display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: var(--color-ink); line-height: 1; }
+.brand { display: flex; text-decoration: none; color: var(--color-ink); line-height: 1; }
 .b-name { font-weight: 780; font-stretch: 116%; font-size: 18px; letter-spacing: -.01em; }
 .b-name .dot { color: var(--color-wine); }
-.b-tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-mute); }
 
 .nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
 .nav-link {

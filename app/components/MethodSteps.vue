@@ -28,7 +28,7 @@ import { steps } from '~/data/site'
   width: 11px; height: 11px; border-radius: 50%; background: var(--color-wine);
   box-shadow: 0 0 0 5px var(--color-paper);
 }
-.ms-num { font-family: var(--font-mono); font-size: 13px; color: var(--color-wine); letter-spacing: .08em; }
+.ms-num { font-size: 14px; color: var(--color-wine); }
 .ms-step h3 { margin-top: 10px; font-weight: 720; font-stretch: 110%; font-size: 21px; line-height: 1.2; letter-spacing: -.01em; }
 .ms-step p { margin-top: 10px; font-size: 15.5px; line-height: 1.6; color: var(--color-graphite); }
 

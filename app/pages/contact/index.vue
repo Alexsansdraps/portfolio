@@ -23,7 +23,6 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
 <template>
   <main>
     <section class="c-hero wrap">
-      <p class="eyebrow rise">Contact</p>
       <h1 class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
       <p class="lead rise d2">
         Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.
@@ -74,7 +73,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
 }
 .c-side { display: flex; flex-direction: column; gap: 14px; }
 .c-card { padding: 22px 24px; border-radius: 18px; background: var(--color-sand); }
-.c-k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--color-wine); }
+.c-k { font-weight: 650; font-size: 14.5px; color: var(--color-wine); }
 .c-v { margin-top: 6px; font-weight: 650; font-size: 17.5px; line-height: 1.4; overflow-wrap: anywhere; }
 .c-v a { color: var(--color-ink); }
 .c-v a:hover { color: var(--color-wine); }

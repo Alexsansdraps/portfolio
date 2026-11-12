@@ -28,5 +28,5 @@ defineProps<{ prices: Price[], note?: string }>()
 dt { font-size: 16px; line-height: 1.45; color: var(--color-ink); }
 /* margin-left: auto → le prix reste calé à droite même quand il passe à la ligne */
 dd { margin-left: auto; font-weight: 740; font-stretch: 108%; font-size: 17px; color: var(--color-wine); white-space: nowrap; }
-.pl-note { margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--color-mute); }
+.pl-note { margin-top: 10px; font-size: 14px; color: var(--color-mute); }
 </style>

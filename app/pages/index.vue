@@ -32,11 +32,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
           <NuxtLink to="/realisations" class="btn btn-ghost">Voir mes réalisations</NuxtLink>
         </div>
-        <ul class="hero-trust rise d4">
-          <li>Audit offert</li>
-          <li>Basée à Mulhouse</li>
-          <li>Réponse sous 24 h</li>
-        </ul>
       </div>
 
       <div class="hero-visual rise d2" aria-hidden="true">
@@ -65,7 +60,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section id="realisations" class="section on-dark" aria-labelledby="real-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Réalisations</p>
           <h2 id="real-title" class="h2">Mes derniers projets</h2>
           <p class="lead">Trois sites que j’ai conçus et développés cette année, pour une entreprise d’animation, une boutique d’affiches personnalisées et un studio photo et vidéo.</p>
         </div>
@@ -79,7 +73,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section class="section audit-sec" aria-labelledby="audit-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Audit gratuit</p>
           <h2 id="audit-title" class="h2">Votre site est-il bien trouvé sur&nbsp;Google&nbsp;?</h2>
           <p class="lead">
             On vous propose un audit gratuit : on regarde votre site (ou vos outils, ou votre présence en ligne si
@@ -103,7 +96,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- SERVICES -->
     <section id="services" class="section wrap" aria-labelledby="svc-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Services</p>
         <h2 id="svc-title" class="h2">Ce que je fais</h2>
       </div>
       <div class="svc-grid">
@@ -124,7 +116,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section class="section why-sec" aria-labelledby="why-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">L’agence</p>
           <h2 id="why-title" class="h2">Pourquoi travailler avec moi</h2>
         </div>
         <div class="why">
@@ -139,7 +130,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- MÉTHODE -->
     <section class="section wrap" aria-labelledby="method-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Comment ça se passe</p>
         <h2 id="method-title" class="h2">Comment on travaille ensemble</h2>
       </div>
       <MethodSteps />
@@ -149,7 +139,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <section class="section zone-sec" aria-labelledby="zone-title">
       <div class="wrap zone">
         <div class="zone-txt" data-reveal>
-          <p class="eyebrow">Où me trouver</p>
           <h2 id="zone-title" class="h2">Je suis basée à Mulhouse</h2>
           <p class="lead">
             Mon agence est installée à Mulhouse, dans le sud de l’Alsace, entre les Vosges et le Rhin.
@@ -167,7 +156,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
       </div>
       <div class="about-txt" data-reveal>
-        <p class="eyebrow">Qui suis-je</p>
         <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
         <p class="lead">
           Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de lancer mon agence, j’ai travaillé
@@ -185,7 +173,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
     <!-- FAQ -->
     <section class="section wrap faq-sec" aria-labelledby="faq-title">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">FAQ</p>
         <h2 id="faq-title" class="h2">Questions fréquentes</h2>
       </div>
       <FaqList />
@@ -215,16 +202,6 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 }
 .hero-lead { margin-top: 14px; font-size: 17px; color: var(--color-graphite); max-width: 46ch; }
 .hero-ctas { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-trust {
-  list-style: none; margin-top: 28px;
-  display: flex; flex-wrap: wrap; gap: 8px 22px;
-  font-family: var(--font-mono); font-size: 12.5px; color: var(--color-graphite);
-}
-.hero-trust li { display: inline-flex; align-items: center; gap: 8px; }
-.hero-trust li::before {
-  content: "✓"; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%;
-  background: var(--color-blush); color: var(--color-wine); font-size: 10px; font-weight: 700;
-}
 
 .hero-visual { position: relative; aspect-ratio: 1 / .92; margin-top: 40px; }
 .hv { position: absolute; will-change: transform; }
@@ -263,7 +240,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 .audit-case h3 { margin-top: 18px; font-weight: 740; font-stretch: 110%; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
 .audit-case p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
 .audit-cta { margin-top: clamp(28px, 4vw, 44px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
-.audit-cta p { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em; color: var(--color-wine-deep); }
+.audit-cta p { font-size: 14px; color: var(--color-wine-deep); }
 
 /* ---------- services ---------- */
 .svc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
@@ -276,7 +253,7 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 }
 .svc:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .svc:hover { border-color: var(--color-wine); transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgb(29 22 26 / .35); }
-.svc-num { font-family: var(--font-mono); font-size: 13px; color: var(--color-wine); }
+.svc-num { font-size: 14px; color: var(--color-wine); }
 .svc h3 { margin-top: 18px; font-weight: 760; font-stretch: 112%; font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -.015em; line-height: 1.1; }
 .svc p { margin-top: 12px; color: var(--color-graphite); font-size: 16.5px; line-height: 1.6; flex: 1; }
 .svc-foot {

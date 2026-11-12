@@ -35,7 +35,6 @@ const steps = [
 <template>
   <main>
     <section class="a-hero wrap">
-      <p class="eyebrow rise">Audit gratuit</p>
       <h1 class="a-h1 rise d1">On regarde votre site, <em>gratuitement.</em></h1>
       <p class="lead rise d2">
         Votre site ne vous amène pas assez de clients ? Vos outils vous font perdre du temps ? Vous n’avez pas encore
@@ -57,13 +56,11 @@ const steps = [
 
     <section class="section wrap a-grid">
       <div data-reveal>
-        <p class="eyebrow">Ce qu’on regarde</p>
         <ul class="a-list">
           <li v-for="c in audit.checks" :key="c">{{ c }}</li>
         </ul>
       </div>
       <div class="a-gets" data-reveal>
-        <p class="eyebrow">Ce que vous recevez</p>
         <ul class="a-list check">
           <li v-for="g in audit.gets" :key="g">{{ g }}</li>
         </ul>
@@ -73,7 +70,6 @@ const steps = [
     <section class="on-dark section" aria-labelledby="a-how">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">Comment ça se passe</p>
           <h2 id="a-how" class="h2">Comment ça marche</h2>
         </div>
         <ol class="a-steps">
@@ -88,7 +84,6 @@ const steps = [
 
     <section id="demande" class="section wrap a-form" aria-labelledby="a-form-t">
       <div class="sec-head" data-reveal>
-        <p class="eyebrow">Demande d’audit</p>
         <h2 id="a-form-t" class="h2">Hopla, <em>on fait le point ?</em></h2>
         <p class="lead">Indiquez votre site si vous en avez un, et dites-m’en un peu plus sur votre activité.</p>
       </div>
@@ -106,7 +101,7 @@ const steps = [
 .a-h1 em { font-style: normal; color: var(--color-wine); }
 .a-hero .lead { margin-top: 24px; }
 .a-ctas { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
-.a-note { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em; color: var(--color-graphite); }
+.a-note { font-size: 14px; color: var(--color-graphite); }
 
 .a-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
 .a-case { padding: clamp(24px, 3vw, 34px); border-radius: 22px; background: var(--color-blush); }
@@ -132,7 +127,7 @@ const steps = [
 
 .a-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 40px); }
 .a-steps li { padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--color-bone) 20%, transparent); }
-.a-steps .n { font-family: var(--font-mono); font-size: 13px; color: var(--color-rose); }
+.a-steps .n { font-size: 14px; color: var(--color-rose); }
 .a-steps h3 { margin-top: 10px; font-weight: 740; font-stretch: 110%; font-size: 22px; line-height: 1.2; }
 .a-steps p { margin-top: 10px; color: color-mix(in srgb, var(--color-bone) 80%, var(--color-plum)); }
 

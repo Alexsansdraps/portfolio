@@ -25,7 +25,6 @@ useJsonLd([
 <template>
   <main>
     <section class="r-hero wrap">
-      <p class="eyebrow rise">Réalisations</p>
       <h1 class="r-h1 rise d1">Mes réalisations</h1>
       <p class="lead rise d2">
         Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
