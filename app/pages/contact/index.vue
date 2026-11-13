@@ -1,43 +1,63 @@
 <script setup lang="ts">
-import { business, zone } from '~/data/site'
+import { business } from '~/data/site'
 import portrait from '~/assets/img/portrait.webp'
 
+const { tr, en } = useLangue()
+
 usePageSeo({
-  title: 'Contact : votre projet de site internet à Mulhouse',
-  description: 'Un projet de site, de réseaux sociaux ou de logiciel ? Réservez un premier rendez-vous d’une heure, gratuit et sans engagement, ou écrivez-moi. Développeuse web freelance à Mulhouse.',
+  title: tr('Contact : votre projet de site internet à Mulhouse', 'Contact: your website project in Mulhouse, Alsace'),
+  description: tr(
+    'Un projet de site, de réseaux sociaux ou de logiciel ? Réservez un premier rendez-vous d’une heure, gratuit et sans engagement, ou écrivez-moi. Développeuse web freelance à Mulhouse.',
+    'A website, social media or software project? Book a free one-hour first meeting with no obligation, or write to me. Freelance web developer in Mulhouse, France.',
+  ),
   path: '/contact',
 })
 
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Contact', '/contact']]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], ['Contact', '/contact']]),
   {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    'url': absoluteUrl('/contact'),
+    'url': absoluteUrl(en.value ? '/en/contact' : '/contact'),
     'about': { '@id': absoluteUrl('/#agence') },
   },
 ])
 
-const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
+const ensuite = computed(() => tr(
+  [
+    'Je vous rappelle ou je vous réponds par e-mail.',
+    'Un premier rendez-vous d’une heure, gratuit et sans engagement, pour parler de votre situation et de vos besoins.',
+    'Je vous envoie une proposition détaillée.',
+  ],
+  [
+    'I call you back or reply by email.',
+    'A first one-hour meeting, free with no obligation, to talk about where you are and what you need.',
+    'I send you a detailed proposal.',
+  ],
+))
 </script>
 
 <template>
   <main>
     <section class="c-hero wrap hero-split">
       <div>
-      <h1 class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
+      <h1 v-if="!en" class="c-h1 rise d1">Parlons de <em>votre projet.</em></h1>
+      <h1 v-else class="c-h1 rise d1">Let’s talk about <em>your project.</em></h1>
       <p class="lead rise d2">
-        Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.
+        {{ tr(
+          'Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.',
+          'Tell me a little more, even if your idea still fits on a beer mat. I’ll get back to you quickly to talk it through.',
+        ) }}
       </p>
       <div class="c-ctas rise d3">
-        <a :href="business.booking" class="btn" target="_blank" rel="noopener">Réserver un créneau <span aria-hidden="true">↗</span></a>
+        <a :href="business.booking" class="btn" target="_blank" rel="noopener">{{ tr('Réserver un créneau', 'Book a time slot') }} <span aria-hidden="true">↗</span></a>
       </div>
       </div>
       <HeroVisual class="rise d2">
         <figure class="c-pic">
           <img :src="portrait" width="720" height="900" alt="" fetchpriority="high">
         </figure>
-        <p class="c-badge">Réponse sous 24 h</p>
+        <p class="c-badge">{{ tr('Réponse sous 24 h', 'Reply within 24 hours') }}</p>
       </HeroVisual>
     </section>
 
@@ -46,22 +66,20 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
         <ContactForm />
       </div>
 
-      <aside class="c-side rise d3" aria-label="Informations pratiques">
+      <aside class="c-side rise d3" :aria-label="tr('Informations pratiques', 'Practical information')">
         <div class="c-card">
-          <p class="c-k">Par e-mail</p>
+          <p class="c-k">{{ tr('Par e-mail', 'By email') }}</p>
           <p class="c-v"><a :href="`mailto:${business.email}`">{{ business.email }}</a></p>
         </div>
         <div class="c-card">
-          <p class="c-k">Où ?</p>
-          <p class="c-v">En visio, ou chez vous</p>
-          <p class="c-small">Je me déplace dans un rayon de 100 km autour de Mulhouse.</p>
+          <p class="c-k">{{ tr('Où ?', 'Where?') }}</p>
+          <p class="c-v">{{ tr('En visio, ou chez vous', 'By video call, or at your place') }}</p>
+          <p class="c-small">{{ tr('Je me déplace dans un rayon de 100 km autour de Mulhouse.', 'I travel within 100 km of Mulhouse.') }}</p>
         </div>
         <div class="c-card c-next">
-          <p class="c-k">Et ensuite ?</p>
+          <p class="c-k">{{ tr('Et ensuite ?', 'What happens next?') }}</p>
           <ol>
-            <li>Je vous rappelle ou je vous réponds par e-mail.</li>
-            <li>Un premier rendez-vous d’une heure, gratuit et sans engagement, pour parler de votre situation et de vos besoins.</li>
-            <li>Je vous envoie une proposition détaillée.</li>
+            <li v-for="e in ensuite" :key="e">{{ e }}</li>
           </ol>
         </div>
       </aside>

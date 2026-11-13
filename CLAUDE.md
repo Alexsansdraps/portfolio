@@ -1,6 +1,6 @@
 # alexandraporhansl.com — Agence web freelance en Alsace
 
-Site vitrine de l'agence web d'Alexandra (Mulhouse). Nuxt 4, français uniquement, pages pré-générées
+Site vitrine d'Alexandra, développeuse web freelance (Mulhouse). Nuxt 4, en français et en anglais (/en), pages pré-générées
 et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 
 ## Commandes
@@ -11,8 +11,21 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 
 ## Règles du projet
 
-- **Français uniquement.** Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ;
-  `experience.ts` : parcours), le reste directement dans les pages.
+- **Bilingue depuis le 13/11/2026 : français par défaut, anglais sous `/en`.** Toute modification de texte se fait
+  **dans les deux langues**.
+  - Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ; `experience.ts` : parcours),
+    et leur version anglaise à côté (`site.en.ts`, `projects.en.ts`, `experience.en.ts` : seulement les textes, le reste vient du français).
+    Les pages les lisent via `useContenu()`.
+  - Textes propres à une page : directement dans la page, avec `tr('français', 'English')` (`useLangue()`).
+  - Liens internes : toujours écrits avec l'adresse française, passée dans `chemin('/realisations')` (donne `/en/projects` en anglais).
+  - Adresses anglaises : `/en`, `/en/services`, `/en/services/{website, online-shop, seo, online-presence, redesign, custom-software}`,
+    `/en/projects`, `/en/projects/{slug}`, `/en/about`, `/en/contact`, `/en/contact/thank-you`, `/en/legal-notice`.
+    Correspondance dans `app/composables/useLangue.ts` ET dans le hook `pages:extend` de `nuxt.config.ts` (à garder synchro).
+  - Détection : à l'arrivée sur une page française, un navigateur qui ne préfère pas le français passe sur la page anglaise
+    (script en tête de `app.vue`), sauf si le visiteur a choisi FR / EN dans l'en-tête (retenu dans `localStorage.langue`)
+    et jamais pour les robots. Pas de redirection de l'anglais vers le français.
+  - Chaque page déclare l'autre langue (hreflang) via `usePageSeo()`, qui prend le chemin français. Image de partage anglaise : `public/og/og-en.jpg`.
+  - Anglais naturel et simple, mêmes règles de ton qu'en français ; prix en « €690 excl. VAT ».
 - **Zéro jargon, partout**, y compris sur `/parcours` (13/11/2026 : « pour monsieur tout le monde ») : pas de liste d'outils,
   pas de noms de technologies, pas de Claude ni d'« IA » dans la façon de travailler.
 - **Tarifs** : grille validée par Alexandra (base 280 € HT / jour, après la baisse de 30 % du 12/11/2026, vendue au forfait), dans `app/data/site.ts`
@@ -63,7 +76,8 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   redirige les fichiers `.html` statiques et Google refuse une validation qui redirige).
 - URL canonique : `siteUrl` dans `nuxt.config.ts` (une seule source de vérité, `robots.txt` à garder synchro).
 - Pré-génération avec `autoSubfolderIndex: false` : `/parcours` est servi tel quel, sans redirection vers `/parcours/`.
-- Anciennes adresses (`/en/**`, `/de/**`, `/cv/**`) : vraies 301 via `routeRules`, exclues de la pré-génération.
+- Anciennes adresses (`/de/**`, `/cv/**`, `/audit-gratuit`) : vraies 301 via `routeRules`, exclues de la pré-génération.
+  `/en/**` n'est plus redirigé : c'est la version anglaise.
 
 ## Formulaire de contact
 

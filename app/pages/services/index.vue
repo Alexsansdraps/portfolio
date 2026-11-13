@@ -1,78 +1,91 @@
 <script setup lang="ts">
-import { business, services, maintenance } from '~/data/site'
-import { findProject } from '~/data/projects'
+import { business } from '~/data/site'
+
+const { tr, chemin, en } = useLangue()
+const c = useContenu()
 
 usePageSeo({
-  title: 'Services et tarifs : création de site et SEO à Mulhouse',
-  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, logiciel métier : services et tarifs, en freelance à Mulhouse.',
+  title: tr('Services et tarifs : création de site et SEO à Mulhouse', 'Services and prices: websites and SEO in Mulhouse, Alsace'),
+  description: tr(
+    'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, logiciel métier : services et tarifs, en freelance à Mulhouse.',
+    'Business website from €690 excl. VAT, online shop, SEO, Wix or Shopify redesign, custom software: services and prices of a freelance web developer in Mulhouse.',
+  ),
   path: '/services',
 })
 
 /* Le détail de chaque service (données structurées Service comprises) est sur sa propre page. */
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Services', '/services']]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], ['Services', '/services']]),
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'itemListElement': services.map((s, i) => ({
+    'itemListElement': c.value.services.map((s, i) => ({
       '@type': 'ListItem',
       'position': i + 1,
-      'url': absoluteUrl(`/services/${s.id}`),
+      'url': absoluteUrl(chemin(`/services/${s.id}`)),
       'name': s.title,
     })),
   },
 ])
 
-const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) : undefined }))
+/* Ancre de chaque service sur cette page : l'adresse de sa page dédiée, dans la langue de la page. */
+const ancre = (id: string) => (en.value ? SERVICES_EN[id] ?? id : id)
+const list = computed(() => c.value.services.map(s => ({
+  ...s,
+  ancre: ancre(s.id),
+  ref: s.project ? c.value.projects.find(p => p.slug === s.project) : undefined,
+})))
 </script>
 
 <template>
   <main>
     <section class="s-hero wrap">
-      <h1 class="s-h1 rise d1">Ce que je propose, <em>et combien ça coûte.</em></h1>
+      <h1 v-if="!en" class="s-h1 rise d1">Ce que je propose, <em>et combien ça coûte.</em></h1>
+      <h1 v-else class="s-h1 rise d1">What I offer, <em>and what it costs.</em></h1>
       <p class="lead rise d2">
-        Sites vitrines, boutiques en ligne, référencement, refontes et logiciels métier sur mesure. Pour chaque service,
-        vous trouverez ce qui est compris, les prix et la façon dont on travaille. Les prix sont hors taxes,
-        le devis fixe le prix exact, et vous pouvez payer en plusieurs fois.
+        {{ tr(
+          'Sites vitrines, boutiques en ligne, référencement, refontes et logiciels métier sur mesure. Pour chaque service, vous trouverez ce qui est compris, les prix et la façon dont on travaille. Les prix sont hors taxes, le devis fixe le prix exact, et vous pouvez payer en plusieurs fois.',
+          'Business websites, online shops, search engine optimisation, redesigns and custom business software. For each service, you’ll find what’s included, the prices and how we work together. Prices exclude VAT, the quote sets the exact price, and you can pay in instalments.',
+        ) }}
       </p>
       <nav class="s-toc rise d3" aria-label="Services">
-        <a v-for="(s, i) in services" :key="s.id" :href="`#${s.id}`">
+        <a v-for="(s, i) in list" :key="s.id" :href="`#${s.ancre}`">
           <span>{{ String(i + 1).padStart(2, '0') }}</span>{{ s.title }}
         </a>
       </nav>
     </section>
 
-    <section class="wrap s-rdv" aria-label="Premier rendez-vous gratuit">
+    <section class="wrap s-rdv" :aria-label="tr('Premier rendez-vous gratuit', 'Free first meeting')">
       <div class="s-rdv-in" data-reveal>
         <div>
-          <p class="s-rdv-t">Un premier rendez-vous d’une heure, gratuit et sans engagement.</p>
-          <p class="s-rdv-p">On discute de votre situation et de vos besoins, en visio ou en vrai.</p>
+          <p class="s-rdv-t">{{ tr('Un premier rendez-vous d’une heure, gratuit et sans engagement.', 'A first one-hour meeting, free with no obligation.') }}</p>
+          <p class="s-rdv-p">{{ tr('On discute de votre situation et de vos besoins, en visio ou en vrai.', 'We talk about where you are and what you need, by video call or in person.') }}</p>
         </div>
-        <a :href="business.booking" class="btn" target="_blank" rel="noopener">Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
+        <a :href="business.booking" class="btn" target="_blank" rel="noopener">{{ tr('Réserver mon rendez-vous', 'Book my meeting') }} <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section v-for="(s, i) in list" :id="s.id" :key="s.id" class="s-block" :class="{ alt: i % 2 === 1 }" :aria-labelledby="`${s.id}-t`">
+    <section v-for="(s, i) in list" :id="s.ancre" :key="s.id" class="s-block" :class="{ alt: i % 2 === 1 }" :aria-labelledby="`${s.ancre}-t`">
       <div class="wrap s-grid">
         <div class="s-main" data-reveal>
           <span class="s-num">{{ String(i + 1).padStart(2, '0') }}</span>
-          <h2 :id="`${s.id}-t`" class="h2"><NuxtLink :to="`/services/${s.id}`" class="s-h2-link">{{ s.title }}</NuxtLink></h2>
+          <h2 :id="`${s.ancre}-t`" class="h2"><NuxtLink :to="chemin(`/services/${s.id}`)" class="s-h2-link">{{ s.title }}</NuxtLink></h2>
           <p class="lead">{{ s.long }}</p>
           <PriceList :prices="s.prices" />
           <div class="s-actions">
-            <a :href="business.booking" class="btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
-            <NuxtLink :to="`/services/${s.id}`" class="link">{{ s.linkText }} →</NuxtLink>
+            <a :href="business.booking" class="btn" target="_blank" rel="noopener">{{ tr('Parlons de votre projet', 'Let’s talk about your project') }} <span class="arr" aria-hidden="true">↗</span></a>
+            <NuxtLink :to="chemin(`/services/${s.id}`)" class="link">{{ s.linkText }} →</NuxtLink>
           </div>
         </div>
         <div class="s-side" data-reveal>
-          <p class="s-label">Ce qui est compris</p>
+          <p class="s-label">{{ tr('Ce qui est compris', 'What’s included') }}</p>
           <ul class="s-list">
             <li v-for="it in s.includes" :key="it">{{ it }}</li>
           </ul>
-          <NuxtLink v-if="s.ref" :to="`/realisations/${s.ref.slug}`" class="s-ref">
+          <NuxtLink v-if="s.ref" :to="chemin(`/realisations/${s.ref.slug}`)" class="s-ref">
             <img :src="s.ref.cover.src" :alt="''" width="1440" height="900" loading="lazy" decoding="async">
             <span class="s-ref-t">
-              <small>Exemple</small>
+              <small>{{ tr('Exemple', 'Example') }}</small>
               {{ s.ref.name }}
               <span class="arr" aria-hidden="true">→</span>
             </span>
@@ -83,22 +96,22 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 
     <section id="maintenance" class="wrap s-maint" data-reveal>
       <div>
-        <h2 class="h2">{{ maintenance.title }}</h2>
-        <p class="lead">{{ maintenance.text }}</p>
+        <h2 class="h2">{{ c.maintenance.title }}</h2>
+        <p class="lead">{{ c.maintenance.text }}</p>
       </div>
-      <PriceList :prices="maintenance.prices" />
+      <PriceList :prices="c.maintenance.prices" />
     </section>
 
     <section class="section wrap" aria-labelledby="m-title">
       <div class="sec-head" data-reveal>
-        <h2 id="m-title" class="h2">Comment on travaille ensemble</h2>
+        <h2 id="m-title" class="h2">{{ tr('Comment on travaille ensemble', 'How we work together') }}</h2>
       </div>
       <MethodSteps />
     </section>
 
     <section class="section wrap faq-sec" aria-labelledby="f-title">
       <div class="sec-head" data-reveal>
-        <h2 id="f-title" class="h2">Questions fréquentes</h2>
+        <h2 id="f-title" class="h2">{{ tr('Questions fréquentes', 'Frequently asked questions') }}</h2>
       </div>
       <FaqList :schema="false" />
     </section>

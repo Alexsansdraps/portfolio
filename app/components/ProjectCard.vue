@@ -3,11 +3,12 @@ import type { Project } from '~/data/projects'
 
 /** as : niveau du titre selon la page (h3 sous un h2 de section, h2 sur la page Réalisations) */
 defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
+const { tr, chemin } = useLangue()
 </script>
 
 <template>
   <article class="pc" :class="{ flip }">
-    <NuxtLink :to="`/realisations/${project.slug}`" class="pc-visual" tabindex="-1" aria-hidden="true" data-parallax>
+    <NuxtLink :to="chemin(`/realisations/${project.slug}`)" class="pc-visual" tabindex="-1" aria-hidden="true" data-parallax>
       <BrowserFrame v-bind="project.cover" :url="project.domain" />
       <div class="pc-phone">
         <PhoneFrame v-bind="project.mobile" />
@@ -20,7 +21,7 @@ defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
         <span>{{ project.kind }}</span>
       </p>
       <component :is="as || 'h3'" class="pc-name">
-        <NuxtLink :to="`/realisations/${project.slug}`">{{ project.name }}</NuxtLink>
+        <NuxtLink :to="chemin(`/realisations/${project.slug}`)">{{ project.name }}</NuxtLink>
       </component>
       <p class="pc-place">{{ [project.sector, project.place].filter(Boolean).join(' · ') }}</p>
       <p class="pc-hook">{{ project.hook }}</p>
@@ -30,11 +31,11 @@ defineProps<{ project: Project, flip?: boolean, as?: 'h2' | 'h3' }>()
       </ul>
 
       <div class="pc-actions">
-        <NuxtLink class="btn" :to="`/realisations/${project.slug}`">
-          Voir le projet <span class="arr" aria-hidden="true">→</span>
+        <NuxtLink class="btn" :to="chemin(`/realisations/${project.slug}`)">
+          {{ tr('Voir le projet', 'See the project') }} <span class="arr" aria-hidden="true">→</span>
         </NuxtLink>
         <a v-if="project.url" class="btn btn-ghost" :href="project.url" target="_blank" rel="noopener">
-          Visiter le site <span aria-hidden="true">↗</span>
+          {{ tr('Visiter le site', 'Visit the website') }} <span aria-hidden="true">↗</span>
         </a>
       </div>
     </div>

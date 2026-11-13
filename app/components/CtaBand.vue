@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { business } from '~/data/site'
 
-withDefaults(defineProps<{ title?: string, text?: string }>(), {
-  title: 'Un projet de site ? Hopla, on en parle !',
-  text: 'Racontez-moi ce que vous avez en tête : un nouveau site, une refonte, un outil… On en discute, et je vous dis ce que je peux faire pour vous.',
-})
+const props = defineProps<{ title?: string, text?: string }>()
+const { tr } = useLangue()
+
+const titre = computed(() => props.title ?? tr('Un projet de site ? Hopla, on en parle !', 'A website project? Hopla, let’s talk!'))
+const texte = computed(() => props.text ?? tr(
+  'Racontez-moi ce que vous avez en tête : un nouveau site, une refonte, un outil… On en discute, et je vous dis ce que je peux faire pour vous.',
+  'Tell me what you have in mind: a new website, a redesign, a tool… We talk it over, and I tell you what I can do for you.',
+))
 </script>
 
 <template>
@@ -12,11 +16,11 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
     <div class="wrap">
       <div class="cta-in" data-reveal>
         <div>
-          <h2 id="cta-title" class="cta-t">{{ title }}</h2>
-          <p class="cta-p">{{ text }}</p>
+          <h2 id="cta-title" class="cta-t">{{ titre }}</h2>
+          <p class="cta-p">{{ texte }}</p>
         </div>
         <div class="cta-actions">
-          <a :href="business.booking" class="btn cta-btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
+          <a :href="business.booking" class="btn cta-btn" target="_blank" rel="noopener">{{ tr('Parlons de votre projet', 'Let’s talk about your project') }} <span class="arr" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>

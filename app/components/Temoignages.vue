@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { testimonials } from '~/data/site'
-
-/* Témoignages clients (app/data/site.ts). Rien ne s'affiche tant que la liste est vide. */
+/* Témoignages clients (app/data/site.ts, et site.en.ts pour l'anglais). Rien ne s'affiche tant que la liste est vide. */
+const { tr, chemin } = useLangue()
+const c = useContenu()
 </script>
 
 <template>
-  <section v-if="testimonials.length" class="section tm-sec" aria-labelledby="tm-title">
+  <section v-if="c.testimonials.length" class="section tm-sec" aria-labelledby="tm-title">
     <div class="wrap">
-      <h2 id="tm-title" class="h2" data-reveal>Ils m’ont fait confiance</h2>
+      <h2 id="tm-title" class="h2" data-reveal>{{ tr('Ils m’ont fait confiance', 'They trusted me') }}</h2>
       <div class="tm">
-        <figure v-for="t in testimonials" :key="t.name" class="tm-item" data-reveal>
-          <blockquote>« {{ t.quote }} »</blockquote>
+        <figure v-for="t in c.testimonials" :key="t.name" class="tm-item" data-reveal>
+          <blockquote>{{ tr(`« ${t.quote} »`, `“${t.quote}”`) }}</blockquote>
           <figcaption>
             <strong>{{ t.name }}</strong>
             <span>{{ t.role }}</span>
-            <NuxtLink v-if="t.project" :to="`/realisations/${t.project}`" class="link">Voir le projet</NuxtLink>
+            <NuxtLink v-if="t.project" :to="chemin(`/realisations/${t.project}`)" class="link">{{ tr('Voir le projet', 'See the project') }}</NuxtLink>
           </figcaption>
         </figure>
       </div>

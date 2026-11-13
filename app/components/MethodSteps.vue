@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { steps } from '~/data/site'
+const c = useContenu()
 </script>
 
 <template>
   <ol class="ms">
-    <li v-for="(s, i) in steps" :key="s.t" class="ms-step" data-reveal>
+    <li v-for="(s, i) in c.steps" :key="s.t" class="ms-step" data-reveal>
       <span class="ms-num" aria-hidden="true">{{ i + 1 }}</span>
       <h3>{{ s.t }}</h3>
       <p>{{ s.d }}</p>

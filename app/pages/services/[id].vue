@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import { business, services, priceNote } from '~/data/site'
-import { findProject } from '~/data/projects'
+import { business } from '~/data/site'
 
 /* Une page par service : Google peut positionner chacune sur sa propre recherche
-   (« création site vitrine Mulhouse », « refonte site Wix »…), ce que des ancres #… ne permettent pas. */
+   (« création site vitrine Mulhouse », « refonte site Wix »…), ce que des ancres #… ne permettent pas.
+   En anglais, l'adresse est traduite (/en/services/website) : on retrouve l'id français pour charger le service. */
 const route = useRoute()
-const service = services.find(s => s.id === String(route.params.id))
-if (!service) throw createError({ statusCode: 404, statusMessage: 'Service introuvable', fatal: true })
+const { tr, chemin, en } = useLangue()
+const c = useContenu()
+const param = String(route.params.id)
+const id = en.value ? idServiceDepuisEn(param) : param
+const service = c.value.services.find(s => s.id === id)
+if (!service) throw createError({ statusCode: 404, statusMessage: tr('Service introuvable', 'Service not found'), fatal: true })
 const s = service
 
-const example = s.project ? findProject(s.project) : undefined
-const others = services.filter(o => o.id !== s.id)
+const example = s.project ? c.value.projects.find(p => p.slug === s.project) : undefined
+const others = c.value.services.filter(o => o.id !== s.id)
 const path = `/services/${s.id}`
 
 usePageSeo({
@@ -20,15 +24,15 @@ usePageSeo({
 })
 
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Services', '/services'], [s.title, path]]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], ['Services', '/services'], [s.title, path]]),
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': absoluteUrl(`${path}#service`),
+    '@id': absoluteUrl(`${chemin(path)}#service`),
     'name': s.title,
     'serviceType': s.title,
     'description': s.long,
-    'url': absoluteUrl(path),
+    'url': absoluteUrl(chemin(path)),
     'provider': { '@id': absoluteUrl('/#agence') },
     'areaServed': [
       { '@type': 'City', 'name': 'Mulhouse' },
@@ -39,7 +43,7 @@ useJsonLd([
       : {
           offers: {
             '@type': 'Offer',
-            'url': absoluteUrl(path),
+            'url': absoluteUrl(chemin(path)),
             'priceSpecification': {
               '@type': 'PriceSpecification',
               'minPrice': s.minPrice,
@@ -50,59 +54,65 @@ useJsonLd([
         }),
   },
 ])
+
+const canaux = tr(
+  ['Site internet', 'Fiche Google', 'Instagram', 'Facebook', 'LinkedIn'],
+  ['Website', 'Google profile', 'Instagram', 'Facebook', 'LinkedIn'],
+)
 </script>
 
 <template>
   <main>
     <section class="sv-hero wrap">
-      <nav class="crumbs rise" aria-label="Fil d’Ariane">
-        <NuxtLink to="/">Accueil</NuxtLink><span aria-hidden="true">/</span>
-        <NuxtLink to="/services">Services</NuxtLink><span aria-hidden="true">/</span>
+      <nav class="crumbs rise" :aria-label="tr('Fil d’Ariane', 'Breadcrumb')">
+        <NuxtLink :to="chemin('/')">{{ tr('Accueil', 'Home') }}</NuxtLink><span aria-hidden="true">/</span>
+        <NuxtLink :to="chemin('/services')">Services</NuxtLink><span aria-hidden="true">/</span>
         <span aria-current="page">{{ s.title }}</span>
       </nav>
       <div class="sv-hero-grid hero-split">
         <div>
           <h1 class="sv-h1 rise d1">{{ s.h1[0] }} <em>{{ s.h1[1] }}</em></h1>
           <p class="lead sv-lead rise d2">{{ s.long }}</p>
-          <p class="sv-price rise d2"><strong>{{ s.price }}</strong>, paiement possible en plusieurs fois.</p>
+          <p class="sv-price rise d2"><strong>{{ s.price }}</strong>{{ tr(', paiement possible en plusieurs fois.', ', payment in instalments possible.') }}</p>
           <div class="sv-ctas rise d3">
-            <a :href="business.booking" class="btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
+            <a :href="business.booking" class="btn" target="_blank" rel="noopener">{{ tr('Parlons de votre projet', 'Let’s talk about your project') }} <span class="arr" aria-hidden="true">↗</span></a>
           </div>
         </div>
 
         <!-- à droite : la réalisation qui illustre le service, sur un fond travaillé -->
-        <NuxtLink v-if="example" :to="`/realisations/${example.slug}`" class="sv-ex rise d2" :aria-label="`Voir la réalisation ${example.name}`">
+        <NuxtLink v-if="example" :to="chemin(`/realisations/${example.slug}`)" class="sv-ex rise d2" :aria-label="tr(`Voir la réalisation ${example.name}`, `See the ${example.name} project`)">
           <HeroVisual :cover="example.cover" :url="example.domain" :mobile="example.mobile" />
         </NuxtLink>
         <HeroVisual v-else class="rise d2">
           <div class="pres">
-            <p class="pres-t">Votre présence en ligne</p>
+            <p class="pres-t">{{ tr('Votre présence en ligne', 'Your online presence') }}</p>
             <ul class="pres-l">
-              <li v-for="c in ['Site internet', 'Fiche Google', 'Instagram', 'Facebook', 'LinkedIn']" :key="c">{{ c }}<span>à jour</span></li>
+              <li v-for="canal in canaux" :key="canal">{{ canal }}<span>{{ tr('à jour', 'up to date') }}</span></li>
             </ul>
           </div>
         </HeroVisual>
       </div>
     </section>
 
-    <section class="sv-offer" aria-label="Ce qui est compris et tarifs">
+    <section class="sv-offer" :aria-label="tr('Ce qui est compris et tarifs', 'What’s included and prices')">
       <div class="wrap sv-grid">
         <div data-reveal>
-          <h2 class="sv-k">Ce qui est compris</h2>
+          <h2 class="sv-k">{{ tr('Ce qui est compris', 'What’s included') }}</h2>
           <ul class="sv-list">
             <li v-for="it in s.includes" :key="it">{{ it }}</li>
           </ul>
         </div>
         <div data-reveal>
-          <h2 class="sv-k">Tarifs</h2>
-          <PriceList :prices="s.prices" :note="priceNote" />
+          <h2 class="sv-k">{{ tr('Tarifs', 'Prices') }}</h2>
+          <PriceList :prices="s.prices" :note="c.priceNote" />
         </div>
       </div>
     </section>
 
     <section class="section wrap" aria-labelledby="sv-who-t">
       <div class="sec-head" data-reveal>
-        <h2 id="sv-who-t" class="h2">C’est pour vous <em>si…</em></h2>
+        <h2 v-if="!en" id="sv-who-t" class="h2">C’est pour vous <em>si…</em></h2>
+        <h2 v-else id="sv-who-t" class="h2">It’s for you <em>if…</em></h2>
       </div>
       <ul class="sv-who">
         <li v-for="w in s.forWho" :key="w" data-reveal>{{ w }}</li>
@@ -113,22 +123,22 @@ useJsonLd([
 
     <section class="section wrap" aria-labelledby="sv-how-t">
       <div class="sec-head" data-reveal>
-        <h2 id="sv-how-t" class="h2">Comment on travaille ensemble</h2>
+        <h2 id="sv-how-t" class="h2">{{ tr('Comment on travaille ensemble', 'How we work together') }}</h2>
       </div>
       <MethodSteps />
     </section>
 
     <section class="section wrap faq-sec" aria-labelledby="sv-faq-t">
       <div class="sec-head" data-reveal>
-        <h2 id="sv-faq-t" class="h2">Vos questions</h2>
+        <h2 id="sv-faq-t" class="h2">{{ tr('Vos questions', 'Your questions') }}</h2>
       </div>
       <FaqList :items="s.faq" />
     </section>
 
     <nav class="wrap sv-others" aria-labelledby="sv-others-t">
-      <h2 id="sv-others-t" class="sv-k">Les autres services</h2>
+      <h2 id="sv-others-t" class="sv-k">{{ tr('Les autres services', 'Other services') }}</h2>
       <div class="sv-toc">
-        <NuxtLink v-for="o in others" :key="o.id" :to="`/services/${o.id}`">
+        <NuxtLink v-for="o in others" :key="o.id" :to="chemin(`/services/${o.id}`)">
           {{ o.title }} <span class="arr" aria-hidden="true">→</span>
         </NuxtLink>
       </div>

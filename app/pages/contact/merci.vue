@@ -1,8 +1,10 @@
 <script setup lang="ts">
 // Page d'arrivée d'un envoi du formulaire sans JavaScript.
+const { tr, chemin, en } = useLangue()
+
 usePageSeo({
-  title: 'Message envoyé | Alexandra Porhansl',
-  description: 'Votre message est bien parti. Je vous réponds sous 24 h.',
+  title: tr('Message envoyé | Alexandra Porhansl', 'Message sent | Alexandra Porhansl'),
+  description: tr('Votre message est bien parti. Je vous réponds sous 24 h.', 'Your message is on its way. I’ll reply within 24 hours.'),
   path: '/contact/merci',
   noindex: true,
 })
@@ -10,11 +12,12 @@ usePageSeo({
 
 <template>
   <main class="m wrap">
-    <h1 class="m-h1">Merci vielmols, votre message <em>est bien parti&nbsp;!</em></h1>
-    <p class="lead">Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
+    <h1 v-if="!en" class="m-h1">Merci vielmols, votre message <em>est bien parti&nbsp;!</em></h1>
+    <h1 v-else class="m-h1">Merci vielmols, as we say in Alsace: <em>your message is on its way!</em></h1>
+    <p class="lead">{{ tr('Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.', 'I’ll reply within 24 hours, to the email address you gave.') }}</p>
     <div class="m-links">
-      <NuxtLink to="/realisations" class="btn">Voir mes réalisations</NuxtLink>
-      <NuxtLink to="/" class="btn btn-ghost">Retour à l’accueil</NuxtLink>
+      <NuxtLink :to="chemin('/realisations')" class="btn">{{ tr('Voir mes réalisations', 'See my work') }}</NuxtLink>
+      <NuxtLink :to="chemin('/')" class="btn btn-ghost">{{ tr('Retour à l’accueil', 'Back to the home page') }}</NuxtLink>
     </div>
   </main>
 </template>

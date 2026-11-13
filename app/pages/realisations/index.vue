@@ -1,23 +1,27 @@
 <script setup lang="ts">
-import { projects } from '~/data/projects'
+const { tr, chemin } = useLangue()
+const c = useContenu()
 
-const memoryline = projects.find(p => p.slug === 'memoryline')
+const memoryline = computed(() => c.value.projects.find(p => p.slug === 'memoryline'))
 
 usePageSeo({
-  title: 'Réalisations : sites vitrines et boutiques en ligne sur mesure',
-  description: 'Refontes des sites de La Chance Animation et La Chance Production (Guebwiller), boutique en ligne sur mesure pour MemoryLine : mes sites sur mesure.',
+  title: tr('Réalisations : sites vitrines et boutiques en ligne sur mesure', 'My work: custom business websites and online shops'),
+  description: tr(
+    'Refontes des sites de La Chance Animation et La Chance Production (Guebwiller), boutique en ligne sur mesure pour MemoryLine : mes sites sur mesure.',
+    'Website redesigns for La Chance Animation and La Chance Production (Guebwiller, Alsace) and a custom online shop for MemoryLine: websites I designed and built.',
+  ),
   path: '/realisations',
 })
 
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Réalisations', '/realisations']]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], [tr('Réalisations', 'Projects'), '/realisations']]),
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'itemListElement': projects.map((p, i) => ({
+    'itemListElement': c.value.projects.map((p, i) => ({
       '@type': 'ListItem',
       'position': i + 1,
-      'url': absoluteUrl(`/realisations/${p.slug}`),
+      'url': absoluteUrl(chemin(`/realisations/${p.slug}`)),
       'name': p.name,
     })),
   },
@@ -28,23 +32,24 @@ useJsonLd([
   <main>
     <section class="r-hero wrap hero-split">
       <div>
-      <h1 class="r-h1 rise d1">Mes réalisations</h1>
+      <h1 class="r-h1 rise d1">{{ tr('Mes réalisations', 'My work') }}</h1>
       <p class="lead rise d2">
-        Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino,
-        une boutique en ligne sur mesure pour des affiches personnalisées, et la refonte du site
-        d’un photographe, avec un espace pour ses clients.
+        {{ tr(
+          'Trois projets réalisés cette année : la refonte du site d’une entreprise d’animation casino, une boutique en ligne sur mesure pour des affiches personnalisées, et la refonte du site d’un photographe, avec un espace pour ses clients.',
+          'Three projects from this year: a redesign for a casino entertainment company, a custom online shop for personalised posters, and a redesign for a photographer, with a space for his customers.',
+        ) }}
       </p>
       </div>
       <HeroVisual v-if="memoryline" class="rise d2" :cover="memoryline.extra" :url="memoryline.domain" :mobile="memoryline.mobile" />
     </section>
 
-    <section class="section on-dark" aria-label="Projets">
+    <section class="section on-dark" :aria-label="tr('Projets', 'Projects')">
       <div class="wrap projects">
-        <ProjectCard v-for="(p, i) in projects" :key="p.slug" :project="p" :flip="i % 2 === 1" as="h2" />
+        <ProjectCard v-for="(p, i) in c.projects" :key="p.slug" :project="p" :flip="i % 2 === 1" as="h2" />
       </div>
     </section>
 
-    <CtaBand title="Le prochain projet, c’est le vôtre ?" />
+    <CtaBand :title="tr('Le prochain projet, c’est le vôtre ?', 'Could the next project be yours?')" />
   </main>
 </template>
 

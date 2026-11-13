@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import { business } from '~/data/site'
 
+const { tr, chemin, en } = useLangue()
+
 usePageSeo({
-  title: 'Mentions légales | Alexandra Porhansl',
-  description: 'Mentions légales, hébergement et données personnelles du site alexandraporhansl.com.',
+  title: tr('Mentions légales | Alexandra Porhansl', 'Legal notice | Alexandra Porhansl'),
+  description: tr(
+    'Mentions légales, hébergement et données personnelles du site alexandraporhansl.com.',
+    'Legal notice, hosting and personal data for the alexandraporhansl.com website.',
+  ),
   path: '/mentions-legales',
   noindex: true,
 })
 
-const sections = [
+const sectionsFr = [
   {
     h: 'Éditeur du site',
     p: [
@@ -46,7 +51,7 @@ const sections = [
   {
     h: 'Cookies et mesure d’audience',
     p: [
-      'Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure d’audience ni aucun traceur publicitaire.',
+      'Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure d’audience ni aucun traceur publicitaire. Seul votre choix de langue (français ou anglais) est retenu dans votre navigateur, et il n’est transmis à personne.',
       'Le bouton « Réserver un créneau » mène vers la page de réservation Google Agenda, dans un nouvel onglet : rien n’est chargé depuis Google tant que vous ne cliquez pas. La réservation est ensuite soumise aux règles de confidentialité de Google.',
     ],
   },
@@ -55,14 +60,64 @@ const sections = [
     p: ['Design et développement : Alexandra Porhansl.'],
   },
 ]
+
+const sectionsEn = [
+  {
+    h: 'Website publisher',
+    p: [
+      'Alexandra Porhansl, sole proprietorship (Entrepreneur individuel, EI) — website design and development.',
+      'Mulhouse (Haut-Rhin), France.',
+      `SIREN: ${business.legal.siren} — SIRET: ${business.legal.siret}`,
+      `EU VAT number: ${business.legal.vat}`,
+      'Activity: computer programming (NAF 6201Z)',
+      `Contact: ${business.email}`,
+    ],
+  },
+  {
+    h: 'Publication director',
+    p: ['Alexandra Porhansl.'],
+  },
+  {
+    h: 'Hosting',
+    p: ['This website is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, United States — www.cloudflare.com.'],
+  },
+  {
+    h: 'Intellectual property',
+    p: [
+      'All content on this website (text, visuals, photographs, code) is the property of Alexandra Porhansl unless stated otherwise. Any full or partial reproduction or representation without prior permission is prohibited.',
+      'The names, logos and screenshots of client websites shown in the projects belong to their respective owners.',
+    ],
+  },
+  {
+    h: 'Contact form',
+    p: [
+      'The information sent through the contact form (name, email, optional phone number and message) is forwarded by email to Alexandra Porhansl, solely to answer your enquiry and, where relevant, draw up a quote.',
+      'It is not stored on this website, is not passed on to any third party and is never used for marketing. Exchanges are kept for as long as needed to follow up your enquiry, then for no more than three years after the last contact.',
+      `You can ask at any time to access, correct or delete your data by writing to ${business.email}. You can also lodge a complaint with the CNIL, the French data protection authority (www.cnil.fr).`,
+    ],
+  },
+  {
+    h: 'Cookies and analytics',
+    p: [
+      'This website sets no cookies and uses no analytics or advertising trackers. Only your choice of language (French or English) is remembered in your browser, and it is shared with no one.',
+      'The “Book a time slot” button leads to the Google Calendar booking page, in a new tab: nothing is loaded from Google until you click. The booking is then subject to Google’s privacy policy.',
+    ],
+  },
+  {
+    h: 'Credits',
+    p: ['Design and development: Alexandra Porhansl.'],
+  },
+]
+
+const sections = en.value ? sectionsEn : sectionsFr
 </script>
 
 <template>
   <main class="legal wrap">
-    <NuxtLink class="back" to="/">← Retour à l’accueil</NuxtLink>
+    <NuxtLink class="back" :to="chemin('/')">← {{ tr('Retour à l’accueil', 'Back to the home page') }}</NuxtLink>
 
-    <h1 class="l-h1">Mentions légales</h1>
-    <p class="l-up">Dernière mise à jour : novembre 2026</p>
+    <h1 class="l-h1">{{ tr('Mentions légales', 'Legal notice') }}</h1>
+    <p class="l-up">{{ tr('Dernière mise à jour : novembre 2026', 'Last updated: November 2026') }}</p>
 
     <section v-for="s in sections" :key="s.h" class="l-sec">
       <h2>{{ s.h }}</h2>

@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import { steps } from '~/data/experience'
 import portrait from '~/assets/img/portrait.webp'
 
+const { tr, chemin, en } = useLangue()
+const c = useContenu()
 const years = new Date().getFullYear() - 2019
 
 usePageSeo({
-  title: `Mon parcours : ${years} ans de développement web | Alexandra Porhansl`,
-  description: 'Développeuse web depuis 2019 : agence web, startup, e-commerce et éditeur de logiciels. Aujourd’hui salariée, et freelance à Mulhouse.',
+  title: tr(`Mon parcours : ${years} ans de développement web | Alexandra Porhansl`, `About me: ${years} years of web development | Alexandra Porhansl`),
+  description: tr(
+    'Développeuse web depuis 2019 : agence web, startup, e-commerce et éditeur de logiciels. Aujourd’hui salariée, et freelance à Mulhouse.',
+    'Web developer since 2019: web agency, start-up, e-commerce and software companies. Now an employed developer, and a freelancer in Mulhouse, Alsace.',
+  ),
   path: '/parcours',
   type: 'article',
 })
 
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Mon parcours', '/parcours']]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], [tr('Mon parcours', 'About me'), '/parcours']]),
   {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -22,34 +26,46 @@ useJsonLd([
 
 
 /* « Comment je travaille » : 3 étapes numérotées */
-const facons = [
+const facons = computed(() => [
   {
-    t: 'Écoute',
-    d: 'Je commence par vous poser les bonnes questions, sur votre métier et sur vos clients. On fixe ensemble les priorités avant de démarrer.',
+    t: tr('Écoute', 'Listening'),
+    d: tr(
+      'Je commence par vous poser les bonnes questions, sur votre métier et sur vos clients. On fixe ensemble les priorités avant de démarrer.',
+      'I start by asking the right questions, about your trade and your customers. We set the priorities together before getting started.',
+    ),
   },
   {
-    t: 'Conception',
-    d: 'Je dessine les pages avant de les construire, à partir d’un plan clair validé avec vous. Je soigne les détails et je vous montre l’avancement à chaque étape.',
+    t: tr('Conception', 'Design'),
+    d: tr(
+      'Je dessine les pages avant de les construire, à partir d’un plan clair validé avec vous. Je soigne les détails et je vous montre l’avancement à chaque étape.',
+      'I design the pages before building them, from a clear plan we agree on together. I take care over the details and show you how it’s going at every stage.',
+    ),
   },
   {
-    t: 'Suivi',
-    d: 'Je m’occupe de tout jusqu’à la mise en ligne, puis je reste là pour les mises à jour et les petites évolutions.',
+    t: tr('Suivi', 'Follow-up'),
+    d: tr(
+      'Je m’occupe de tout jusqu’à la mise en ligne, puis je reste là pour les mises à jour et les petites évolutions.',
+      'I take care of everything until the website goes live, then I stay on hand for updates and small improvements.',
+    ),
   },
-]
+])
 </script>
 
 <template>
   <main>
     <section class="p-hero wrap">
       <div class="p-hero-txt">
-        <h1 class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
+        <h1 v-if="!en" class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
+        <h1 v-else class="p-h1 rise d1">Developer <em>since 2019</em></h1>
         <p class="lead rise d2">
-          J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
-          de logiciels. Aujourd’hui je suis développeuse web salariée et je travaille en parallèle en freelance, à Mulhouse.
+          {{ tr(
+            'J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur de logiciels. Aujourd’hui je suis développeuse web salariée et je travaille en parallèle en freelance, à Mulhouse.',
+            'I started at a web agency in 2019, then worked at a start-up, in e-commerce and at a software company. Today I’m employed as a web developer, and I also work as a freelancer in Mulhouse.',
+          ) }}
         </p>
       </div>
       <div class="p-hero-pic rise d2">
-        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl" fetchpriority="high">
+        <img :src="portrait" width="720" height="900" :alt="tr('Portrait d’Alexandra Porhansl', 'Portrait of Alexandra Porhansl')" fetchpriority="high">
       </div>
     </section>
 
@@ -57,7 +73,8 @@ const facons = [
     <section class="tl section" data-timeline aria-labelledby="tl-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <h2 id="tl-title" class="h2">De 2019 <em>à aujourd’hui.</em></h2>
+          <h2 v-if="!en" id="tl-title" class="h2">De 2019 <em>à aujourd’hui.</em></h2>
+          <h2 v-else id="tl-title" class="h2">From 2019 <em>to today.</em></h2>
         </div>
 
         <div class="snake">
@@ -68,7 +85,7 @@ const facons = [
           </svg>
           <ol class="tl-list">
             <li
-              v-for="s in steps" :key="s.id"
+              v-for="s in c.parcours" :key="s.id"
               class="tl-item" :class="{ now: s.now, own: s.own }"
             >
               <span class="tl-dot" aria-hidden="true" />
@@ -79,7 +96,7 @@ const facons = [
               <article class="tl-card">
                 <p class="tl-dates">
                   {{ s.dates }}
-                  <span v-if="s.now" class="tl-now"><span class="pulse" aria-hidden="true" /> en cours</span>
+                  <span v-if="s.now" class="tl-now"><span class="pulse" aria-hidden="true" /> {{ tr('en cours', 'ongoing') }}</span>
                 </p>
                 <h3 class="tl-role">{{ s.role }}</h3>
                 <p class="tl-co"><strong>{{ s.company }}</strong><template v-if="s.place"> · {{ s.place }}</template></p>
@@ -90,7 +107,7 @@ const facons = [
                 <ul v-if="s.tags.length" class="tl-tags">
                   <li v-for="t in s.tags" :key="t" class="chip">{{ t }}</li>
                 </ul>
-                <NuxtLink v-if="s.own" to="/realisations" class="link tl-link">Voir mes réalisations →</NuxtLink>
+                <NuxtLink v-if="s.own" :to="chemin('/realisations')" class="link tl-link">{{ tr('Voir mes réalisations', 'See my work') }} →</NuxtLink>
               </article>
             </li>
           </ol>
@@ -99,12 +116,12 @@ const facons = [
     </section>
 
 
-    <!-- MÉTHODE : un parcours en 4 étapes -->
+    <!-- MÉTHODE : un parcours en 3 étapes -->
     <section class="section how-sec" aria-labelledby="how-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <h2 id="how-title" class="h2">Comment je travaille</h2>
-          <p class="lead">De la première question à la mise en ligne, voilà ce qui ne change jamais.</p>
+          <h2 id="how-title" class="h2">{{ tr('Comment je travaille', 'How I work') }}</h2>
+          <p class="lead">{{ tr('De la première question à la mise en ligne, voilà ce qui ne change jamais.', 'From the first question to going live, this is what never changes.') }}</p>
         </div>
         <ol class="how">
           <li v-for="(h, i) in facons" :key="h.t" class="how-item" data-reveal>
@@ -116,7 +133,7 @@ const facons = [
       </div>
     </section>
 
-    <CtaBand title="Envie de travailler ensemble ?" />
+    <CtaBand :title="tr('Envie de travailler ensemble ?', 'Want to work together?')" />
   </main>
 </template>
 

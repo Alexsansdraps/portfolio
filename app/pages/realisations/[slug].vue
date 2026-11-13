@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { findProject, projects } from '~/data/projects'
 import { business } from '~/data/site'
 
 const route = useRoute()
-const project = findProject(String(route.params.slug))
-if (!project) throw createError({ statusCode: 404, statusMessage: 'Réalisation introuvable', fatal: true })
+const { tr, chemin } = useLangue()
+const c = useContenu()
+const project = c.value.projects.find(p => p.slug === String(route.params.slug))
+if (!project) throw createError({ statusCode: 404, statusMessage: tr('Réalisation introuvable', 'Project not found'), fatal: true })
 const p = project
 
-const others = projects.filter(o => o.slug !== p.slug)
+const others = c.value.projects.filter(o => o.slug !== p.slug)
+const path = `/realisations/${p.slug}`
 
 usePageSeo({
-  title: `${p.name} : ${p.kind.toLowerCase()} | Réalisation`,
+  title: tr(`${p.name} : ${p.kind.toLowerCase()} | Réalisation`, `${p.name}: ${p.kind.toLowerCase()} | Project`),
   description: p.summary,
-  path: `/realisations/${p.slug}`,
+  path,
   image: p.cover.src,
   imageAlt: p.cover.alt,
   imageWidth: p.cover.w,
@@ -21,7 +23,7 @@ usePageSeo({
 })
 
 useJsonLd([
-  breadcrumb([['Accueil', '/'], ['Réalisations', '/realisations'], [p.name, `/realisations/${p.slug}`]]),
+  breadcrumb([[tr('Accueil', 'Home'), '/'], [tr('Réalisations', 'Projects'), '/realisations'], [p.name, path]]),
   {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -29,7 +31,7 @@ useJsonLd([
     'description': p.summary,
     'image': absoluteUrl(p.cover.src),
     'dateCreated': String(p.year),
-    'inLanguage': 'fr-FR',
+    'inLanguage': tr('fr-FR', 'en'),
     'creator': { '@id': absoluteUrl('/#alexandra') },
     'publisher': { '@id': absoluteUrl('/#agence') },
     ...(p.url ? { url: p.url } : {}),
@@ -41,24 +43,24 @@ useJsonLd([
 <template>
   <main>
     <section class="cs-hero wrap">
-      <nav class="crumbs rise" aria-label="Fil d’Ariane">
-        <NuxtLink to="/">Accueil</NuxtLink><span aria-hidden="true">/</span>
-        <NuxtLink to="/realisations">Réalisations</NuxtLink><span aria-hidden="true">/</span>
+      <nav class="crumbs rise" :aria-label="tr('Fil d’Ariane', 'Breadcrumb')">
+        <NuxtLink :to="chemin('/')">{{ tr('Accueil', 'Home') }}</NuxtLink><span aria-hidden="true">/</span>
+        <NuxtLink :to="chemin('/realisations')">{{ tr('Réalisations', 'Projects') }}</NuxtLink><span aria-hidden="true">/</span>
         <span aria-current="page">{{ p.name }}</span>
       </nav>
 
       <p class="cs-meta rise d1">
         <span class="status" :class="{ live: p.live }">{{ p.status }}</span>
-        <NuxtLink :to="`/services/${p.service}`" class="cs-kind">{{ p.kind }}</NuxtLink><span aria-hidden="true">·</span><span>{{ p.year }}</span>
+        <NuxtLink :to="chemin(`/services/${p.service}`)" class="cs-kind">{{ p.kind }}</NuxtLink><span aria-hidden="true">·</span><span>{{ p.year }}</span>
       </p>
       <h1 class="cs-h1 rise d1">{{ p.name }}</h1>
       <p class="cs-hook rise d2">{{ p.hook }}</p>
       <p class="cs-place rise d2">{{ [p.sector, p.place].filter(Boolean).join(' · ') }}</p>
       <div class="cs-ctas rise d3">
         <a v-if="p.url" :href="p.url" class="btn" target="_blank" rel="noopener">
-          Visiter {{ p.domain }} <span aria-hidden="true">↗</span>
+          {{ tr('Visiter', 'Visit') }} {{ p.domain }} <span aria-hidden="true">↗</span>
         </a>
-        <a :href="business.booking" class="btn" :class="{ 'btn-ghost': p.url }" target="_blank" rel="noopener">Un projet similaire ? Parlons-en</a>
+        <a :href="business.booking" class="btn" :class="{ 'btn-ghost': p.url }" target="_blank" rel="noopener">{{ tr('Un projet similaire ? Parlons-en', 'A similar project? Let’s talk') }}</a>
       </div>
     </section>
 
@@ -68,11 +70,11 @@ useJsonLd([
 
     <section class="wrap cs-grid section">
       <div class="cs-col" data-reveal>
-        <h2 class="cs-h2">Le client</h2>
+        <h2 class="cs-h2">{{ tr('Le client', 'The client') }}</h2>
         <p class="cs-text">{{ p.context }}</p>
       </div>
       <div class="cs-col" data-reveal>
-        <h2 class="cs-h2">Les objectifs</h2>
+        <h2 class="cs-h2">{{ tr('Les objectifs', 'The goals') }}</h2>
         <ul class="cs-goals">
           <li v-for="g in p.goals" :key="g">{{ g }}</li>
         </ul>
@@ -82,7 +84,7 @@ useJsonLd([
     <section class="on-dark section" aria-labelledby="done-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <h2 id="done-title" class="h2">Ce que j’ai fait</h2>
+          <h2 id="done-title" class="h2">{{ tr('Ce que j’ai fait', 'What I did') }}</h2>
         </div>
         <ol class="cs-done">
           <li v-for="(d, i) in p.done" :key="i" data-reveal>
@@ -96,7 +98,7 @@ useJsonLd([
       </div>
     </section>
 
-    <section class="section wrap cs-gallery" aria-label="Aperçus">
+    <section class="section wrap cs-gallery" :aria-label="tr('Aperçus', 'Screenshots')">
       <div class="g-wide" data-reveal>
         <BrowserFrame v-bind="p.extra" :url="p.domain" />
       </div>
@@ -106,8 +108,10 @@ useJsonLd([
     </section>
 
     <section class="wrap cs-next" aria-labelledby="next-title">
-      <h2 id="next-title" class="cs-h2">{{ others.length > 1 ? 'Les autres réalisations' : 'Une autre réalisation' }}</h2>
-      <NuxtLink v-for="o in others" :key="o.slug" :to="`/realisations/${o.slug}`" class="next">
+      <h2 id="next-title" class="cs-h2">
+        {{ others.length > 1 ? tr('Les autres réalisations', 'Other projects') : tr('Une autre réalisation', 'Another project') }}
+      </h2>
+      <NuxtLink v-for="o in others" :key="o.slug" :to="chemin(`/realisations/${o.slug}`)" class="next">
         <img :src="o.cover.src" alt="" width="1440" height="900" loading="lazy" decoding="async">
         <span>
           <small>{{ o.kind }}</small>
@@ -117,7 +121,7 @@ useJsonLd([
       </NuxtLink>
     </section>
 
-    <CtaBand title="Un projet comme celui-ci ?" />
+    <CtaBand :title="tr('Un projet comme celui-ci ?', 'A project like this one?')" />
   </main>
 </template>
 

@@ -1,20 +1,42 @@
 <script setup lang="ts">
-import { business, services, reasons, maintenance } from '~/data/site'
-import { projects } from '~/data/projects'
+import { business } from '~/data/site'
 import portrait from '~/assets/img/portrait.webp'
 
+const { tr, chemin, en } = useLangue()
+const c = useContenu()
+
 usePageSeo({
-  title: 'Création de site internet à Mulhouse | Freelance en Alsace',
-  description: 'Développeuse web freelance à Mulhouse : sites internet, boutiques en ligne, référencement Google, réseaux sociaux et logiciels sur mesure. Premier rendez-vous gratuit et sans engagement.',
+  title: tr('Création de site internet à Mulhouse | Freelance en Alsace', 'Website design in Mulhouse, Alsace | Freelance web developer'),
+  description: tr(
+    'Développeuse web freelance à Mulhouse : sites internet, boutiques en ligne, référencement Google, réseaux sociaux et logiciels sur mesure. Premier rendez-vous gratuit et sans engagement.',
+    'Freelance web developer in Mulhouse, France: websites, online shops, Google search, social media and custom software. Free first meeting, with no obligation.',
+  ),
   path: '/',
 })
 
-const [lachance, memoryline] = projects
-const formules = [
-  { t: 'De A à Z', d: 'Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', lien: 'Parlons de votre projet', to: business.booking },
-  { t: 'Juste une partie', d: 'Un site, une refonte, le référencement ou vos réseaux sociaux : je prends ce qui vous manque, et vous gardez le reste.', lien: 'Voir les services et les tarifs', to: '/services' },
-  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Réserver un rendez-vous gratuit', to: business.booking },
-]
+const lachance = computed(() => c.value.projects[0]!)
+const memoryline = computed(() => c.value.projects[1]!)
+const years = new Date().getFullYear() - business.since
+const formules = computed(() => [
+  {
+    t: tr('De A à Z', 'From A to Z'),
+    d: tr('Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', 'I take care of everything: your website, your Google profile, your social media, then ongoing care once you’re live.'),
+    lien: tr('Parlons de votre projet', 'Let’s talk about your project'),
+    to: business.booking,
+  },
+  {
+    t: tr('Juste une partie', 'Just one part'),
+    d: tr('Un site, une refonte, le référencement ou vos réseaux sociaux : je prends ce qui vous manque, et vous gardez le reste.', 'A website, a redesign, search rankings or your social media: I take on what you’re missing, and you keep the rest.'),
+    lien: tr('Voir les services et les tarifs', 'See services and prices'),
+    to: chemin('/services'),
+  },
+  {
+    t: tr('Des conseils', 'Advice'),
+    d: tr('Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', 'An outside view of what you already do, so you know what to improve first.'),
+    lien: tr('Réserver un rendez-vous gratuit', 'Book a free meeting'),
+    to: business.booking,
+  },
+])
 </script>
 
 <template>
@@ -22,30 +44,33 @@ const formules = [
     <!-- HERO -->
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-txt">
-        <h1 id="hero-title" class="hero-h1 rise d1">
+        <h1 v-if="!en" id="hero-title" class="hero-h1 rise d1">
           Votre présence en ligne, <em>je m’en occupe.</em>
         </h1>
+        <h1 v-else id="hero-title" class="hero-h1 rise d1">
+          Your online presence, <em>taken care of.</em>
+        </h1>
         <p class="hero-sub rise d2">
-          Site internet, fiche Google, réseaux sociaux&nbsp;: je vous accompagne de A à Z, ou seulement sur ce qui vous manque.
+          {{ tr('Site internet, fiche Google, réseaux sociaux : je vous accompagne de A à Z, ou seulement sur ce qui vous manque.', 'Website, Google profile, social media: I can handle everything from A to Z, or just the part you’re missing.') }}
         </p>
         <p class="hero-lead rise d2">
-          Développeuse web freelance à Mulhouse&nbsp;: vous gardez le même contact du début à la fin.
+          {{ tr('Développeuse web freelance à Mulhouse : vous gardez le même contact du début à la fin.', 'Freelance web developer in Mulhouse, France: you deal with the same person from start to finish.') }}
         </p>
         <div class="hero-ctas rise d3">
-          <a :href="business.booking" class="btn" target="_blank" rel="noopener">Rendez-vous gratuit <span class="arr" aria-hidden="true">↗</span></a>
-          <NuxtLink to="/realisations" class="btn btn-ghost">Voir mes réalisations</NuxtLink>
+          <a :href="business.booking" class="btn" target="_blank" rel="noopener">{{ tr('Rendez-vous gratuit', 'Free meeting') }} <span class="arr" aria-hidden="true">↗</span></a>
+          <NuxtLink :to="chemin('/realisations')" class="btn btn-ghost">{{ tr('Voir mes réalisations', 'See my work') }}</NuxtLink>
         </div>
       </div>
 
       <div class="hero-visual rise d2" aria-hidden="true">
         <div class="hv hv-back" data-depth="0.06">
-          <BrowserFrame v-bind="memoryline!.extra" :url="memoryline!.domain" eager />
+          <BrowserFrame v-bind="memoryline.extra" :url="memoryline.domain" eager />
         </div>
         <div class="hv hv-front" data-depth="0.14">
-          <BrowserFrame v-bind="lachance!.cover" :url="lachance!.domain" eager />
+          <BrowserFrame v-bind="lachance.cover" :url="lachance.domain" eager />
         </div>
         <div class="hv hv-phone" data-depth="0.24">
-          <PhoneFrame v-bind="memoryline!.mobile" />
+          <PhoneFrame v-bind="memoryline.mobile" />
         </div>
       </div>
     </section>
@@ -53,7 +78,7 @@ const formules = [
     <!-- TROIS FAÇONS DE TRAVAILLER ENSEMBLE -->
     <section class="formules" aria-labelledby="formules-title">
       <div class="wrap">
-        <h2 id="formules-title" class="formules-t" data-reveal>Tout, une partie, ou juste des conseils</h2>
+        <h2 id="formules-title" class="formules-t" data-reveal>{{ tr('Tout, une partie, ou juste des conseils', 'Everything, just one part, or simply advice') }}</h2>
         <div class="formules-grid">
           <div v-for="f in formules" :key="f.t" class="formule" data-reveal>
             <h3>{{ f.t }}</h3>
@@ -68,11 +93,16 @@ const formules = [
     <section id="realisations" class="section on-dark" aria-labelledby="real-title">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <h2 id="real-title" class="h2">Mes derniers projets</h2>
-          <p class="lead">Trois sites que j’ai conçus et développés cette année, pour une entreprise d’animation, une boutique d’affiches personnalisées et un studio photo et vidéo.</p>
+          <h2 id="real-title" class="h2">{{ tr('Mes derniers projets', 'My latest projects') }}</h2>
+          <p class="lead">
+            {{ tr(
+              'Trois sites que j’ai conçus et développés cette année, pour une entreprise d’animation, une boutique d’affiches personnalisées et un studio photo et vidéo.',
+              'Three websites I designed and built this year, for an entertainment company, a personalised poster shop and a photo and video studio.',
+            ) }}
+          </p>
         </div>
         <div class="projects">
-          <ProjectCard v-for="(p, i) in projects" :key="p.slug" :project="p" :flip="i % 2 === 1" />
+          <ProjectCard v-for="(p, i) in c.projects" :key="p.slug" :project="p" :flip="i % 2 === 1" />
         </div>
       </div>
     </section>
@@ -80,48 +110,57 @@ const formules = [
     <!-- À PROPOS -->
     <section class="section wrap about" aria-labelledby="about-title">
       <div class="about-pic" data-reveal>
-        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, développeuse web freelance" loading="lazy" decoding="async">
+        <img :src="portrait" width="720" height="900" :alt="tr('Portrait d’Alexandra Porhansl, développeuse web freelance', 'Portrait of Alexandra Porhansl, freelance web developer')" loading="lazy" decoding="async">
       </div>
       <div class="about-txt" data-reveal>
-        <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
+        <h2 v-if="!en" id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
+        <h2 v-else id="about-title" class="h2">Hello, <em>I’m Alexandra.</em></h2>
         <p class="lead">
-          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans, en agence, en startup puis chez des éditeurs de logiciels.
+          {{ tr(
+            `Je crée des sites web depuis ${years} ans, en agence, en startup puis chez des éditeurs de logiciels.`,
+            `I’ve been building websites for ${years} years, at an agency, at a start-up, then at software companies.`,
+          ) }}
         </p>
         <p class="about-p">
-          J’ai toujours aimé le contact avec les clients : coder seule dans mon coin ne m’a jamais suffi.
-          Avec moi, vous parlez directement à la personne qui fait votre site.
+          {{ tr(
+            'J’ai toujours aimé le contact avec les clients : coder seule dans mon coin ne m’a jamais suffi. Avec moi, vous parlez directement à la personne qui fait votre site.',
+            'I’ve always enjoyed working with clients: coding alone in my corner was never enough for me. With me, you talk directly to the person building your website.',
+          ) }}
         </p>
         <ul class="about-why">
-          <li v-for="r in reasons" :key="r.t"><strong>{{ r.t }}.</strong> {{ r.d }}</li>
+          <li v-for="r in c.reasons" :key="r.t"><strong>{{ r.t }}.</strong> {{ r.d }}</li>
         </ul>
-        <NuxtLink to="/parcours" class="link">Découvrir mon parcours →</NuxtLink>
+        <NuxtLink :to="chemin('/parcours')" class="link">{{ tr('Découvrir mon parcours', 'More about me') }} →</NuxtLink>
       </div>
     </section>
 
     <!-- TÉMOIGNAGES (affichés dès qu’il y en a) -->
     <Temoignages />
 
-    <!-- PREMIER RENDEZ-VOUS OFFERT -->
+    <!-- PREMIER RENDEZ-VOUS GRATUIT -->
     <section class="section rdv-sec" aria-labelledby="rdv-title">
       <div class="wrap rdv">
         <div data-reveal>
-          <h2 id="rdv-title" class="h2">Un premier rendez-vous d’une heure, <em>gratuit et sans engagement.</em></h2>
+          <h2 v-if="!en" id="rdv-title" class="h2">Un premier rendez-vous d’une heure, <em>gratuit et sans engagement.</em></h2>
+          <h2 v-else id="rdv-title" class="h2">A first one-hour meeting, <em>free with no obligation.</em></h2>
           <p class="lead">
-            On discute ensemble de votre situation, de vos besoins, de ce qui marche déjà et de ce qui vous manque.
-            En visio ou en vrai, comme vous préférez.
+            {{ tr(
+              'On discute ensemble de votre situation, de vos besoins, de ce qui marche déjà et de ce qui vous manque. En visio ou en vrai, comme vous préférez.',
+              'We talk about where you are, what you need, what already works and what’s missing. By video call or in person, whichever you prefer.',
+            ) }}
           </p>
         </div>
-        <a :href="business.booking" class="btn rdv-btn" target="_blank" rel="noopener" data-reveal>Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
+        <a :href="business.booking" class="btn rdv-btn" target="_blank" rel="noopener" data-reveal>{{ tr('Réserver mon rendez-vous', 'Book my meeting') }} <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section id="services" class="section wrap" aria-labelledby="svc-title">
       <div class="sec-head" data-reveal>
-        <h2 id="svc-title" class="h2">Ce que je propose</h2>
+        <h2 id="svc-title" class="h2">{{ tr('Ce que je propose', 'What I offer') }}</h2>
       </div>
       <div class="svc-grid">
-        <NuxtLink v-for="s in services" :key="s.id" :to="`/services/${s.id}`" class="svc" data-reveal>
+        <NuxtLink v-for="s in c.services" :key="s.id" :to="chemin(`/services/${s.id}`)" class="svc" data-reveal>
           <span class="svc-ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" v-html="s.icon" />
           </span>
@@ -129,18 +168,18 @@ const formules = [
           <p>{{ s.short }}</p>
           <span class="svc-foot">
             <span class="svc-price">{{ s.price }}</span>
-            <span class="svc-more">Voir le détail <span class="arr" aria-hidden="true">→</span></span>
+            <span class="svc-more">{{ tr('Voir le détail', 'See details') }} <span class="arr" aria-hidden="true">→</span></span>
           </span>
         </NuxtLink>
       </div>
-      <p class="svc-after" data-reveal><strong>{{ maintenance.title }}</strong> {{ maintenance.text }} {{ maintenance.price }}</p>
+      <p class="svc-after" data-reveal><strong>{{ c.maintenance.title }}</strong> {{ c.maintenance.text }} {{ c.maintenance.price }}</p>
     </section>
 
 
     <!-- MÉTHODE -->
     <section class="section wrap" aria-labelledby="method-title">
       <div class="sec-head" data-reveal>
-        <h2 id="method-title" class="h2">Comment on travaille ensemble</h2>
+        <h2 id="method-title" class="h2">{{ tr('Comment on travaille ensemble', 'How we work together') }}</h2>
       </div>
       <MethodSteps />
     </section>
@@ -149,10 +188,13 @@ const formules = [
     <section class="section zone-sec" aria-labelledby="zone-title">
       <div class="wrap zone">
         <div class="zone-txt" data-reveal>
-          <h2 id="zone-title" class="h2">Je suis basée <em>à Mulhouse.</em></h2>
+          <h2 v-if="!en" id="zone-title" class="h2">Je suis basée <em>à Mulhouse.</em></h2>
+          <h2 v-else id="zone-title" class="h2">I’m based <em>in Mulhouse.</em></h2>
           <p class="lead">
-            Je travaille depuis Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio,
-            comme vous préférez.
+            {{ tr(
+              'Je travaille depuis Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio, comme vous préférez.',
+              'I work from Mulhouse, in the south of Alsace, France, close to Germany and Switzerland. We can meet in person or by video call, whichever you prefer.',
+            ) }}
           </p>
           <Bretzel class="zone-bretzel" />
         </div>
@@ -165,7 +207,7 @@ const formules = [
     <!-- FAQ -->
     <section class="section wrap faq-sec" aria-labelledby="faq-title">
       <div class="sec-head" data-reveal>
-        <h2 id="faq-title" class="h2">Questions fréquentes</h2>
+        <h2 id="faq-title" class="h2">{{ tr('Questions fréquentes', 'Frequently asked questions') }}</h2>
       </div>
       <FaqList />
     </section>

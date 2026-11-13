@@ -60,15 +60,36 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/contact/merci'],
+    exclude: ['/contact/merci', '/en/contact/thank-you'],
   },
 
-  /* Anciennes adresses (site trilingue, CV) → 301 vers leur équivalent, pour garder le référencement acquis. */
+  /*
+   * Version anglaise (13/11/2026) : chaque page existe aussi sous /en, avec des adresses anglaises.
+   * Mêmes fichiers de pages : la page lit la langue dans l'adresse (composables/useLangue.ts,
+   * qui contient aussi la correspondance des adresses, à garder synchro avec celle-ci).
+   */
+  hooks: {
+    'pages:extend'(pages) {
+      const en: Record<string, string> = {
+        'index': '/en',
+        'services': '/en/services',
+        'services-id': '/en/services/:id',
+        'realisations': '/en/projects',
+        'realisations-slug': '/en/projects/:slug',
+        'parcours': '/en/about',
+        'contact': '/en/contact',
+        'contact-merci': '/en/contact/thank-you',
+        'mentions-legales': '/en/legal-notice',
+      }
+      for (const p of [...pages]) {
+        const path = p.name ? en[p.name] : undefined
+        if (path) pages.push({ ...p, name: `en-${p.name}`, path })
+      }
+    },
+  },
+
+  /* Anciennes adresses (ancien site trilingue, CV) → 301 vers leur équivalent, pour garder le référencement acquis. */
   routeRules: {
-    '/en': { redirect: { to: '/', statusCode: 301 } },
-    '/en/services': { redirect: { to: '/services', statusCode: 301 } },
-    '/en/legal-notice': { redirect: { to: '/mentions-legales', statusCode: 301 } },
-    '/en/**': { redirect: { to: '/', statusCode: 301 } },
     '/de': { redirect: { to: '/', statusCode: 301 } },
     '/de/**': { redirect: { to: '/', statusCode: 301 } },
     '/cv/**': { redirect: { to: '/parcours', statusCode: 301 } },
@@ -81,12 +102,12 @@ export default defineNuxtConfig({
     // Toutes les pages sont pré-générées au build (rapides à servir) ; seul /api/contact tourne dans le Worker.
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml'],
+      routes: ['/', '/en', '/sitemap.xml'],
       // /parcours.html plutôt que /parcours/index.html : Cloudflare sert alors /parcours tel quel,
       // sans redirection vers /parcours/ (une seule URL par page, celle du canonical).
       autoSubfolderIndex: false,
       // Les anciennes adresses restent des vraies 301 servies par le Worker, pas des pages HTML de redirection.
-      ignore: [/^\/(en|de|cv)(\/|$)/, /^\/audit-gratuit$/],
+      ignore: [/^\/(de|cv)(\/|$)/, /^\/audit-gratuit$/],
     },
     // Build Cloudflare Workers : Nitro génère la config wrangler, on y ajoute l'envoi d'e-mail
     // (Cloudflare Email Routing). destination_address verrouille le destinataire côté Cloudflare.

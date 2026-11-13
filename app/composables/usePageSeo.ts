@@ -3,9 +3,9 @@ interface PageSeo {
   title: string
   /** ≈ 150–160 caractères */
   description: string
-  /** chemin de la page, ex. « /services » */
+  /** chemin FRANÇAIS de la page, ex. « /services » : l'adresse anglaise (/en/…) s'en déduit */
   path: string
-  /** image de partage : chemin ou URL absolue (défaut : /og/og.jpg) */
+  /** image de partage : chemin ou URL absolue (défaut : /og/og.jpg, ou /og/og-en.jpg en anglais) */
   image?: string
   imageAlt?: string
   imageWidth?: number
@@ -14,11 +14,15 @@ interface PageSeo {
   type?: 'website' | 'article'
 }
 
-/** Balises SEO d'une page : title, description, canonical, Open Graph, Twitter. */
+/**
+ * Balises SEO d'une page : title, description, canonical, Open Graph, Twitter,
+ * et les liens hreflang vers la même page dans l'autre langue (Google, et la détection de langue de app.vue).
+ */
 export function usePageSeo(o: PageSeo) {
   const { public: { siteUrl } } = useRuntimeConfig()
-  const url = absoluteUrl(o.path)
-  const image = o.image ? absoluteUrl(o.image) : `${siteUrl}/og/og.jpg`
+  const { langue, tr } = useLangue()
+  const url = absoluteUrl(cheminEn(o.path, langue.value))
+  const image = o.image ? absoluteUrl(o.image) : `${siteUrl}/og/${tr('og.jpg', 'og-en.jpg')}`
   const custom = !!o.image
 
   useSeoMeta({
@@ -29,12 +33,13 @@ export function usePageSeo(o: PageSeo) {
     ogDescription: o.description,
     ogUrl: url,
     ogType: o.type ?? 'website',
-    ogSiteName: 'Alexandra Porhansl, développeuse web freelance',
-    ogLocale: 'fr_FR',
+    ogSiteName: tr('Alexandra Porhansl, développeuse web freelance', 'Alexandra Porhansl, freelance web developer'),
+    ogLocale: tr('fr_FR', 'en_GB'),
+    ogLocaleAlternate: tr('en_GB', 'fr_FR'),
     ogImage: image,
     ogImageWidth: custom ? o.imageWidth : 1200,
     ogImageHeight: custom ? o.imageHeight : 630,
-    ogImageAlt: o.imageAlt ?? 'Alexandra Porhansl, développeuse web freelance à Mulhouse',
+    ogImageAlt: o.imageAlt ?? tr('Alexandra Porhansl, développeuse web freelance à Mulhouse', 'Alexandra Porhansl, freelance web developer in Mulhouse'),
     twitterCard: 'summary_large_image',
     twitterTitle: o.title,
     twitterDescription: o.description,
@@ -42,7 +47,12 @@ export function usePageSeo(o: PageSeo) {
   })
 
   useHead({
-    link: [{ rel: 'canonical', href: url }],
+    link: [
+      { rel: 'canonical', href: url },
+      { rel: 'alternate', hreflang: 'fr', href: absoluteUrl(o.path) },
+      { rel: 'alternate', hreflang: 'en', href: absoluteUrl(cheminEn(o.path, 'en')) },
+      { rel: 'alternate', hreflang: 'x-default', href: absoluteUrl(o.path) },
+    ],
   })
 }
 
@@ -59,8 +69,9 @@ export function absoluteUrl(path: string) {
   return /^https?:\/\//.test(path) ? path : `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`
 }
 
-/** Fil d'Ariane schema.org à partir de [nom, chemin]. */
+/** Fil d'Ariane schema.org à partir de [nom, chemin français] : les adresses suivent la langue de la page. */
 export function breadcrumb(items: [string, string][]) {
+  const { chemin } = useLangue()
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -68,7 +79,7 @@ export function breadcrumb(items: [string, string][]) {
       '@type': 'ListItem',
       'position': i + 1,
       'name': name,
-      'item': absoluteUrl(path),
+      'item': absoluteUrl(chemin(path)),
     })),
   }
 }

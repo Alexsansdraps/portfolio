@@ -4,16 +4,18 @@ import { business } from '~/data/site'
 /**
  * Formulaire de contact → POST /api/contact (e-mail via Cloudflare Email Routing).
  * Fonctionne sans JavaScript (redirection vers /contact/merci) ; avec JS, envoi sans recharger la page.
+ * Le champ caché « langue » fait répondre l'API dans la langue de la page (et le signale dans l'e-mail).
  */
 /** projet : envoyé tel quel dans le sujet de l'e-mail, sans champ visible (facultatif) */
 const props = defineProps<{ projet?: string }>()
+const { tr, chemin, langue } = useLangue()
 
 const etat = ref<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')
 const erreur = ref('')
 const route = useRoute()
 onMounted(() => {
   // retour d'un envoi sans JavaScript qui a échoué
-  if (route.query.erreur) { etat.value = 'erreur'; erreur.value = 'L’envoi n’a pas abouti.' }
+  if (route.query.erreur) { etat.value = 'erreur'; erreur.value = tr('L’envoi n’a pas abouti.', 'Your message could not be sent.') }
 })
 
 async function envoyer(e: Event) {
@@ -32,12 +34,12 @@ async function envoyer(e: Event) {
     }
     else {
       etat.value = 'erreur'
-      erreur.value = data.message || 'L’envoi a échoué.'
+      erreur.value = data.message || tr('L’envoi a échoué.', 'Sending failed.')
     }
   }
   catch {
     etat.value = 'erreur'
-    erreur.value = 'Connexion impossible.'
+    erreur.value = tr('Connexion impossible.', 'Could not connect.')
   }
 }
 </script>
@@ -45,55 +47,58 @@ async function envoyer(e: Event) {
 <template>
   <div id="formulaire" class="cf">
     <div v-if="etat === 'ok'" class="cf-ok" role="status">
-      <p class="cf-ok-t">Merci vielmols, votre message est bien parti&nbsp;!</p>
-      <p>Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.</p>
-      <button type="button" class="link cf-again" @click="etat = 'idle'">Envoyer un autre message</button>
+      <p v-if="langue === 'fr'" class="cf-ok-t">Merci vielmols, votre message est bien parti&nbsp;!</p>
+      <p v-else class="cf-ok-t">Merci vielmols, as we say in Alsace: your message is on its way!</p>
+      <p>{{ tr('Je vous réponds sous 24 h, à l’adresse e-mail que vous avez indiquée.', 'I’ll reply within 24 hours, to the email address you gave.') }}</p>
+      <button type="button" class="link cf-again" @click="etat = 'idle'">{{ tr('Envoyer un autre message', 'Send another message') }}</button>
     </div>
 
     <form v-else action="/api/contact" method="post" class="cf-form" @submit.prevent="envoyer">
       <div class="row two">
         <div class="field">
-          <label for="cf-nom">Votre nom <span aria-hidden="true">*</span></label>
+          <label for="cf-nom">{{ tr('Votre nom', 'Your name') }} <span aria-hidden="true">*</span></label>
           <input id="cf-nom" name="nom" type="text" autocomplete="name" required maxlength="120">
         </div>
         <div class="field">
-          <label for="cf-email">E-mail <span aria-hidden="true">*</span></label>
+          <label for="cf-email">{{ tr('E-mail', 'Email') }} <span aria-hidden="true">*</span></label>
           <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="160">
         </div>
       </div>
       <div class="row two">
         <div class="field">
-          <label for="cf-tel">Téléphone <small>(facultatif)</small></label>
+          <label for="cf-tel">{{ tr('Téléphone', 'Phone') }} <small>{{ tr('(facultatif)', '(optional)') }}</small></label>
           <input id="cf-tel" name="telephone" type="tel" autocomplete="tel" maxlength="40">
         </div>
       </div>
       <input v-if="props.projet" type="hidden" name="projet" :value="props.projet">
+      <input type="hidden" name="langue" :value="langue">
 
       <div class="field">
-        <label for="cf-message">Votre message <span aria-hidden="true">*</span></label>
+        <label for="cf-message">{{ tr('Votre message', 'Your message') }} <span aria-hidden="true">*</span></label>
         <textarea
           id="cf-message" name="message" rows="5" required maxlength="5000"
-          placeholder="Votre activité, votre site si vous en avez un, ce que vous aimeriez…"
+          :placeholder="tr('Votre activité, votre site si vous en avez un, ce que vous aimeriez…', 'Your business, your website if you have one, what you’d like…')"
         />
       </div>
 
       <!-- piège à robots : invisible pour les humains -->
       <div class="hp" aria-hidden="true">
-        <label for="cf-site">Ne pas remplir</label>
+        <label for="cf-site">{{ tr('Ne pas remplir', 'Leave empty') }}</label>
         <input id="cf-site" name="site_web" type="text" tabindex="-1" autocomplete="off">
       </div>
 
       <p v-if="etat === 'erreur'" class="cf-err" role="alert">
-        {{ erreur }} Vous pouvez réessayer, ou m’écrire directement à
+        {{ erreur }} {{ tr('Vous pouvez réessayer, ou m’écrire directement à', 'You can try again, or write to me directly at') }}
         <a :href="`mailto:${business.email}`">{{ business.email }}</a>.
       </p>
 
       <div class="cf-foot">
         <button class="btn" type="submit" :disabled="etat === 'envoi'">
-          {{ etat === 'envoi' ? 'Envoi…' : 'Envoyer mon message' }} <span class="arr" aria-hidden="true">→</span>
+          {{ etat === 'envoi' ? tr('Envoi…', 'Sending…') : tr('Envoyer mon message', 'Send my message') }} <span class="arr" aria-hidden="true">→</span>
         </button>
         <p class="cf-note">
-          Vos informations servent uniquement à vous répondre. <NuxtLink to="/mentions-legales">En savoir plus</NuxtLink>
+          {{ tr('Vos informations servent uniquement à vous répondre.', 'Your details are only used to reply to you.') }}
+          <NuxtLink :to="chemin('/mentions-legales')">{{ tr('En savoir plus', 'Find out more') }}</NuxtLink>
         </p>
       </div>
     </form>

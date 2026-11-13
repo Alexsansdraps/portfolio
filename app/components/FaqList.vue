@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { faq, type Faq } from '~/data/site'
+import type { Faq } from '~/data/site'
 
 /* Données structurées FAQPage : les mêmes questions/réponses que celles affichées.
    Une même question ne se balise qu'une fois sur le site : la FAQ générale seulement sur l'accueil,
    les questions propres à un service (items) sur la page de ce service. */
 const props = withDefaults(defineProps<{ schema?: boolean, items?: Faq[] }>(), { schema: true })
-const list = props.items ?? faq
+const c = useContenu()
+const list = computed(() => props.items ?? c.value.faq)
 if (props.schema) useJsonLd({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  'mainEntity': list.map(f => ({
+  'mainEntity': list.value.map(f => ({
     '@type': 'Question',
     'name': f.q,
     'acceptedAnswer': { '@type': 'Answer', 'text': f.a },

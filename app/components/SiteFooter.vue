@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { business, services } from '~/data/site'
+import { business } from '~/data/site'
 
+const { tr, chemin } = useLangue()
+const c = useContenu()
 const year = new Date().getFullYear()
 </script>
 
@@ -11,29 +13,31 @@ const year = new Date().getFullYear()
         <div class="f-brand">
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
-            Développeuse web freelance à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
-            et logiciels métier sur mesure.
+            {{ tr(
+              'Développeuse web freelance à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement et logiciels métier sur mesure.',
+              'Freelance web developer in Mulhouse, Alsace, France. Business websites, online shops, search engine optimisation and custom business software.',
+            ) }}
           </p>
-          <a :href="business.booking" class="btn f-cta" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
+          <a :href="business.booking" class="btn f-cta" target="_blank" rel="noopener">{{ tr('Parlons de votre projet', 'Let’s talk about your project') }} <span class="arr" aria-hidden="true">↗</span></a>
         </div>
 
         <nav class="f-col" aria-label="Services">
           <p class="f-h">Services</p>
-          <NuxtLink v-for="s in services" :key="s.id" :to="`/services/${s.id}`">{{ s.title }}</NuxtLink>
+          <NuxtLink v-for="s in c.services" :key="s.id" :to="chemin(`/services/${s.id}`)">{{ s.title }}</NuxtLink>
         </nav>
 
-        <nav class="f-col" aria-label="Le site">
-          <p class="f-h">Le site</p>
-          <NuxtLink to="/realisations">Réalisations</NuxtLink>
-          <NuxtLink to="/parcours">Mon parcours</NuxtLink>
-          <NuxtLink to="/contact">Contact</NuxtLink>
+        <nav class="f-col" :aria-label="tr('Le site', 'This website')">
+          <p class="f-h">{{ tr('Le site', 'This website') }}</p>
+          <NuxtLink :to="chemin('/realisations')">{{ tr('Réalisations', 'Projects') }}</NuxtLink>
+          <NuxtLink :to="chemin('/parcours')">{{ tr('Mon parcours', 'About me') }}</NuxtLink>
+          <NuxtLink :to="chemin('/contact')">Contact</NuxtLink>
           <a :href="`mailto:${business.email}`">{{ business.email }}</a>
         </nav>
 
         <div class="f-col">
-          <p class="f-h">Où me trouver</p>
+          <p class="f-h">{{ tr('Où me trouver', 'Where to find me') }}</p>
           <p class="f-zone">
-            Mulhouse, Haut-Rhin (68)<br>Alsace
+            Mulhouse, Haut-Rhin (68)<br>{{ tr('Alsace', 'Alsace, France') }}
           </p>
         </div>
       </div>
@@ -41,9 +45,9 @@ const year = new Date().getFullYear()
       <div class="f-bottom">
         <span>© {{ year }} Alexandra Porhansl · EI · SIRET {{ business.legal.siret }}</span>
         <span class="f-links">
-          <NuxtLink to="/mentions-legales">Mentions légales</NuxtLink>
+          <NuxtLink :to="chemin('/mentions-legales')">{{ tr('Mentions légales', 'Legal notice') }}</NuxtLink>
           <span aria-hidden="true">·</span>
-          <span>Conçu et développé à Mulhouse, entre Vosges et Rhin</span>
+          <span>{{ tr('Conçu et développé à Mulhouse, entre Vosges et Rhin', 'Designed and built in Mulhouse, between the Vosges and the Rhine') }}</span>
         </span>
       </div>
     </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 /* Petit bouton rond « revenir en haut », visible une fois qu'on a fait défiler la page.
    Lien vers #haut : le défilement doux (Lenis) gère l'ancre, et sans JS le lien marche quand même. */
+const { tr } = useLangue()
 const visible = ref(false)
 onMounted(() => {
   const onScroll = () => { visible.value = window.scrollY > 600 }
@@ -11,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <a href="#haut" class="rh" :class="{ visible }" aria-label="Revenir en haut de la page">
+  <a href="#haut" class="rh" :class="{ visible }" :aria-label="tr('Revenir en haut de la page', 'Back to the top of the page')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>

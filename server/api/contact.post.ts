@@ -24,12 +24,45 @@ interface CloudflareEnv {
   CONTACT_TO?: string
 }
 
+// Messages renvoyés au formulaire, selon la langue de la page (champ caché « langue »).
+const MESSAGES = {
+  fr: {
+    origine: 'Origine refusée.',
+    illisible: 'Formulaire illisible.',
+    merci: 'Merci.',
+    obligatoire: (l: string) => `Le champ « ${l} » est obligatoire.`,
+    tropLong: (l: string) => `Le champ « ${l} » est trop long.`,
+    email: 'Adresse e-mail invalide.',
+    indispo: 'L’envoi est momentanément indisponible.',
+    echec: 'L’envoi a échoué.',
+    envoye: 'Message envoyé.',
+  },
+  en: {
+    origine: 'Origin refused.',
+    illisible: 'The form could not be read.',
+    merci: 'Thank you.',
+    obligatoire: (l: string) => `The “${l}” field is required.`,
+    tropLong: (l: string) => `The “${l}” field is too long.`,
+    email: 'Invalid email address.',
+    indispo: 'Sending is temporarily unavailable.',
+    echec: 'Sending failed.',
+    envoye: 'Message sent.',
+  },
+}
+// Libellés des champs dans les messages d'erreur en anglais (l'e-mail reçu reste en français).
+const LIBELLES_EN: Record<string, string> = { nom: 'Name', email: 'Email', telephone: 'Phone', message: 'Message' }
+
 export default defineEventHandler(async (event) => {
-  // Avec JS, le formulaire attend du JSON ; sans JS, une redirection vers /contact/merci ou /contact?erreur=1.
+  // Avec JS, le formulaire attend du JSON ; sans JS, une redirection vers la page de remerciement ou le formulaire.
   const enJson = (getHeader(event, 'accept') || '').includes('application/json')
+  let anglais = getRequestURL(event).searchParams.get('langue') === 'en'
+  const msg = () => MESSAGES[anglais ? 'en' : 'fr']
   // detail : message d'erreur de Cloudflare, pour le diagnostic (le formulaire n'affiche que message)
   const repondre = (ok: boolean, message: string, statut: number, detail?: string) => {
-    if (!enJson) return sendRedirect(event, ok ? '/contact/merci' : '/contact?erreur=1#formulaire', 303)
+    if (!enJson) {
+      const contact = anglais ? '/en/contact' : '/contact'
+      return sendRedirect(event, ok ? (anglais ? '/en/contact/thank-you' : '/contact/merci') : `${contact}?erreur=1#formulaire`, 303)
+    }
     setResponseStatus(event, statut)
     return detail ? { ok, message, detail } : { ok, message }
   }
@@ -37,7 +70,7 @@ export default defineEventHandler(async (event) => {
   // Un navigateur envoie toujours son Origin sur un POST : on refuse les envois depuis un autre site.
   const origine = getHeader(event, 'origin')
   if (origine && !memeHote(origine, getRequestURL(event).host)) {
-    return repondre(false, 'Origine refusée.', 403)
+    return repondre(false, msg().origine, 403)
   }
 
   let form: FormData
@@ -45,22 +78,24 @@ export default defineEventHandler(async (event) => {
     form = await readFormData(event)
   }
   catch {
-    return repondre(false, 'Formulaire illisible.', 400)
+    return repondre(false, msg().illisible, 400)
   }
+  anglais = String(form.get('langue') || '') === 'en'
 
   // Champ piège invisible : un robot le remplit, un humain jamais. On fait semblant d'accepter.
-  if (String(form.get('site_web') || '').trim()) return repondre(true, 'Merci.', 200)
+  if (String(form.get('site_web') || '').trim()) return repondre(true, msg().merci, 200)
 
   const v = {} as Record<Cle, string>
   for (const [cle, libelle, max, obligatoire] of CHAMPS) {
     let val = String(form.get(cle) || '').trim()
-    if (obligatoire && !val) return repondre(false, `Le champ « ${libelle} » est obligatoire.`, 422)
-    if (val.length > max) return repondre(false, `Le champ « ${libelle} » est trop long.`, 422)
+    const nomChamp = anglais ? LIBELLES_EN[cle] ?? libelle : libelle
+    if (obligatoire && !val) return repondre(false, msg().obligatoire(nomChamp), 422)
+    if (val.length > max) return repondre(false, msg().tropLong(nomChamp), 422)
     // Tout sauf le message finit potentiellement dans un en-tête (Subject, Reply-To) : pas de retour à la ligne.
     if (cle !== 'message') val = val.replace(/[\r\n]+/g, ' ')
     v[cle] = val
   }
-  if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(v.email)) return repondre(false, 'Adresse e-mail invalide.', 422)
+  if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(v.email)) return repondre(false, msg().email, 422)
 
   // Le sujet dit d'où vient le message, pour le repérer d'un coup d'œil dans la boîte mail.
   const sujet = `[Site ${SITE}] ${v.projet || 'Nouveau message'} — ${v.nom}${v.entreprise ? ` (${v.entreprise})` : ''}`
@@ -68,6 +103,7 @@ export default defineEventHandler(async (event) => {
     `Nouveau message envoyé depuis le formulaire de ${SITE}`,
     '',
     ...CHAMPS.filter(([cle]) => cle !== 'message' && v[cle]).map(([cle, libelle]) => `${libelle} : ${v[cle]}`),
+    ...(anglais ? ['Langue : anglais (message envoyé depuis la version anglaise du site)'] : []),
     '',
     'Message :',
     v.message,
@@ -84,7 +120,7 @@ export default defineEventHandler(async (event) => {
       return repondre(true, 'Message reçu (dev).', 200)
     }
     console.error('[contact] binding CONTACT_EMAIL ou CONTACT_TO absent')
-    return repondre(false, 'L’envoi est momentanément indisponible.', 503)
+    return repondre(false, msg().indispo, 503)
   }
 
   const brut = construireEmail({
@@ -100,9 +136,9 @@ export default defineEventHandler(async (event) => {
   }
   catch (err) {
     console.error('[contact] envoi impossible :', (err as Error)?.message)
-    return repondre(false, 'L’envoi a échoué.', 502, (err as Error)?.message)
+    return repondre(false, msg().echec, 502, (err as Error)?.message)
   }
-  return repondre(true, 'Message envoyé.', 200)
+  return repondre(true, msg().envoye, 200)
 })
 
 function memeHote(origine: string, hote: string) {

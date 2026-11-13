@@ -2,7 +2,9 @@
 import { zone } from '~/data/site'
 
 const { home, cities } = zone
-const aria = `Carte de l’Alsace avec Mulhouse et ${cities.map(c => c.name).join(', ')}`
+const { tr } = useLangue()
+const villes = cities.map(c => c.name).join(', ')
+const aria = tr(`Carte de l’Alsace avec Mulhouse et ${villes}`, `Map of Alsace showing Mulhouse and ${villes}`)
 
 /* Le Rhin, de Bâle à Lauterbourg (mêmes coordonnées projetées que les villes) */
 const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 320, 234 290 S 255 220, 268 189 S 300 140, 328 110 S 360 70, 371 49'
@@ -16,13 +18,13 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
 
     <!-- Route des vins, au pied des Vosges (Thann → Marlenheim) -->
     <path class="wine-road" d="M 101 468 L 122 432 L 148 337 L 184 250 L 194 175" />
-    <text class="geo wine" x="146" y="296" transform="rotate(-70 146 296)">ROUTE DES VINS</text>
+    <text class="geo wine" x="146" y="296" transform="rotate(-70 146 296)">{{ tr('ROUTE DES VINS', 'WINE ROUTE') }}</text>
 
     <!-- Rhin + pays voisins -->
     <path class="rhine" :d="rhine" />
-    <text class="geo river" x="283" y="246" transform="rotate(-56 283 246)">RHIN</text>
-    <text class="geo" x="330" y="300">ALLEMAGNE</text>
-    <text class="geo" x="244" y="610">SUISSE</text>
+    <text class="geo river" x="283" y="246" transform="rotate(-56 283 246)">{{ tr('RHIN', 'RHINE') }}</text>
+    <text class="geo" x="330" y="300">{{ tr('ALLEMAGNE', 'GERMANY') }}</text>
+    <text class="geo" x="244" y="610">{{ tr('SUISSE', 'SWITZERLAND') }}</text>
 
     <g v-for="c in cities" :key="`c-${c.name}`" class="city">
       <circle :cx="c.x" :cy="c.y" r="4" />

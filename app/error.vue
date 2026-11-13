@@ -2,37 +2,44 @@
 import type { NuxtError } from '#app'
 
 /* Page d'erreur (404 surtout) : garde l'en-tête et le pied de page, propose les pages utiles,
-   et reste hors de l'index Google. */
+   et reste hors de l'index Google. En anglais sous /en. */
 const props = defineProps<{ error: NuxtError }>()
 const introuvable = props.error.statusCode === 404
+const { tr, chemin, en } = useLangue()
 
 useSeoMeta({
-  title: introuvable ? 'Page introuvable | Alexandra Porhansl' : 'Erreur | Alexandra Porhansl',
+  title: introuvable
+    ? tr('Page introuvable | Alexandra Porhansl', 'Page not found | Alexandra Porhansl')
+    : tr('Erreur | Alexandra Porhansl', 'Error | Alexandra Porhansl'),
   robots: 'noindex, follow',
 })
 
-const liens = [
-  { to: '/services', label: 'Services et tarifs' },
-  { to: '/realisations', label: 'Réalisations' },
-  { to: '/contact', label: 'Contact' },
-]
+const liens = computed(() => [
+  { to: chemin('/services'), label: tr('Services et tarifs', 'Services and prices') },
+  { to: chemin('/realisations'), label: tr('Réalisations', 'Projects') },
+  { to: chemin('/contact'), label: 'Contact' },
+])
 </script>
 
 <template>
   <div>
     <SiteHeader />
     <main class="e wrap">
-      <h1 class="e-h1">
+      <h1 v-if="!en" class="e-h1">
         <template v-if="introuvable">Cette page s’est perdue <em>entre les Vosges et le Rhin.</em></template>
         <template v-else>Oups, quelque chose <em>s’est mal passé.</em></template>
       </h1>
+      <h1 v-else class="e-h1">
+        <template v-if="introuvable">This page got lost <em>between the Vosges and the Rhine.</em></template>
+        <template v-else>Oops, something <em>went wrong.</em></template>
+      </h1>
       <p class="lead">
         {{ introuvable
-          ? 'L’adresse a peut-être changé, ou la page n’existe plus. Voici par où continuer :'
-          : 'Réessayez dans un instant, ou continuez par ici :' }}
+          ? tr('L’adresse a peut-être changé, ou la page n’existe plus. Voici par où continuer :', 'The address may have changed, or the page no longer exists. Here’s where to go next:')
+          : tr('Réessayez dans un instant, ou continuez par ici :', 'Try again in a moment, or carry on from here:') }}
       </p>
       <div class="e-links">
-        <NuxtLink to="/" class="btn">Retour à l’accueil <span class="arr" aria-hidden="true">→</span></NuxtLink>
+        <NuxtLink :to="chemin('/')" class="btn">{{ tr('Retour à l’accueil', 'Back to the home page') }} <span class="arr" aria-hidden="true">→</span></NuxtLink>
         <NuxtLink v-for="l in liens" :key="l.to" :to="l.to" class="btn btn-ghost">{{ l.label }}</NuxtLink>
       </div>
     </main>
