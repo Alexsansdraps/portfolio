@@ -13,7 +13,6 @@ export const business = {
   department: 'Haut-Rhin',
   region: 'Alsace',
   github: 'https://github.com/Alexsansdraps',
-  spotify: 'https://open.spotify.com/user/6j2surqecwtez6nsx9etex4zd',
   /** page de réservation Google Agenda (premier rendez-vous, en visio ou en vrai) */
   booking: 'https://calendar.app.google/j8M5FrwVp79yotrp7',
   since: 2019,
@@ -40,8 +39,10 @@ export const priceNote = 'Prix hors taxes. Le devis fixe le prix exact, selon vo
 export interface Service {
   id: string
   title: string
-  /** une phrase, sur les cartes */
+  /** une phrase courte, sur les cartes de l’accueil */
   short: string
+  /** icône de la carte (intérieur d’un SVG 24 × 24, trait) */
+  icon: string
   /** paragraphe de la page Services */
   long: string
   includes: string[]
@@ -72,7 +73,8 @@ export const services: Service[] = [
   {
     id: 'site-vitrine',
     title: 'Site vitrine',
-    short: 'Présentez votre activité, rassurez vos clients et recevez des demandes directement dans votre boîte mail.',
+    short: 'Présentez votre activité et recevez les demandes de vos clients.',
+    icon: '<rect x="3" y="4" width="18" height="13" rx="2" /><path d="M3 8h18M8 21h8M12 17v4" />',
     long: 'Votre site est souvent la première chose que vos clients voient de vous. Je le conçois pour qu’il présente clairement votre activité, qu’il soit agréable à lire sur téléphone, et qu’on ait envie de vous contacter.',
     includes: [
       'Un design unique, à votre image (pas un modèle tout fait)',
@@ -115,7 +117,8 @@ export const services: Service[] = [
   {
     id: 'boutique-en-ligne',
     title: 'Boutique en ligne',
-    short: 'Vendez vos produits en ligne avec une boutique pensée pour eux, paiement sécurisé compris.',
+    short: 'Vendez vos produits en ligne, paiement sécurisé compris.',
+    icon: '<path d="M5 8h14l-1 12H6z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" />',
     long: 'Je crée des boutiques adaptées à vos produits, plutôt que de vous faire entrer dans une plateforme toute faite. Paiement, livraisons, factures, personnalisation : on prévoit ce dont vous avez besoin au quotidien.',
     includes: [
       'Paiement par carte bancaire et PayPal, directement sur votre site',
@@ -156,7 +159,8 @@ export const services: Service[] = [
   {
     id: 'referencement',
     title: 'Référencement naturel (SEO)',
-    short: 'Être trouvé sur Google par les bons clients : état des lieux, optimisation de votre site, fiche Google et suivi des résultats.',
+    short: 'Soyez trouvé sur Google par les clients de votre secteur.',
+    icon: '<circle cx="11" cy="11" r="6" /><path d="M20 20l-4.5-4.5" />',
     long: 'Le référencement naturel (SEO), c’est ce qui aide Google à comprendre ce que vous faites et à vous montrer aux personnes qui cherchent vos services. Je m’en occupe sur chaque site que je crée, et je peux aussi améliorer un site existant.',
     includes: [
       'Un état des lieux de votre visibilité actuelle',
@@ -197,7 +201,8 @@ export const services: Service[] = [
   {
     id: 'presence-en-ligne',
     title: 'Réseaux sociaux et présence en ligne',
-    short: 'Votre site, votre fiche Google, vos réseaux sociaux : je m’occupe de tout, et je vous conseille pour que ça vous amène des clients.',
+    short: 'Site, fiche Google et réseaux sociaux, à jour et cohérents.',
+    icon: '<circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="18" cy="18" r="2.5" /><path d="M8.2 10.8l7.6-3.6M8.2 13.2l7.6 3.6" />',
     long: 'Un client peut vous découvrir sur Google, sur Instagram, sur Facebook ou par votre site. Je m’occupe de l’ensemble pour que tout soit à jour, cohérent et à votre image, et je vous conseille sur ce qui vaut vraiment le coup pour votre activité.',
     includes: [
       'Création ou reprise de vos pages Facebook, Instagram et LinkedIn',
@@ -237,7 +242,8 @@ export const services: Service[] = [
   {
     id: 'refonte',
     title: 'Refonte de site',
-    short: 'Votre site a vieilli, ou vous voulez quitter Wix ou Shopify ? Je le reconstruis sans perdre votre place sur Google.',
+    short: 'Un site qui a vieilli ? Je le refais sans perdre votre place sur Google.',
+    icon: '<path d="M20 11a8 8 0 0 0-14.5-4.5L4 8" /><path d="M4 4v4h4" /><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16" /><path d="M20 20v-4h-4" />',
     long: 'Si votre site a pris un coup de vieux, ou si vous payez cher un abonnement Wix ou Shopify, je peux le refaire. Je reprends vos contenus et je m’occupe de la transition pour que vous ne perdiez pas votre place sur Google.',
     includes: [
       'Reprise et réécriture de vos contenus existants',
@@ -277,7 +283,8 @@ export const services: Service[] = [
   {
     id: 'outils-sur-mesure',
     title: 'Logiciel métier sur mesure',
-    short: 'Un logiciel métier, un espace client ou un outil de réservation, construit autour de votre façon de travailler.',
+    short: 'Un logiciel ou un outil construit autour de votre façon de travailler.',
+    icon: '<rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="7" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><path d="M16.5 13v7M13 16.5h7" />',
     long: 'Vous jonglez entre plusieurs fichiers Excel, ou les logiciels du marché ne collent pas à votre métier ? Je développe des logiciels métier sur mesure, et des outils plus simples quand c’est suffisant, avec l’IA là où elle vous fait vraiment gagner du temps.',
     includes: [
       'Un logiciel métier qui suit votre façon de travailler',
@@ -331,16 +338,12 @@ export const maintenance = {
 /** Les arguments de la présentation (accueil, sous « Bonjour, moi c’est Alexandra »). */
 export const reasons = [
   {
-    t: 'Vous me parlez directement',
-    d: 'C’est moi qui conçois et développe votre site, du premier rendez-vous à la mise en ligne. Il n’y a personne entre nous.',
-  },
-  {
     t: 'Un site fait pour vous',
-    d: 'Je ne pars pas d’un thème acheté en ligne. Le design est pensé pour votre activité et pour vos clients.',
+    d: 'Le design part de votre activité, jamais d’un thème acheté en ligne.',
   },
   {
     t: 'Tout vous appartient',
-    d: 'Le site, le nom de domaine et les contenus sont à vous.',
+    d: 'Le site, le nom de domaine et les contenus.',
   },
 ]
 
@@ -352,10 +355,9 @@ export interface Temoignage { quote: string, name: string, role: string, project
 export const testimonials: Temoignage[] = []
 
 export const steps = [
-  { t: 'On fait le point', d: 'Une heure, gratuite et sans engagement, pour parler de votre situation et de vos besoins, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
-  { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
-  { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
-  { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
+  { t: 'Rencontre', d: 'Une heure, gratuite et sans engagement, pour faire le point sur votre situation et vos besoins, en visio ou en vrai.' },
+  { t: 'Création', d: 'Je vous envoie une proposition claire, avec le contenu, le délai et le prix, puis je construis le projet en vous montrant l’avancement.' },
+  { t: 'Lancement', d: 'Je mets en ligne, je vous montre comment tout fonctionne, et je reste disponible pour la suite.' },
 ]
 
 export interface Faq { q: string, a: string }
@@ -363,39 +365,39 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Un site d’une page démarre à 690 €, un site vitrine de 5 à 7 pages à 1 390 € et une boutique en ligne sur mesure à 4 130 € (prix hors taxes). Le prix exact dépend de votre projet : après un premier échange, je vous envoie une proposition détaillée, pour que vous sachiez exactement ce que vous payez, et pourquoi.',
+    a: 'Un site d’une page démarre à 690 € HT, un site vitrine de 5 à 7 pages à 1 390 € HT et une boutique en ligne sur mesure à 4 130 € HT. Chaque projet fait l’objet d’un devis détaillé, établi après notre premier rendez-vous, qui précise le contenu, le délai et le prix.',
   },
   {
-    q: 'Puis-je payer en plusieurs fois ?',
-    a: 'Oui. Le paiement peut se faire en plusieurs fois, on fixe l’échéancier ensemble dans le devis.',
+    q: 'Le paiement peut-il être échelonné ?',
+    a: 'Oui. Le règlement peut se faire en plusieurs fois, selon un échéancier défini ensemble et inscrit dans le devis.',
   },
   {
-    q: 'Le premier rendez-vous est-il vraiment gratuit ?',
-    a: 'Oui, et sans engagement. Pendant une heure, on discute ensemble de votre situation et de vos besoins, en visio ou en vrai. Ensuite, si on travaille ensemble, je vous envoie un devis.',
+    q: 'Le premier rendez-vous est-il payant ?',
+    a: 'Non. Le premier rendez-vous dure une heure, il est gratuit et sans engagement. Il permet de faire le point sur votre situation et vos besoins, en visio ou en personne.',
   },
   {
-    q: 'Combien de temps faut-il pour créer mon site ?',
-    a: 'Cela dépend de la taille du projet et du temps nécessaire pour réunir vos contenus (textes, photos). Le planning est fixé ensemble dans le devis, et vous suivez l’avancement à chaque étape.',
+    q: 'Quel est le délai de réalisation ?',
+    a: 'Il dépend de l’ampleur du projet et de la disponibilité de vos contenus (textes, photos). Le planning est fixé dans le devis, et vous suivez l’avancement à chaque étape.',
   },
   {
     q: 'Pourrai-je modifier mon site moi-même ?',
-    a: 'Oui. Je peux ajouter un espace d’administration simple pour changer vos textes, photos, prix ou horaires sans connaissances techniques. On en parle au moment du devis.',
+    a: 'Oui. Un espace d’administration simple peut être mis en place pour modifier vos textes, vos photos, vos prix ou vos horaires, sans compétence technique.',
   },
   {
-    q: 'Mon site sera-t-il bien référencé sur Google ?',
-    a: 'Le référencement est pensé dès la conception : site rapide, adapté au téléphone, textes et titres travaillés, informations structurées pour Google. Pour une refonte, les anciennes adresses sont redirigées pour ne pas perdre vos positions.',
+    q: 'Le référencement est-il inclus ?',
+    a: 'Oui. Chaque site est conçu pour Google dès le départ : rapidité, affichage sur téléphone, titres et textes travaillés, informations structurées. Lors d’une refonte, les anciennes adresses sont redirigées afin de préserver vos positions.',
   },
   {
-    q: 'Si je refais mon site, est-ce que je vais perdre mes données ?',
-    a: 'Non. Je récupère vos contenus (textes, photos, produits…) et je redirige les adresses de votre site actuel vers les nouvelles pages, pour que vous gardiez aussi votre place sur Google. Ça vaut aussi si vous êtes sur Wix ou Shopify.',
+    q: 'Que deviennent mes contenus lors d’une refonte ?',
+    a: 'Ils sont récupérés et repris : textes, photos, produits. Les anciennes adresses sont redirigées vers les nouvelles pages, y compris si votre site actuel est sur Wix ou Shopify.',
   },
   {
     q: 'Vous déplacez-vous ?',
-    a: 'Oui, dans un rayon de 100 km autour de Mulhouse. Si vous êtes plus loin, on se voit en visio.',
+    a: 'Oui, dans un rayon de 100 km autour de Mulhouse. Au-delà, les rendez-vous se font en visio.',
   },
   {
-    q: 'Et une fois le site en ligne ?',
-    a: 'Je reste votre interlocutrice : hébergement, mises à jour, petites évolutions et corrections, à partir de 27 € HT par mois. Vous avez quelqu’un à appeler si quelque chose ne va pas.',
+    q: 'Que se passe-t-il après la mise en ligne ?',
+    a: 'Je reste votre interlocutrice pour l’hébergement, les mises à jour et les évolutions, à partir de 27 € HT par mois.',
   },
 ]
 

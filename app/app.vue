@@ -128,7 +128,7 @@ useJsonLd({
 </script>
 
 <template>
-  <div>
+  <div id="haut">
     <a class="skip" href="#contenu">Aller au contenu</a>
     <NuxtRouteAnnouncer />
     <SiteHeader />
@@ -136,6 +136,6 @@ useJsonLd({
       <NuxtPage />
     </div>
     <SiteFooter />
-    <MusicLink />
+    <RetourHaut />
   </div>
 </template>

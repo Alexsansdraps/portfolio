@@ -85,14 +85,11 @@ const formules = [
       <div class="about-txt" data-reveal>
         <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
         <p class="lead">
-          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de me lancer en freelance, j’ai travaillé
-          en agence web, dans une startup et chez des éditeurs de logiciels, sur des sites, des boutiques en ligne
-          et des applications mobiles.
+          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans, en agence, en startup puis chez des éditeurs de logiciels.
         </p>
         <p class="about-p">
-          J’ai toujours aimé le contact avec les clients : comprendre leur métier, leurs envies, et ce que leurs
-          propres clients attendent. Coder seule dans mon coin ne m’a jamais suffi. En freelance, je suis
-          en lien direct avec vous, je prends le temps de vous écouter et je vous explique mes choix simplement.
+          J’ai toujours aimé le contact avec les clients : coder seule dans mon coin ne m’a jamais suffi.
+          Avec moi, vous parlez directement à la personne qui fait votre site.
         </p>
         <ul class="about-why">
           <li v-for="r in reasons" :key="r.t"><strong>{{ r.t }}.</strong> {{ r.d }}</li>
@@ -124,13 +121,15 @@ const formules = [
         <h2 id="svc-title" class="h2">Ce que je propose</h2>
       </div>
       <div class="svc-grid">
-        <NuxtLink v-for="(s, i) in services" :key="s.id" :to="`/services/${s.id}`" class="svc" data-reveal>
-          <span class="svc-num">{{ String(i + 1).padStart(2, '0') }}</span>
+        <NuxtLink v-for="s in services" :key="s.id" :to="`/services/${s.id}`" class="svc" data-reveal>
+          <span class="svc-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" v-html="s.icon" />
+          </span>
           <h3>{{ s.title }}</h3>
           <p>{{ s.short }}</p>
           <span class="svc-foot">
             <span class="svc-price">{{ s.price }}</span>
-            <span class="svc-more">En savoir plus <span class="arr" aria-hidden="true">→</span></span>
+            <span class="svc-more">Voir le détail <span class="arr" aria-hidden="true">→</span></span>
           </span>
         </NuxtLink>
       </div>
@@ -155,6 +154,7 @@ const formules = [
             Je travaille depuis Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio,
             comme vous préférez.
           </p>
+          <Bretzel class="zone-bretzel" />
         </div>
         <div class="zone-map" data-reveal>
           <ZoneMap />
@@ -222,27 +222,31 @@ const formules = [
 @media (max-width: 860px) { .rdv { grid-template-columns: 1fr; align-items: start; } .rdv-btn { justify-self: start; } }
 
 /* ---------- services ---------- */
-.svc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
 .svc {
-  position: relative; display: flex; flex-direction: column;
-  padding: clamp(24px, 3vw, 40px); border-radius: 22px;
-  background: #fff; border: 1px solid var(--color-line);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: #fff;
+  box-shadow: 0 18px 40px -30px rgb(29 22 26 / .45);
   color: var(--color-ink); text-decoration: none;
-  transition: border-color .25s, transform .25s, box-shadow .25s;
+  transition: transform .25s, box-shadow .25s;
 }
-.svc:last-child:nth-child(odd) { grid-column: 1 / -1; }
-.svc:hover { border-color: var(--color-wine); transform: translateY(-3px); box-shadow: 0 20px 40px -28px rgb(29 22 26 / .35); }
-.svc-num { font-size: 14px; color: var(--color-wine); }
-.svc h3 { margin-top: 18px; font-weight: 760; font-stretch: 112%; font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -.015em; line-height: 1.1; }
-.svc p { margin-top: 12px; color: var(--color-graphite); font-size: 16.5px; line-height: 1.6; flex: 1; }
+.svc:hover { transform: translateY(-4px); box-shadow: 0 24px 46px -28px rgb(29 22 26 / .5); }
+.svc-ic {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--color-wine); color: #fff;
+}
+.svc-ic svg { width: 24px; height: 24px; }
+.svc h3 { margin-top: 4px; font-weight: 740; font-stretch: 110%; font-size: 20px; letter-spacing: -.01em; line-height: 1.2; }
+.svc p { color: var(--color-graphite); font-size: 15.5px; line-height: 1.6; flex: 1; }
 .svc-foot {
-  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--color-line);
-  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px;
+  align-self: stretch; margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--color-line);
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px;
 }
-.svc-price { font-weight: 720; font-stretch: 106%; font-size: 16.5px; color: var(--color-ink); }
-.svc-more { font-weight: 650; color: var(--color-wine); }
+.svc-price { font-weight: 720; font-stretch: 106%; font-size: 15.5px; color: var(--color-ink); }
+.svc-more { font-weight: 650; font-size: 15px; color: var(--color-wine); }
 .svc-more .arr { display: inline-block; transition: transform .2s; }
 .svc:hover .svc-more .arr { transform: translateX(4px); }
+@media (max-width: 1000px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .svc-after {
   margin-top: 28px; padding: 20px 24px; border-radius: 16px;
   background: var(--color-blush); color: var(--color-ink); font-size: 16px; line-height: 1.6;
@@ -255,6 +259,7 @@ const formules = [
 .zone { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .zone-txt .h2 { margin-top: 18px; }
 .zone-txt .lead { margin-top: 20px; }
+.zone-bretzel { margin-top: 24px; transform: rotate(-10deg); }
 .zone-map { max-width: 460px; justify-self: center; width: 100%; }
 
 /* ---------- à propos ---------- */

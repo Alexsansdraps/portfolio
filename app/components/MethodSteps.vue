@@ -5,7 +5,7 @@ import { steps } from '~/data/site'
 <template>
   <ol class="ms">
     <li v-for="(s, i) in steps" :key="s.t" class="ms-step" data-reveal>
-      <span class="ms-num" aria-hidden="true">{{ String(i + 1).padStart(2, '0') }}</span>
+      <span class="ms-num" aria-hidden="true">{{ i + 1 }}</span>
       <h3>{{ s.t }}</h3>
       <p>{{ s.d }}</p>
     </li>
@@ -13,35 +13,26 @@ import { steps } from '~/data/site'
 </template>
 
 <style scoped>
-.ms {
-  list-style: none; counter-reset: step;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.5vw, 32px);
+/* même présentation que « Comment je travaille » (page Parcours) : cartes blanches, numéros dans un rond, pointillé */
+.ms { position: relative; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.ms::before {
+  content: ""; position: absolute; left: 16%; right: 16%; top: 54px; height: 0;
+  border-top: 2px dashed color-mix(in srgb, var(--color-wine) 45%, transparent);
 }
-.ms-step { position: relative; padding-top: 28px; }
-.ms-step::before {
-  content: ""; position: absolute; top: 9px; left: 0; right: calc(-1 * clamp(20px, 2.5vw, 32px));
-  height: 1px; background: var(--color-line);
+.ms-step {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: #fff;
+  box-shadow: 0 18px 40px -30px rgb(29 22 26 / .45);
 }
-.ms-step:last-child::before { right: 0; }
-.ms-step::after {
-  content: ""; position: absolute; top: 4px; left: 0;
-  width: 11px; height: 11px; border-radius: 50%; background: var(--color-wine);
-  box-shadow: 0 0 0 5px var(--color-paper);
+.ms-num {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
+  background: var(--color-wine); color: #fff; box-shadow: 0 0 0 6px #fff;
+  font-weight: 780; font-stretch: 112%; font-size: 24px; line-height: 1;
 }
-.ms-num { font-size: 14px; color: var(--color-wine); }
-.ms-step h3 { margin-top: 10px; font-weight: 720; font-stretch: 110%; font-size: 21px; line-height: 1.2; letter-spacing: -.01em; }
-.ms-step p { margin-top: 10px; font-size: 15.5px; line-height: 1.6; color: var(--color-graphite); }
-
+.ms-step h3 { margin-top: 4px; font-weight: 740; font-stretch: 110%; font-size: 20px; letter-spacing: -.01em; line-height: 1.2; }
+.ms-step p { font-size: 15.5px; line-height: 1.6; color: var(--color-graphite); }
 @media (max-width: 900px) {
-  .ms { grid-template-columns: 1fr 1fr; row-gap: 40px; }
-  .ms-step::before { right: 0; }
-}
-@media (max-width: 560px) {
-  .ms { grid-template-columns: 1fr; row-gap: 0; }
-  .ms-step { padding: 0 0 28px 30px; }
-  .ms-step::before { top: 6px; bottom: 0; left: 5px; right: auto; width: 1px; height: auto; }
-  .ms-step:last-child::before { display: none; }
-  .ms-step::after { top: 2px; }
-  .ms-step h3 { margin-top: 4px; }
+  .ms { grid-template-columns: 1fr; }
+  .ms::before { display: none; }
 }
 </style>
