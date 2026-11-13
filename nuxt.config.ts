@@ -72,6 +72,8 @@ export default defineNuxtConfig({
     '/de': { redirect: { to: '/', statusCode: 301 } },
     '/de/**': { redirect: { to: '/', statusCode: 301 } },
     '/cv/**': { redirect: { to: '/parcours', statusCode: 301 } },
+    // l'audit gratuit a été retiré (13/11/2026) : le premier rendez-vous offert se réserve depuis /contact
+    '/audit-gratuit': { redirect: { to: '/contact', statusCode: 301 } },
   },
 
   nitro: {
@@ -84,7 +86,7 @@ export default defineNuxtConfig({
       // sans redirection vers /parcours/ (une seule URL par page, celle du canonical).
       autoSubfolderIndex: false,
       // Les anciennes adresses restent des vraies 301 servies par le Worker, pas des pages HTML de redirection.
-      ignore: [/^\/(en|de|cv)(\/|$)/],
+      ignore: [/^\/(en|de|cv)(\/|$)/, /^\/audit-gratuit$/],
     },
     // Build Cloudflare Workers : Nitro génère la config wrangler, on y ajoute l'envoi d'e-mail
     // (Cloudflare Email Routing). destination_address verrouille le destinataire côté Cloudflare.

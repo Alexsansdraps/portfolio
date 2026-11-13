@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services, maintenance } from '~/data/site'
+import { business, services, maintenance } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 usePageSeo({
@@ -42,13 +42,13 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       </nav>
     </section>
 
-    <section class="wrap s-audit" aria-label="Audit gratuit">
-      <div class="s-audit-in" data-reveal>
+    <section class="wrap s-rdv" aria-label="Premier rendez-vous offert">
+      <div class="s-rdv-in" data-reveal>
         <div>
-          <p class="s-audit-t">Un audit gratuit de votre site, de vos outils ou de votre situation.</p>
-          <p class="s-audit-p">On fait le point et on vous donne les priorités, sans engagement.</p>
+          <p class="s-rdv-t">Un premier rendez-vous d’une heure, offert.</p>
+          <p class="s-rdv-p">On discute de votre situation et de vos besoins, en visio ou en vrai, sans engagement.</p>
         </div>
-        <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+        <a :href="business.booking" class="btn" target="_blank" rel="noopener">Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
@@ -60,7 +60,7 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
           <p class="lead">{{ s.long }}</p>
           <PriceList :prices="s.prices" />
           <div class="s-actions">
-            <NuxtLink to="/contact" class="btn">Parler de mon projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+            <a :href="business.booking" class="btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
             <NuxtLink :to="`/services/${s.id}`" class="link">{{ s.linkText }} →</NuxtLink>
           </div>
         </div>
@@ -125,13 +125,13 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
 .s-toc a span { font-size: 14px; color: var(--color-wine); }
 .s-toc a:hover { border-color: var(--color-wine); background: #fff; }
 
-.s-audit { padding-bottom: clamp(40px, 6vw, 72px); }
-.s-audit-in {
+.s-rdv { padding-bottom: clamp(40px, 6vw, 72px); }
+.s-rdv-in {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
   padding: clamp(24px, 3.5vw, 40px); border-radius: 24px; background: var(--color-blush);
 }
-.s-audit-t { margin-top: 10px; font-weight: 760; font-stretch: 110%; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.015em; max-width: 30ch; }
-.s-audit-p { margin-top: 8px; color: var(--color-graphite); }
+.s-rdv-t { margin-top: 10px; font-weight: 760; font-stretch: 110%; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.015em; max-width: 30ch; }
+.s-rdv-p { margin-top: 8px; color: var(--color-graphite); }
 .s-block { padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--color-line); }
 .s-block.alt { background: var(--color-sand); }
 .s-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 96px); align-items: start; }

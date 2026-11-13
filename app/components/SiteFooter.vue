@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
             Agence web freelance basée à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
             et logiciels métier sur mesure.
           </p>
-          <NuxtLink to="/contact" class="btn f-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <a :href="business.booking" class="btn f-cta" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
         </div>
 
         <nav class="f-col" aria-label="Services">
@@ -24,7 +24,6 @@ const year = new Date().getFullYear()
 
         <nav class="f-col" aria-label="Le site">
           <p class="f-h">L’agence</p>
-          <NuxtLink to="/audit-gratuit">Audit gratuit</NuxtLink>
           <NuxtLink to="/realisations">Réalisations</NuxtLink>
           <NuxtLink to="/parcours">Mon parcours</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>

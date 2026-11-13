@@ -4,7 +4,7 @@ import type { Shot } from '~/data/projects'
 /**
  * Visuel de droite des en-têtes de page : aplat rose incliné avec une trame de points.
  * Par-dessus, soit une capture d'écran + un téléphone (cover / mobile), soit le contenu du slot
- * (aperçu de compte rendu d'audit, portrait…).
+ * (aperçu « présence en ligne », portrait…).
  */
 defineProps<{ cover?: Shot, url?: string, mobile?: Shot }>()
 </script>

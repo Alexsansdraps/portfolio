@@ -156,24 +156,23 @@ export const services: Service[] = [
   {
     id: 'referencement',
     title: 'Référencement naturel (SEO)',
-    short: 'Être trouvé sur Google par les bons clients : audit, optimisation de votre site, fiche Google et suivi des résultats.',
+    short: 'Être trouvé sur Google par les bons clients : état des lieux, optimisation de votre site, fiche Google et suivi des résultats.',
     long: 'Le référencement naturel (SEO), c’est ce qui aide Google à comprendre ce que vous faites et à vous montrer aux personnes qui cherchent vos services. Je m’en occupe sur chaque site que je crée, et je peux aussi améliorer un site existant.',
     includes: [
-      'Audit de votre visibilité actuelle, offert',
+      'Un état des lieux de votre visibilité actuelle',
       'Titres et textes pensés pour les recherches de vos clients',
       'Site rapide et parfaitement adapté au téléphone',
       'Fiche Google (Google Business Profile) : horaires, photos, avis',
       'Suivi des positions et des visites, expliqué simplement',
     ],
-    price: 'Audit offert, puis sur devis',
+    price: 'Sur devis',
     prices: [
-      { label: 'Audit de votre site et de votre visibilité', value: 'offert' },
       { label: 'Amélioration du référencement', value: 'sur devis' },
     ],
     project: 'la-chance-animation',
     h1: ['Être trouvé', 'sur Google.'],
-    seoTitle: 'Référencement naturel (SEO) à Mulhouse | Audit offert',
-    seoDescription: 'Être trouvé sur Google par vos clients : audit offert, titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Agence web à Mulhouse.',
+    seoTitle: 'Référencement naturel (SEO) à Mulhouse | Agence web',
+    seoDescription: 'Être trouvé sur Google par vos clients : titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Premier rendez-vous offert, à Mulhouse.',
     linkText: 'Le référencement en détail',
     forWho: [
       'Votre site existe, mais personne ne le trouve quand on cherche votre métier et votre ville.',
@@ -183,7 +182,7 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Combien de temps faut-il pour voir des résultats ?',
-        a: 'Les premiers effets se voient en général après quelques semaines, et le référencement se construit sur plusieurs mois. Tout dépend de la concurrence dans votre secteur et de l’état de votre site au départ : l’audit gratuit sert justement à le savoir.',
+        a: 'Les premiers effets se voient en général après quelques semaines, et le référencement se construit sur plusieurs mois. Tout dépend de la concurrence dans votre secteur et de l’état de votre site au départ. On le voit ensemble dès le premier rendez-vous.',
       },
       {
         q: 'C’est quoi, une fiche Google ?',
@@ -191,7 +190,7 @@ export const services: Service[] = [
       },
       {
         q: 'Pouvez-vous améliorer un site que vous n’avez pas créé ?',
-        a: 'Oui. On commence par l’audit gratuit pour voir ce qui freine votre site, puis je vous propose les améliorations sur devis : textes, titres, vitesse, erreurs techniques, fiche Google.',
+        a: 'Oui. On commence par regarder ensemble ce qui freine votre site, puis je vous propose les améliorations sur devis : textes, titres, vitesse, erreurs techniques, fiche Google.',
       },
     ],
   },
@@ -231,7 +230,7 @@ export const services: Service[] = [
       },
       {
         q: 'Combien coûte la gestion de ma présence en ligne ?',
-        a: 'Cela dépend de ce que vous voulez me confier. On commence par l’audit gratuit de votre présence en ligne, puis je vous envoie un devis.',
+        a: 'Cela dépend de ce que vous voulez me confier. On en parle au premier rendez-vous, offert, puis je vous envoie un devis.',
       },
     ],
   },
@@ -311,7 +310,7 @@ export const services: Service[] = [
       },
       {
         q: 'Combien coûte un logiciel sur mesure ?',
-        a: 'Le prix dépend de ce que l’outil doit faire. On commence par l’audit gratuit de vos outils actuels, puis je vous envoie un devis détaillé.',
+        a: 'Le prix dépend de ce que l’outil doit faire. On fait d’abord le point sur vos outils actuels au premier rendez-vous, offert, puis je vous envoie un devis détaillé.',
       },
     ],
   },
@@ -353,7 +352,7 @@ export interface Temoignage { quote: string, name: string, role: string, project
 export const testimonials: Temoignage[] = []
 
 export const steps = [
-  { t: 'On fait le point', d: 'Une demi-heure pour parler de votre activité et de ce que vous attendez, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
+  { t: 'On fait le point', d: 'Une heure, offerte, pour parler de votre situation et de vos besoins, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
   { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
   { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
   { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
@@ -371,8 +370,8 @@ export const faq: Faq[] = [
     a: 'Oui. Le paiement peut se faire en plusieurs fois, on fixe l’échéancier ensemble dans le devis.',
   },
   {
-    q: 'Votre audit est-il vraiment gratuit ?',
-    a: 'Oui, et sans engagement. Que vous ayez un site, un logiciel ou pas encore de site, on fait le point et on vous remet un compte rendu clair avec les priorités.',
+    q: 'Le premier rendez-vous est-il vraiment gratuit ?',
+    a: 'Oui, et sans engagement. Pendant une heure, on discute ensemble de votre situation et de vos besoins, en visio ou en vrai. Ensuite, si on travaille ensemble, je vous envoie un devis.',
   },
   {
     q: 'Combien de temps faut-il pour créer mon site ?',
@@ -400,28 +399,6 @@ export const faq: Faq[] = [
   },
 ]
 
-/** Audit gratuit : page /audit-gratuit et encart de l'accueil. */
-export const audit = {
-  cases: [
-    { t: 'Vous avez un site', d: 'On analyse sa vitesse, son affichage sur téléphone, son référencement Google et tout ce qui freine vos clients avant qu’ils vous contactent.' },
-    { t: 'Vous utilisez un logiciel ou des outils', d: 'Logiciel métier, fichiers Excel, boutique en ligne : on regarde comment vous travaillez et où vous perdez du temps (ressaisies, tâches répétitives, outils qui ne se parlent pas).' },
-    { t: 'Vous n’avez pas encore de site', d: 'On fait le point sur votre situation : comment vos clients vous trouvent aujourd’hui, ce que font vos concurrents, et ce dont vous avez vraiment besoin pour démarrer.' },
-  ],
-  checks: [
-    'Votre visibilité sur Google : sur quelles recherches vous apparaissez, et à quelle place',
-    'La vitesse de chargement et l’affichage sur téléphone',
-    'Les titres et les textes : Google comprend-il ce que vous faites, et pour qui ?',
-    'Votre fiche Google : horaires, photos, avis',
-    'Les erreurs techniques qui freinent votre référencement',
-    'Le parcours de vos clients : est-ce simple de vous contacter, de commander, de demander un devis ?',
-  ],
-  gets: [
-    'Un compte rendu clair, sans jargon',
-    'Les 3 à 5 priorités, classées par impact',
-    'Ce que vous pouvez faire vous-même, tout de suite',
-    'Aucun engagement de votre part',
-  ],
-}
 
 /**
  * Zone d'intervention — positions calculées depuis les coordonnées GPS

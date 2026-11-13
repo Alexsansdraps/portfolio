@@ -16,10 +16,7 @@ withDefaults(defineProps<{ title?: string, text?: string }>(), {
           <p class="cta-p">{{ text }}</p>
         </div>
         <div class="cta-actions">
-          <NuxtLink to="/contact" class="btn cta-btn">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
-          <a :href="business.booking" class="cta-alt" target="_blank" rel="noopener">ou réserver directement un créneau ↗</a>
-          <NuxtLink to="/audit-gratuit" class="cta-alt">ou commencer par un audit gratuit →</NuxtLink>
-          <p class="cta-note">Je vous réponds sous 24 h.</p>
+          <a :href="business.booking" class="btn cta-btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>

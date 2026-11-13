@@ -14,7 +14,6 @@ useSeoMeta({
 const liens = [
   { to: '/services', label: 'Services et tarifs' },
   { to: '/realisations', label: 'Réalisations' },
-  { to: '/audit-gratuit', label: 'Audit gratuit' },
   { to: '/contact', label: 'Contact' },
 ]
 </script>

@@ -3,7 +3,7 @@
 Site de l'agence web freelance d'Alexandra Porhansl, à Mulhouse : sites vitrines, boutiques en ligne,
 refontes et outils sur mesure pour les entreprises d'Alsace.
 
-Pages : accueil, services et tarifs, audit gratuit, réalisations (La Chance Animation, MemoryLine),
+Pages : accueil, services et tarifs, réalisations (La Chance Animation, MemoryLine),
 mon parcours (frise animée en serpentine), contact (formulaire → e-mail), mentions légales.
 Les prix (HT) sont dans `app/data/site.ts`.
 

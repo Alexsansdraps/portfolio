@@ -18,17 +18,17 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   (`price` sur les cartes de l'accueil, `prices` sur la page Services via `PriceList`, `minPrice` pour les données structurées,
   `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
   la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.
-- L'**audit gratuit** (`/audit-gratuit`) est à mettre en avant (accueil, menu, bandeau final, formulaire) — pour un site,
-  un logiciel / des outils, ou sans site.
+- **Plus d'audit gratuit** (retiré le 13/11/2026, `/audit-gratuit` redirige en 301 vers `/contact`). À la place : un
+  **premier rendez-vous d'une heure, offert** (situation, besoins), réservé sur Google Agenda (`business.booking`).
+  Les boutons « Parlons de votre projet » ouvrent cette page de réservation ; le formulaire reste sur `/contact`.
 - Positionnement : **agence web freelance basée à Mulhouse, en Alsace**, qui s’occupe de toute la présence en ligne
   (site, fiche Google, réseaux sociaux, conseil). Premier rendez-vous en visio ou en vrai : elle se déplace dans un rayon de
   **100 km** autour de Mulhouse (13/11/2026). Rien sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
-- Pas de « premier échange gratuit » : seul l'audit est gratuit. Pas de « Demander un devis » : « Parlons de votre projet ».
+- Seul le premier rendez-vous (1 h) est offert. Pas de « Demander un devis » : « Parlons de votre projet ».
 - Ton naturel, à la première personne, sans slogans en deux temps ni formules toutes faites (« zéro jargon », « X, pas Y »…).
 - Petits clins d'œil alsaciens bienvenus (Hopla, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
-- Textes de l'audit gratuit à la 1re personne du pluriel : « on » (« on fait le point »), boutons « Audit gratuit ».
 - MemoryLine n'est pas alsacienne : pas de mention de l'Alsace pour elle. La Chance Animation et La Chance Production (Guebwiller) le sont.
 - Réalisations (`app/data/projects.ts`) : parler de « refonte », jamais de Wix ni d'abonnement économisé ; chiffres clés
   qui ne bougent pas (« 200+ » plutôt qu'un compte exact). Captures : 1440 × 900 (ordinateur), 600 × 1200 (téléphone), en WebP.

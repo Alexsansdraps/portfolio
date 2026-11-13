@@ -5,7 +5,7 @@ import { business } from '~/data/site'
  * Formulaire de contact → POST /api/contact (e-mail via Cloudflare Email Routing).
  * Fonctionne sans JavaScript (redirection vers /contact/merci) ; avec JS, envoi sans recharger la page.
  */
-/** projet : envoyé tel quel dans le sujet de l'e-mail, sans champ visible (« Audit gratuit » sur la page de l'audit) */
+/** projet : envoyé tel quel dans le sujet de l'e-mail, sans champ visible (facultatif) */
 const props = defineProps<{ projet?: string }>()
 
 const etat = ref<'idle' | 'envoi' | 'ok' | 'erreur'>('idle')

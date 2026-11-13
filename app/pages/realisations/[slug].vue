@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { findProject, projects } from '~/data/projects'
+import { business } from '~/data/site'
 
 const route = useRoute()
 const project = findProject(String(route.params.slug))
@@ -57,7 +58,7 @@ useJsonLd([
         <a v-if="p.url" :href="p.url" class="btn" target="_blank" rel="noopener">
           Visiter {{ p.domain }} <span aria-hidden="true">↗</span>
         </a>
-        <NuxtLink to="/contact" class="btn" :class="{ 'btn-ghost': p.url }">Un projet similaire ? Parlons-en</NuxtLink>
+        <a :href="business.booking" class="btn" :class="{ 'btn-ghost': p.url }" target="_blank" rel="noopener">Un projet similaire ? Parlons-en</a>
       </div>
     </section>
 

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { services, reasons, maintenance, audit } from '~/data/site'
+import { business, services, reasons, maintenance } from '~/data/site'
 import { projects } from '~/data/projects'
 import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
   title: 'Création de site internet à Mulhouse | Agence web en Alsace',
-  description: 'Agence web freelance à Mulhouse : création de sites internet, sites vitrines, boutiques en ligne, référencement Google et refontes. Audit gratuit.',
+  description: 'Agence web à Mulhouse : sites internet, boutiques en ligne, référencement Google, réseaux sociaux et logiciels sur mesure. Premier rendez-vous offert.',
   path: '/',
 })
 
 const [lachance, memoryline] = projects
 const formules = [
-  { t: 'De A à Z', d: 'Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', lien: 'Parlons de votre projet', to: '/contact' },
+  { t: 'De A à Z', d: 'Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', lien: 'Parlons de votre projet', to: business.booking },
   { t: 'Juste une partie', d: 'Un site, une refonte, le référencement ou vos réseaux sociaux : je prends ce qui vous manque, et vous gardez le reste.', lien: 'Voir les services et les tarifs', to: '/services' },
-  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Commencer par l’audit gratuit', to: '/audit-gratuit' },
+  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Réserver le rendez-vous offert', to: business.booking },
 ]
 </script>
 
@@ -23,18 +23,16 @@ const formules = [
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-txt">
         <h1 id="hero-title" class="hero-h1 rise d1">
-          Je crée des sites internet <em>à&nbsp;Mulhouse.</em>
+          Votre présence en ligne, <em>je m’en occupe.</em>
         </h1>
         <p class="hero-sub rise d2">
-          Votre site, votre fiche Google, vos réseaux sociaux : je peux m’occuper de toute votre présence
-          en ligne, de A à Z, ou seulement de la partie qui vous manque.
+          Site internet, fiche Google, réseaux sociaux&nbsp;: je vous accompagne de A à Z, ou seulement sur ce qui vous manque.
         </p>
         <p class="hero-lead rise d2">
-          Et si vous avez juste besoin d’un avis, je vous conseille. Dans tous les cas, vous avez une seule
-          interlocutrice&nbsp;: moi, Alexandra.
+          Agence web à Mulhouse. Une seule interlocutrice&nbsp;: moi, Alexandra.
         </p>
         <div class="hero-ctas rise d3">
-          <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
+          <a :href="business.booking" class="btn" target="_blank" rel="noopener">Premier rendez-vous offert <span class="arr" aria-hidden="true">↗</span></a>
           <NuxtLink to="/realisations" class="btn btn-ghost">Voir mes réalisations</NuxtLink>
         </div>
       </div>
@@ -60,7 +58,7 @@ const formules = [
           <div v-for="f in formules" :key="f.t" class="formule" data-reveal>
             <h3>{{ f.t }}</h3>
             <p>{{ f.d }}</p>
-            <NuxtLink :to="f.to" class="link">{{ f.lien }} →</NuxtLink>
+            <NuxtLink :to="f.to" class="link" :target="f.to.startsWith('http') ? '_blank' : undefined">{{ f.lien }} {{ f.to.startsWith('http') ? '↗' : '→' }}</NuxtLink>
           </div>
         </div>
       </div>
@@ -105,26 +103,17 @@ const formules = [
     <!-- TÉMOIGNAGES (affichés dès qu’il y en a) -->
     <Temoignages />
 
-    <!-- AUDIT GRATUIT -->
-    <section class="section audit-sec" aria-labelledby="audit-title">
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <h2 id="audit-title" class="h2">Votre site est-il bien trouvé sur&nbsp;Google&nbsp;?</h2>
+    <!-- PREMIER RENDEZ-VOUS OFFERT -->
+    <section class="section rdv-sec" aria-labelledby="rdv-title">
+      <div class="wrap rdv">
+        <div data-reveal>
+          <h2 id="rdv-title" class="h2">Un premier rendez-vous d’une heure, <em>offert.</em></h2>
           <p class="lead">
-            On vous propose un audit gratuit : on regarde votre site (ou vos outils, ou votre présence en ligne si
-            vous n’avez pas encore de site) et on vous dit ce qu’on changerait en priorité. Vous n’êtes engagé à rien.
+            On discute ensemble de votre situation, de vos besoins, de ce qui marche déjà et de ce qui vous manque.
+            En visio ou en vrai, et sans engagement.
           </p>
         </div>
-        <div class="audit-cases">
-          <div v-for="(c, i) in audit.cases" :key="c.t" class="audit-case" data-reveal>
-            <span class="ac-num">{{ i + 1 }}</span>
-            <h3>{{ c.t }}</h3>
-            <p>{{ c.d }}</p>
-          </div>
-        </div>
-        <div class="audit-cta" data-reveal>
-          <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
-        </div>
+        <a :href="business.booking" class="btn rdv-btn" target="_blank" rel="noopener" data-reveal>Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
@@ -224,17 +213,12 @@ const formules = [
 /* ---------- réalisations ---------- */
 .projects { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 140px); }
 
-/* ---------- audit gratuit ---------- */
-.audit-sec { background: var(--color-blush); }
-.audit-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
-.audit-case { padding: clamp(24px, 3vw, 34px); border-radius: 22px; background: #fff; border: 1px solid color-mix(in srgb, var(--color-wine) 18%, var(--color-line)); }
-.ac-num {
-  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
-  background: var(--color-wine); color: #fff; font-weight: 760; font-size: 17px;
-}
-.audit-case h3 { margin-top: 18px; font-weight: 740; font-stretch: 110%; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; }
-.audit-case p { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
-.audit-cta { margin-top: clamp(28px, 4vw, 44px); display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+/* ---------- premier rendez-vous offert ---------- */
+.rdv-sec { background: var(--color-blush); }
+.rdv { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 56px; align-items: end; }
+.rdv .h2 em { font-style: normal; color: var(--color-wine); }
+.rdv .lead { margin-top: 18px; }
+@media (max-width: 860px) { .rdv { grid-template-columns: 1fr; align-items: start; } .rdv-btn { justify-self: start; } }
 
 /* ---------- services ---------- */
 .svc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
@@ -289,7 +273,6 @@ const formules = [
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .hero-visual { max-width: 620px; width: 100%; margin: 12px auto 0; }
-  .audit-cases { grid-template-columns: 1fr; }
   .zone, .about { grid-template-columns: 1fr; }
   .about-pic { max-width: 420px; }
 }

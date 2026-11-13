@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { business } from '~/data/site'
+
 const nav = [
   { to: '/services', label: 'Services' },
   { to: '/realisations', label: 'Réalisations' },
   { to: '/parcours', label: 'Mon parcours' },
-  { to: '/audit-gratuit', label: 'Audit gratuit', hot: true },
+  { to: '/contact', label: 'Contact' },
 ]
 
 const open = ref(false)
@@ -29,7 +31,7 @@ onMounted(() => {
 
       <nav class="nav" aria-label="Navigation principale">
         <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="nav-link" :class="{ hot: n.hot }">{{ n.label }}</NuxtLink>
-        <NuxtLink to="/contact" class="btn nav-cta">Parlons de votre projet</NuxtLink>
+        <a :href="business.booking" class="btn nav-cta" target="_blank" rel="noopener">Parlons de votre projet</a>
       </nav>
 
       <button
@@ -46,7 +48,7 @@ onMounted(() => {
       <div class="wrap">
         <NuxtLink to="/" class="m-link">Accueil</NuxtLink>
         <NuxtLink v-for="n in nav" :key="n.to" :to="n.to" class="m-link">{{ n.label }}</NuxtLink>
-        <NuxtLink to="/contact" class="btn m-cta">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
+        <a :href="business.booking" class="btn m-cta" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </nav>
   </header>

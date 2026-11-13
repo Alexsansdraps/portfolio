@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { services, priceNote } from '~/data/site'
+import { business, services, priceNote } from '~/data/site'
 import { findProject } from '~/data/projects'
 
 /* Une page par service : Google peut positionner chacune sur sa propre recherche
@@ -66,8 +66,7 @@ useJsonLd([
           <p class="lead sv-lead rise d2">{{ s.long }}</p>
           <p class="sv-price rise d2"><strong>{{ s.price }}</strong>, paiement possible en plusieurs fois.</p>
           <div class="sv-ctas rise d3">
-            <NuxtLink to="/contact" class="btn">Parlons de votre projet <span class="arr" aria-hidden="true">→</span></NuxtLink>
-            <NuxtLink to="/audit-gratuit" class="btn btn-ghost">Audit gratuit</NuxtLink>
+            <a :href="business.booking" class="btn" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -206,6 +205,11 @@ useJsonLd([
 .sv-toc a .arr { color: var(--color-wine); }
 .sv-toc a:hover { border-color: var(--color-wine); background: #fff; }
 
+/* téléphone et tablette : la carte suit le flux de la page au lieu d'être posée par-dessus */
+@media (max-width: 960px) {
+  .hv:has(.pres) { aspect-ratio: auto; padding: 28px 0 36px; }
+  .pres { position: relative; left: auto; top: auto; width: auto; margin: 0 6% 0 2%; }
+}
 @media (max-width: 900px) {
   .sv-grid { grid-template-columns: 1fr; }
   .sv-who { grid-template-columns: 1fr; }
