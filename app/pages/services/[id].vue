@@ -75,6 +75,14 @@ useJsonLd([
         <NuxtLink v-if="example" :to="`/realisations/${example.slug}`" class="sv-ex rise d2" :aria-label="`Voir la réalisation ${example.name}`">
           <HeroVisual :cover="example.cover" :url="example.domain" :mobile="example.mobile" />
         </NuxtLink>
+        <HeroVisual v-else class="rise d2">
+          <div class="pres">
+            <p class="pres-t">Votre présence en ligne</p>
+            <ul class="pres-l">
+              <li v-for="c in ['Site internet', 'Fiche Google', 'Instagram', 'Facebook', 'LinkedIn']" :key="c">{{ c }}<span>à jour</span></li>
+            </ul>
+          </div>
+        </HeroVisual>
       </div>
     </section>
 
@@ -146,6 +154,16 @@ useJsonLd([
 .sv-lead { margin-top: 24px; max-width: 54ch; }
 .sv-ex { display: block; width: 100%; }
 .sv-ex:hover :deep(.hv-shot) { transform: rotate(-2deg) translateY(-6px); transition: transform .4s; }
+.pres {
+  position: absolute; left: 4%; top: 12%; width: 78%;
+  padding: clamp(20px, 2.6vw, 32px); border-radius: 20px; background: #fff;
+  box-shadow: 0 1px 2px rgb(29 22 26 / .06), 0 28px 60px -30px rgb(29 22 26 / .45);
+  transform: rotate(-2deg);
+}
+.pres-t { font-weight: 780; font-stretch: 112%; font-size: clamp(18px, 1.7vw, 22px); white-space: nowrap; letter-spacing: -.01em; }
+.pres-l { list-style: none; margin-top: 14px; }
+.pres-l li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1px solid var(--color-line); font-weight: 600; font-size: clamp(15px, 1.4vw, 17px); }
+.pres-l span { padding: 4px 10px; border-radius: 999px; background: var(--color-blush); color: var(--color-wine); font-size: 13px; font-weight: 650; }
 .sv-price { margin-top: 20px; font-size: 18px; color: var(--color-graphite); }
 .sv-price strong { color: var(--color-ink); font-weight: 720; }
 .sv-ctas { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }

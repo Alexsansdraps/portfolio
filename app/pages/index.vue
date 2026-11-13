@@ -10,7 +10,7 @@ usePageSeo({
 })
 
 const [lachance, memoryline] = projects
-const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Logiciel métier sur mesure', 'Suivi & maintenance']
+const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Logiciel métier sur mesure', 'Réseaux sociaux', 'Suivi & maintenance']
 </script>
 
 <template>
@@ -22,8 +22,8 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           Je crée des sites internet <em>à&nbsp;Mulhouse.</em>
         </h1>
         <p class="hero-sub rise d2">
-          Des sites vitrines, des boutiques en ligne et des logiciels métier sur mesure pour les entreprises du coin.
-          Je soigne le design, et je fais en sorte qu’on vous trouve sur Google.
+          Votre site, votre fiche Google, vos réseaux sociaux : je m’occupe de toute votre présence en ligne,
+          et je vous conseille pour qu’elle vous amène des clients.
         </p>
         <p class="hero-lead rise d2">
           Du premier échange à la mise en ligne, vous avez une seule interlocutrice&nbsp;: moi, Alexandra.
@@ -152,7 +152,8 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
         <div class="zone-txt" data-reveal>
           <h2 id="zone-title" class="h2">Je suis basée à Mulhouse</h2>
           <p class="lead">
-            Mon agence est installée à Mulhouse, dans le sud de l’Alsace, entre les Vosges et le Rhin.
+            Mon agence est installée à Mulhouse, dans le sud de l’Alsace. Je me déplace dans un rayon de 100 km,
+            et on peut aussi se voir en visio.
           </p>
         </div>
         <div class="zone-map" data-reveal>

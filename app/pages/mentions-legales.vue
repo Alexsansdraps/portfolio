@@ -48,6 +48,7 @@ const sections = [
     p: [
       'Ce site ne dépose aucun cookie et n’utilise aucun outil de mesure d’audience ni aucun traceur publicitaire.',
       'Le lien « ce que j’écoute en ce moment » mène vers Spotify, dans un nouvel onglet : rien n’est chargé depuis Spotify tant que vous ne cliquez pas.',
+      'Le bouton « Réserver un créneau » mène vers la page de réservation Google Agenda, dans un nouvel onglet : rien n’est chargé depuis Google tant que vous ne cliquez pas. La réservation est ensuite soumise aux règles de confidentialité de Google.',
     ],
   },
   {

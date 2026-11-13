@@ -14,6 +14,8 @@ export const business = {
   region: 'Alsace',
   github: 'https://github.com/Alexsansdraps',
   spotify: 'https://open.spotify.com/user/6j2surqecwtez6nsx9etex4zd',
+  /** page de réservation Google Agenda (premier rendez-vous, en visio ou en vrai) */
+  booking: 'https://calendar.app.google/j8M5FrwVp79yotrp7',
   since: 2019,
   /** immatriculation (Insee / RNE) */
   legal: {
@@ -194,6 +196,46 @@ export const services: Service[] = [
     ],
   },
   {
+    id: 'presence-en-ligne',
+    title: 'Réseaux sociaux et présence en ligne',
+    short: 'Votre site, votre fiche Google, vos réseaux sociaux : je m’occupe de tout, et je vous conseille pour que ça vous amène des clients.',
+    long: 'Un client peut vous découvrir sur Google, sur Instagram, sur Facebook ou par votre site. Je m’occupe de l’ensemble pour que tout soit à jour, cohérent et à votre image, et je vous conseille sur ce qui vaut vraiment le coup pour votre activité.',
+    includes: [
+      'Création ou reprise de vos pages Facebook, Instagram et LinkedIn',
+      'Votre fiche Google, avec vos horaires, vos photos et vos avis',
+      'Les mêmes informations partout, et toujours à jour',
+      'La gestion de vos publications, si vous le souhaitez',
+      'Des conseils concrets, adaptés à votre activité',
+    ],
+    price: 'Sur devis',
+    prices: [
+      { label: 'Présence en ligne et réseaux sociaux', value: 'sur devis' },
+    ],
+    h1: ['Je m’occupe de', 'toute votre présence en ligne.'],
+    seoTitle: 'Gestion des réseaux sociaux et présence en ligne | Mulhouse',
+    seoDescription: 'Réseaux sociaux, fiche Google, site internet : je m’occupe de toute votre présence en ligne et je vous conseille. Agence web à Mulhouse, sur devis.',
+    linkText: 'La présence en ligne en détail',
+    forWho: [
+      'Vous n’avez pas le temps de vous occuper de vos réseaux sociaux.',
+      'Vos informations ne sont pas les mêmes sur Google, sur Facebook et sur votre site.',
+      'Vous ne savez pas par où commencer pour être visible en ligne.',
+    ],
+    faq: [
+      {
+        q: 'Vous occupez-vous aussi de mes publications ?',
+        a: 'Oui, si vous le souhaitez. On choisit ensemble le rythme et le ton, et je m’en charge. Vous pouvez aussi garder la main, et je vous conseille.',
+      },
+      {
+        q: 'Sur quels réseaux sociaux faut-il être ?',
+        a: 'Là où se trouvent vos clients, souvent Facebook et Instagram, parfois LinkedIn. Pas besoin d’être partout : je vous dis lesquels valent le coup pour votre activité.',
+      },
+      {
+        q: 'Combien coûte la gestion de ma présence en ligne ?',
+        a: 'Cela dépend de ce que vous voulez me confier. On commence par l’audit gratuit de votre présence en ligne, puis je vous envoie un devis.',
+      },
+    ],
+  },
+  {
     id: 'refonte',
     title: 'Refonte de site',
     short: 'Votre site a vieilli, ou vous voulez quitter Wix ou Shopify ? Je le reconstruis sans perdre votre place sur Google.',
@@ -311,7 +353,7 @@ export interface Temoignage { quote: string, name: string, role: string, project
 export const testimonials: Temoignage[] = []
 
 export const steps = [
-  { t: 'On se rencontre', d: 'On prend une demi-heure pour parler de votre activité et de ce que vous attendez. En rendez-vous ou en visio.' },
+  { t: 'On fait le point', d: 'Une demi-heure pour parler de votre activité et de ce que vous attendez, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
   { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
   { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
   { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },
@@ -347,6 +389,10 @@ export const faq: Faq[] = [
   {
     q: 'Si je refais mon site, est-ce que je vais perdre mes données ?',
     a: 'Non. Je récupère vos contenus (textes, photos, produits…) et je redirige les adresses de votre site actuel vers les nouvelles pages, pour que vous gardiez aussi votre place sur Google. Ça vaut aussi si vous êtes sur Wix ou Shopify.',
+  },
+  {
+    q: 'Vous déplacez-vous ?',
+    a: 'Oui, dans un rayon de 100 km autour de Mulhouse. Si vous êtes plus loin, on se voit en visio.',
   },
   {
     q: 'Et une fois le site en ligne ?',

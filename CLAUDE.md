@@ -20,8 +20,9 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.
 - L'**audit gratuit** (`/audit-gratuit`) est à mettre en avant (accueil, menu, bandeau final, formulaire) — pour un site,
   un logiciel / des outils, ou sans site.
-- Positionnement : **agence web freelance basée à Mulhouse, en Alsace**. Ne rien dire sur la zone de déplacement
-  ni sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
+- Positionnement : **agence web freelance basée à Mulhouse, en Alsace**, qui s’occupe de toute la présence en ligne
+  (site, fiche Google, réseaux sociaux, conseil). Premier rendez-vous en visio ou en vrai : elle se déplace dans un rayon de
+  **100 km** autour de Mulhouse (13/11/2026). Rien sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
 - Pas de « premier échange gratuit » : seul l'audit est gratuit. Pas de « Demander un devis » : « Parlons de votre projet ».
 - Ton naturel, à la première personne, sans slogans en deux temps ni formules toutes faites (« zéro jargon », « X, pas Y »…).

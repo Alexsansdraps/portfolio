@@ -29,6 +29,9 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
       <p class="lead rise d2">
         Dites-m’en un peu plus, même si votre idée tient encore sur un sous-bock. Je vous recontacte rapidement pour en parler.
       </p>
+      <div class="c-ctas rise d3">
+        <a :href="business.booking" class="btn" target="_blank" rel="noopener">Réserver un créneau <span aria-hidden="true">↗</span></a>
+      </div>
       </div>
       <HeroVisual class="rise d2">
         <figure class="c-pic">
@@ -50,14 +53,14 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
         </div>
         <div class="c-card">
           <p class="c-k">Où ?</p>
-          <p class="c-v">Mulhouse, en Alsace</p>
-          <p class="c-small">Rendez-vous ou visio, comme vous préférez.</p>
+          <p class="c-v">En visio, ou chez vous</p>
+          <p class="c-small">Je me déplace dans un rayon de 100 km autour de Mulhouse.</p>
         </div>
         <div class="c-card c-next">
           <p class="c-k">Et ensuite ?</p>
           <ol>
             <li>Je vous rappelle ou je vous réponds par e-mail.</li>
-            <li>On échange une demi-heure sur votre besoin.</li>
+            <li>On fait le point, en visio ou en vrai.</li>
             <li>Je vous envoie une proposition détaillée.</li>
           </ol>
         </div>
@@ -76,6 +79,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
   position: absolute; left: 6%; bottom: 10%; padding: 14px 20px; border-radius: 16px; background: #fff;
   font-weight: 720; font-size: 17px; box-shadow: 0 18px 40px -24px rgb(29 22 26 / .45); transform: rotate(-3deg);
 }
+.c-ctas { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
 .c-hero .lead { margin-top: 22px; }
 
 .c-grid {
