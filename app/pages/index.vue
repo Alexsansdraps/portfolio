@@ -10,7 +10,11 @@ usePageSeo({
 })
 
 const [lachance, memoryline] = projects
-const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (SEO)', 'Audit gratuit', 'Refonte de site', 'Logiciel métier sur mesure', 'Réseaux sociaux', 'Suivi & maintenance']
+const formules = [
+  { t: 'De A à Z', d: 'Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', lien: 'Parlons de votre projet', to: '/contact' },
+  { t: 'Juste une partie', d: 'Un site, une refonte, le référencement ou vos réseaux sociaux : je prends ce qui vous manque, et vous gardez le reste.', lien: 'Voir les services et les tarifs', to: '/services' },
+  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Commencer par l’audit gratuit', to: '/audit-gratuit' },
+]
 </script>
 
 <template>
@@ -22,11 +26,12 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
           Je crée des sites internet <em>à&nbsp;Mulhouse.</em>
         </h1>
         <p class="hero-sub rise d2">
-          Votre site, votre fiche Google, vos réseaux sociaux : je m’occupe de toute votre présence en ligne,
-          et je vous conseille pour qu’elle vous amène des clients.
+          Votre site, votre fiche Google, vos réseaux sociaux : je peux m’occuper de toute votre présence
+          en ligne, de A à Z, ou seulement de la partie qui vous manque.
         </p>
         <p class="hero-lead rise d2">
-          Du premier échange à la mise en ligne, vous avez une seule interlocutrice&nbsp;: moi, Alexandra.
+          Et si vous avez juste besoin d’un avis, je vous conseille. Dans tous les cas, vous avez une seule
+          interlocutrice&nbsp;: moi, Alexandra.
         </p>
         <div class="hero-ctas rise d3">
           <NuxtLink to="/audit-gratuit" class="btn">Audit gratuit <span class="arr" aria-hidden="true">→</span></NuxtLink>
@@ -47,14 +52,19 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
       </div>
     </section>
 
-    <!-- BANDEAU DÉFILANT -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <template v-for="n in 2" :key="n">
-          <span v-for="t in ticker" :key="`${n}-${t}`">{{ t }}<i>✦</i></span>
-        </template>
+    <!-- TROIS FAÇONS DE TRAVAILLER ENSEMBLE -->
+    <section class="formules" aria-labelledby="formules-title">
+      <div class="wrap">
+        <h2 id="formules-title" class="formules-t" data-reveal>Tout, une partie, ou juste des conseils</h2>
+        <div class="formules-grid">
+          <div v-for="f in formules" :key="f.t" class="formule" data-reveal>
+            <h3>{{ f.t }}</h3>
+            <p>{{ f.d }}</p>
+            <NuxtLink :to="f.to" class="link">{{ f.lien }} →</NuxtLink>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- RÉALISATIONS -->
     <section id="realisations" class="section on-dark" aria-labelledby="real-title">
@@ -201,22 +211,15 @@ const ticker = ['Site vitrine', 'Boutique en ligne', 'Référencement naturel (S
 .hv-front { left: 0; top: 30%; width: 82%; transform: rotate(-2deg); }
 .hv-phone { right: 2%; bottom: -2%; width: 22%; transform: rotate(4deg); }
 
-/* ---------- bandeau défilant ---------- */
-.ticker {
-  overflow: hidden; border-block: 1px solid var(--color-line);
-  background: var(--color-sand); padding: 16px 0;
-}
-.ticker-track { display: flex; width: max-content; }
-.ticker span {
-  display: inline-flex; align-items: center; gap: 28px; padding-right: 28px;
-  font-weight: 700; font-stretch: 116%; font-size: clamp(18px, 2vw, 24px); letter-spacing: -.01em;
-  white-space: nowrap;
-}
-.ticker i { font-style: normal; color: var(--color-wine); font-size: .7em; }
-@media (prefers-reduced-motion: no-preference) {
-  .ticker-track { animation: ticker 38s linear infinite; }
-  @keyframes ticker { to { transform: translateX(-50%); } }
-}
+/* ---------- tout, une partie, ou juste des conseils ---------- */
+.formules { background: var(--color-sand); border-block: 1px solid var(--color-line); padding-block: clamp(40px, 6vw, 72px); }
+.formules-t { font-weight: 760; font-stretch: 112%; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.1; letter-spacing: -.015em; }
+.formules-grid { margin-top: clamp(22px, 3vw, 36px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.formule { padding: clamp(22px, 2.6vw, 30px); border-radius: 22px; background: #fff; border: 1px solid var(--color-line); display: flex; flex-direction: column; gap: 10px; }
+.formule h3 { font-weight: 760; font-stretch: 112%; font-size: clamp(21px, 2vw, 26px); letter-spacing: -.01em; color: var(--color-wine); }
+.formule p { font-size: 16.5px; line-height: 1.6; color: var(--color-graphite); flex: 1; }
+.formule .link { width: fit-content; }
+@media (max-width: 900px) { .formules-grid { grid-template-columns: 1fr; } }
 
 /* ---------- réalisations ---------- */
 .projects { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 140px); }

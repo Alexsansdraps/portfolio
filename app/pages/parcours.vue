@@ -20,6 +20,30 @@ useJsonLd([
   },
 ])
 
+
+/* « Comment je travaille » : icônes dessinées à la main en SVG (aucune ressource externe) */
+const facons = [
+  {
+    t: 'J’écoute avant de développer',
+    d: 'Je commence par poser les bonnes questions, au client ou à l’équipe. J’en tire un cahier des charges clair, avec des priorités établies.',
+    ic: '<path d="M4 5h16v10H10l-5 4v-4H4z" /><path d="M8 9h8M8 12h5" />',
+  },
+  {
+    t: 'Le design fait partie du métier',
+    d: 'Je viens du front-end : je réalise mes maquettes sur Figma, je soigne les détails, et je préfère concevoir une interface plutôt que de me contenter de l’intégrer.',
+    ic: '<path d="M4 20l1-4L16 5l3 3L8 19z" /><path d="M14 7l3 3" />',
+  },
+  {
+    t: 'L’IA, toujours à partir d’un plan',
+    d: 'J’utilise Claude Code au quotidien, mais jamais sans plan de développement écrit au préalable : je garde la main, l’outil démultiplie la vitesse. Et les standards restent : conventions, Prettier, tests.',
+    ic: '<rect x="5" y="3" width="14" height="18" rx="2" /><path d="M9 8h6M9 12h6M9 16h3" />',
+  },
+  {
+    t: 'Jusqu’à la mise en production',
+    d: 'Spécifications, développement, recette, mise en ligne, puis le suivi. Je débogue aussi bien le web que le mobile.',
+    ic: '<path d="M21 3L3 10l7 3 3 7z" /><path d="M10 13L21 3" />',
+  },
+]
 </script>
 
 <template>
@@ -99,28 +123,22 @@ useJsonLd([
       </div>
     </section>
 
-    <!-- MÉTHODE -->
-    <section class="section wrap" aria-labelledby="how-title">
-      <div class="sec-head" data-reveal>
-        <h2 id="how-title" class="h2">Comment je travaille</h2>
-      </div>
-      <div class="how">
-        <div class="how-item" data-reveal>
-          <h3>J’écoute avant de développer</h3>
-          <p>Je commence par poser les bonnes questions, au client ou à l’équipe. J’en tire un cahier des charges clair, avec des priorités établies.</p>
+    <!-- MÉTHODE : un parcours en 4 étapes -->
+    <section class="section how-sec" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 id="how-title" class="h2">Comment je travaille</h2>
+          <p class="lead">De la première question à la mise en ligne, voilà ce qui ne change jamais.</p>
         </div>
-        <div class="how-item" data-reveal>
-          <h3>Le design fait partie du métier</h3>
-          <p>Je viens du front-end : je réalise mes maquettes sur Figma, je soigne les détails, et je préfère concevoir une interface plutôt que de me contenter de l’intégrer.</p>
-        </div>
-        <div class="how-item" data-reveal>
-          <h3>L’IA, toujours à partir d’un plan</h3>
-          <p>J’utilise Claude Code au quotidien, mais jamais sans plan de développement écrit au préalable : je garde la main, l’outil démultiplie la vitesse. Et les standards restent : conventions, Prettier, tests.</p>
-        </div>
-        <div class="how-item" data-reveal>
-          <h3>Jusqu’à la mise en production</h3>
-          <p>Spécifications, développement, recette, mise en ligne, puis le suivi. Je débogue aussi bien le web que le mobile.</p>
-        </div>
+        <ol class="how">
+          <li v-for="h in facons" :key="h.t" class="how-item" data-reveal>
+            <span class="how-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" v-html="h.ic" />
+            </span>
+            <h3>{{ h.t }}</h3>
+            <p>{{ h.d }}</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -237,10 +255,31 @@ useJsonLd([
 .st-tags li:hover { background: var(--color-rose); color: var(--color-plum); border-color: var(--color-rose); }
 
 /* ---------- méthode ---------- */
-.how { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 52px); }
-.how-item { padding-top: 20px; border-top: 2px solid var(--color-ink); }
-.how-item h3 { font-weight: 740; font-stretch: 110%; font-size: 22px; letter-spacing: -.01em; line-height: 1.2; }
-.how-item p { margin-top: 10px; color: var(--color-graphite); max-width: 52ch; }
+.how-sec { background: var(--color-blush); }
+.how { position: relative; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+/* la ligne pointillée qui relie les étapes, à hauteur des icônes */
+.how::before {
+  content: ""; position: absolute; left: 12%; right: 12%; top: 54px; height: 0;
+  border-top: 2px dashed color-mix(in srgb, var(--color-wine) 45%, transparent);
+}
+.how-item {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: #fff;
+  box-shadow: 0 18px 40px -30px rgb(29 22 26 / .45);
+  transition: transform .25s;
+}
+.how-item:hover { transform: translateY(-4px); }
+.how-ic {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
+  background: var(--color-wine); color: #fff; box-shadow: 0 0 0 6px #fff;
+}
+.how-ic svg { width: 26px; height: 26px; }
+.how-item h3 { margin-top: 4px; font-weight: 740; font-stretch: 110%; font-size: 20px; letter-spacing: -.01em; line-height: 1.2; }
+.how-item p { font-size: 15.5px; line-height: 1.6; color: var(--color-graphite); }
+@media (max-width: 1100px) {
+  .how { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .how::before { display: none; }
+}
 
 @media (max-width: 900px) {
   .p-hero { grid-template-columns: 1fr; }
@@ -253,6 +292,7 @@ useJsonLd([
   .tl-dot { left: 14px; }
   .tl-item:nth-child(even) .tl-dot { left: 38px; }
   .how { grid-template-columns: 1fr; }
+  .how-item:hover { transform: none; }
 }
 @media (max-width: 560px) {
   .st-row { grid-template-columns: 1fr; }
