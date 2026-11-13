@@ -29,7 +29,7 @@ const formules = [
           Site internet, fiche Google, réseaux sociaux&nbsp;: je vous accompagne de A à Z, ou seulement sur ce qui vous manque.
         </p>
         <p class="hero-lead rise d2">
-          Agence web à Mulhouse. Une seule interlocutrice&nbsp;: moi, Alexandra.
+          Agence web à Mulhouse. Vous gardez le même contact du début à la fin.
         </p>
         <div class="hero-ctas rise d3">
           <a :href="business.booking" class="btn" target="_blank" rel="noopener">Premier rendez-vous offert <span class="arr" aria-hidden="true">↗</span></a>
@@ -90,8 +90,9 @@ const formules = [
           et des applications mobiles.
         </p>
         <p class="about-p">
-          Pour moi, le plus important se passe avant de commencer : comprendre comment vous travaillez et ce que
-          vos clients cherchent. Je prends le temps de vous écouter, et je vous explique mes choix simplement.
+          J’ai toujours aimé le contact avec les clients : comprendre leur métier, leurs envies, et ce que leurs
+          propres clients attendent. Coder seule dans mon coin ne m’a jamais suffi. Avec mon agence, je suis
+          en lien direct avec vous, je prends le temps de vous écouter et je vous explique mes choix simplement.
         </p>
         <ul class="about-why">
           <li v-for="r in reasons" :key="r.t"><strong>{{ r.t }}.</strong> {{ r.d }}</li>
@@ -149,10 +150,10 @@ const formules = [
     <section class="section zone-sec" aria-labelledby="zone-title">
       <div class="wrap zone">
         <div class="zone-txt" data-reveal>
-          <h2 id="zone-title" class="h2">Je suis basée à Mulhouse</h2>
+          <h2 id="zone-title" class="h2">Je suis basée <em>à Mulhouse.</em></h2>
           <p class="lead">
-            Mon agence est installée à Mulhouse, dans le sud de l’Alsace. Je me déplace dans un rayon de 100 km,
-            et on peut aussi se voir en visio.
+            Mon agence est installée à Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio,
+            comme vous préférez.
           </p>
         </div>
         <div class="zone-map" data-reveal>

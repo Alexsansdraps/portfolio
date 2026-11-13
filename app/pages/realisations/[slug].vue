@@ -143,7 +143,7 @@ useJsonLd([
   margin-top: 18px; font-weight: 800; font-stretch: 118%;
   font-size: clamp(44px, 8vw, 112px); line-height: .94; letter-spacing: -.035em;
 }
-.cs-hook { margin-top: 22px; font-size: clamp(19px, 2vw, 25px); line-height: 1.4; font-weight: 500; max-width: 36ch; text-wrap: pretty; }
+.cs-hook { margin-top: 22px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; font-weight: 500; max-width: 54ch; text-wrap: pretty; }
 .cs-place { margin-top: 12px; color: var(--color-graphite); }
 .cs-ctas { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
 .cs-shot { margin-top: clamp(40px, 6vw, 72px); }

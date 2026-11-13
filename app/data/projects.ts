@@ -56,7 +56,7 @@ export const projects: Project[] = [
     live: true,
     domain: 'lachanceanimation.com',
     url: 'https://www.lachanceanimation.com',
-    hook: 'Un site qui donne envie de réserver, et que le gérant met à jour lui-même.',
+    hook: 'Refonte complète du site d’une entreprise d’animation casino : un nouveau design à l’ambiance de leurs soirées, une page par événement (mariages, soirées d’entreprise, anniversaires) et un formulaire de devis détaillé. Le gérant modifie lui-même ses formules, ses prix et ses photos.',
     summary: 'Refonte complète du site d’une entreprise d’animation casino : nouveau design, pages par type d’événement, formulaire de devis et espace d’administration.',
     context: 'La Chance Animation fait venir le casino dans les mariages, les soirées d’entreprise et les anniversaires partout en Alsace : roulette, blackjack, poker, croupiers en tenue. Leur ancien site ne rendait justice ni à l’ambiance de leurs soirées, ni au sérieux de leur travail : je l’ai entièrement refait, en reprenant leurs contenus.',
     goals: [
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     slug: 'memoryline',
     name: 'MemoryLine',
     place: '',
-    sector: 'Affiches personnalisées de villes et de paysages',
+    sector: 'Affiches personnalisées',
     kind: 'Boutique en ligne sur mesure',
     service: 'boutique-en-ligne',
     year: 2026,
@@ -109,11 +109,8 @@ export const projects: Project[] = [
       'Un espace d’administration complet : catalogue, personnages, commandes, livraisons, factures et promotions.',
       'Un site en cinq langues, et toutes les anciennes adresses Shopify reprises pour ne pas perdre le référencement.',
     ],
-    figures: [
-      { v: '200+', k: 'affiches personnalisables' },
-      { v: '5', k: 'langues' },
-      { v: '2', k: 'canaux de vente : site et salons' },
-    ],
+    // pas de chiffres clés (13/11/2026)
+    figures: [],
     cover: { src: memorylineDesktop, alt: 'Configurateur d’affiche MemoryLine : aperçu de l’affiche « Mulhouse, Tour du Bollwerk » et choix des textes', w: 1440, h: 900 },
     mobile: { src: memorylineMobile, alt: 'Le configurateur MemoryLine sur téléphone', w: 600, h: 1200, theme: 'light' },
     extra: { src: memorylineCatalogue, alt: 'Catalogue MemoryLine : affiches illustrées de Riquewihr', w: 1440, h: 900 },

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { steps, stack } from '~/data/experience'
+import { steps } from '~/data/experience'
 import portrait from '~/assets/img/portrait.webp'
 
 const years = new Date().getFullYear() - 2019
 
 usePageSeo({
   title: `Mon parcours : ${years} ans de développement web | Alexandra Porhansl`,
-  description: 'Développeuse full-stack depuis 2019 (agence web, startup SaaS, e-commerce, éditeur de logiciels), aujourd’hui salariée, avec mon agence web à Mulhouse.',
+  description: 'Développeuse web depuis 2019 : agence web, jeune entreprise, e-commerce et éditeur de logiciels. Aujourd’hui salariée, avec mon agence web à Mulhouse.',
   path: '/parcours',
   type: 'article',
 })
@@ -24,23 +24,23 @@ useJsonLd([
 /* « Comment je travaille » : icônes dessinées à la main en SVG (aucune ressource externe) */
 const facons = [
   {
-    t: 'J’écoute avant de développer',
-    d: 'Je commence par poser les bonnes questions, au client ou à l’équipe. J’en tire un cahier des charges clair, avec des priorités établies.',
+    t: 'Écoute',
+    d: 'Je commence par vous poser les bonnes questions, sur votre métier et sur vos clients. On fixe ensemble les priorités avant de démarrer.',
     ic: '<path d="M4 5h16v10H10l-5 4v-4H4z" /><path d="M8 9h8M8 12h5" />',
   },
   {
-    t: 'Le design fait partie du métier',
-    d: 'Je viens du front-end : je réalise mes maquettes sur Figma, je soigne les détails, et je préfère concevoir une interface plutôt que de me contenter de l’intégrer.',
+    t: 'Design',
+    d: 'Je dessine les pages avant de les construire, je soigne les détails, et je pense d’abord à ceux qui vont s’en servir.',
     ic: '<path d="M4 20l1-4L16 5l3 3L8 19z" /><path d="M14 7l3 3" />',
   },
   {
-    t: 'L’IA, toujours à partir d’un plan',
-    d: 'J’utilise Claude Code au quotidien, mais jamais sans plan de développement écrit au préalable : je garde la main, l’outil démultiplie la vitesse. Et les standards restent : conventions, Prettier, tests.',
+    t: 'Méthode',
+    d: 'Rien n’est fait au hasard : je pars d’un plan clair, validé avec vous, et je vous montre l’avancement à chaque étape.',
     ic: '<rect x="5" y="3" width="14" height="18" rx="2" /><path d="M9 8h6M9 12h6M9 16h3" />',
   },
   {
-    t: 'Jusqu’à la mise en production',
-    d: 'Spécifications, développement, recette, mise en ligne, puis le suivi. Je débogue aussi bien le web que le mobile.',
+    t: 'Suivi',
+    d: 'Je m’occupe de tout jusqu’à la mise en ligne, puis je reste là pour les mises à jour et les petites évolutions.',
     ic: '<path d="M21 3L3 10l7 3 3 7z" /><path d="M10 13L21 3" />',
   },
 ]
@@ -53,7 +53,7 @@ const facons = [
         <h1 class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
         <p class="lead rise d2">
           J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
-          de logiciels. Aujourd’hui je suis développeuse full-stack salariée et je mène en parallèle mon agence web en Alsace.
+          de logiciels. Aujourd’hui je suis développeuse web salariée et je mène en parallèle mon agence web en Alsace.
         </p>
       </div>
       <div class="p-hero-pic rise d2">
@@ -106,22 +106,6 @@ const facons = [
       </div>
     </section>
 
-    <!-- STACK -->
-    <section class="section on-dark" aria-labelledby="stack-title">
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <h2 id="stack-title" class="h2">Les outils que j’utilise</h2>
-        </div>
-        <div class="st-rows">
-          <div v-for="g in stack" :key="g.label" class="st-row" data-reveal>
-            <span class="st-k">{{ g.label }}</span>
-            <ul class="st-tags">
-              <li v-for="i in g.items" :key="i">{{ i }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- MÉTHODE : un parcours en 4 étapes -->
     <section class="section how-sec" aria-labelledby="how-title">
@@ -236,23 +220,6 @@ const facons = [
 .tl-tags { list-style: none; margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
 .tl-link { display: inline-block; margin-top: 18px; }
 
-/* ---------- stack ---------- */
-.st-rows { display: flex; flex-direction: column; }
-.st-row {
-  display: grid; grid-template-columns: 160px 1fr; gap: 12px 32px; align-items: baseline;
-  padding: 20px 0; border-top: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent);
-}
-.st-row:last-child { border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 16%, transparent); }
-.st-k { font-weight: 650; font-size: 14.5px; color: var(--color-rose); }
-.st-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.st-tags li {
- font-size: 14px;
-  padding: 7px 13px; border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--color-bone) 22%, transparent);
-  color: var(--color-bone);
-  transition: background .2s, color .2s, border-color .2s;
-}
-.st-tags li:hover { background: var(--color-rose); color: var(--color-plum); border-color: var(--color-rose); }
 
 /* ---------- méthode ---------- */
 .how-sec { background: var(--color-blush); }

@@ -13,7 +13,8 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 
 - **Français uniquement.** Textes partagés dans `app/data/` (`site.ts` : services, FAQ, zone ; `projects.ts` : réalisations ;
   `experience.ts` : parcours), le reste directement dans les pages.
-- **Côté clients, zéro jargon** (accueil, services, réalisations, contact). Le vocabulaire technique n'a sa place que sur `/parcours`.
+- **Zéro jargon, partout**, y compris sur `/parcours` (13/11/2026 : « pour monsieur tout le monde ») : pas de liste d'outils,
+  pas de noms de technologies, pas de Claude ni d'« IA » dans la façon de travailler.
 - **Tarifs** : grille validée par Alexandra (base 280 € HT / jour, après la baisse de 30 % du 12/11/2026, vendue au forfait), dans `app/data/site.ts`
   (`price` sur les cartes de l'accueil, `prices` sur la page Services via `PriceList`, `minPrice` pour les données structurées,
   `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
@@ -30,8 +31,8 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 - Petits clins d'œil alsaciens bienvenus (Hopla, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
 - MemoryLine n'est pas alsacienne : pas de mention de l'Alsace pour elle. La Chance Animation et La Chance Production (Guebwiller) le sont.
-- Réalisations (`app/data/projects.ts`) : parler de « refonte », jamais de Wix ni d'abonnement économisé ; chiffres clés
-  qui ne bougent pas (« 200+ » plutôt qu'un compte exact). Captures : 1440 × 900 (ordinateur), 600 × 1200 (téléphone), en WebP.
+- Réalisations (`app/data/projects.ts`) : parler de « refonte », jamais de Wix ni d'abonnement économisé ; plus aucun chiffre clé
+  sur les réalisations (retirés le 13/11/2026). Captures : 1440 × 900 (ordinateur), 600 × 1200 (téléphone), en WebP.
 - Design system : tokens dans `app/assets/css/main.css` (`paper`, `sand`, `ink`, `wine`, `plum`…). Thème clair papier,
   bandeaux sombres `.on-dark`, accent unique wine `#a1264c` (échantillonné sur le portrait). Boutons en pilule, cartes arrondies.
 - Typo : Archivo variable (titres `font-stretch` 110–118 %, graisse 700–800) + JB Mono pour les méta. Fontes self-hostées
@@ -40,7 +41,7 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   `[data-count]`, carte de l'Alsace, frise en serpentine du parcours — tracé dans `app/utils/serpentine.ts`).
   Respecter `prefers-reduced-motion` pour toute nouvelle animation.
 - Le téléphone d'Alexandra n'apparaît jamais sur le site.
-- Page Parcours : « développeuse full-stack salariée » dans l'intro ; Infosat n'apparaît que dans la frise. Pas de chiffres-clés en tête de page.
+- Page Parcours : « développeuse web salariée » dans l'intro ; Infosat n'apparaît que dans la frise. Pas de chiffres-clés en tête de page.
 
 ## Référencement
 

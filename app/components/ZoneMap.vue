@@ -2,10 +2,7 @@
 import { zone } from '~/data/site'
 
 const { home, cities } = zone
-const aria = `Carte de l’Alsace avec Mulhouse, ${cities.map(c => c.name).join(', ')}, et le rayon de 100 km autour de Mulhouse`
-
-/* 100 km ≈ 322 unités (0,9° de latitude × 360 ; 1,34° de longitude × 240 à cette latitude) */
-const rayon = 322
+const aria = `Carte de l’Alsace avec Mulhouse et ${cities.map(c => c.name).join(', ')}`
 
 /* Le Rhin, de Bâle à Lauterbourg (mêmes coordonnées projetées que les villes) */
 const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 320, 234 290 S 255 220, 268 189 S 300 140, 328 110 S 360 70, 371 49'
@@ -21,11 +18,6 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
     <path class="wine-road" d="M 101 468 L 122 432 L 148 337 L 184 250 L 194 175" />
     <text class="geo wine" x="146" y="296" transform="rotate(-70 146 296)">ROUTE DES VINS</text>
 
-    <!-- rayon de déplacement : 100 km autour de Mulhouse, coupé aux bords de la carte -->
-    <clipPath id="zm-cadre"><rect x="40" y="30" width="380" height="600" /></clipPath>
-    <circle class="radius" :cx="home.x" :cy="home.y" :r="rayon" clip-path="url(#zm-cadre)" />
-    <text class="geo radius-t" :x="home.x" :y="home.y - rayon - 8" text-anchor="middle">100 KM</text>
-
     <!-- Rhin + pays voisins -->
     <path class="rhine" :d="rhine" />
     <text class="geo river" x="283" y="246" transform="rotate(-56 283 246)">RHIN</text>
@@ -38,9 +30,10 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
     </g>
 
     <g class="home">
-      <circle class="home-halo" :cx="home.x" :cy="home.y" r="16" />
-      <circle class="home-dot" :cx="home.x" :cy="home.y" r="6.5" />
-      <text class="c-name home-name" :x="home.x + 14" :y="home.y + 20">{{ home.name }}</text>
+      <circle class="home-halo" :cx="home.x" :cy="home.y" r="26" />
+      <circle class="home-dot" :cx="home.x" :cy="home.y" r="9" />
+      <rect class="home-tag" :x="home.x + 16" :y="home.y + 6" width="104" height="30" rx="15" />
+      <text class="home-name" :x="home.x + 68" :y="home.y + 26" text-anchor="middle">{{ home.name }}</text>
     </g>
   </svg>
 </template>
@@ -52,8 +45,6 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
   font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .3em;
   fill: var(--color-mute); opacity: .8;
 }
-.radius { fill: none; stroke: var(--color-wine); stroke-width: 1.5; stroke-dasharray: 5 6; opacity: .7; }
-.geo.radius-t { fill: var(--color-wine); opacity: 1; letter-spacing: .2em; }
 .rhine { fill: none; stroke: #8db3cf; stroke-width: 3; stroke-linecap: round; opacity: .75; }
 .river { fill: #5d87a6; }
 .wine-road { fill: none; stroke: #b7a06a; stroke-width: 2; stroke-dasharray: 1 5; stroke-linecap: round; }
@@ -66,7 +57,8 @@ const rhine = 'M 218 600 C 214 560, 205 520, 203 470 S 212 400, 215 387 S 228 32
 .c-name, .c-time { paint-order: stroke; stroke: var(--color-paper); stroke-width: 4px; stroke-linejoin: round; }
 .home-dot { fill: var(--color-wine); }
 .home-halo { fill: var(--color-wine); opacity: .18; transform-box: fill-box; transform-origin: center; }
-.home-name { font-size: 16px; font-weight: 780; fill: var(--color-wine); }
+.home-tag { fill: var(--color-wine); }
+.home-name { font-family: var(--font-display); font-size: 16px; font-weight: 780; fill: #fff; }
 
 @media (prefers-reduced-motion: no-preference) {
   .home-halo { animation: halo 2.6s ease-out infinite; }
