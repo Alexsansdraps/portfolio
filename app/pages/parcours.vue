@@ -6,7 +6,7 @@ const years = new Date().getFullYear() - 2019
 
 usePageSeo({
   title: `Mon parcours : ${years} ans de développement web | Alexandra Porhansl`,
-  description: 'Développeuse web depuis 2019 : agence web, jeune entreprise, e-commerce et éditeur de logiciels. Aujourd’hui salariée, avec mon agence web à Mulhouse.',
+  description: 'Développeuse web depuis 2019 : agence web, startup, e-commerce et éditeur de logiciels. Aujourd’hui salariée, et freelance à Mulhouse.',
   path: '/parcours',
   type: 'article',
 })
@@ -21,27 +21,19 @@ useJsonLd([
 ])
 
 
-/* « Comment je travaille » : icônes dessinées à la main en SVG (aucune ressource externe) */
+/* « Comment je travaille » : 3 étapes numérotées */
 const facons = [
   {
     t: 'Écoute',
     d: 'Je commence par vous poser les bonnes questions, sur votre métier et sur vos clients. On fixe ensemble les priorités avant de démarrer.',
-    ic: '<path d="M4 5h16v10H10l-5 4v-4H4z" /><path d="M8 9h8M8 12h5" />',
   },
   {
-    t: 'Design',
-    d: 'Je dessine les pages avant de les construire, je soigne les détails, et je pense d’abord à ceux qui vont s’en servir.',
-    ic: '<path d="M4 20l1-4L16 5l3 3L8 19z" /><path d="M14 7l3 3" />',
-  },
-  {
-    t: 'Méthode',
-    d: 'Rien n’est fait au hasard : je pars d’un plan clair, validé avec vous, et je vous montre l’avancement à chaque étape.',
-    ic: '<rect x="5" y="3" width="14" height="18" rx="2" /><path d="M9 8h6M9 12h6M9 16h3" />',
+    t: 'Conception',
+    d: 'Je dessine les pages avant de les construire, à partir d’un plan clair validé avec vous. Je soigne les détails et je vous montre l’avancement à chaque étape.',
   },
   {
     t: 'Suivi',
     d: 'Je m’occupe de tout jusqu’à la mise en ligne, puis je reste là pour les mises à jour et les petites évolutions.',
-    ic: '<path d="M21 3L3 10l7 3 3 7z" /><path d="M10 13L21 3" />',
   },
 ]
 </script>
@@ -53,7 +45,7 @@ const facons = [
         <h1 class="p-h1 rise d1">Développeuse <em>depuis 2019</em></h1>
         <p class="lead rise d2">
           J’ai commencé en agence web en 2019, puis j’ai travaillé dans une startup, dans l’e-commerce et chez un éditeur
-          de logiciels. Aujourd’hui je suis développeuse web salariée et je mène en parallèle mon agence web en Alsace.
+          de logiciels. Aujourd’hui je suis développeuse web salariée et je travaille en parallèle en freelance, à Mulhouse.
         </p>
       </div>
       <div class="p-hero-pic rise d2">
@@ -115,10 +107,8 @@ const facons = [
           <p class="lead">De la première question à la mise en ligne, voilà ce qui ne change jamais.</p>
         </div>
         <ol class="how">
-          <li v-for="h in facons" :key="h.t" class="how-item" data-reveal>
-            <span class="how-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" v-html="h.ic" />
-            </span>
+          <li v-for="(h, i) in facons" :key="h.t" class="how-item" data-reveal>
+            <span class="how-ic" aria-hidden="true">{{ i + 1 }}</span>
             <h3>{{ h.t }}</h3>
             <p>{{ h.d }}</p>
           </li>
@@ -223,10 +213,10 @@ const facons = [
 
 /* ---------- méthode ---------- */
 .how-sec { background: var(--color-blush); }
-.how { position: relative; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.how { position: relative; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
 /* la ligne pointillée qui relie les étapes, à hauteur des icônes */
 .how::before {
-  content: ""; position: absolute; left: 12%; right: 12%; top: 54px; height: 0;
+  content: ""; position: absolute; left: 16%; right: 16%; top: 54px; height: 0;
   border-top: 2px dashed color-mix(in srgb, var(--color-wine) 45%, transparent);
 }
 .how-item {
@@ -240,11 +230,10 @@ const facons = [
   display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
   background: var(--color-wine); color: #fff; box-shadow: 0 0 0 6px #fff;
 }
-.how-ic svg { width: 26px; height: 26px; }
+.how-ic { font-weight: 780; font-stretch: 112%; font-size: 24px; line-height: 1; }
 .how-item h3 { margin-top: 4px; font-weight: 740; font-stretch: 110%; font-size: 20px; letter-spacing: -.01em; line-height: 1.2; }
 .how-item p { font-size: 15.5px; line-height: 1.6; color: var(--color-graphite); }
-@media (max-width: 1100px) {
-  .how { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) {
   .how::before { display: none; }
 }
 

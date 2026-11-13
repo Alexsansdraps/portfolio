@@ -11,7 +11,7 @@ export interface Step {
   tags: string[]
   /** étape en cours → point qui pulse */
   now?: boolean
-  /** étape « maison » (l'agence) plutôt qu'un employeur */
+  /** étape « maison » (son activité freelance) plutôt qu'un employeur */
   own?: boolean
 }
 
@@ -42,12 +42,12 @@ export const steps: Step[] = [
     company: 'Vivocaz',
     place: 'Soissons',
     role: 'Développeuse web et mobile',
-    context: 'Jeune entreprise qui édite un logiciel de gestion de flotte automobile',
+    context: 'Startup qui édite plusieurs logiciels de digitalisation (Vivocaz, Vivofleet, Vivodrive)',
     bullets: [
-      { k: 'Web et mobile', t: 'les écrans du logiciel, sur ordinateur comme sur téléphone.' },
-      { k: 'Application iPhone', t: 'développée jusqu’à sa publication sur l’App Store.' },
+      { k: 'Web et mobile', t: 'les écrans des logiciels, sur ordinateur comme sur téléphone.' },
+      { k: 'Application iPhone', t: 'développement de nouvelles fonctionnalités de l’application Vivocaz.' },
       { k: 'Design', t: 'conception des écrans, pour qu’ils restent simples à utiliser.' },
-      { k: 'Qualité', t: 'des règles communes et des tests pour fiabiliser le logiciel.' },
+      { k: 'Qualité', t: 'des règles communes et des tests pour fiabiliser les logiciels.' },
     ],
     tags: [],
   },
@@ -84,14 +84,14 @@ export const steps: Step[] = [
     id: 'agence',
     year: '2026',
     dates: '2026 – aujourd’hui',
-    company: 'Mon agence web',
-    place: 'Mulhouse, Alsace',
-    role: 'Fondatrice',
-    context: 'Sites, boutiques en ligne, réseaux sociaux et logiciels sur mesure',
+    company: 'À mon compte',
+    place: 'Mulhouse',
+    role: 'Développeuse web freelance',
+    context: 'Indépendante, pour les entreprises qui veulent être visibles en ligne',
     bullets: [
-      { k: 'La Chance Animation', t: 'refonte du site, avec un espace pour que le gérant modifie ses contenus seul et un formulaire de devis.' },
-      { k: 'MemoryLine', t: 'boutique en ligne sur mesure, avec un configurateur d’affiches, le paiement en ligne et la vente sur les salons.' },
-      { k: 'La Chance Production', t: 'refonte du site, avec un espace de gestion, des comptes clients et des galeries photos privées.' },
+      { k: 'Sites et boutiques', t: 'je conçois des sites vitrines, des boutiques en ligne et des logiciels sur mesure.' },
+      { k: 'Visibilité', t: 'référencement Google, fiche Google et réseaux sociaux, pour que mes clients soient trouvés.' },
+      { k: 'Accompagnement', t: 'conseil et suivi, de A à Z ou seulement sur la partie qui manque.' },
     ],
     tags: [],
     now: true,
@@ -104,7 +104,7 @@ export const steps: Step[] = [
     company: 'Infosat',
     place: '',
     role: 'Développeuse web',
-    context: 'En parallèle de mon agence',
+    context: 'En parallèle de mon activité freelance',
     bullets: [],
     tags: [],
     now: true,

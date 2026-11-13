@@ -20,13 +20,14 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
   la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.
 - **Plus d'audit gratuit** (retiré le 13/11/2026, `/audit-gratuit` redirige en 301 vers `/contact`). À la place : un
-  **premier rendez-vous d'une heure, offert** (situation, besoins), réservé sur Google Agenda (`business.booking`).
+  **premier rendez-vous d'une heure, gratuit et sans engagement** (situation, besoins ; dire « gratuit et sans engagement », pas « offert »), réservé sur Google Agenda (`business.booking`).
   Les boutons « Parlons de votre projet » ouvrent cette page de réservation ; le formulaire reste sur `/contact`.
-- Positionnement : **agence web freelance basée à Mulhouse, en Alsace**, qui s’occupe de toute la présence en ligne
+- Positionnement : **développeuse web freelance à Mulhouse, en Alsace** (ne plus dire « agence » pour se présenter, 13/11/2026 ;
+  « agence web » seulement pour son ancien employeur), qui s’occupe de toute la présence en ligne
   (site, fiche Google, réseaux sociaux, conseil). Premier rendez-vous en visio ou en vrai : elle se déplace dans un rayon de
   **100 km** autour de Mulhouse (13/11/2026). Rien sur des clients « partout » (ni « Alsace uniquement », ni « monde entier »).
   Une seule interlocutrice, sur mesure, référencement (SEO) pensé dès le départ — le SEO est aussi un service à part entière.
-- Seul le premier rendez-vous (1 h) est offert. Pas de « Demander un devis » : « Parlons de votre projet ».
+- Seul le premier rendez-vous (1 h) est gratuit. Pas de « Demander un devis » : « Parlons de votre projet ».
 - Ton naturel, à la première personne, sans slogans en deux temps ni formules toutes faites (« zéro jargon », « X, pas Y »…).
 - Petits clins d'œil alsaciens bienvenus (Hopla, Merci vielmols, bretzel, sous-bock, Vosges / Rhin, Route des vins), avec parcimonie.
 - **Aucune référence aux clients dans la FAQ** (les réalisations ont leurs propres pages).
@@ -46,7 +47,7 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
 ## Référencement
 
 - Chaque page appelle `usePageSeo()` (title ≈ 60 car., description ≈ 155, canonical, Open Graph) — `app/composables/usePageSeo.ts`.
-- Requêtes visées : « création site internet Mulhouse », « agence web Mulhouse » (accueil : title + H1),
+- Requêtes visées : « création site internet Mulhouse », « freelance web Mulhouse » (accueil : title),
   puis une page par service `/services/{id}` (`pages/services/[id].vue`, textes dans `site.ts` : `h1`, `seoTitle`,
   `seoDescription`, `linkText`, `forWho`, `faq`). `/services` reste la page récapitulative avec les tarifs.
   Les liens vers un service pointent vers sa page dédiée (accueil, pied de page, réalisations), plus vers `#ancre`.

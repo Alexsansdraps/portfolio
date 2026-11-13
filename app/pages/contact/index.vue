@@ -4,7 +4,7 @@ import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
   title: 'Contact : votre projet de site internet à Mulhouse',
-  description: 'Un projet de site, de réseaux sociaux ou de logiciel ? Réservez un premier rendez-vous d’une heure, offert, ou écrivez-moi. Agence web à Mulhouse.',
+  description: 'Un projet de site, de réseaux sociaux ou de logiciel ? Réservez un premier rendez-vous d’une heure, gratuit et sans engagement, ou écrivez-moi. Développeuse web freelance à Mulhouse.',
   path: '/contact',
 })
 
@@ -60,7 +60,7 @@ const cities = [zone.home.name, ...zone.cities.map(c => c.name)].join(', ')
           <p class="c-k">Et ensuite ?</p>
           <ol>
             <li>Je vous rappelle ou je vous réponds par e-mail.</li>
-            <li>Un premier rendez-vous d’une heure, offert, pour parler de votre situation et de vos besoins.</li>
+            <li>Un premier rendez-vous d’une heure, gratuit et sans engagement, pour parler de votre situation et de vos besoins.</li>
             <li>Je vous envoie une proposition détaillée.</li>
           </ol>
         </div>

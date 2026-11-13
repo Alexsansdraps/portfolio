@@ -4,8 +4,8 @@ import { projects } from '~/data/projects'
 import portrait from '~/assets/img/portrait.webp'
 
 usePageSeo({
-  title: 'Création de site internet à Mulhouse | Agence web en Alsace',
-  description: 'Agence web à Mulhouse : sites internet, boutiques en ligne, référencement Google, réseaux sociaux et logiciels sur mesure. Premier rendez-vous offert.',
+  title: 'Création de site internet à Mulhouse | Freelance en Alsace',
+  description: 'Développeuse web freelance à Mulhouse : sites internet, boutiques en ligne, référencement Google, réseaux sociaux et logiciels sur mesure. Premier rendez-vous gratuit et sans engagement.',
   path: '/',
 })
 
@@ -13,7 +13,7 @@ const [lachance, memoryline] = projects
 const formules = [
   { t: 'De A à Z', d: 'Je m’occupe de tout : votre site, votre fiche Google, vos réseaux sociaux, puis le suivi une fois en ligne.', lien: 'Parlons de votre projet', to: business.booking },
   { t: 'Juste une partie', d: 'Un site, une refonte, le référencement ou vos réseaux sociaux : je prends ce qui vous manque, et vous gardez le reste.', lien: 'Voir les services et les tarifs', to: '/services' },
-  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Réserver le rendez-vous offert', to: business.booking },
+  { t: 'Des conseils', d: 'Un regard extérieur sur ce que vous faites déjà, pour savoir quoi améliorer en priorité.', lien: 'Réserver un rendez-vous gratuit', to: business.booking },
 ]
 </script>
 
@@ -29,10 +29,10 @@ const formules = [
           Site internet, fiche Google, réseaux sociaux&nbsp;: je vous accompagne de A à Z, ou seulement sur ce qui vous manque.
         </p>
         <p class="hero-lead rise d2">
-          Agence web à Mulhouse. Vous gardez le même contact du début à la fin.
+          Développeuse web freelance à Mulhouse&nbsp;: vous gardez le même contact du début à la fin.
         </p>
         <div class="hero-ctas rise d3">
-          <a :href="business.booking" class="btn" target="_blank" rel="noopener">Premier rendez-vous offert <span class="arr" aria-hidden="true">↗</span></a>
+          <a :href="business.booking" class="btn" target="_blank" rel="noopener">Rendez-vous gratuit <span class="arr" aria-hidden="true">↗</span></a>
           <NuxtLink to="/realisations" class="btn btn-ghost">Voir mes réalisations</NuxtLink>
         </div>
       </div>
@@ -80,18 +80,18 @@ const formules = [
     <!-- À PROPOS -->
     <section class="section wrap about" aria-labelledby="about-title">
       <div class="about-pic" data-reveal>
-        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, fondatrice de l’agence" loading="lazy" decoding="async">
+        <img :src="portrait" width="720" height="900" alt="Portrait d’Alexandra Porhansl, développeuse web freelance" loading="lazy" decoding="async">
       </div>
       <div class="about-txt" data-reveal>
         <h2 id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
         <p class="lead">
-          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de lancer mon agence, j’ai travaillé
+          Je crée des sites web depuis {{ new Date().getFullYear() - 2019 }} ans. Avant de me lancer en freelance, j’ai travaillé
           en agence web, dans une startup et chez des éditeurs de logiciels, sur des sites, des boutiques en ligne
           et des applications mobiles.
         </p>
         <p class="about-p">
           J’ai toujours aimé le contact avec les clients : comprendre leur métier, leurs envies, et ce que leurs
-          propres clients attendent. Coder seule dans mon coin ne m’a jamais suffi. Avec mon agence, je suis
+          propres clients attendent. Coder seule dans mon coin ne m’a jamais suffi. En freelance, je suis
           en lien direct avec vous, je prends le temps de vous écouter et je vous explique mes choix simplement.
         </p>
         <ul class="about-why">
@@ -108,10 +108,10 @@ const formules = [
     <section class="section rdv-sec" aria-labelledby="rdv-title">
       <div class="wrap rdv">
         <div data-reveal>
-          <h2 id="rdv-title" class="h2">Un premier rendez-vous d’une heure, <em>offert.</em></h2>
+          <h2 id="rdv-title" class="h2">Un premier rendez-vous d’une heure, <em>gratuit et sans engagement.</em></h2>
           <p class="lead">
             On discute ensemble de votre situation, de vos besoins, de ce qui marche déjà et de ce qui vous manque.
-            En visio ou en vrai, et sans engagement.
+            En visio ou en vrai, comme vous préférez.
           </p>
         </div>
         <a :href="business.booking" class="btn rdv-btn" target="_blank" rel="noopener" data-reveal>Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
@@ -152,7 +152,7 @@ const formules = [
         <div class="zone-txt" data-reveal>
           <h2 id="zone-title" class="h2">Je suis basée <em>à Mulhouse.</em></h2>
           <p class="lead">
-            Mon agence est installée à Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio,
+            Je travaille depuis Mulhouse, dans le sud de l’Alsace. On se voit en vrai ou en visio,
             comme vous préférez.
           </p>
         </div>
@@ -214,7 +214,7 @@ const formules = [
 /* ---------- réalisations ---------- */
 .projects { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 140px); }
 
-/* ---------- premier rendez-vous offert ---------- */
+/* ---------- premier rendez-vous gratuit ---------- */
 .rdv-sec { background: var(--color-blush); }
 .rdv { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 56px; align-items: end; }
 .rdv .h2 em { font-style: normal; color: var(--color-wine); }

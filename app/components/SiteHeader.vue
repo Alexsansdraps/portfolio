@@ -25,7 +25,7 @@ onMounted(() => {
 <template>
   <header class="bar" :class="{ scrolled, open }">
     <div class="wrap bar-in">
-      <NuxtLink to="/" class="brand" aria-label="Alexandra Porhansl, agence web — accueil">
+      <NuxtLink to="/" class="brand" aria-label="Alexandra Porhansl, développeuse web freelance, accueil">
         <span class="b-name">Alexandra Porhansl<span class="dot">.</span></span>
       </NuxtLink>
 

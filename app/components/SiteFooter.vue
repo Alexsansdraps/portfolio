@@ -11,7 +11,7 @@ const year = new Date().getFullYear()
         <div class="f-brand">
           <p class="f-name">Alexandra Porhansl<span>.</span></p>
           <p class="f-desc">
-            Agence web freelance basée à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
+            Développeuse web freelance à Mulhouse, en Alsace. Sites vitrines, boutiques en ligne, référencement
             et logiciels métier sur mesure.
           </p>
           <a :href="business.booking" class="btn f-cta" target="_blank" rel="noopener">Parlons de votre projet <span class="arr" aria-hidden="true">↗</span></a>
@@ -23,7 +23,7 @@ const year = new Date().getFullYear()
         </nav>
 
         <nav class="f-col" aria-label="Le site">
-          <p class="f-h">L’agence</p>
+          <p class="f-h">Le site</p>
           <NuxtLink to="/realisations">Réalisations</NuxtLink>
           <NuxtLink to="/parcours">Mon parcours</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>

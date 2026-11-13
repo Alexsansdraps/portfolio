@@ -1,12 +1,12 @@
 /**
- * Infos de l'agence et contenus partagés entre plusieurs pages.
+ * Infos de l'activité et contenus partagés entre plusieurs pages.
  * Le site est en français uniquement : les textes vivent ici ou directement dans les pages.
  * Côté clients (accueil, services, réalisations) : vocabulaire simple, pas de jargon technique.
  */
 
 export const business = {
   name: 'Alexandra Porhansl',
-  tagline: 'Agence web freelance en Alsace',
+  tagline: 'Développeuse web freelance à Mulhouse',
   email: 'a.porhansl@icloud.com',
   city: 'Mulhouse',
   postalCode: '68100',
@@ -171,8 +171,8 @@ export const services: Service[] = [
     ],
     project: 'la-chance-animation',
     h1: ['Être trouvé', 'sur Google.'],
-    seoTitle: 'Référencement naturel (SEO) à Mulhouse | Agence web',
-    seoDescription: 'Être trouvé sur Google par vos clients : titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Premier rendez-vous offert, à Mulhouse.',
+    seoTitle: 'Référencement naturel (SEO) à Mulhouse | Freelance web',
+    seoDescription: 'Être trouvé sur Google par vos clients : titres et textes travaillés, site rapide, fiche Google et suivi des résultats. Premier rendez-vous gratuit, à Mulhouse.',
     linkText: 'Le référencement en détail',
     forWho: [
       'Votre site existe, mais personne ne le trouve quand on cherche votre métier et votre ville.',
@@ -212,7 +212,7 @@ export const services: Service[] = [
     ],
     h1: ['Je m’occupe de', 'toute votre présence en ligne.'],
     seoTitle: 'Gestion des réseaux sociaux et présence en ligne | Mulhouse',
-    seoDescription: 'Réseaux sociaux, fiche Google, site internet : je m’occupe de toute votre présence en ligne et je vous conseille. Agence web à Mulhouse, sur devis.',
+    seoDescription: 'Réseaux sociaux, fiche Google, site internet : je m’occupe de toute votre présence en ligne et je vous conseille. Freelance à Mulhouse, sur devis.',
     linkText: 'La présence en ligne en détail',
     forWho: [
       'Vous n’avez pas le temps de vous occuper de vos réseaux sociaux.',
@@ -230,7 +230,7 @@ export const services: Service[] = [
       },
       {
         q: 'Combien coûte la gestion de ma présence en ligne ?',
-        a: 'Cela dépend de ce que vous voulez me confier. On en parle au premier rendez-vous, offert, puis je vous envoie un devis.',
+        a: 'Cela dépend de ce que vous voulez me confier. On en parle au premier rendez-vous, gratuit et sans engagement, puis je vous envoie un devis.',
       },
     ],
   },
@@ -291,7 +291,7 @@ export const services: Service[] = [
     ],
     project: 'memoryline',
     h1: ['Je développe', 'votre logiciel métier.'],
-    seoTitle: 'Logiciel métier sur mesure à Mulhouse | Agence web',
+    seoTitle: 'Logiciel métier sur mesure à Mulhouse | Freelance web',
     seoDescription: 'Logiciel métier, espace client, prise de rendez-vous, tableau de bord : un outil sur mesure qui remplace vos tableurs et vos ressaisies. Sur devis, à Mulhouse.',
     linkText: 'Le logiciel métier en détail',
     forWho: [
@@ -310,7 +310,7 @@ export const services: Service[] = [
       },
       {
         q: 'Combien coûte un logiciel sur mesure ?',
-        a: 'Le prix dépend de ce que l’outil doit faire. On fait d’abord le point sur vos outils actuels au premier rendez-vous, offert, puis je vous envoie un devis détaillé.',
+        a: 'Le prix dépend de ce que l’outil doit faire. On fait d’abord le point sur vos outils actuels au premier rendez-vous, gratuit et sans engagement, puis je vous envoie un devis détaillé.',
       },
     ],
   },
@@ -352,7 +352,7 @@ export interface Temoignage { quote: string, name: string, role: string, project
 export const testimonials: Temoignage[] = []
 
 export const steps = [
-  { t: 'On fait le point', d: 'Une heure, offerte, pour parler de votre situation et de vos besoins, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
+  { t: 'On fait le point', d: 'Une heure, gratuite et sans engagement, pour parler de votre situation et de vos besoins, en visio ou en vrai : je me déplace dans un rayon de 100 km autour de Mulhouse.' },
   { t: 'Je vous envoie une proposition', d: 'Avec le détail de ce que je vais faire, le délai et le prix. Si quelque chose ne vous convient pas, on en discute.' },
   { t: 'Je construis le site', d: 'Je vous montre l’avancement au fur et à mesure. Vous me dites ce qui vous plaît ou non, et j’ajuste.' },
   { t: 'Mise en ligne', d: 'Je mets le site en ligne et je vous montre comment vous en servir. Ensuite, je reste joignable.' },

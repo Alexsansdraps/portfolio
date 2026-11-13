@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 
   site: {
     url: siteUrl,
-    name: 'Alexandra Porhansl — Agence web en Alsace',
+    name: 'Alexandra Porhansl, développeuse web freelance',
     defaultLocale: 'fr',
   },
 

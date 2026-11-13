@@ -4,7 +4,7 @@ import { findProject } from '~/data/projects'
 
 usePageSeo({
   title: 'Services et tarifs : création de site et SEO à Mulhouse',
-  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, logiciel métier : services et tarifs de mon agence web à Mulhouse.',
+  description: 'Site vitrine dès 690 € HT, boutique en ligne, référencement (SEO), refonte Wix ou Shopify, logiciel métier : services et tarifs, en freelance à Mulhouse.',
   path: '/services',
 })
 
@@ -42,11 +42,11 @@ const list = services.map(s => ({ ...s, ref: s.project ? findProject(s.project) 
       </nav>
     </section>
 
-    <section class="wrap s-rdv" aria-label="Premier rendez-vous offert">
+    <section class="wrap s-rdv" aria-label="Premier rendez-vous gratuit">
       <div class="s-rdv-in" data-reveal>
         <div>
-          <p class="s-rdv-t">Un premier rendez-vous d’une heure, offert.</p>
-          <p class="s-rdv-p">On discute de votre situation et de vos besoins, en visio ou en vrai, sans engagement.</p>
+          <p class="s-rdv-t">Un premier rendez-vous d’une heure, gratuit et sans engagement.</p>
+          <p class="s-rdv-p">On discute de votre situation et de vos besoins, en visio ou en vrai.</p>
         </div>
         <a :href="business.booking" class="btn" target="_blank" rel="noopener">Réserver mon rendez-vous <span class="arr" aria-hidden="true">↗</span></a>
       </div>

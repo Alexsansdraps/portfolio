@@ -5,7 +5,7 @@ import portrait from '~/assets/img/portrait.webp'
 const { public: { siteUrl } } = useRuntimeConfig()
 
 useHead({
-  titleTemplate: t => t || 'Alexandra Porhansl — Agence web freelance en Alsace',
+  titleTemplate: t => t || 'Alexandra Porhansl, développeuse web freelance à Mulhouse',
 })
 
 /* Prix plancher HT d'une offre (grille de site.ts). */
@@ -21,16 +21,16 @@ const fromPrice = (min?: number, unitText?: string) => min === undefined
       },
     }
 
-/* Données structurées globales : l'agence (entreprise locale), sa fondatrice, le site. */
+/* Données structurées globales : l'activité freelance (entreprise locale), Alexandra, le site. */
 useJsonLd({
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'ProfessionalService',
       '@id': `${siteUrl}/#agence`,
-      'name': 'Alexandra Porhansl — Agence web',
+      'name': 'Alexandra Porhansl, développeuse web freelance',
       'alternateName': 'Alexandra Porhansl',
-      'description': 'Agence web freelance basée à Mulhouse, en Alsace : création de sites internet, sites vitrines, boutiques en ligne, référencement (SEO), réseaux sociaux, refontes et logiciels métier sur mesure. Premier rendez-vous offert.',
+      'description': 'Développeuse web freelance basée à Mulhouse, en Alsace : création de sites internet, sites vitrines, boutiques en ligne, référencement (SEO), réseaux sociaux, refontes et logiciels métier sur mesure. Premier rendez-vous gratuit et sans engagement.',
       'slogan': 'Création de sites internet à Mulhouse',
       'priceRange': '€€',
       'currenciesAccepted': 'EUR',
@@ -71,7 +71,7 @@ useJsonLd({
             'priceCurrency': 'EUR',
             'itemOffered': {
               '@type': 'Service',
-              'name': 'Premier rendez-vous d’une heure, offert',
+              'name': 'Premier rendez-vous d’une heure, gratuit et sans engagement',
               'url': `${siteUrl}/contact`,
             },
           },
@@ -103,8 +103,8 @@ useJsonLd({
       '@type': 'Person',
       '@id': `${siteUrl}/#alexandra`,
       'name': 'Alexandra Porhansl',
-      'jobTitle': 'Développeuse web, fondatrice de l’agence',
-      'description': 'Développeuse web depuis 2019, fondatrice d’une agence web freelance à Mulhouse : sites internet, boutiques en ligne et référencement.',
+      'jobTitle': 'Développeuse web freelance',
+      'description': 'Développeuse web depuis 2019, freelance à Mulhouse : sites internet, boutiques en ligne et référencement.',
       'knowsAbout': ['Développement web', 'Référencement naturel (SEO)', 'E-commerce', 'UI/UX', 'Vue.js', 'Nuxt', 'TypeScript', 'Symfony', 'PostgreSQL'],
       'image': `${siteUrl}${portrait}`,
       'url': `${siteUrl}/parcours`,
@@ -119,7 +119,7 @@ useJsonLd({
       'url': `${siteUrl}/`,
       // nom court : c'est celui que Google affiche au-dessus du résultat
       'name': 'Alexandra Porhansl',
-      'alternateName': ['Alexandra Porhansl, agence web', 'alexandraporhansl.com'],
+      'alternateName': ['Alexandra Porhansl, développeuse web freelance', 'alexandraporhansl.com'],
       'inLanguage': 'fr-FR',
       'publisher': { '@id': `${siteUrl}/#agence` },
     },
