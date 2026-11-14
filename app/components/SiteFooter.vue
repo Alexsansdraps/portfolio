@@ -47,7 +47,7 @@ const year = new Date().getFullYear()
         <span class="f-links">
           <NuxtLink :to="chemin('/mentions-legales')">{{ tr('Mentions légales', 'Legal notice') }}</NuxtLink>
           <span aria-hidden="true">·</span>
-          <span>{{ tr('Conçu et développé à Mulhouse, entre Vosges et Rhin', 'Designed and built in Mulhouse, between the Vosges and the Rhine') }}</span>
+          <span>{{ tr('Conçu et développé avec ♥ à Mulhouse', 'Designed and built with ♥ in Mulhouse') }}</span>
         </span>
       </div>
     </div>
