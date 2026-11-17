@@ -40,7 +40,7 @@ const textes: Record<string, TextesProjet> = {
     place: '',
     sector: 'Personalised posters',
     kind: 'Custom online shop',
-    status: 'In development',
+    status: 'Live',
     hook: 'A custom shop where every customer designs their own poster, on the website as well as at the trade fair stand.',
     summary: 'A Shopify store replaced by a custom online shop: poster designer, built-in payment, sales at trade fairs and a complete admin area.',
     context: 'MemoryLine makes illustrated posters of towns and landscapes, which each customer personalises with their own text and characters. The shop ran on Shopify with a separate personalisation add-on: hard to develop further, and trade fair sales got mixed up with website sales.',
