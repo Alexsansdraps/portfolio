@@ -50,7 +50,8 @@ useJsonLd([
       </nav>
 
       <p class="cs-meta rise d1">
-        <span class="status" :class="{ live: p.live }">{{ p.status }}</span>
+        <!-- statut affiché seulement s’il n’est pas encore en ligne (« En ligne » allait de soi) -->
+        <span v-if="!p.live" class="status">{{ p.status }}</span>
         <NuxtLink :to="chemin(`/services/${p.service}`)" class="cs-kind">{{ p.kind }}</NuxtLink><span aria-hidden="true">·</span><span>{{ p.year }}</span>
       </p>
       <h1 class="cs-h1 rise d1">{{ p.name }}</h1>
@@ -142,7 +143,6 @@ useJsonLd([
   border: 1px solid var(--color-line); background: #fff;
 }
 .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #d9a441; }
-.status.live::before { background: #39b36e; }
 .cs-h1 {
   margin-top: 18px; font-weight: 800; font-stretch: 118%;
   font-size: clamp(44px, 8vw, 112px); line-height: .94; letter-spacing: -.035em;

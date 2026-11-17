@@ -17,7 +17,8 @@ const { tr, chemin } = useLangue()
 
     <div class="pc-body" data-reveal>
       <p class="pc-meta">
-        <span class="status" :class="{ live: project.live }">{{ project.status }}</span>
+        <!-- statut affiché seulement s’il n’est pas encore en ligne (« En ligne » allait de soi) -->
+        <span v-if="!project.live" class="status">{{ project.status }}</span>
         <span>{{ project.kind }}</span>
       </p>
       <component :is="as || 'h3'" class="pc-name">
@@ -69,7 +70,6 @@ const { tr, chemin } = useLangue()
   border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
 }
 .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #d9a441; }
-.status.live::before { background: #39b36e; }
 
 .pc-name {
   margin-top: 18px;
