@@ -126,15 +126,14 @@ export const services: Service[] = [
       'Suivi des commandes, livraisons, factures et promotions',
       'Un espace d’administration simple pour tout gérer',
     ],
-    price: 'À partir de 4 130 € HT',
-    minPrice: 4130,
+    price: 'Sur devis',
     prices: [
-      { label: 'Boutique en ligne sur mesure', value: 'à partir de 4 130 €' },
+      { label: 'Boutique en ligne sur mesure', value: 'sur devis' },
     ],
     project: 'memoryline',
     h1: ['Je crée', 'votre boutique en ligne.'],
     seoTitle: 'Création de boutique en ligne sur mesure | Mulhouse, Alsace',
-    seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, dès 4 130 € HT.',
+    seoDescription: 'Une boutique en ligne pensée pour vos produits : paiement par carte et PayPal, livraisons, factures, produits personnalisables. Sur mesure, sur devis.',
     linkText: 'La boutique en ligne en détail',
     forWho: [
       'Vous vendez des produits et la plateforme que vous utilisez vous limite.',
@@ -251,14 +250,14 @@ export const services: Service[] = [
       'Transfert du nom de domaine, sans coupure pour vos clients',
       'Fin des abonnements inutiles, hébergement à coût maîtrisé',
     ],
-    price: 'Autour de 2 450 € HT',
+    price: 'Sur devis',
     prices: [
-      { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis, autour de 2 450 €' },
+      { label: 'Refonte d’un site Wix, Shopify ou vieillissant', value: 'sur devis' },
     ],
     project: 'la-chance-animation',
     h1: ['Je refais', 'votre site.'],
     seoTitle: 'Refonte de site internet, quitter Wix ou Shopify | Alsace',
-    seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Autour de 2 450 € HT.',
+    seoDescription: 'Site vieillissant, abonnement Wix ou Shopify trop cher ? Je refais votre site sur mesure sans perdre votre place sur Google. Sur devis.',
     linkText: 'La refonte en détail',
     forWho: [
       'Votre site a quelques années et ne donne plus une bonne image de votre activité.',
@@ -365,7 +364,7 @@ export interface Faq { q: string, a: string }
 export const faq: Faq[] = [
   {
     q: 'Combien coûte un site internet ?',
-    a: 'Un site d’une page démarre à 690 € HT, un site vitrine de 5 à 7 pages à 1 390 € HT et une boutique en ligne sur mesure à 4 130 € HT. Chaque projet fait l’objet d’un devis détaillé, établi après notre premier rendez-vous, qui précise le contenu, le délai et le prix.',
+    a: 'Un site d’une page démarre à 690 € HT et un site vitrine de 5 à 7 pages à 1 390 € HT. Les autres prestations (boutique en ligne, refonte, référencement, réseaux sociaux, logiciel métier) sont sur devis. Chaque projet fait l’objet d’un devis détaillé, établi après notre premier rendez-vous, qui précise le contenu, le délai et le prix.',
   },
   {
     q: 'Le paiement peut-il être échelonné ?',

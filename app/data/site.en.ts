@@ -67,13 +67,13 @@ const textes: Record<string, TextesService> = {
       'Order tracking, shipping, invoices and promotions',
       'A simple admin area to manage everything',
     ],
-    price: 'From €4,130 excl. VAT',
+    price: 'Quote on request',
     prices: [
-      { label: 'Custom online shop', value: 'from €4,130' },
+      { label: 'Custom online shop', value: 'quote on request' },
     ],
     h1: ['I build', 'your online shop.'],
     seoTitle: 'Custom online shop design | Mulhouse, Alsace',
-    seoDescription: 'An online shop designed for your products: card and PayPal payments, shipping, invoices, personalised products. Custom-built, from €4,130 excl. VAT.',
+    seoDescription: 'An online shop designed for your products: card and PayPal payments, shipping, invoices, personalised products. Custom-built, quote on request.',
     linkText: 'The online shop in detail',
     forWho: [
       'You sell products and the platform you use is holding you back.',
@@ -183,13 +183,13 @@ const textes: Record<string, TextesService> = {
       'Domain name transfer, with no downtime for your customers',
       'No more unnecessary subscriptions, hosting at a controlled cost',
     ],
-    price: 'Around €2,450 excl. VAT',
+    price: 'Quote on request',
     prices: [
-      { label: 'Redesign of a Wix, Shopify or dated website', value: 'on quote, around €2,450' },
+      { label: 'Redesign of a Wix, Shopify or dated website', value: 'quote on request' },
     ],
     h1: ['I rebuild', 'your website.'],
     seoTitle: 'Website redesign, moving away from Wix or Shopify | Alsace',
-    seoDescription: 'Dated website, Wix or Shopify subscription too expensive? I rebuild your website from scratch without losing your place on Google. Around €2,450 excl. VAT.',
+    seoDescription: 'Dated website, Wix or Shopify subscription too expensive? I rebuild your website from scratch without losing your place on Google. Quote on request.',
     linkText: 'The redesign in detail',
     forWho: [
       'Your website is a few years old and no longer gives a good image of your business.',
@@ -288,7 +288,7 @@ export const steps = [
 export const faq: Faq[] = [
   {
     q: 'How much does a website cost?',
-    a: 'A one-page website starts at €690 excl. VAT, a 5 to 7 page business website at €1,390 excl. VAT and a custom online shop at €4,130 excl. VAT. Every project comes with a detailed quote, drawn up after our first meeting, setting out the content, the timeline and the price.',
+    a: 'A one-page website starts at €690 excl. VAT and a 5 to 7 page business website at €1,390 excl. VAT. Everything else (online shop, redesign, search engine optimisation, social media, business software) is priced on quote. Every project comes with a detailed quote, drawn up after our first meeting, setting out the content, the timeline and the price.',
   },
   {
     q: 'Can I pay in instalments?',

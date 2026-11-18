@@ -30,7 +30,9 @@ et servies par Cloudflare Workers ; seul `/api/contact` tourne dans le Worker.
   pas de noms de technologies, pas de Claude ni d'« IA » dans la façon de travailler.
 - **Tarifs** : grille validée par Alexandra (base 280 € HT / jour, après la baisse de 30 % du 12/11/2026, vendue au forfait), dans `app/data/site.ts`
   (`price` sur les cartes de l'accueil, `prices` sur la page Services via `PriceList`, `minPrice` pour les données structurées,
-  `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Ne pas inventer de prix hors de cette grille :
+  `maintenance.prices`). Prix **hors taxes**, « à partir de » ou « sur devis ». Depuis le 18/11/2026, **seul le site vitrine affiche un prix**
+  (690 € / 1 390 € HT) : boutique en ligne, refonte, référencement, réseaux sociaux et logiciel métier sont « sur devis »
+  (le suivi après mise en ligne garde ses prix, dès 27 € HT / mois). Ne pas inventer de prix hors de cette grille :
   la reprendre aussi dans la FAQ (« Combien coûte un site internet ? ») si elle change. Jamais de taux journalier affiché.
 - **Plus d'audit gratuit** (retiré le 13/11/2026, `/audit-gratuit` redirige en 301 vers `/contact`). À la place : un
   **premier rendez-vous d'une heure, gratuit et sans engagement** (situation, besoins ; dire « gratuit et sans engagement », pas « offert »), réservé sur Google Agenda (`business.booking`).
