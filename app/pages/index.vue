@@ -116,11 +116,11 @@ const formules = computed(() => [
       <div class="about-txt" data-reveal>
         <h2 v-if="!en" id="about-title" class="h2">Bonjour, <em>moi c’est Alexandra.</em></h2>
         <h2 v-else id="about-title" class="h2">Hello, <em>I’m Alexandra.</em></h2>
-        <p class="lead">
-          {{ tr(
-            `Je crée des sites web depuis ${years} ans, en agence, en startup puis chez des éditeurs de logiciels.`,
-            `I’ve been building websites for ${years} years, at an agency, at a start-up, then at software companies.`,
-          ) }}
+        <p v-if="!en" class="lead">
+          Je crée des sites web <strong>depuis {{ years }} ans</strong>, en agence, en startup puis chez des éditeurs de logiciels.
+        </p>
+        <p v-else class="lead">
+          I’ve been building websites <strong>for {{ years }} years</strong>, at an agency, at a start-up, then at software companies.
         </p>
         <p class="about-p">
           {{ tr(
@@ -310,6 +310,7 @@ const formules = computed(() => [
 .about-pic img { display: block; width: 100%; border-radius: 24px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
 .about-txt .h2 { margin-top: 18px; }
 .about-txt .lead { margin-top: 22px; }
+.about-txt .lead strong { color: var(--color-ink); font-weight: 720; }
 .about-p { margin-top: 16px; color: var(--color-graphite); max-width: 60ch; }
 .about-why { list-style: none; margin-top: 22px; display: flex; flex-direction: column; }
 .about-why li { padding: 12px 0; border-top: 1px solid var(--color-line); font-size: 16.5px; line-height: 1.55; color: var(--color-graphite); }
