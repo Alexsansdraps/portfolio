@@ -16,7 +16,8 @@ usePageSeo({
 
 const lachance = computed(() => c.value.projects[0]!)
 const memoryline = computed(() => c.value.projects[1]!)
-const years = new Date().getFullYear() - business.since
+// 2019 compte comme une année : 8 ans en 2026 (18/11/2026), et ça augmente tout seul chaque année
+const years = new Date().getFullYear() - business.since + 1
 const formules = computed(() => [
   {
     t: tr('De A à Z', 'From A to Z'),

@@ -3,7 +3,8 @@ import portrait from '~/assets/img/portrait.webp'
 
 const { tr, chemin, en } = useLangue()
 const c = useContenu()
-const years = new Date().getFullYear() - 2019
+// 2019 compte comme une année : 8 ans en 2026 (18/11/2026), et ça augmente tout seul chaque année
+const years = new Date().getFullYear() - 2019 + 1
 
 usePageSeo({
   title: tr(`Mon parcours : ${years} ans de développement web | Alexandra Porhansl`, `About me: ${years} years of web development | Alexandra Porhansl`),
